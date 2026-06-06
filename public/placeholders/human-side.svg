@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Warm abstract placeholder for travel architecture and conversation">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f6f1e9"/>
+      <stop offset="0.5" stop-color="#c4b29c"/>
+      <stop offset="1" stop-color="#657060"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect x="96" y="110" width="360" height="620" fill="#11110f" opacity="0.78"/>
+  <rect x="500" y="190" width="250" height="430" fill="#fffaf2" opacity="0.62"/>
+  <rect x="790" y="130" width="290" height="570" fill="#2b2b28" opacity="0.62"/>
+  <circle cx="332" cy="302" r="82" fill="#b87a4b" opacity="0.72"/>
+  <path d="M90 752 C260 688 440 800 620 720 C780 648 912 720 1110 662 L1110 900 L90 900 Z" fill="#11110f" opacity="0.62"/>
+</svg>

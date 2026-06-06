@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Alex Lindholm social preview">
+  <rect width="1200" height="630" fill="#11110f"/>
+  <path d="M0 410 C180 350 280 430 430 360 C610 276 750 355 910 285 C1030 232 1110 266 1200 228 L1200 630 L0 630 Z" fill="#657060" opacity="0.42"/>
+  <circle cx="930" cy="150" r="220" fill="#b87a4b" opacity="0.25"/>
+  <text x="80" y="180" fill="#fffaf2" font-family="Georgia, serif" font-size="74">Alex Lindholm</text>
+  <text x="84" y="252" fill="#fffaf2" opacity="0.72" font-family="Arial, sans-serif" font-size="30">Venture Architect | Human-Centered Technologist | Ecosystem Builder</text>
+  <text x="84" y="452" fill="#fffaf2" opacity="0.64" font-family="Arial, sans-serif" font-size="26">Human-centered innovation, ethical technology, venture ecosystems, and meaningful collaboration.</text>
+</svg>
