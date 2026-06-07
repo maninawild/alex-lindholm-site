@@ -133,8 +133,9 @@ export const mediaNotes = [
     text: "Some collaborations begin in meeting rooms. Others begin during dinners, travel, or unexpected conversations.",
   },
   {
-    title: "Operator perspective",
+    title: "Partnership Building",
     text: "I tend to work best where ideas need practical testing, better positioning, and the right people around the table.",
+    image: "/media/alex/IMG_0007.JPG",
   },
   {
     title: "Ecosystem setting",

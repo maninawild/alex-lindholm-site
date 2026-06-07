@@ -202,11 +202,11 @@ function WhoIAm() {
         <div className="grid gap-6 lg:grid-cols-[0.78fr_1fr] lg:items-start">
           <div className="relative min-h-[390px] overflow-hidden rounded-sm shadow-quiet">
             <Image
-              src="/media/alex/alex-portrait-01.jpg"
+              src="/media/alex/AlexPuzinLindholm.jpg"
               alt="Portrait of Alex Lindholm"
               fill
               sizes="(min-width: 1024px) 34vw, 100vw"
-              className="object-cover object-[50%_18%]"
+              className="object-cover object-[50%_28%]"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 to-transparent p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white drop-shadow-sm">
@@ -247,15 +247,28 @@ function FieldNotes() {
         <div className="grid gap-4 md:grid-cols-3">
           {mediaNotes.map((item) => (
             <article
-              className="rounded-sm border border-ink/8 bg-bone p-6 shadow-quiet"
+              className="overflow-hidden rounded-sm border border-ink/8 bg-bone shadow-quiet"
               key={item.title}
             >
-              <h3 className="text-xl font-semibold tracking-[-0.01em]">
-                {item.title}
-              </h3>
-              <p className="mt-4 text-sm leading-6 text-graphite/70">
-                {item.text}
-              </p>
+              {item.image ? (
+                <div className="relative min-h-[190px] bg-stone">
+                  <Image
+                    src={item.image}
+                    alt={`${item.title} with Alex Lindholm`}
+                    fill
+                    sizes="(min-width: 768px) 30vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              ) : null}
+              <div className="p-6">
+                <h3 className="text-xl font-semibold tracking-[-0.01em]">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-sm leading-6 text-graphite/70">
+                  {item.text}
+                </p>
+              </div>
             </article>
           ))}
         </div>
@@ -431,8 +444,8 @@ function EducationAndSpeaking() {
           <div className="grid gap-4 md:grid-cols-[0.72fr_1fr]">
             <div className="relative flex min-h-[360px] items-center justify-center overflow-hidden rounded-sm bg-ink shadow-quiet">
               <Image
-                src="/media/alex/alex-storyteller-01.jpg"
-                alt="Alex Lindholm speaking and holding a photo during an educational session"
+                src="/media/speaking/ZaSkobkamy3.jpg"
+                alt="Alex Lindholm speaking during an educational session"
                 fill
                 sizes="(min-width: 1024px) 28vw, 100vw"
                 className="object-contain"
@@ -630,22 +643,33 @@ function Thinking() {
             title="What I keep thinking about."
           />
         </div>
-        <div className="border-l border-ink/10 pl-6">
-          <p className="max-w-2xl text-lg leading-8 text-graphite/78">
-            I am interested in practical questions around human-centered
-            innovation, ethical technology, responsible AI, digital humanism,
-            innovation leadership, and the future of entrepreneurship in Europe
-            and beyond.
-          </p>
-          <div className="mt-7 flex flex-wrap gap-2">
-            {thinkingTopics.map((topic) => (
-              <span
-                key={topic}
-                className="rounded-full border border-ink/12 bg-bone px-4 py-2 text-sm text-graphite/75"
-              >
-                {topic}
-              </span>
-            ))}
+        <div className="grid gap-6 border-l border-ink/10 pl-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <div>
+            <p className="max-w-2xl text-lg leading-8 text-graphite/78">
+              I am interested in practical questions around human-centered
+              innovation, ethical technology, responsible AI, digital humanism,
+              innovation leadership, and the future of entrepreneurship in Europe
+              and beyond.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-2">
+              {thinkingTopics.map((topic) => (
+                <span
+                  key={topic}
+                  className="rounded-full border border-ink/12 bg-bone px-4 py-2 text-sm text-graphite/75"
+                >
+                  {topic}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="relative min-h-[360px] overflow-hidden rounded-sm bg-stone shadow-quiet">
+            <Image
+              src="/media/alex/IMG_2789-normalized.jpg"
+              alt="Alex Lindholm in a reflective thinking moment"
+              fill
+              sizes="(min-width: 1024px) 34vw, 100vw"
+              className="object-cover object-[50%_24%]"
+            />
           </div>
         </div>
       </div>
@@ -713,11 +737,11 @@ function HumanSide() {
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="relative min-h-[440px] overflow-hidden rounded-sm">
             <Image
-              src="/media/alex/alex-travel-01.jpg"
-              alt="Alex Lindholm travelling in Tallinn"
+              src="/media/alex/IMG_2396-display.jpg"
+              alt="Alex Lindholm during a personal travel moment"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
+              className="object-cover object-[50%_45%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/62 to-transparent" />
           </div>

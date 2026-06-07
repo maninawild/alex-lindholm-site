@@ -222,7 +222,7 @@ export default function LecturesAndSpeakingPage() {
 
         <div className="relative flex min-h-[430px] items-center justify-center overflow-hidden rounded-sm bg-ink shadow-premium">
           <Image
-            src="/media/speaking/swipe-microphone-portrait.jpg"
+            src="/media/speaking/ZaSkobkamy2.jpg"
             alt="Alex Lindholm speaking during an interactive session"
             fill
             priority
