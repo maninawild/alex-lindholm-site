@@ -7,6 +7,8 @@ tags:
   - "Future of Work"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Google just dropped something interesting. Not another “generate a UI from a prompt” tool. Something closer to a design teammate. They call it Stitch 🔥 Un..."
 openGraphTitle: "Google just dropped something interesting."
 openGraphDescription: "Google just dropped something interesting. Not another “generate a UI from a prompt” tool. Something closer to a design teammate. They call it Stitch 🔥 Un..."

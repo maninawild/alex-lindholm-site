@@ -10,6 +10,8 @@ tags:
   - "Digital Humanism"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Most companies are approaching AI automation backwards. They start with tools. Not with problems. So they end up with: 10 dashboards 5 disconnected automat..."
 openGraphTitle: "AI for teams"
 openGraphDescription: "Most companies are approaching AI automation backwards. They start with tools. Not with problems. So they end up with: 10 dashboards 5 disconnected automat..."

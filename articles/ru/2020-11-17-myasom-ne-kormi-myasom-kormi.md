@@ -1,5 +1,5 @@
 ---
-title: "​**Мясом не корми – мясом корми."
+title: "Мясом не корми – мясом корми."
 slug: "2020-11-17-myasom-ne-kormi-myasom-kormi"
 date: "2020-11-17T14:52:11.000Z"
 originalDate: "2020-11-17T14:52:11.000Z"
@@ -11,17 +11,21 @@ tags:
   - "Innovation"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-11-17-myasom-ne-kormi-myasom-kormi"
+telegramMessageId: "89"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/89"
+featuredImage: "/media/articles/cynicschool/external-56e627656d7e80.jpg"
 excerpt: "​ Мясом не корми – мясом корми. 🥦Продолжаю про мясо и вегетарианство. Давайте попробуем посмотреть на вечный спор трупоедов и травожуев издалека, с высоты..."
 metaDescription: "​ Мясом не корми – мясом корми. 🥦Продолжаю про мясо и вегетарианство. Давайте попробуем посмотреть на вечный спор трупоедов и травожуев издалека, с высоты..."
-openGraphTitle: "​**Мясом не корми – мясом корми."
+openGraphTitle: "Мясом не корми – мясом корми."
 openGraphDescription: "​ Мясом не корми – мясом корми. 🥦Продолжаю про мясо и вегетарианство. Давайте попробуем посмотреть на вечный спор трупоедов и травожуев издалека, с высоты..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/ee6560addfab001e87ecf.jpg)**Мясом не корми – мясом корми.**
+​**Мясом не корми – мясом корми.**
 
 *🥦Продолжаю про мясо и вегетарианство.*
 

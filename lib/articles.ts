@@ -18,11 +18,17 @@ export type ArticleFrontmatter = {
   relatedArticles?: string[];
   source?: string;
   sourceUrl?: string;
+  contentSource?: ContentSource;
+  translatedFrom?: ArticleLanguage;
+  originalSlug?: string;
+  translationKey?: string;
+  telegramMessageId?: string;
   originalDate?: string;
   status?: ArticleStatus;
 };
 
 export type ArticleStatus = "published" | "draft";
+export type ContentSource = "telegram_ru" | "original_en";
 
 export type Article = {
   id: string;
@@ -34,6 +40,11 @@ export type Article = {
   language: ArticleLanguage;
   source: string;
   sourceUrl?: string;
+  contentSource: ContentSource;
+  translatedFrom?: ArticleLanguage;
+  originalSlug?: string;
+  translationKey?: string;
+  telegramMessageId?: string;
   originalDate?: string;
   featuredImage?: string;
   excerpt: string;
@@ -92,6 +103,16 @@ export function getRelatedArticles(article: Article, limit = 3): ArticleSummary[
     .map((item) => item.article);
 
   return [...explicit, ...inferred].slice(0, limit);
+}
+
+export function getArticleTranslations(article: Article): ArticleSummary[] {
+  const key = article.translationKey || article.originalSlug || article.slug;
+  return getArticleSummaries().filter((item) => {
+    if (item.slug === article.slug) return false;
+    if (item.contentSource !== article.contentSource) return false;
+    if (!item.translationKey && !item.originalSlug) return false;
+    return item.translationKey === key || item.originalSlug === article.slug || article.originalSlug === item.slug;
+  });
 }
 
 export function formatArticleDate(date?: string, language: ArticleLanguage = "en") {
@@ -162,7 +183,8 @@ function readArticleFile(directory: string, fileName: string, fallbackLanguage: 
   const excerpt = frontmatter.excerpt || frontmatter.metaDescription || createDescription(body);
   const metaDescription = frontmatter.metaDescription || excerpt;
   const status = frontmatter.status === "draft" ? "draft" : "published";
-  const source = frontmatter.source || inferSource(frontmatter.sourceUrl);
+  const contentSource = frontmatter.contentSource || inferContentSource(language, frontmatter.sourceUrl);
+  const source = frontmatter.source || inferSource(frontmatter.sourceUrl, contentSource);
 
   return {
     id,
@@ -174,6 +196,11 @@ function readArticleFile(directory: string, fileName: string, fallbackLanguage: 
     language,
     source,
     sourceUrl: frontmatter.sourceUrl,
+    contentSource,
+    translatedFrom: frontmatter.translatedFrom,
+    originalSlug: frontmatter.originalSlug,
+    translationKey: frontmatter.translationKey,
+    telegramMessageId: frontmatter.telegramMessageId,
     originalDate: frontmatter.originalDate,
     featuredImage: frontmatter.featuredImage,
     excerpt,
@@ -243,10 +270,16 @@ function inferCategory(tags: string[]) {
   return tags.find((tag) => articleCategories.includes(tag as ArticleCategory)) || fallbackCategory;
 }
 
-function inferSource(sourceUrl?: string) {
+function inferContentSource(language: ArticleLanguage, sourceUrl?: string): ContentSource {
+  if (sourceUrl?.includes("t.me")) return "telegram_ru";
+  if (language === "ru") return "telegram_ru";
+  return "original_en";
+}
+
+function inferSource(sourceUrl: string | undefined, contentSource: ContentSource) {
+  if (contentSource === "telegram_ru") return "Telegram @cynicschool";
+  if (contentSource === "original_en") return "Alex Lindholm";
   if (!sourceUrl) return "Original article";
-  if (sourceUrl.includes("docs.google.com")) return "Google Docs import";
-  if (sourceUrl.includes("t.me")) return "Telegram";
   if (sourceUrl.includes("linkedin.com")) return "LinkedIn";
   return "Original source";
 }

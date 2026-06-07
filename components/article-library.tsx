@@ -70,7 +70,7 @@ export function ArticleLibrary({ articles }: ArticleLibraryProps) {
   return (
     <section className="bg-bone pb-20 text-ink">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="sticky top-[3.85rem] z-20 border-y border-ink/10 bg-white/90 py-5 backdrop-blur-xl">
+        <div className="relative z-10 border-y border-ink/10 bg-white py-5">
           <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
             <label className="block">
               <span className="mb-2 block text-xs font-medium uppercase tracking-[0.16em] text-graphite/52">
@@ -83,13 +83,13 @@ export function ArticleLibrary({ articles }: ArticleLibraryProps) {
                 className="min-h-12 w-full rounded-md border border-ink/12 bg-white px-4 text-sm text-ink outline-none transition placeholder:text-graphite/45 focus:border-electric"
               />
             </label>
-            <div className="flex flex-wrap gap-2">
+            <div className="relative z-10 flex flex-wrap gap-2">
               {languageOptions.map((option) => (
                 <button
                   key={option.value}
                   type="button"
                   onClick={() => setLanguage(option.value)}
-                  className={`min-h-10 rounded-md border px-4 text-sm transition ${
+                  className={`relative z-10 min-h-10 rounded-md border px-4 text-sm transition ${
                     language === option.value
                       ? "border-electric bg-electric text-white"
                       : "border-ink/12 bg-white text-graphite/74 hover:border-electric"
@@ -105,14 +105,14 @@ export function ArticleLibrary({ articles }: ArticleLibraryProps) {
             <p className="mb-2 text-xs font-medium uppercase tracking-[0.16em] text-graphite/52">
               Featured topics
             </p>
-            <div className="flex gap-2 overflow-x-auto pb-1">
-              {["All", ...featuredTopics].map((item) => (
+            <div className="relative z-10 flex gap-2 overflow-x-auto pb-1">
+              {["All topics", ...featuredTopics].map((item) => (
                 <button
                   key={item}
                   type="button"
-                  onClick={() => setTag(item)}
-                  className={`shrink-0 rounded-md border px-3 py-2 text-xs transition ${
-                    tag === item
+                  onClick={() => setTag(item === "All topics" ? "All" : item)}
+                  className={`relative z-10 shrink-0 rounded-md border px-3 py-2 text-xs transition ${
+                    (item === "All topics" ? tag === "All" : tag === item)
                       ? "border-ink bg-ink text-white"
                       : "border-ink/10 bg-white text-graphite/70 hover:border-ink/30"
                   }`}
@@ -123,13 +123,13 @@ export function ArticleLibrary({ articles }: ArticleLibraryProps) {
             </div>
           </div>
 
-          <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+          <div className="relative z-10 mt-3 flex gap-2 overflow-x-auto pb-1">
             {topicTags.filter((item) => !featuredTopics.includes(item)).map((item) => (
               <button
                 key={item}
                 type="button"
                 onClick={() => setTag(item)}
-                className={`shrink-0 rounded-md border px-3 py-2 text-xs transition ${
+                className={`relative z-10 shrink-0 rounded-md border px-3 py-2 text-xs transition ${
                   tag === item
                     ? "border-ink bg-ink text-white"
                     : "border-ink/10 bg-white text-graphite/70 hover:border-ink/30"

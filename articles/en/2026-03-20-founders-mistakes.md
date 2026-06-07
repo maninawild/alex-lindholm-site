@@ -10,6 +10,8 @@ tags:
   - "Future of Work"
 category: "Fundraising"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Paul Graham’s “18 Mistakes That Kill Startups” should be mandatory reading for every founder. Not because it tells you how to build a startup. But because..."
 openGraphTitle: "founders’ mistakes"
 openGraphDescription: "Paul Graham’s “18 Mistakes That Kill Startups” should be mandatory reading for every founder. Not because it tells you how to build a startup. But because..."

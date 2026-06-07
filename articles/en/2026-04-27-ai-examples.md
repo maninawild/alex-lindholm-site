@@ -10,6 +10,8 @@ tags:
   - "Founder Psychology"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "They say Europe is behind in the AI race. No biggest models. No loud hype. And then someone builds an AI agent… to call 3,000 pubs and ask the price of a G..."
 openGraphTitle: "AI examples"
 openGraphDescription: "They say Europe is behind in the AI race. No biggest models. No loud hype. And then someone builds an AI agent… to call 3,000 pubs and ask the price of a G..."

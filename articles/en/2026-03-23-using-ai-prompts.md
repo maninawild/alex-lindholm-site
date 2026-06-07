@@ -10,6 +10,8 @@ tags:
   - "Future of Work"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Most people are using AI like a chatbot. That’s about 1% of its real value. The real leverage appears when AI becomes a thinking partner for your business..."
 openGraphTitle: "using AI prompts"
 openGraphDescription: "Most people are using AI like a chatbot. That’s about 1% of its real value. The real leverage appears when AI becomes a thinking partner for your business..."

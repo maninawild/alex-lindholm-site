@@ -10,6 +10,8 @@ tags:
   - "Entrepreneurship"
 category: "Fundraising"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "If I had to start again from Day 1 as a founder… I wouldn’t open Figma. I wouldn’t write code. I wouldn’t think about fundraising. I’d start somewhere much..."
 openGraphTitle: "If I had to start again from Day 1 as a founder…"
 openGraphDescription: "If I had to start again from Day 1 as a founder… I wouldn’t open Figma. I wouldn’t write code. I wouldn’t think about fundraising. I’d start somewhere much..."

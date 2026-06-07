@@ -1,5 +1,5 @@
 ---
-title: "​​**Как Дед Интернет выпорол."
+title: "Как Дед Интернет выпорол."
 slug: "2020-05-29-kak-ded-internet-vyporol"
 date: "2020-05-29T08:36:14.000Z"
 originalDate: "2020-05-29T08:36:14.000Z"
@@ -7,21 +7,25 @@ tags:
   - "Human-Centered AI"
   - "Ethical Technology"
   - "Future of Work"
-  - "Communities"
-  - "Travel"
+  - "Media & Algorithms"
+  - "Cities & Communities"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-05-29-kak-ded-internet-vyporol"
+telegramMessageId: "51"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/51"
+featuredImage: "/media/articles/cynicschool/external-80562e2e6b5e9a.jpg"
 excerpt: "​​ Как Дед Интернет выпорол. Только вчера писал о несправедливом отношении соцсетей к пользователям и вот опять: в интернете обидели дедушку! На этот раз о..."
 metaDescription: "​​ Как Дед Интернет выпорол. Только вчера писал о несправедливом отношении соцсетей к пользователям и вот опять: в интернете обидели дедушку! На этот раз о..."
-openGraphTitle: "​​**Как Дед Интернет выпорол."
+openGraphTitle: "Как Дед Интернет выпорол."
 openGraphDescription: "​​ Как Дед Интернет выпорол. Только вчера писал о несправедливом отношении соцсетей к пользователям и вот опять: в интернете обидели дедушку! На этот раз о..."
 relatedArticles: []
 status: "published"
 ---
 
-[​​](https://telegra.ph/file/48d133ff1698cf44da436.jpg)**Как Дед Интернет выпорол.**
+​​**Как Дед Интернет выпорол.**
 
 *Только вчера писал о несправедливом отношении соцсетей к пользователям и вот опять: в интернете обидели дедушку!*
 

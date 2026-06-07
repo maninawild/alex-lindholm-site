@@ -10,6 +10,8 @@ tags:
   - "Entrepreneurship"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "AI made launching startups dramatically easier. And standing out dramatically harder. Because now everyone has: → the same models → the same no-code tools..."
 openGraphTitle: "AI startup"
 openGraphDescription: "AI made launching startups dramatically easier. And standing out dramatically harder. Because now everyone has: → the same models → the same no-code tools..."

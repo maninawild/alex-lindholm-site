@@ -10,6 +10,8 @@ tags:
   - "Venture Building"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Everyone talks about fundraising like it’s step one. Like you need permission before you can build something real. But take a look here please: – Zoho → $1..."
 openGraphTitle: "Everyone talks about fundraising like it’s step one."
 openGraphDescription: "Everyone talks about fundraising like it’s step one. Like you need permission before you can build something real. But take a look here please: – Zoho → $1..."

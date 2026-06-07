@@ -10,6 +10,8 @@ tags:
   - "Future of Work"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "For years, the narrative was simple: “If you want to build a generational AI company, move to Silicon Valley.” That narrative is breaking fast. Europe now..."
 openGraphTitle: "startups statistics"
 openGraphDescription: "For years, the narrative was simple: “If you want to build a generational AI company, move to Silicon Valley.” That narrative is breaking fast. Europe now..."

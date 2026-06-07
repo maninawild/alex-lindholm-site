@@ -10,6 +10,8 @@ tags:
   - "Digital Humanism"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Strange realization lately. The most risky thing about AI… isn’t hallucination. It’s agreement you make with them 😅 We thought we were building intelligen..."
 openGraphTitle: "Strange realization lately."
 openGraphDescription: "Strange realization lately. The most risky thing about AI… isn’t hallucination. It’s agreement you make with them 😅 We thought we were building intelligen..."

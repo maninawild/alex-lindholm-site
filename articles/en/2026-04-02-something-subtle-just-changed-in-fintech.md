@@ -9,6 +9,8 @@ tags:
   - "Digital Humanism"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Something subtle just changed in fintech. But it’s bigger than it looks. AI can now move money. The problem? No one really trusts it to. So the biggest pla..."
 openGraphTitle: "Something subtle just changed in fintech."
 openGraphDescription: "Something subtle just changed in fintech. But it’s bigger than it looks. AI can now move money. The problem? No one really trusts it to. So the biggest pla..."

@@ -1,25 +1,30 @@
 ---
-title: "​​\"**Дорогой, ты оплатил счет за новости?**\""
+title: "\" Дорогой, ты оплатил счет за новости? \""
 slug: "2020-09-09-dorogoi-ty-oplatil-schet-za-novosti"
 date: "2020-09-09T20:31:55.000Z"
 originalDate: "2020-09-09T20:31:55.000Z"
 tags:
   - "Fundraising"
   - "Founder Psychology"
+  - "Media & Algorithms"
   - "Society"
 category: "Fundraising"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-09-09-dorogoi-ty-oplatil-schet-za-novosti"
+telegramMessageId: "79"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/79"
+featuredImage: "/media/articles/cynicschool/external-f3279a0f35b130.png"
 excerpt: "​​\" Дорогой, ты оплатил счет за новости? \" Задумывались ли вы, кто платит за ваши новости? Кто содержит источники, из которых вы их получете? Вы замечали,..."
 metaDescription: "​​\" Дорогой, ты оплатил счет за новости? \" Задумывались ли вы, кто платит за ваши новости? Кто содержит источники, из которых вы их получете? Вы замечали,..."
-openGraphTitle: "​​\"**Дорогой, ты оплатил счет за новости?**\""
+openGraphTitle: "\" Дорогой, ты оплатил счет за новости? \""
 openGraphDescription: "​​\" Дорогой, ты оплатил счет за новости? \" Задумывались ли вы, кто платит за ваши новости? Кто содержит источники, из которых вы их получете? Вы замечали,..."
 relatedArticles: []
 status: "published"
 ---
 
-[​​](https://telegra.ph/file/ab0a74cd575629e2e4be3.png)"**Дорогой, ты оплатил счет за новости?**"
+​​"**Дорогой, ты оплатил счет за новости?**"
 
 *Задумывались ли вы, кто платит за ваши новости? Кто содержит источники, из которых вы их получете?*
 

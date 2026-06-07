@@ -9,6 +9,8 @@ tags:
   - "Digital Humanism"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Most people think learning AI requires: $1,000 courses. Bootcamps. Certificates. Some “AI guru” selling a roadmap. It doesn’t. We’re living through the fir..."
 openGraphTitle: "AI YouTube channels"
 openGraphDescription: "Most people think learning AI requires: $1,000 courses. Bootcamps. Certificates. Some “AI guru” selling a roadmap. It doesn’t. We’re living through the fir..."

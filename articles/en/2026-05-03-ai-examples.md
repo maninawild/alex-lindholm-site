@@ -10,6 +10,8 @@ tags:
   - "Entrepreneurship"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Something funny is happening to corporate language. SEC filings are starting to sound… identical 😅 Just a reminder: SEC is one of the most influential org..."
 openGraphTitle: "AI examples"
 openGraphDescription: "Something funny is happening to corporate language. SEC filings are starting to sound… identical 😅 Just a reminder: SEC is one of the most influential org..."

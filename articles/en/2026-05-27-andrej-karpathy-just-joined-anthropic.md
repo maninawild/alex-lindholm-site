@@ -10,6 +10,8 @@ tags:
   - "Venture Building"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Big signal from the AI world today 👀 Andrej Karpathy just joined Anthropic. For context: – founding member at OpenAI – former Tesla AI lead – one of the m..."
 openGraphTitle: "Andrej Karpathy just joined Anthropic"
 openGraphDescription: "Big signal from the AI world today 👀 Andrej Karpathy just joined Anthropic. For context: – founding member at OpenAI – former Tesla AI lead – one of the m..."

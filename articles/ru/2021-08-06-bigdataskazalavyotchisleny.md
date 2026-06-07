@@ -1,5 +1,5 @@
 ---
-title: "​**БигДатаСказалаВыОтчислены."
+title: "БигДатаСказалаВыОтчислены."
 slug: "2021-08-06-bigdataskazalavyotchisleny"
 date: "2021-08-06T21:15:08.000Z"
 originalDate: "2021-08-06T21:15:08.000Z"
@@ -11,17 +11,21 @@ tags:
   - "Founder Psychology"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2021-08-06-bigdataskazalavyotchisleny"
+telegramMessageId: "107"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/107"
+featuredImage: "/media/articles/cynicschool/external-1715e7b9768514.jpg"
 excerpt: "​ БигДатаСказалаВыОтчислены. История с неграмотным основателем успешной Пермской софт компании Xsolla Шуриком Агапитовым стала мемом недели, претендуя на э..."
 metaDescription: "​ БигДатаСказалаВыОтчислены. История с неграмотным основателем успешной Пермской софт компании Xsolla Шуриком Агапитовым стала мемом недели, претендуя на э..."
-openGraphTitle: "​**БигДатаСказалаВыОтчислены."
+openGraphTitle: "БигДатаСказалаВыОтчислены."
 openGraphDescription: "​ БигДатаСказалаВыОтчислены. История с неграмотным основателем успешной Пермской софт компании Xsolla Шуриком Агапитовым стала мемом недели, претендуя на э..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/46285d002b8b7a36cfc22.jpg)**БигДатаСказалаВыОтчислены.**
+​**БигДатаСказалаВыОтчислены.**
 
 История с неграмотным основателем успешной Пермской софт-компании Xsolla Шуриком Агапитовым стала [мемом недели](https://tjournal.ru/internet/420127-big-data-govorit-chto-vy-petuh-massovoe-uvolnenie-v-xsolla-posle-analiza-aktivnosti-stalo-temoy-dlya-shutok-v-seti), претендуя на эпохальность.
 

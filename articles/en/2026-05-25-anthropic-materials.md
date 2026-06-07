@@ -10,6 +10,8 @@ tags:
   - "Founder Psychology"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Big update from Anthropic that early-stage founders will probably love 👀 Claude for Legal. And finally this feels less like “AI chatbot for lawyers”… and..."
 openGraphTitle: "Anthropic materials"
 openGraphDescription: "Big update from Anthropic that early-stage founders will probably love 👀 Claude for Legal. And finally this feels less like “AI chatbot for lawyers”… and..."

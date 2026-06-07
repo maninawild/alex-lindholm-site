@@ -10,6 +10,8 @@ tags:
   - "Venture Building"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "When people hear “software engineer,” they still imagine Big Tech. Apps. Product teams. Shipping features. Feels a bit outdated now. AI agents are quietly..."
 openGraphTitle: "AI instead of software engineer"
 openGraphDescription: "When people hear “software engineer,” they still imagine Big Tech. Apps. Product teams. Shipping features. Feels a bit outdated now. AI agents are quietly..."

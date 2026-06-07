@@ -1,5 +1,5 @@
 ---
-title: "​**Как забанить Президента?"
+title: "Как забанить Президента?"
 slug: "2021-01-09-kak-zabanit-prezidenta"
 date: "2021-01-09T07:49:08.000Z"
 originalDate: "2021-01-09T07:49:08.000Z"
@@ -8,20 +8,24 @@ tags:
   - "Fundraising"
   - "Digital Humanism"
   - "Future of Work"
-  - "Travel"
+  - "Media & Algorithms"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2021-01-09-kak-zabanit-prezidenta"
+telegramMessageId: "100"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/100"
+featuredImage: "/media/articles/cynicschool/external-1d7ec665f85ab7.png"
 excerpt: "​ Как забанить Президента? Сразу несколько человек написали мне с возмущением / негодованием по поводу бана Трампа – ограничении его доступа к социальным с..."
 metaDescription: "​ Как забанить Президента? Сразу несколько человек написали мне с возмущением / негодованием по поводу бана Трампа – ограничении его доступа к социальным с..."
-openGraphTitle: "​**Как забанить Президента?"
+openGraphTitle: "Как забанить Президента?"
 openGraphDescription: "​ Как забанить Президента? Сразу несколько человек написали мне с возмущением / негодованием по поводу бана Трампа – ограничении его доступа к социальным с..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/275331a1a6965439a339f.png)**Как забанить Президента?**
+​**Как забанить Президента?**
 
 Сразу несколько человек написали мне с возмущением / негодованием по поводу бана Трампа – ограничении его доступа к социальным сетям по решению самих сетей.
 

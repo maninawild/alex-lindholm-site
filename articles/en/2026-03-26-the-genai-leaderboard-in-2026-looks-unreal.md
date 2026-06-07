@@ -10,6 +10,8 @@ tags:
   - "Venture Building"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "The GenAI leaderboard in 2026 looks… unreal. A few years ago, most of these companies were just decks. Now the top 10 alone are worth $1.7T+ combined. And..."
 openGraphTitle: "The GenAI leaderboard in 2026 looks… unreal."
 openGraphDescription: "The GenAI leaderboard in 2026 looks… unreal. A few years ago, most of these companies were just decks. Now the top 10 alone are worth $1.7T+ combined. And..."

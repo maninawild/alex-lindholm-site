@@ -10,6 +10,8 @@ tags:
   - "Entrepreneurship"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Top 10 things founders say… and what they actually mean 👇 “We built proprietary AI” → we’re calling an API “We grew 200% last month” → from 3 users to 9 “..."
 openGraphTitle: "Top 10 things founders say… and what they actually mean 👇"
 openGraphDescription: "Top 10 things founders say… and what they actually mean 👇 “We built proprietary AI” → we’re calling an API “We grew 200% last month” → from 3 users to 9 “..."

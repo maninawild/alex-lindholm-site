@@ -1,5 +1,5 @@
 ---
-title: "​​Вечный**батл: государство VS монополисты"
+title: "Вечный батл: государство VS монополисты"
 slug: "2020-07-30-vechnyi-batl-gosudarstvo-vs-monopolisty"
 date: "2020-07-30T10:38:33.000Z"
 originalDate: "2020-07-30T10:38:33.000Z"
@@ -11,17 +11,21 @@ tags:
   - "Future of Work"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-07-30-vechnyi-batl-gosudarstvo-vs-monopolisty"
+telegramMessageId: "73"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/73"
+featuredImage: "/media/articles/cynicschool/external-9144fe7ccc4f75.jpg"
 excerpt: "​​Вечный батл: государство VS монополисты Вчера начались слушания против цифровых гигантов в Конгрессе США. Государственные обвинители выступают против кор..."
 metaDescription: "​​Вечный батл: государство VS монополисты Вчера начались слушания против цифровых гигантов в Конгрессе США. Государственные обвинители выступают против кор..."
-openGraphTitle: "​​Вечный**батл: государство VS монополисты"
+openGraphTitle: "Вечный батл: государство VS монополисты"
 openGraphDescription: "​​Вечный батл: государство VS монополисты Вчера начались слушания против цифровых гигантов в Конгрессе США. Государственные обвинители выступают против кор..."
 relatedArticles: []
 status: "published"
 ---
 
-​​[Вечный](https://telegra.ph/file/ca44691a0730a70ee0261.jpg)**батл: государство VS монополисты**
+​​Вечный**батл: государство VS монополисты**
 
 *Вчера начались слушания против цифровых гигантов в Конгрессе США.*
 

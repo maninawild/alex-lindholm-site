@@ -10,6 +10,8 @@ tags:
   - "Entrepreneurship"
 category: "Founder Psychology"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "You don’t need ads to hit your first $1M. You need distribution. And one of the most underrated places to build it? Reddit. No budgets. No influencers. No..."
 openGraphTitle: "You don’t need ads to hit your first $1M."
 openGraphDescription: "You don’t need ads to hit your first $1M. You need distribution. And one of the most underrated places to build it? Reddit. No budgets. No influencers. No..."

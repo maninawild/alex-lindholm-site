@@ -10,6 +10,8 @@ tags:
   - "Venture Building"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "From “toxic legacy” to $27B deals. Nebius is scaling fast – but to earn trust is a bit different story. Nebius (ex-Yandex N.V.) just signed a $27B AI infra..."
 openGraphTitle: "Nebius investment"
 openGraphDescription: "From “toxic legacy” to $27B deals. Nebius is scaling fast – but to earn trust is a bit different story. Nebius (ex-Yandex N.V.) just signed a $27B AI infra..."

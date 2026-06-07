@@ -10,6 +10,8 @@ tags:
   - "Entrepreneurship"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "80% of startups don’t fail because the idea is bad. They fail before they ever get to their first dollar. No traction. No distribution. No clear playbook...."
 openGraphTitle: "80% of startups don’t fail because the idea is bad."
 openGraphDescription: "80% of startups don’t fail because the idea is bad. They fail before they ever get to their first dollar. No traction. No distribution. No clear playbook...."

@@ -10,6 +10,8 @@ tags:
   - "Venture Building"
 category: "Startup Ecosystems"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Founders keep asking: “Where do you actually learn how startups work?” 🤔 Not from one book. Not from one mentor. But by consistently following people who..."
 openGraphTitle: "Founders keep asking:"
 openGraphDescription: "Founders keep asking: “Where do you actually learn how startups work?” 🤔 Not from one book. Not from one mentor. But by consistently following people who..."

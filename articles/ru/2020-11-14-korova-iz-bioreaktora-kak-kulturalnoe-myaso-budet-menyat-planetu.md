@@ -1,5 +1,5 @@
 ---
-title: "​**Корова из биореактора: как культуральное мясо будет менять планету."
+title: "Корова из биореактора: как культуральное мясо будет менять планету."
 slug: "2020-11-14-korova-iz-bioreaktora-kak-kulturalnoe-myaso-budet-menyat-planetu"
 date: "2020-11-14T17:19:50.000Z"
 originalDate: "2020-11-14T17:19:50.000Z"
@@ -7,19 +7,24 @@ tags:
   - "Human-Centered AI"
   - "Digital Humanism"
   - "Future of Work"
+  - "Cities & Communities"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-11-14-korova-iz-bioreaktora-kak-kulturalnoe-myaso-budet-menyat-planetu"
+telegramMessageId: "87"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/87"
+featuredImage: "/media/articles/cynicschool/external-4628bd69b5341f.jpg"
 excerpt: "​ Корова из биореактора: как культуральное мясо будет менять планету. Существует всего два мнения: 1️⃣ Мясо – отвратительная вещь. ⭕️ Производство этого пр..."
 metaDescription: "​ Корова из биореактора: как культуральное мясо будет менять планету. Существует всего два мнения: 1️⃣ Мясо – отвратительная вещь. ⭕️ Производство этого пр..."
-openGraphTitle: "​**Корова из биореактора: как культуральное мясо будет менять планету."
+openGraphTitle: "Корова из биореактора: как культуральное мясо будет менять планету."
 openGraphDescription: "​ Корова из биореактора: как культуральное мясо будет менять планету. Существует всего два мнения: 1️⃣ Мясо – отвратительная вещь. ⭕️ Производство этого пр..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/a7b682ad8935ce526a2e1.jpg)**Корова из биореактора: как культуральное мясо будет менять планету.**
+​**Корова из биореактора: как культуральное мясо будет менять планету.**
 
 *Существует всего два мнения:*
 

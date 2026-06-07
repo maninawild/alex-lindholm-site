@@ -1,5 +1,5 @@
 ---
-title: "​**По ком звонит колокольчик?"
+title: "По ком звонит колокольчик?"
 slug: "2020-11-03-po-kom-zvonit-kolokolchik"
 date: "2020-11-03T10:44:15.000Z"
 originalDate: "2020-11-03T10:44:15.000Z"
@@ -11,17 +11,21 @@ tags:
   - "Future of Work"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-11-03-po-kom-zvonit-kolokolchik"
+telegramMessageId: "85"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/85"
+featuredImage: "/media/articles/cynicschool/external-bc71a73b77ea7f.jpg"
 excerpt: "​ По ком звонит колокольчик? Некоторые страны медленно, но верно превращаются в цифровой ГУЛАГ. Цифровой ГУЛАГ 21 го века я бы сравнил с модным нынче глэмп..."
 metaDescription: "​ По ком звонит колокольчик? Некоторые страны медленно, но верно превращаются в цифровой ГУЛАГ. Цифровой ГУЛАГ 21 го века я бы сравнил с модным нынче глэмп..."
-openGraphTitle: "​**По ком звонит колокольчик?"
+openGraphTitle: "По ком звонит колокольчик?"
 openGraphDescription: "​ По ком звонит колокольчик? Некоторые страны медленно, но верно превращаются в цифровой ГУЛАГ. Цифровой ГУЛАГ 21 го века я бы сравнил с модным нынче глэмп..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/ba92d28e961cde7764c12.jpg)**По ком звонит колокольчик?**
+​**По ком звонит колокольчик?**
 
 *Некоторые страны медленно, но верно превращаются в цифровой ГУЛАГ.*
 

@@ -9,6 +9,8 @@ tags:
   - "Digital Humanism"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "This is slightly strange… and very interesting. Some developer built a 3D map of their own thinking 😳 Not notes. Not folders. A living structure of how id..."
 openGraphTitle: "This is slightly strange… and very interesting."
 openGraphDescription: "This is slightly strange… and very interesting. Some developer built a 3D map of their own thinking 😳 Not notes. Not folders. A living structure of how id..."

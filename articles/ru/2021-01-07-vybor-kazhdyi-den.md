@@ -1,5 +1,5 @@
 ---
-title: "​**Выбор. Каждый день."
+title: "Выбор. Каждый день."
 slug: "2021-01-07-vybor-kazhdyi-den"
 date: "2021-01-07T05:56:20.000Z"
 originalDate: "2021-01-07T05:56:20.000Z"
@@ -8,20 +8,24 @@ tags:
   - "Founder Psychology"
   - "Digital Humanism"
   - "Future of Work"
-  - "Communities"
+  - "Media & Algorithms"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2021-01-07-vybor-kazhdyi-den"
+telegramMessageId: "99"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/99"
+featuredImage: "/media/articles/cynicschool/external-7f808c657f9494.png"
 excerpt: "​ Выбор. Каждый день. То, что происходит с американскими выборами – настоящее шоу. С началам эпохи Трампа люди во всём мире помешались на защите своей точк..."
 metaDescription: "​ Выбор. Каждый день. То, что происходит с американскими выборами – настоящее шоу. С началам эпохи Трампа люди во всём мире помешались на защите своей точк..."
-openGraphTitle: "​**Выбор. Каждый день."
+openGraphTitle: "Выбор. Каждый день."
 openGraphDescription: "​ Выбор. Каждый день. То, что происходит с американскими выборами – настоящее шоу. С началам эпохи Трампа люди во всём мире помешались на защите своей точк..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/e9bd5b58f2c1255d6a39c.png)**Выбор. Каждый день.**
+​**Выбор. Каждый день.**
 
 *То, что происходит с американскими выборами – настоящее шоу.*
 

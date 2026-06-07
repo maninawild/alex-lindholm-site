@@ -8,9 +8,12 @@ tags:
   - "Fundraising"
   - "Digital Humanism"
   - "Future of Work"
-  - "Communities"
+  - "Cities & Communities"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-04-17-kak-vy-mne-dorogi"
+telegramMessageId: "29"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/29"
 featuredImage: "/media/articles/cynicschool/photo_1@17-04-2020_18-26-21.jpg"
@@ -51,5 +54,3 @@ The Economist выпустил [Worldwide Cost of Living 2020](https://pages.eiu
 **Скоро-скоро мир откашляется и снова рванет вперед. Ну а пока... можем пофантазировать, в каком городе из этого списка мы действительно хотим жить.**
 
 Как вы мне дОроги – рейтинг городов по стоимости жизни.
-
-![Telegram image](/media/articles/cynicschool/photo_1@17-04-2020_18-26-21.jpg)

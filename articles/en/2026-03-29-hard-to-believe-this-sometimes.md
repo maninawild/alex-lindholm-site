@@ -10,6 +10,8 @@ tags:
   - "Entrepreneurship"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Hard to believe this sometimes. Jim Simons built the most successful hedge fund in history… starting at 40. No Google. No cloud. No AI copilots. No “startu..."
 openGraphTitle: "Hard to believe this sometimes."
 openGraphDescription: "Hard to believe this sometimes. Jim Simons built the most successful hedge fund in history… starting at 40. No Google. No cloud. No AI copilots. No “startu..."

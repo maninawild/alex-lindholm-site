@@ -1,5 +1,5 @@
 ---
-title: "​**Фьючерс на воздух."
+title: "Фьючерс на воздух."
 slug: "2020-12-10-fyuchers-na-vozduh"
 date: "2020-12-10T06:36:31.000Z"
 originalDate: "2020-12-10T06:36:31.000Z"
@@ -8,20 +8,24 @@ tags:
   - "Fundraising"
   - "Digital Humanism"
   - "Future of Work"
-  - "Travel"
+  - "Cities & Communities"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-12-10-fyuchers-na-vozduh"
+telegramMessageId: "94"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/94"
+featuredImage: "/media/articles/cynicschool/external-afb63798286128.jpg"
 excerpt: "​ Фьючерс на воздух. Свершилось! Чикагская Фондовая начала торговать фьючерсами на воду. Что же происходит, братцы? Давайте ка разберёмся. Первое. Всё в ми..."
 metaDescription: "​ Фьючерс на воздух. Свершилось! Чикагская Фондовая начала торговать фьючерсами на воду. Что же происходит, братцы? Давайте ка разберёмся. Первое. Всё в ми..."
-openGraphTitle: "​**Фьючерс на воздух."
+openGraphTitle: "Фьючерс на воздух."
 openGraphDescription: "​ Фьючерс на воздух. Свершилось! Чикагская Фондовая начала торговать фьючерсами на воду. Что же происходит, братцы? Давайте ка разберёмся. Первое. Всё в ми..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/bf0bfc202754762eba820.jpg)**Фьючерс на воздух.**
+​**Фьючерс на воздух.**
 
 *Свершилось! Чикагская Фондовая* [начала торговать фьючерсами на воду](https://quote.rbc.ru/news/article/5fcde3c89a7947d4ce1fb0ff).
 

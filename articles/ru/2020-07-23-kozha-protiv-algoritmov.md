@@ -1,5 +1,5 @@
 ---
-title: "​​**Кожа против алгоритмов."
+title: "Кожа против алгоритмов."
 slug: "2020-07-23-kozha-protiv-algoritmov"
 date: "2020-07-23T14:29:37.000Z"
 originalDate: "2020-07-23T14:29:37.000Z"
@@ -7,21 +7,25 @@ tags:
   - "Human-Centered AI"
   - "Digital Humanism"
   - "Future of Work"
+  - "Media & Algorithms"
   - "Communities"
-  - "Travel"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-07-23-kozha-protiv-algoritmov"
+telegramMessageId: "68"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/68"
+featuredImage: "/media/articles/cynicschool/external-135f3ff105b2b8.jpg"
 excerpt: "​​ Кожа против алгоритмов. В 2020 ом случилось много пугающих вещей: например, появился новый супер умный алгоритм по генерации текста GPT 3 . Выпустила ег..."
 metaDescription: "​​ Кожа против алгоритмов. В 2020 ом случилось много пугающих вещей: например, появился новый супер умный алгоритм по генерации текста GPT 3 . Выпустила ег..."
-openGraphTitle: "​​**Кожа против алгоритмов."
+openGraphTitle: "Кожа против алгоритмов."
 openGraphDescription: "​​ Кожа против алгоритмов. В 2020 ом случилось много пугающих вещей: например, появился новый супер умный алгоритм по генерации текста GPT 3 . Выпустила ег..."
 relatedArticles: []
 status: "published"
 ---
 
-[​​](https://telegra.ph/file/16cb57923c4c9e8a4c5a8.jpg)**Кожа против алгоритмов.**
+​​**Кожа против алгоритмов.**
 
 В 2020-ом случилось много пугающих вещей: например, появился новый **супер-умный алгоритм по генерации текста GPT-3**. Выпустила его калифорнийская лаборатория [OpenAI](https://openai.com/).
 

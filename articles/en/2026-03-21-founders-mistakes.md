@@ -8,6 +8,8 @@ tags:
   - "Entrepreneurship"
 category: "Founder Psychology"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Founders keep asking me one thing: “What should I actually read?” 📚 After working with early-stage founders across Europe, one pattern is clear to me: The..."
 openGraphTitle: "founders’ mistakes"
 openGraphDescription: "Founders keep asking me one thing: “What should I actually read?” 📚 After working with early-stage founders across Europe, one pattern is clear to me: The..."

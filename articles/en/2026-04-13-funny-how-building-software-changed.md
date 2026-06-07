@@ -10,6 +10,8 @@ tags:
   - "Fundraising"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Funny how building software changed. Same goal, very different chaos 😅 1 - Waterfall Plan for 12–18 months. Ship what made sense… a year ago. 2 - Agile Sh..."
 openGraphTitle: "Funny how building software changed."
 openGraphDescription: "Funny how building software changed. Same goal, very different chaos 😅 1 - Waterfall Plan for 12–18 months. Ship what made sense… a year ago. 2 - Agile Sh..."

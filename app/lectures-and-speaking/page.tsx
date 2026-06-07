@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { ArrowLink } from "@/components/arrow-link";
 import { SectionHeader } from "@/components/section-header";
+import { SiteHeader } from "@/components/site-header";
 
 const consultationUrl = "https://zcal.co/axlindholm/1hour";
 const linkedinUrl = "https://www.linkedin.com/in/axlindholm/";
@@ -186,20 +187,10 @@ const detailBadges = [
 
 export default function LecturesAndSpeakingPage() {
   return (
-    <main className="bg-bone text-ink">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-8">
-        <a href="/" className="text-lg font-semibold tracking-[-0.01em]">
-          Alex Lindholm
-        </a>
-        <div className="flex items-center gap-5 text-sm text-graphite/70">
-          <a href="/">Home</a>
-          <a href={linkedinUrl} target="_blank" rel="noopener noreferrer me">
-            LinkedIn
-          </a>
-        </div>
-      </nav>
+    <main className="bg-bone pt-20 text-ink sm:pt-24">
+      <SiteHeader transparentAtTop={false} />
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-5 pb-16 pt-8 sm:px-8 lg:grid-cols-[0.92fr_0.72fr] lg:items-center">
+      <section className="mx-auto grid max-w-7xl gap-10 px-5 pb-16 pt-8 sm:px-8 lg:grid-cols-[0.92fr_0.72fr] lg:items-center lg:pt-12">
         <div>
           <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
             Lectures & Speaking

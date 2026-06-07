@@ -1,5 +1,5 @@
 ---
-title: "​​**Белковая дискриминация"
+title: "Белковая дискриминация"
 slug: "2020-08-22-belkovaya-diskriminatsiya"
 date: "2020-08-22T21:23:24.000Z"
 originalDate: "2020-08-22T21:23:24.000Z"
@@ -7,21 +7,25 @@ tags:
   - "Human-Centered AI"
   - "Digital Humanism"
   - "Future of Work"
-  - "Communities"
-  - "Travel"
+  - "Media & Algorithms"
+  - "Cities & Communities"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-08-22-belkovaya-diskriminatsiya"
+telegramMessageId: "78"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/78"
+featuredImage: "/media/articles/cynicschool/external-7c24effc14299c.jpg"
 excerpt: "​​ Белковая дискриминация Я много писал о том, что скоро мы перестанем существовать как вид Homo Sapiens и приобретём новую форму, возможно, цифровую. Если..."
 metaDescription: "​​ Белковая дискриминация Я много писал о том, что скоро мы перестанем существовать как вид Homo Sapiens и приобретём новую форму, возможно, цифровую. Если..."
-openGraphTitle: "​​**Белковая дискриминация"
+openGraphTitle: "Белковая дискриминация"
 openGraphDescription: "​​ Белковая дискриминация Я много писал о том, что скоро мы перестанем существовать как вид Homo Sapiens и приобретём новую форму, возможно, цифровую. Если..."
 relatedArticles: []
 status: "published"
 ---
 
-[​​](https://telegra.ph/file/2819707b117e7eb6a92b5.jpg)**Белковая дискриминация**
+​​**Белковая дискриминация**
 
 Я много [писал](https://t.me/cynicschool/33) о том, что скоро мы перестанем существовать как вид Homo Sapiens и приобретём новую форму, возможно, цифровую.
 

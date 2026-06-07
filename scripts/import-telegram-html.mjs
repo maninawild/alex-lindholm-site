@@ -1,8 +1,9 @@
 import fs from "node:fs";
+import crypto from "node:crypto";
 import path from "node:path";
 
 const projectRoot = process.cwd();
-const exportDir = path.join(projectRoot, "imports", "telegram", "cynicschool");
+const exportDir = process.env.TELEGRAM_EXPORT_DIR || path.join(projectRoot, "imports", "telegram", "cynicschool");
 const htmlPath = path.join(exportDir, "messages.html");
 const articleDir = path.join(projectRoot, "articles", "ru");
 const mediaDir = path.join(projectRoot, "public", "media", "articles", "cynicschool");
@@ -14,12 +15,17 @@ const minCyrillicCharsWithMedia = 50;
 const stats = {
   imported: 0,
   imagesCopied: 0,
+  externalImagesDownloaded: 0,
+  articlesWithImages: 0,
+  bodyImages: 0,
+  sourceExport: exportDir,
   skipped: {
     serviceOrUi: 0,
     short: 0,
     notRussian: 0,
     noDate: 0,
     missingMedia: 0,
+    failedExternalMedia: 0,
   },
   titles: [],
 };
@@ -40,13 +46,15 @@ const usedSlugs = new Set();
 const copiedMedia = new Set();
 
 for (const group of groups) {
-  const article = buildArticle(group, copiedMedia);
+  const article = await buildArticle(group, copiedMedia);
   if (!article) continue;
 
   fs.writeFileSync(path.join(articleDir, `${article.slug}.md`), article.markdown, "utf8");
   stats.imported += 1;
+  if (article.imageCount > 0) stats.articlesWithImages += 1;
+  stats.bodyImages += Math.max(0, article.imageCount - 1);
   if (stats.titles.length < 10) {
-    stats.titles.push({ title: article.title, date: article.originalDate });
+    stats.titles.push({ title: article.title, date: article.originalDate, imageCount: article.imageCount });
   }
 }
 
@@ -75,9 +83,7 @@ function parseMessages(documentHtml) {
     .map((item) => {
       const dateTitle = item.html.match(/<div class="pull_right date details" title="([^"]+)">/);
       const textHtml = item.html.match(/<div class="text">\s*([\s\S]*?)\s*<\/div>/);
-      const media = [...item.html.matchAll(/<a class="photo_wrap[^"]*" href="([^"]+)"/g)]
-        .map((mediaMatch) => decodeHtml(mediaMatch[1]))
-        .filter((href) => !href.includes("_thumb."));
+      const media = collectMessageMedia(item.html);
 
       return {
         id: item.id,
@@ -117,7 +123,7 @@ function groupMessages(messages) {
   return groups;
 }
 
-function buildArticle(group, copiedMedia) {
+async function buildArticle(group, copiedMedia) {
   const bodyText = group.textParts.filter(Boolean).join("\n\n").trim();
   const cyrillicCount = (bodyText.match(/[А-Яа-яЁё]/g) || []).length;
   const hasMedia = group.media.length > 0;
@@ -137,12 +143,15 @@ function buildArticle(group, copiedMedia) {
 
   const title = extractTitle(bodyText);
   const slug = uniqueSlug(slugify(`${group.originalDate.slice(0, 10)}-${title}`));
-  const copiedImages = copyMedia(group.media, copiedMedia);
+  const copiedImages = await copyMedia(group.media, copiedMedia);
   const tags = deriveTags(bodyText);
   const category = tags[0] || "Society";
   const description = createDescription(bodyText);
   const sourceUrl = `https://t.me/${channel}/${group.id}`;
-  const imageMarkdown = copiedImages.map((image, index) => `![${title}${copiedImages.length > 1 ? `, image ${index + 1}` : ""}](${image.publicPath})`).join("\n\n");
+  const inlineImages = copiedImages.slice(1);
+  const imageMarkdown = inlineImages
+    .map((image, index) => `![${image.caption || `${title}, image ${index + 2}`}](${image.publicPath})`)
+    .join("\n\n");
   const content = imageMarkdown ? `${bodyText}\n\n${imageMarkdown}` : bodyText;
   const featuredImage = copiedImages[0]?.publicPath;
 
@@ -150,35 +159,111 @@ function buildArticle(group, copiedMedia) {
     slug,
     title,
     originalDate: group.originalDate,
-    markdown: `---\ntitle: ${yamlString(title)}\nslug: ${yamlString(slug)}\ndate: ${yamlString(group.originalDate)}\noriginalDate: ${yamlString(group.originalDate)}\ntags:\n${tags.map((tag) => `  - ${yamlString(tag)}`).join("\n")}\ncategory: ${yamlString(category)}\nlanguage: "ru"\nsource: ${yamlString(sourceName)}\nsourceUrl: ${yamlString(sourceUrl)}\n${featuredImage ? `featuredImage: ${yamlString(featuredImage)}\n` : ""}excerpt: ${yamlString(description)}\nmetaDescription: ${yamlString(description)}\nopenGraphTitle: ${yamlString(title)}\nopenGraphDescription: ${yamlString(description)}\nrelatedArticles: []\nstatus: "published"\n---\n\n${content}\n`,
+    imageCount: copiedImages.length,
+    markdown: `---\ntitle: ${yamlString(title)}\nslug: ${yamlString(slug)}\ndate: ${yamlString(group.originalDate)}\noriginalDate: ${yamlString(group.originalDate)}\ntags:\n${tags.map((tag) => `  - ${yamlString(tag)}`).join("\n")}\ncategory: ${yamlString(category)}\nlanguage: "ru"\ncontentSource: "telegram_ru"\ntranslationKey: ${yamlString(slug)}\ntelegramMessageId: ${yamlString(group.id)}\nsource: ${yamlString(sourceName)}\nsourceUrl: ${yamlString(sourceUrl)}\n${featuredImage ? `featuredImage: ${yamlString(featuredImage)}\n` : ""}excerpt: ${yamlString(description)}\nmetaDescription: ${yamlString(description)}\nopenGraphTitle: ${yamlString(title)}\nopenGraphDescription: ${yamlString(description)}\nrelatedArticles: []\nstatus: "published"\n---\n\n${content}\n`,
   };
 }
 
-function copyMedia(mediaItems, copiedMedia) {
-  const copied = [];
+function collectMessageMedia(messageHtml) {
+  const media = [];
 
-  for (const relativePath of mediaItems) {
-    const source = path.join(exportDir, relativePath);
-    if (!fs.existsSync(source)) {
-      stats.skipped.missingMedia += 1;
-      continue;
+  for (const match of messageHtml.matchAll(/<a class="photo_wrap[^"]*" href="([^"]+)"/g)) {
+    const href = decodeHtml(match[1]);
+    if (!href.includes("_thumb.")) {
+      media.push({
+        kind: "local",
+        href,
+        caption: "",
+        index: match.index ?? 0,
+      });
     }
+  }
 
-    const fileName = path.basename(relativePath).replace(/[^A-Za-z0-9@._-]/g, "-");
-    const destination = path.join(mediaDir, fileName);
-    fs.copyFileSync(source, destination);
-
-    if (!copiedMedia.has(fileName)) {
-      copiedMedia.add(fileName);
-      stats.imagesCopied += 1;
-    }
-
-    copied.push({
-      publicPath: `/media/articles/cynicschool/${fileName}`,
+  for (const match of messageHtml.matchAll(/<a\b([^>]*)href="([^"]*)"([^>]*)>([\s\S]*?)<\/a>/gi)) {
+    const href = decodeHtml(match[2]);
+    if (!isImageUrl(href)) continue;
+    media.push({
+      kind: "external",
+      href,
+      caption: stripTags(match[4]).replace(/[\u200B-\u200D\uFEFF]/g, "").trim(),
+      index: match.index ?? 0,
     });
   }
 
+  const seen = new Set();
+  return media
+    .sort((a, b) => a.index - b.index)
+    .filter((item) => {
+      const key = `${item.kind}:${item.href}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+}
+
+async function copyMedia(mediaItems, copiedMedia) {
+  const copied = [];
+
+  for (const item of mediaItems) {
+    if (item.kind === "local") {
+      const source = path.join(exportDir, item.href);
+      if (!fs.existsSync(source)) {
+        stats.skipped.missingMedia += 1;
+        continue;
+      }
+
+      const fileName = path.basename(item.href).replace(/[^A-Za-z0-9@._-]/g, "-");
+      const destination = path.join(mediaDir, fileName);
+      fs.copyFileSync(source, destination);
+
+      if (!copiedMedia.has(fileName)) {
+        copiedMedia.add(fileName);
+        stats.imagesCopied += 1;
+      }
+
+      copied.push({
+        publicPath: `/media/articles/cynicschool/${fileName}`,
+        caption: item.caption,
+      });
+      continue;
+    }
+
+    const downloaded = await downloadExternalImage(item, copiedMedia);
+    if (downloaded) copied.push(downloaded);
+  }
+
   return copied;
+}
+
+async function downloadExternalImage(item, copiedMedia) {
+  const extension = extensionFromUrl(item.href);
+  const hash = crypto.createHash("sha1").update(item.href).digest("hex").slice(0, 14);
+  const fileName = `external-${hash}${extension}`;
+  const destination = path.join(mediaDir, fileName);
+
+  if (!fs.existsSync(destination)) {
+    try {
+      const response = await fetch(item.href);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const buffer = Buffer.from(await response.arrayBuffer());
+      if (buffer.length < 100) throw new Error("Downloaded image is unexpectedly small");
+      fs.writeFileSync(destination, buffer);
+      stats.externalImagesDownloaded += 1;
+    } catch (error) {
+      stats.skipped.failedExternalMedia += 1;
+      return undefined;
+    }
+  }
+
+  if (!copiedMedia.has(fileName)) {
+    copiedMedia.add(fileName);
+    stats.imagesCopied += 1;
+  }
+
+  return {
+    publicPath: `/media/articles/cynicschool/${fileName}`,
+    caption: item.caption,
+  };
 }
 
 function clearPreviousImports() {
@@ -204,6 +289,7 @@ function htmlToMarkdown(value) {
       .replace(/<a\b([^>]*)href="([^"]*)"([^>]*)>([\s\S]*?)<\/a>/gi, (_full, _before, href, _after, label) => {
         const text = stripTags(label).trim();
         const cleanHref = decodeHtml(href);
+        if (isImageUrl(cleanHref)) return text;
         if (!cleanHref || cleanHref.startsWith("#")) return text;
         return `[${text}](${cleanHref})`;
       })
@@ -217,6 +303,16 @@ function htmlToMarkdown(value) {
     .replace(/[ \t]+\n/g, "\n")
     .replace(/\n{4,}/g, "\n\n\n")
     .trim();
+}
+
+function isImageUrl(value) {
+  return /^https?:\/\/.+\.(?:jpe?g|png|gif|webp)(?:[?#].*)?$/i.test(value);
+}
+
+function extensionFromUrl(value) {
+  const pathname = new URL(value).pathname;
+  const extension = path.extname(pathname).toLowerCase();
+  return [".jpg", ".jpeg", ".png", ".gif", ".webp"].includes(extension) ? extension : ".jpg";
 }
 
 function stripTags(value) {
@@ -248,8 +344,16 @@ function extractTitle(body) {
       .split(/\n/)
       .map((line) =>
         line
+          .replace(/[\u200B-\u200D\uFEFF]/g, "")
+          .replace(/^(?:\s*\[\s*]\([^)]+\)\s*)+/g, "")
+          .replace(/^\s*\[\s*]\(https?:\/\/[^)]+\.(?:jpg|jpeg|png|gif|webp)\)\s*/i, "")
           .replace(/\[([^\]]+)]\(([^)]+)\)/g, "$1")
           .replace(/^[#>*_\s]+|[#>*_\s]+$/g, "")
+          .replace(/^\*\*(.+?)\*\*$/, "$1")
+          .replace(/^\*(.+?)\*$/, "$1")
+          .replace(/\*\*/g, " ")
+          .replace(/__/g, " ")
+          .replace(/\s+/g, " ")
           .trim()
       )
       .find((line) => line && !line.startsWith("http")) || "Публикация Telegram";

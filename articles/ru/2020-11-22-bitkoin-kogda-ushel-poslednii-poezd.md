@@ -1,5 +1,5 @@
 ---
-title: "​**Биткоин - когда ушёл последний поезд?"
+title: "Биткоин - когда ушёл последний поезд?"
 slug: "2020-11-22-bitkoin-kogda-ushel-poslednii-poezd"
 date: "2020-11-22T11:48:10.000Z"
 originalDate: "2020-11-22T11:48:10.000Z"
@@ -8,20 +8,24 @@ tags:
   - "Fundraising"
   - "Digital Humanism"
   - "Future of Work"
-  - "Travel"
+  - "Media & Algorithms"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-11-22-bitkoin-kogda-ushel-poslednii-poezd"
+telegramMessageId: "92"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/92"
+featuredImage: "/media/articles/cynicschool/external-cc7b9e463d5779.png"
 excerpt: "​ Биткоин когда ушёл последний поезд? Слово биткоин, как Феникс, возвращается в наш обиход каждые пару лет, когда его цена растет и бьют какой то очередной..."
 metaDescription: "​ Биткоин когда ушёл последний поезд? Слово биткоин, как Феникс, возвращается в наш обиход каждые пару лет, когда его цена растет и бьют какой то очередной..."
-openGraphTitle: "​**Биткоин - когда ушёл последний поезд?"
+openGraphTitle: "Биткоин - когда ушёл последний поезд?"
 openGraphDescription: "​ Биткоин когда ушёл последний поезд? Слово биткоин, как Феникс, возвращается в наш обиход каждые пару лет, когда его цена растет и бьют какой то очередной..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/b4145ee90b4170f9dd2e4.png)**Биткоин - когда ушёл последний поезд?**
+​**Биткоин - когда ушёл последний поезд?**
 
 *Слово биткоин, как Феникс, возвращается в наш обиход каждые пару лет, когда его цена растет и бьют какой-то очередной рекорд. Бежим покупать?*💰
 

@@ -1,5 +1,5 @@
 ---
-title: "​**Привет, человечество, что нового?"
+title: "Привет, человечество, что нового?"
 slug: "2021-07-25-privet-chelovechestvo-chto-novogo"
 date: "2021-07-25T22:00:16.000Z"
 originalDate: "2021-07-25T22:00:16.000Z"
@@ -8,20 +8,24 @@ tags:
   - "Ethical Technology"
   - "Digital Humanism"
   - "Future of Work"
-  - "Jewish Culture"
+  - "Media & Algorithms"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2021-07-25-privet-chelovechestvo-chto-novogo"
+telegramMessageId: "105"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/105"
+featuredImage: "/media/articles/cynicschool/external-54d9737d0306c5.jpg"
 excerpt: "​ Привет, человечество, что нового? Как проходит буйный год? Что вообще происходит в мире и на уровне человека? Давайте разбираться! ⛔️ Обострение всех кон..."
 metaDescription: "​ Привет, человечество, что нового? Как проходит буйный год? Что вообще происходит в мире и на уровне человека? Давайте разбираться! ⛔️ Обострение всех кон..."
-openGraphTitle: "​**Привет, человечество, что нового?"
+openGraphTitle: "Привет, человечество, что нового?"
 openGraphDescription: "​ Привет, человечество, что нового? Как проходит буйный год? Что вообще происходит в мире и на уровне человека? Давайте разбираться! ⛔️ Обострение всех кон..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/653de358c5d956544acef.jpg)**Привет, человечество, что нового?**
+​**Привет, человечество, что нового?**
 
 Как проходит буйный год? Что вообще происходит в мире и на уровне человека? *Давайте разбираться!*
 

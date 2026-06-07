@@ -1,5 +1,5 @@
 ---
-title: "​​**Деньги или жизнь. Как алгоритмы поедают людей."
+title: "Деньги или жизнь. Как алгоритмы поедают людей."
 slug: "2020-05-27-dengi-ili-zhizn-kak-algoritmy-poedayut-lyudei"
 date: "2020-05-27T16:43:31.000Z"
 originalDate: "2020-05-27T16:43:31.000Z"
@@ -8,20 +8,24 @@ tags:
   - "Startup Ecosystems"
   - "Digital Humanism"
   - "Future of Work"
-  - "Communities"
+  - "Media & Algorithms"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-05-27-dengi-ili-zhizn-kak-algoritmy-poedayut-lyudei"
+telegramMessageId: "50"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/50"
+featuredImage: "/media/articles/cynicschool/external-f9ae011001e4fa.jpg"
 excerpt: "​​ Деньги или жизнь. Как алгоритмы поедают людей. Одиозная и крайне атмосферная группа “Secret Tel Aviv” приказала долго жить. Это такое израильское условн..."
 metaDescription: "​​ Деньги или жизнь. Как алгоритмы поедают людей. Одиозная и крайне атмосферная группа “Secret Tel Aviv” приказала долго жить. Это такое израильское условн..."
-openGraphTitle: "​​**Деньги или жизнь. Как алгоритмы поедают людей."
+openGraphTitle: "Деньги или жизнь. Как алгоритмы поедают людей."
 openGraphDescription: "​​ Деньги или жизнь. Как алгоритмы поедают людей. Одиозная и крайне атмосферная группа “Secret Tel Aviv” приказала долго жить. Это такое израильское условн..."
 relatedArticles: []
 status: "published"
 ---
 
-[​​](https://telegra.ph/file/5ca9024380ad5311f5673.jpg)**Деньги или жизнь. Как алгоритмы поедают людей.**
+​​**Деньги или жизнь. Как алгоритмы поедают людей.**
 
 Одиозная и крайне атмосферная группа “Secret Tel Aviv” приказала долго жить.
 

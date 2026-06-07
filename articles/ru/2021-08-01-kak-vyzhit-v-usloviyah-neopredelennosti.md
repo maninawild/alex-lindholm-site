@@ -1,5 +1,5 @@
 ---
-title: "​**Как выжить в условиях неопределённости?"
+title: "Как выжить в условиях неопределённости?"
 slug: "2021-08-01-kak-vyzhit-v-usloviyah-neopredelennosti"
 date: "2021-08-01T10:26:19.000Z"
 originalDate: "2021-08-01T10:26:19.000Z"
@@ -11,17 +11,21 @@ tags:
   - "Society"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2021-08-01-kak-vyzhit-v-usloviyah-neopredelennosti"
+telegramMessageId: "106"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/106"
+featuredImage: "/media/articles/cynicschool/external-8b8273be86790b.jpg"
 excerpt: "​ Как выжить в условиях неопределённости? Терапия текстом. Один из основных источников нашего стресса сегодня – это высокий уровень неопределённости. Выбор..."
 metaDescription: "​ Как выжить в условиях неопределённости? Терапия текстом. Один из основных источников нашего стресса сегодня – это высокий уровень неопределённости. Выбор..."
-openGraphTitle: "​**Как выжить в условиях неопределённости?"
+openGraphTitle: "Как выжить в условиях неопределённости?"
 openGraphDescription: "​ Как выжить в условиях неопределённости? Терапия текстом. Один из основных источников нашего стресса сегодня – это высокий уровень неопределённости. Выбор..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/d5e9411b846b61aee43fa.jpg)**Как выжить в условиях неопределённости?**
+​**Как выжить в условиях неопределённости?**
 
 *Терапия текстом.*
 

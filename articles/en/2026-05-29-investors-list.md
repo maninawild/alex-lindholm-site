@@ -10,6 +10,8 @@ tags:
   - "Fundraising"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Stanford just revealed which investors are best at picking unicorns. The data is fascinating!"
 openGraphTitle: "Investors’ list"
 openGraphDescription: "Stanford just revealed which investors are best at picking unicorns. The data is fascinating!"

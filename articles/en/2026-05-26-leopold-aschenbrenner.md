@@ -9,6 +9,8 @@ tags:
   - "Fundraising"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Everyone wants to invest in “the AI revolution”. Very few people want to invest in transformers, cooling systems and electricity 😅 And that’s exactly why..."
 openGraphTitle: "Leopold Aschenbrenner"
 openGraphDescription: "Everyone wants to invest in “the AI revolution”. Very few people want to invest in transformers, cooling systems and electricity 😅 And that’s exactly why..."

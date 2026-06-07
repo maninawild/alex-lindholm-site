@@ -11,6 +11,7 @@ import {
 } from "@/data/site-content";
 import { SectionHeader } from "@/components/section-header";
 import { ArrowLink } from "@/components/arrow-link";
+import { SiteHeader } from "@/components/site-header";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -184,24 +185,6 @@ function HeroLinkedInCard() {
   );
 }
 
-function SiteHeader() {
-  return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-ink/8 bg-white/78 text-ink shadow-[0_1px_18px_rgba(16,19,26,0.04)] backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#top" className="text-lg font-semibold tracking-[-0.01em]">
-          Alex Lindholm
-        </a>
-        <div className="hidden items-center gap-7 text-sm text-graphite/70 md:flex">
-          <a href="#work" className="transition hover:text-ink">Work</a>
-          <a href="/lectures-and-speaking" className="transition hover:text-ink">Speaking</a>
-          <a href="/articles" className="transition hover:text-ink">Articles</a>
-          <a href="#collaborate" className="transition hover:text-ink">Collaborate</a>
-        </div>
-      </nav>
-    </header>
-  );
-}
-
 function WhoIAm() {
   return (
     <section className="section bg-bone text-ink">
@@ -283,14 +266,16 @@ function FieldNotes() {
 
 function OperatingPhilosophy() {
   return (
-    <section className="section bg-bone text-ink">
-      <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.75fr_1.25fr]">
-        <SectionHeader
-          eyebrow="Operating Philosophy"
-          title="Practical before impressive."
-          intro="I have always approached startups through a crash-test lens: validating not only the product or market, but also whether an idea should exist in its current form at all."
-        />
-        <div className="grid gap-4 text-base leading-7 text-graphite/78 md:grid-cols-2">
+    <section id="operating-philosophy" className="section bg-bone text-ink">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:min-h-[calc(100vh+6rem)] lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+        <div className="lg:sticky lg:top-24">
+          <SectionHeader
+            eyebrow="Operating Philosophy"
+            title="Practical before impressive."
+            intro="I have always approached startups through a crash-test lens: validating not only the product or market, but also whether an idea should exist in its current form at all."
+          />
+        </div>
+        <div className="space-y-5 border-l border-ink/10 pl-6 text-lg leading-8 text-graphite/82">
           <p>
             Not every venture is meant to become a unicorn, and that is
             perfectly fine. Some ideas create far more value for ecosystems,
@@ -321,14 +306,14 @@ function OperatingPhilosophy() {
 
 function ExploreGrid() {
   return (
-    <section id="work" className="section bg-bone text-ink">
+    <section id="work" className="bg-bone pb-8 pt-16 text-ink sm:pb-10 sm:pt-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeader
           eyebrow="Things I Build / Explore"
-          title="Focused areas, not a menu of services."
+          title="Focused areas."
           intro="The work usually sits where venture strategy, ecosystem design, human-centered innovation, and cross-border execution meet."
         />
-        <div className="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-8 grid gap-3 md:grid-cols-2">
           {explorations.map((item, index) => (
             <article
               className="group flex min-h-[205px] flex-col justify-between rounded-sm border border-ink/8 bg-bone p-5 shadow-quiet transition duration-300 hover:-translate-y-0.5 hover:border-electric/30 hover:bg-bone"
@@ -358,17 +343,20 @@ function ExploreGrid() {
 
 function SelectedInitiatives() {
   return (
-    <section className="section bg-bone text-ink">
+    <section className="bg-bone pb-16 pt-8 text-ink sm:pb-20 sm:pt-10">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeader
           eyebrow="Selected Initiatives"
           title="Projects, rooms, and working formats."
-          intro="A selection of platforms, labs, gatherings, and venture experiments connected to founders, investors, creators, and ecosystem partners."
+          intro="Concrete formats I build or help shape around founders, investors, operators, homes, and ecosystem partners."
         />
-        <div className="mt-8 divide-y divide-bone/12 border-y border-ink/10">
+        <div className="mt-6 max-w-3xl border-l-2 border-electric/55 pl-5 text-base leading-7 text-graphite/78">
+          Open to new partners, ideas and projects as investor, partner, venture architect and risk-manager.
+        </div>
+        <div className="mt-8 divide-y divide-ink/10 border-y border-ink/10">
           {initiatives.map((project, index) => (
             <article
-              className="grid gap-4 py-6 transition duration-300 hover:bg-ink/[0.02] md:grid-cols-[0.2fr_0.35fr_1fr]"
+              className="grid gap-4 py-6 transition duration-300 hover:bg-ink/[0.02] md:grid-cols-[0.16fr_0.34fr_1fr]"
               key={project.title}
             >
               <div className="flex items-center justify-between text-xs uppercase tracking-[0.18em] text-graphite/46 md:block">
@@ -398,7 +386,7 @@ function Experience() {
           title="A few useful signals."
           intro="The work has moved through founder calls, universities, accelerators, volunteer initiatives, innovation ecosystems, speaking rooms, and partnership tables."
         />
-        <div className="mt-8 grid gap-x-8 gap-y-6 border-y border-ink/10 py-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-x-8 gap-y-6 border-y border-ink/10 py-8 sm:grid-cols-2">
           {metrics.map((metric) => (
             <div className="relative pl-4 before:absolute before:left-0 before:top-2 before:h-8 before:w-px before:bg-copper/55" key={metric.label}>
               <div className="text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
@@ -417,9 +405,9 @@ function Experience() {
 
 function EducationAndSpeaking() {
   return (
-    <section className="bg-bone pb-16 text-ink">
+    <section id="beyond-venture-work" className="bg-bone pb-16 text-ink">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid gap-8 border-y border-ink/10 py-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+        <div className="grid gap-8 border-y border-ink/10 py-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <div className="lg:sticky lg:top-24">
             <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
               Beyond Venture Work
@@ -494,52 +482,50 @@ const credibilityCategories = [
 type CredibilityLogo = {
   name: string;
   src?: string;
-  treatment?: "standard" | "wide" | "tall" | "dark" | "text";
+  treatment?: "standard" | "wide" | "tall" | "dark";
+  logoScale?: number;
+  maxWidth?: number;
 };
 
 const credibilityLogoGroups: { title: string; items: CredibilityLogo[] }[] = [
   {
     title: "Built",
     items: [
-      { name: "InspireXchange", src: "/media/logos/inspirexchange.jpg", treatment: "tall" },
-      { name: "Bear Grid", treatment: "text" },
-      { name: "EVI Safety Technology", src: "/media/logos/evi-safety-technology.jpg", treatment: "tall" },
-      { name: "Boxmate", treatment: "text" },
+      { name: "InspireXchange", src: "/media/logos/inspirexchange.jpg", treatment: "tall", logoScale: 2.15 },
+      { name: "EVI Safety Technology", src: "/media/logos/evi-safety-technology.jpg", treatment: "tall", logoScale: 1.22 },
     ],
   },
   {
     title: "Ecosystems",
     items: [
-      { name: "YES!Delft", src: "/media/logos/yes-delft.jpg", treatment: "tall" },
-      { name: "The Hague Tech", src: "/media/logos/the-hague-tech.png", treatment: "dark" },
-      { name: "HSD Security Delta", src: "/media/logos/hsd-security-delta.jpg", treatment: "tall" },
+      { name: "YES!Delft", src: "/media/logos/yes-delft.jpg", treatment: "tall", logoScale: 1.72 },
+      { name: "The Hague Tech", src: "/media/logos/the-hague-tech.png", treatment: "dark", logoScale: 1 },
+      { name: "HSD Security Delta", src: "/media/logos/hsd-security-delta.jpg", treatment: "tall", logoScale: 1.72 },
     ],
   },
   {
     title: "Learned & Community",
     items: [
-      { name: "Global Jewry", src: "/media/logos/global-jewry.webp", treatment: "wide" },
-      { name: "Paideia", src: "/media/logos/paideia.png", treatment: "wide" },
-      { name: "ANU Museum of the Jewish People", src: "/media/logos/anu-museum.jpg", treatment: "wide" },
-      { name: "BCI / American Jewish University", src: "/media/logos/american-jewish-university.svg", treatment: "wide" },
-      { name: "Hillel International", src: "/media/logos/hillel-international.svg", treatment: "wide" },
-      { name: "Hillel Saint Petersburg", treatment: "text" },
+      { name: "Global Jewry", src: "/media/logos/global-jewry.webp", treatment: "wide", logoScale: 0.64 },
+      { name: "Paideia", src: "/media/logos/paideia.png", treatment: "dark", logoScale: 1.04 },
+      { name: "ANU Museum of the Jewish People", src: "/media/logos/anu-museum.jpg", treatment: "wide", logoScale: 1.38 },
+      { name: "BCI / American Jewish University", src: "/media/logos/american-jewish-university.svg", treatment: "wide", logoScale: 0.84 },
+      { name: "Hillel International", src: "/media/logos/hillel-international.svg", treatment: "wide", logoScale: 0.62 },
     ],
   },
   {
     title: "Taught",
     items: [
-      { name: "Saint Petersburg State University", src: "/media/logos/spbsu.svg", treatment: "wide" },
-      { name: "Higher School of Economics", treatment: "text" },
-      { name: "Erasmus University Rotterdam", src: "/media/logos/erasmus-university-rotterdam.svg", treatment: "wide" },
-      { name: "Yad Vashem", src: "/media/logos/yad-vashem.svg", treatment: "wide" },
+      { name: "Saint Petersburg State University", src: "/media/logos/spbsu.svg", treatment: "dark", logoScale: 1.12 },
+      { name: "Erasmus University Rotterdam", src: "/media/logos/erasmus-university-rotterdam.svg", treatment: "wide", logoScale: 1.08 },
+      { name: "Yad Vashem", src: "/media/logos/yad-vashem.svg", treatment: "wide", logoScale: 1.06 },
     ],
   },
 ];
 
 function CredibilitySection() {
   return (
-    <section className="bg-bone pb-16 text-ink">
+    <section id="credibility" className="bg-bone pb-16 text-ink">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-10 border-y border-ink/10 py-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
           <div>
@@ -550,13 +536,7 @@ function CredibilitySection() {
               Where I Built, Learned and Contributed
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-graphite/75">
-              Selected ventures, ecosystems, educational institutions and
-              community organizations that shaped my work.
-            </p>
-            <p className="mt-5 max-w-xl text-sm leading-6 text-graphite/62">
-              These are not sponsorship badges. They are reference points from
-              the rooms, programs and communities where I have built, learned,
-              taught, contributed, and tested ideas in practice.
+              Selected places where I built, learned, taught and contributed.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {credibilityCategories.map((item) => (
@@ -597,41 +577,44 @@ function CredibilitySection() {
 function LogoCard({ item }: { item: CredibilityLogo }) {
   const treatment = item.treatment ?? "standard";
   const imageSrc = item.src;
-  const isTextOnly = !imageSrc || treatment === "text";
+
   const isDark = treatment === "dark";
+  const logoScale = item.logoScale ?? 1;
+  const maxWidth = item.maxWidth ?? 230;
   const imageSizeClass =
     treatment === "wide"
-      ? "h-[74px]"
+      ? "h-[88px]"
       : treatment === "tall" || treatment === "dark"
-        ? "h-20"
-        : "h-[72px]";
+        ? "h-[92px]"
+        : "h-[84px]";
 
   return (
     <article
-      className={`flex min-h-[124px] items-center justify-center rounded-md border px-5 py-4 shadow-quiet ${
+      className={`flex min-h-[136px] items-center justify-center overflow-hidden rounded-md border px-5 py-5 shadow-quiet transition duration-300 hover:-translate-y-0.5 ${
         isDark
           ? "border-ink/12 bg-ink text-bone"
-          : isTextOnly
-            ? "border-ink/10 bg-paper text-ink"
-            : "border-ink/8 bg-white text-ink"
+          : "border-ink/8 bg-white text-ink"
       }`}
     >
-      {!isTextOnly ? (
-        <div className={`relative w-full ${imageSizeClass}`}>
-          <Image
-            src={imageSrc}
-            alt={`${item.name} logo`}
-            fill
-            sizes="(min-width: 1280px) 220px, (min-width: 640px) 40vw, 80vw"
-            className="object-contain"
-          />
-        </div>
+      {!imageSrc ? (
+        <p className="max-w-[13rem] text-center text-base font-semibold leading-tight tracking-[-0.01em]">
+          {item.name}
+        </p>
       ) : (
-        <div className="flex min-h-[72px] items-center justify-center text-center">
-          <p className="max-w-[14rem] text-lg font-semibold leading-tight tracking-[-0.015em]">
-            {item.name}
-          </p>
-        </div>
+      <div
+        className={`relative mx-auto w-full max-w-[230px] ${imageSizeClass}`}
+        style={{ maxWidth, transform: `scale(${logoScale})` }}
+      >
+        <Image
+          src={imageSrc}
+          alt={`${item.name} logo`}
+          fill
+          loading="eager"
+          unoptimized={imageSrc.endsWith(".svg")}
+          sizes="(min-width: 1280px) 220px, (min-width: 640px) 40vw, 80vw"
+          className="object-contain"
+        />
+      </div>
       )}
     </article>
   );
@@ -640,14 +623,14 @@ function LogoCard({ item }: { item: CredibilityLogo }) {
 function Thinking() {
   return (
     <section id="thinking" className="section bg-bone text-ink">
-      <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr]">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
         <div className="lg:sticky lg:top-24">
           <SectionHeader
             eyebrow="Ideas / Thinking"
             title="What I keep thinking about."
           />
         </div>
-        <div>
+        <div className="border-l border-ink/10 pl-6">
           <p className="max-w-2xl text-lg leading-8 text-graphite/78">
             I am interested in practical questions around human-centered
             innovation, ethical technology, responsible AI, digital humanism,
@@ -674,7 +657,7 @@ function Collaborations() {
   return (
     <section id="collaborate" className="section bg-bone text-ink">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <div className="lg:sticky lg:top-24">
             <SectionHeader
               eyebrow="Collaborations"
@@ -719,8 +702,8 @@ function Collaborations() {
 
 function HumanSide() {
   return (
-    <section className="section bg-bone text-ink">
-      <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+    <section id="human-side" className="section bg-bone text-ink">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
         <div className="lg:sticky lg:top-24">
           <SectionHeader
             eyebrow="Human Side"
@@ -753,9 +736,9 @@ function HumanSide() {
 
 function Contact() {
   return (
-    <section id="contact" className="section bg-bone text-ink">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[1fr_0.72fr] lg:items-center">
-        <div className="lg:sticky lg:top-24">
+    <section id="contact" className="bg-bone pb-14 pt-8 text-ink sm:pb-16 sm:pt-10">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[1fr_0.72fr] lg:items-start">
+        <div>
           <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
             Contact
           </p>
@@ -882,7 +865,7 @@ function StrategicSession() {
   ];
 
   return (
-    <section className="section bg-bone text-ink" id="strategic-session">
+    <section className="bg-bone py-10 text-ink sm:py-12" id="strategic-session">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-8 rounded-sm border border-ink/10 bg-bone p-6 shadow-quiet sm:p-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
           <div>

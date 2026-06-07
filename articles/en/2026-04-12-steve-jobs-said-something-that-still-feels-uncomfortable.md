@@ -10,6 +10,8 @@ tags:
   - "Entrepreneurship"
 category: "Founder Psychology"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Steve Jobs said something that still feels uncomfortable: “All the work I’ve done will be obsolete in a few years.” Coming from the person who shaped the P..."
 openGraphTitle: "Steve Jobs said something that still feels uncomfortable:"
 openGraphDescription: "Steve Jobs said something that still feels uncomfortable: “All the work I’ve done will be obsolete in a few years.” Coming from the person who shaped the P..."

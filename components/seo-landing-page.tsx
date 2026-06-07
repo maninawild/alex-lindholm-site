@@ -1,4 +1,5 @@
 import { ArrowLink } from "@/components/arrow-link";
+import { SiteHeader } from "@/components/site-header";
 import {
   profileLinks,
   SeoPageKey,
@@ -34,26 +35,15 @@ export function SeoLandingPage({ pageKey }: SeoLandingPageProps) {
   const jsonLd = [personSchema(pageKey), serviceSchema(pageKey), webPageSchema(pageKey)];
 
   return (
-    <main className="bg-bone text-ink">
+    <main className="bg-bone pt-20 text-ink sm:pt-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-8">
-        <a href="/" className="text-lg font-semibold tracking-[-0.01em]">
-          Alex Lindholm
-        </a>
-        <div className="hidden items-center gap-5 text-sm text-graphite/70 lg:flex">
-          {allLinks.slice(1).map((link) => (
-            <a href={link.href} key={link.href}>
-              {link.label}
-            </a>
-          ))}
-        </div>
-      </nav>
+      <SiteHeader transparentAtTop={false} />
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-5 pb-16 pt-8 sm:px-8 lg:grid-cols-[0.9fr_0.72fr] lg:items-end">
+      <section className="mx-auto grid max-w-7xl gap-10 px-5 pb-16 pt-8 sm:px-8 lg:grid-cols-[0.9fr_0.72fr] lg:items-end lg:pt-12">
         <div>
           <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
             {page.eyebrow}

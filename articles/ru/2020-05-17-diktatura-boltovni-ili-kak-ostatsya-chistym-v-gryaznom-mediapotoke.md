@@ -8,9 +8,12 @@ tags:
   - "Ethical Technology"
   - "Digital Humanism"
   - "Future of Work"
-  - "Society"
+  - "Media & Algorithms"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-05-17-diktatura-boltovni-ili-kak-ostatsya-chistym-v-gryaznom-mediapotoke"
+telegramMessageId: "45"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/45"
 featuredImage: "/media/articles/cynicschool/photo_4@17-05-2020_17-10-15.jpg"
@@ -65,5 +68,3 @@ status: "published"
 —
 
 Я буду благодарен вам, если вы расскажете о канале своим друзьям или напишите мне комментарий / критику / whatever.
-
-![Telegram image](/media/articles/cynicschool/photo_4@17-05-2020_17-10-15.jpg)

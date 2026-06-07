@@ -1,5 +1,5 @@
 ---
-title: "​**Яблоко раздора или как бодаются единороги."
+title: "Яблоко раздора или как бодаются единороги."
 slug: "2020-11-19-yabloko-razdora-ili-kak-bodayutsya-edinorogi"
 date: "2020-11-19T09:12:09.000Z"
 originalDate: "2020-11-19T09:12:09.000Z"
@@ -11,17 +11,21 @@ tags:
   - "Innovation"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-11-19-yabloko-razdora-ili-kak-bodayutsya-edinorogi"
+telegramMessageId: "91"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/91"
+featuredImage: "/media/articles/cynicschool/external-634d6f97bd50ab.png"
 excerpt: "​ Яблоко раздора или как бодаются единороги. Apple изящно дала понять миру девелоперов, кто в доме хозяин. А также обозначила свою политическую позицию. Су..."
 metaDescription: "​ Яблоко раздора или как бодаются единороги. Apple изящно дала понять миру девелоперов, кто в доме хозяин. А также обозначила свою политическую позицию. Су..."
-openGraphTitle: "​**Яблоко раздора или как бодаются единороги."
+openGraphTitle: "Яблоко раздора или как бодаются единороги."
 openGraphDescription: "​ Яблоко раздора или как бодаются единороги. Apple изящно дала понять миру девелоперов, кто в доме хозяин. А также обозначила свою политическую позицию. Су..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/733da8358635ee4ad3da8.png)**Яблоко раздора или как бодаются единороги.**
+​**Яблоко раздора или как бодаются единороги.**
 
 *Apple изящно дала понять миру девелоперов, кто в доме хозяин. А также обозначила свою политическую позицию.*
 

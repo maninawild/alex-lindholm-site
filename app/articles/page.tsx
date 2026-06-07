@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArticleLibrary } from "@/components/article-library";
+import { SiteHeader } from "@/components/site-header";
 import { getArticleSummaries } from "@/lib/articles";
 
 export const metadata: Metadata = {
@@ -19,9 +20,9 @@ export default function ArticlesPage() {
   const articles = getArticleSummaries();
 
   return (
-    <main className="bg-bone text-ink">
-      <LibraryNav />
-      <section className="mx-auto max-w-7xl px-5 pb-12 pt-12 sm:px-8 lg:pb-16 lg:pt-20">
+    <main className="bg-bone pt-20 text-ink sm:pt-24">
+      <SiteHeader transparentAtTop={false} />
+      <section className="mx-auto max-w-7xl px-5 pb-12 pt-8 sm:px-8 lg:pb-16 lg:pt-12">
         <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
           Article Library
         </p>
@@ -37,19 +38,5 @@ export default function ArticlesPage() {
       </section>
       <ArticleLibrary articles={articles} />
     </main>
-  );
-}
-
-function LibraryNav() {
-  return (
-    <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-8">
-      <a href="/" className="text-lg font-semibold tracking-[-0.01em]">
-        Alex Lindholm
-      </a>
-      <div className="flex items-center gap-5 text-sm text-graphite/70">
-        <a href="/">Home</a>
-        <a href="/lectures-and-speaking">Speaking</a>
-      </div>
-    </nav>
   );
 }

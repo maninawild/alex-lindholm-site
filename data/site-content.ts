@@ -18,6 +18,12 @@ export const explorations = [
     keywords: ["Human networks", "Venture infrastructure"],
   },
   {
+    label: "Partnerships",
+    title: "Partnership Building",
+    text: "Initiating promising, mutually beneficial partnerships between founders, investors, institutions, operators and ecosystem partners. I am especially strong at seeing hidden synergy, connecting the right people, and turning vague mutual interest into concrete collaboration.",
+    keywords: ["Partnerships", "Ecosystem design", "Human networks"],
+  },
+  {
     label: "Technology ethics",
     title: "Human-Centered Technology",
     text: "Responsible AI, digital humanism, and technology decisions grounded in people, context, and usefulness.",
@@ -27,61 +33,35 @@ export const explorations = [
 
 export const initiatives = [
   {
-    title: "InspireXchange",
-    type: "Ecosystem",
-    text: "A platform and network for connecting founders, investors, experts, and ecosystem partners around relevant opportunities.",
+    title: "InspireXchange Accelerator",
+    type: "Accelerator",
+    text: "Human-centered accelerator for founders: PMF testing, market validation, mentoring, ecosystem access, investor readiness, and execution support.",
   },
   {
-    title: "Deal Room",
+    title: "Venture Boutique / Deal Room",
     type: "Venture",
-    text: "A focused environment for investor-founder discovery, warm introductions, and honest readiness conversations.",
+    text: "Private venture-building and investor-founder matching format for fundraising-ready teams, curated deal flow, honest feedback, and serious investor conversations.",
   },
   {
-    title: "AI Venture Lab",
-    type: "Technology",
-    text: "A working space for responsible AI, venture development, and human-centered technology with founders and innovation teams.",
+    title: "LINDHOME / Prefab Housing Lifestyle",
+    type: "Housing",
+    text: "Modular prefab homes in Bulgaria, combining turnkey land, design, construction, furnishing, lifestyle relocation, second-home use, and investment logic.",
   },
   {
     title: "Private Founder Gatherings",
     type: "Community",
-    text: "Curated gatherings built around trust, thoughtful guests, and conversations that rarely happen on public stages.",
+    text: "Curated rooms for founders, investors, operators, and ecosystem partners where trust, signal, and direct conversation matter more than volume.",
   },
   {
-    title: "Experimental Networking Formats",
-    type: "Format",
-    text: "New formats for founders, creators, investors, and operators who need signal, not another crowded room.",
-  },
-  {
-    title: "Prefab Housing / Lifestyle",
-    type: "Concept",
-    text: "Practical exploration around architecture, mobility, hospitality, and human-scaled living concepts.",
-  },
-  {
-    title: "Art & Legacy Projects",
-    type: "Culture",
-    text: "Projects where story, memory, creativity, and entrepreneurship meet across families, communities, and cultures.",
-  },
-  {
-    title: "Venture Boutique",
-    type: "Strategy",
-    text: "Selective strategic work for founders and partners who need ecosystem design, introductions, positioning, and execution support.",
-  },
-  {
-    title: "Human-Centered Venture Experiments",
-    type: "Research",
-    text: "Experiments in stakeholder-driven entrepreneurship, founder psychology, and technology that stays useful to people.",
+    title: "Strategic Sessions",
+    type: "Consultation",
+    text: "Paid 1-hour consultations for founders, investors, operators, and partners who need a sharp external view on a concrete decision.",
   },
 ];
 
 export const metrics = [
-  { value: "500+", label: "founder calls" },
-  { value: "65+", label: "countries explored" },
-  { value: "4", label: "startup acceleration programs alumni" },
-  { value: "3", label: "startup acceleration programs mentored" },
-  { value: "31", label: "investor-founder matches facilitated" },
-  { value: "20+", label: "ecosystem partnerships" },
-  { value: "∞", label: "cross-border collaborations" },
-  { value: "1000+", label: "lectures, workshops & strategy sessions" },
+  { value: "1000+", label: "founder calls" },
+  { value: "500+", label: "lectures, workshops & strategy sessions" },
 ];
 
 export const educationHighlights = [

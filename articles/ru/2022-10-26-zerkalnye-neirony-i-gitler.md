@@ -1,5 +1,5 @@
 ---
-title: "​**Зеркальные нейроны и Гитлер."
+title: "Зеркальные нейроны и Гитлер."
 slug: "2022-10-26-zerkalnye-neirony-i-gitler"
 date: "2022-10-26T15:47:15.000Z"
 originalDate: "2022-10-26T15:47:15.000Z"
@@ -9,17 +9,21 @@ tags:
   - "Communities"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2022-10-26-zerkalnye-neirony-i-gitler"
+telegramMessageId: "111"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/111"
+featuredImage: "/media/articles/cynicschool/external-9c7a6bfe2bba1f.jpg"
 excerpt: "​ Зеркальные нейроны и Гитлер. Именно эмпатия по признанию многих учёных – та самая штука, делающая человека человеком. Пусть эмпатия доказанно есть и у мн..."
 metaDescription: "​ Зеркальные нейроны и Гитлер. Именно эмпатия по признанию многих учёных – та самая штука, делающая человека человеком. Пусть эмпатия доказанно есть и у мн..."
-openGraphTitle: "​**Зеркальные нейроны и Гитлер."
+openGraphTitle: "Зеркальные нейроны и Гитлер."
 openGraphDescription: "​ Зеркальные нейроны и Гитлер. Именно эмпатия по признанию многих учёных – та самая штука, делающая человека человеком. Пусть эмпатия доказанно есть и у мн..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/9aaab9fd9f326619b1366.jpg)**Зеркальные нейроны и Гитлер.**
+​**Зеркальные нейроны и Гитлер.**
 
 Именно эмпатия по признанию многих учёных – та самая штука, делающая человека человеком. Пусть эмпатия доказанно есть и у многих других животных – люди тут всё же чемпионы.
 

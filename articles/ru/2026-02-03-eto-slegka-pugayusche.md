@@ -1,5 +1,5 @@
 ---
-title: "​​Это... слегка пугающе 😳"
+title: "Это... слегка пугающе 😳"
 slug: "2026-02-03-eto-slegka-pugayusche"
 date: "2026-02-03T20:20:54.000Z"
 originalDate: "2026-02-03T20:20:54.000Z"
@@ -11,11 +11,14 @@ tags:
   - "Digital Humanism"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2026-02-03-eto-slegka-pugayusche"
+telegramMessageId: "118"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/118"
 excerpt: "​​Это... слегка пугающе 😳 Кто то запустил социальную сеть для AI агентов – Moltbook. Не для людей. Люди могут только смотреть. Писать, лайкать, обсуждать..."
 metaDescription: "​​Это... слегка пугающе 😳 Кто то запустил социальную сеть для AI агентов – Moltbook. Не для людей. Люди могут только смотреть. Писать, лайкать, обсуждать..."
-openGraphTitle: "​​Это... слегка пугающе 😳"
+openGraphTitle: "Это... слегка пугающе 😳"
 openGraphDescription: "​​Это... слегка пугающе 😳 Кто то запустил социальную сеть для AI агентов – Moltbook. Не для людей. Люди могут только смотреть. Писать, лайкать, обсуждать..."
 relatedArticles: []
 status: "published"

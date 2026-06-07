@@ -1,5 +1,5 @@
 ---
-title: "​**Праздник к нам приходит!"
+title: "Праздник к нам приходит!"
 slug: "2020-12-14-prazdnik-k-nam-prihodit"
 date: "2020-12-14T20:18:23.000Z"
 originalDate: "2020-12-14T20:18:23.000Z"
@@ -7,21 +7,25 @@ tags:
   - "Human-Centered AI"
   - "Founder Psychology"
   - "Digital Humanism"
-  - "Jewish Culture"
-  - "Travel"
+  - "Media & Algorithms"
+  - "Cities & Communities"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-12-14-prazdnik-k-nam-prihodit"
+telegramMessageId: "96"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/96"
+featuredImage: "/media/articles/cynicschool/external-c12fa43a2c121a.jpg"
 excerpt: "​ Праздник к нам приходит! Началось распределение вакцины от COVID 19. Наконец то, виден свет в конце тоннеля безумия 2020. Страны и правительства выстроил..."
 metaDescription: "​ Праздник к нам приходит! Началось распределение вакцины от COVID 19. Наконец то, виден свет в конце тоннеля безумия 2020. Страны и правительства выстроил..."
-openGraphTitle: "​**Праздник к нам приходит!"
+openGraphTitle: "Праздник к нам приходит!"
 openGraphDescription: "​ Праздник к нам приходит! Началось распределение вакцины от COVID 19. Наконец то, виден свет в конце тоннеля безумия 2020. Страны и правительства выстроил..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/9b86df4399569ff4802f1.jpg)**Праздник к нам приходит!**
+​**Праздник к нам приходит!**
 
 *Началось распределение вакцины от COVID-19.*
 

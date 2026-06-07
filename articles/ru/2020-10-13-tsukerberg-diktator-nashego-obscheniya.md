@@ -1,5 +1,5 @@
 ---
-title: "​**Цукерберг – диктатор нашего общения."
+title: "Цукерберг – диктатор нашего общения."
 slug: "2020-10-13-tsukerberg-diktator-nashego-obscheniya"
 date: "2020-10-13T11:26:05.000Z"
 originalDate: "2020-10-13T11:26:05.000Z"
@@ -8,20 +8,24 @@ tags:
   - "Ethical Technology"
   - "Digital Humanism"
   - "Future of Work"
-  - "Jewish Culture"
+  - "Media & Algorithms"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-10-13-tsukerberg-diktator-nashego-obscheniya"
+telegramMessageId: "82"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/82"
+featuredImage: "/media/articles/cynicschool/external-4c87d1d511d8c6.jpg"
 excerpt: "​ Цукерберг – диктатор нашего общения. Facebook с барского плеча Марка Эдуардовича Цукерберга «радикально обновил» политику социальной сети. Теперь можно б..."
 metaDescription: "​ Цукерберг – диктатор нашего общения. Facebook с барского плеча Марка Эдуардовича Цукерберга «радикально обновил» политику социальной сети. Теперь можно б..."
-openGraphTitle: "​**Цукерберг – диктатор нашего общения."
+openGraphTitle: "Цукерберг – диктатор нашего общения."
 openGraphDescription: "​ Цукерберг – диктатор нашего общения. Facebook с барского плеча Марка Эдуардовича Цукерберга «радикально обновил» политику социальной сети. Теперь можно б..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/48664297567a0b0f558c7.jpg)**Цукерберг – диктатор нашего общения.**
+​**Цукерберг – диктатор нашего общения.**
 
 *Facebook с барского плеча Марка Эдуардовича Цукерберга «радикально обновил» политику социальной сети. Теперь можно будет пожаловаться на контент, отрицающий Холокост и модераторы выпилят его из доступа.*
 

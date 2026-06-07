@@ -1,5 +1,5 @@
 ---
-title: "Жадность или закон природы**?"
+title: "Жадность или закон природы ?"
 slug: "2020-05-02-zhadnost-ili-zakon-prirody"
 date: "2020-05-02T12:56:53.000Z"
 originalDate: "2020-05-02T12:56:53.000Z"
@@ -10,12 +10,15 @@ tags:
   - "Communities"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-05-02-zhadnost-ili-zakon-prirody"
+telegramMessageId: "41"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/41"
 featuredImage: "/media/articles/cynicschool/photo_3@02-05-2020_13-58-01.jpg"
 excerpt: "Жадность или закон природы ? В теле человека около 37 ми триллионов клеток и ежедневно каждая из них проживает целую маленькую жизнь. Какие то из них живут..."
 metaDescription: "Жадность или закон природы ? В теле человека около 37 ми триллионов клеток и ежедневно каждая из них проживает целую маленькую жизнь. Какие то из них живут..."
-openGraphTitle: "Жадность или закон природы**?"
+openGraphTitle: "Жадность или закон природы ?"
 openGraphDescription: "Жадность или закон природы ? В теле человека около 37 ми триллионов клеток и ежедневно каждая из них проживает целую маленькую жизнь. Какие то из них живут..."
 relatedArticles: []
 status: "published"
@@ -43,5 +46,3 @@ status: "published"
 Мир людей, как уже сказано, сложнее: homo sapiens пытается обмануть и преступить законы физики, хотя технически к этому пока не готов.
 
 **Богатые клетки должны поддерживать бедных в сложных ситуациях ведь без одних не будет других. Это закон природы. Ибо существуем мы в одном замкнутом едином организме и законы физики мы пока преступить не можем.**
-
-![Telegram image](/media/articles/cynicschool/photo_3@02-05-2020_13-58-01.jpg)

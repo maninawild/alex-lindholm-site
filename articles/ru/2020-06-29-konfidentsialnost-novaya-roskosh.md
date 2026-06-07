@@ -1,5 +1,5 @@
 ---
-title: "​​**Конфиденциальность – новая роскошь."
+title: "Конфиденциальность – новая роскошь."
 slug: "2020-06-29-konfidentsialnost-novaya-roskosh"
 date: "2020-06-29T11:41:34.000Z"
 originalDate: "2020-06-29T11:41:34.000Z"
@@ -8,20 +8,24 @@ tags:
   - "Ethical Technology"
   - "Startup Ecosystems"
   - "Future of Work"
-  - "Travel"
+  - "Media & Algorithms"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-06-29-konfidentsialnost-novaya-roskosh"
+telegramMessageId: "57"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/57"
+featuredImage: "/media/articles/cynicschool/external-fb7e4bcf844cfa.jpg"
 excerpt: "​​ Конфиденциальность – новая роскошь. Мне очень приятно, когда мои прогнозы сбываются, особенно, если они позитивные. Только недавно писал о том, что начн..."
 metaDescription: "​​ Конфиденциальность – новая роскошь. Мне очень приятно, когда мои прогнозы сбываются, особенно, если они позитивные. Только недавно писал о том, что начн..."
-openGraphTitle: "​​**Конфиденциальность – новая роскошь."
+openGraphTitle: "Конфиденциальность – новая роскошь."
 openGraphDescription: "​​ Конфиденциальность – новая роскошь. Мне очень приятно, когда мои прогнозы сбываются, особенно, если они позитивные. Только недавно писал о том, что начн..."
 relatedArticles: []
 status: "published"
 ---
 
-[​​](https://telegra.ph/file/46a2281e8f6dbc668c15a.jpg)**Конфиденциальность – новая роскошь.**
+​​**Конфиденциальность – новая роскошь.**
 
 *Мне очень приятно, когда мои прогнозы сбываются, особенно, если они позитивные.*
 

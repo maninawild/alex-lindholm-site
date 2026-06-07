@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "import:telegram": "node scripts/import-telegram-html.mjs",
+    "translate:telegram": "node scripts/translate-telegram-articles.mjs",
     "lint": "next lint"
   },
   "dependencies": {

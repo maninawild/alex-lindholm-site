@@ -9,6 +9,8 @@ tags:
   - "Entrepreneurship"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "This might be one of the most important AI shifts this year. And almost no one is talking about it. Google just released TurboQuant. And it changes how AI..."
 openGraphTitle: "This might be one of the most important AI shifts this year."
 openGraphDescription: "This might be one of the most important AI shifts this year. And almost no one is talking about it. Google just released TurboQuant. And it changes how AI..."

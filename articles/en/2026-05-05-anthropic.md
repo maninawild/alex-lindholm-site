@@ -9,6 +9,8 @@ tags:
   - "Digital Humanism"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "This is worth 15 minutes. Not another AI demo. It shows what most people still miss: How to use Claude as a thinking partner… not just a chatbot. No hacks...."
 openGraphTitle: "Anthropic"
 openGraphDescription: "This is worth 15 minutes. Not another AI demo. It shows what most people still miss: How to use Claude as a thinking partner… not just a chatbot. No hacks...."

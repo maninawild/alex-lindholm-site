@@ -1,5 +1,5 @@
 ---
-title: "​**Война как метод естественного отбора."
+title: "Война как метод естественного отбора."
 slug: "2022-11-17-voina-kak-metod-estestvennogo-otbora"
 date: "2022-11-17T07:00:18.000Z"
 originalDate: "2022-11-17T07:00:18.000Z"
@@ -11,17 +11,21 @@ tags:
   - "Future of Work"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2022-11-17-voina-kak-metod-estestvennogo-otbora"
+telegramMessageId: "113"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/113"
+featuredImage: "/media/articles/cynicschool/external-44744d1e921c5a.jpg"
 excerpt: "​ Война как метод естественного отбора. По некоторым данным, в начатой Россией войне погибло уже выше 100 тыс. человек. Крайне сложно выходить из вязкого м..."
 metaDescription: "​ Война как метод естественного отбора. По некоторым данным, в начатой Россией войне погибло уже выше 100 тыс. человек. Крайне сложно выходить из вязкого м..."
-openGraphTitle: "​**Война как метод естественного отбора."
+openGraphTitle: "Война как метод естественного отбора."
 openGraphDescription: "​ Война как метод естественного отбора. По некоторым данным, в начатой Россией войне погибло уже выше 100 тыс. человек. Крайне сложно выходить из вязкого м..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/763a5c57113fb36f4eee7.jpg)**Война как метод естественного отбора.**
+​**Война как метод естественного отбора.**
 
 По некоторым данным, в начатой Россией войне погибло уже выше 100 тыс. человек.
 

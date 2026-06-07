@@ -2,12 +2,14 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { MarkdownContent } from "@/components/markdown-content";
+import { SiteHeader } from "@/components/site-header";
 import {
   type ArticleSummary,
   articleJsonLd,
   formatArticleDate,
   getAllArticles,
   getArticleBySlug,
+  getArticleTranslations,
   getRelatedArticles,
 } from "@/lib/articles";
 import { articleLanguages } from "@/data/article-taxonomy";
@@ -76,27 +78,21 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const previousArticle = articleIndex >= 0 ? allArticles[articleIndex + 1] : undefined;
   const nextArticle = articleIndex > 0 ? allArticles[articleIndex - 1] : undefined;
   const related = getRelatedArticles(article);
+  const translations = getArticleTranslations(article);
+  const isTelegramArticle = article.contentSource === "telegram_ru";
+  const articleMedia = getArticleMedia(article);
+  const articleContent = isTelegramArticle ? articleMedia.content : article.content;
 
   return (
-    <main className="bg-bone text-ink">
+    <main className="bg-bone pt-20 text-ink sm:pt-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd(article)) }}
       />
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-8">
-        <a href="/" className="text-lg font-semibold tracking-[-0.01em]">
-          Alex Lindholm
-        </a>
-        <div className="flex items-center gap-5 text-sm text-graphite/70">
-          <a href="/articles">Articles</a>
-          <a href={linkedinUrl} target="_blank" rel="noopener noreferrer me">
-            LinkedIn
-          </a>
-        </div>
-      </nav>
+      <SiteHeader transparentAtTop={false} />
 
       <article>
-        <header className="mx-auto max-w-4xl px-5 pb-10 pt-12 sm:px-8 lg:pt-20">
+        <header className="mx-auto max-w-4xl px-5 pb-10 pt-8 sm:px-8 lg:pt-12">
           <a href="/articles" className="mb-8 inline-flex rounded-md border border-ink/10 bg-white px-4 py-2 text-sm text-graphite/72 transition hover:border-electric hover:text-electric">
             Back to Articles
           </a>
@@ -121,19 +117,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               </span>
             ))}
           </div>
-          <div className="mt-6 rounded-md border border-ink/10 bg-white p-4 text-sm leading-6 text-graphite/72">
-            <span className="font-medium text-ink">Original source:</span>{" "}
-            {article.sourceUrl ? (
-              <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-electric underline decoration-electric/25 underline-offset-4 transition hover:decoration-electric">
-                {article.source}
-              </a>
-            ) : (
-              <span>{article.source}</span>
-            )}
-          </div>
+          <LanguageSwitcher currentArticle={article} translations={translations} />
+          <ContentSourceNotice article={article} />
         </header>
 
-        {article.featuredImage ? (
+        {article.featuredImage && !isTelegramArticle ? (
           <div className="mx-auto max-w-6xl px-5 sm:px-8">
             <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-ink/10 bg-white p-3 shadow-quiet sm:aspect-[16/9]">
               <Image src={article.featuredImage} alt={article.title} fill sizes="(min-width: 1024px) 960px, 100vw" className="object-contain p-3" priority />
@@ -142,7 +130,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         ) : null}
 
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-8 lg:grid-cols-[minmax(0,720px)_260px] lg:items-start lg:py-16">
-          <MarkdownContent content={article.content} />
+          <div>
+            <MarkdownContent content={articleContent} />
+            {isTelegramArticle ? <RelatedImageSection images={articleMedia.images} /> : null}
+          </div>
           <aside className="space-y-5 lg:sticky lg:top-8">
             <ShareBlock title={article.title} href={article.href} />
             <AuthorBlock />
@@ -170,6 +161,131 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         </section>
       ) : null}
     </main>
+  );
+}
+
+type ArticleImage = {
+  alt: string;
+  src: string;
+};
+
+function getArticleMedia(article: ArticleSummary & { content?: string }) {
+  const content = "content" in article && article.content ? article.content : "";
+  const images: ArticleImage[] = [];
+  const seen = new Set<string>();
+
+  if (article.featuredImage) {
+    images.push({ alt: article.title, src: article.featuredImage });
+    seen.add(article.featuredImage);
+  }
+
+  const textBlocks = content
+    .split(/\n{2,}/)
+    .map((block) => {
+      const image = block.trim().match(/^!\[([^\]]*)]\(([^)]+)\)$/);
+      if (!image) return block;
+
+      const [, alt, src] = image;
+      if (!seen.has(src)) {
+        images.push({ alt: alt || article.title, src });
+        seen.add(src);
+      }
+
+      return "";
+    })
+    .filter((block) => block.trim());
+
+  return {
+    content: textBlocks.join("\n\n").trim(),
+    images,
+  };
+}
+
+function RelatedImageSection({ images }: { images: ArticleImage[] }) {
+  if (images.length === 0) return null;
+
+  const isGallery = images.length > 1;
+
+  return (
+    <section className="mt-14 border-t border-ink/10 pt-8">
+      <p className="text-xs font-medium uppercase tracking-[0.16em] text-copper">
+        {isGallery ? "Related images" : "Related image"}
+      </p>
+      <div className={isGallery ? "mt-5 grid gap-4 sm:grid-cols-2" : "mt-5"}>
+        {images.map((image) => (
+          <figure key={image.src} className="overflow-hidden rounded-md border border-ink/10 bg-white p-3 shadow-quiet">
+            <img
+              src={image.src}
+              alt={image.alt}
+              loading="lazy"
+              className="max-h-[620px] w-full rounded-[3px] object-contain"
+            />
+            {image.alt ? (
+              <figcaption className="mt-3 text-xs leading-5 text-graphite/56">
+                {image.alt}
+              </figcaption>
+            ) : null}
+          </figure>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function LanguageSwitcher({
+  currentArticle,
+  translations,
+}: {
+  currentArticle: ArticleSummary;
+  translations: ArticleSummary[];
+}) {
+  if (translations.length === 0) return null;
+
+  return (
+    <div className="mt-6 flex flex-wrap items-center gap-2 rounded-md border border-ink/10 bg-white p-3 text-sm">
+      <span className="mr-1 text-xs font-medium uppercase tracking-[0.16em] text-graphite/52">Read in</span>
+      <span className="rounded-md bg-ink px-3 py-1.5 text-xs text-white">
+        {articleLanguages[currentArticle.language]}
+      </span>
+      {translations.map((translation) => (
+        <a
+          key={translation.slug}
+          href={translation.href}
+          className="rounded-md border border-ink/10 px-3 py-1.5 text-xs text-graphite/72 transition hover:border-electric hover:text-electric"
+        >
+          {articleLanguages[translation.language]}
+        </a>
+      ))}
+    </div>
+  );
+}
+
+function ContentSourceNotice({ article }: { article: ArticleSummary }) {
+  const sourceLink = article.sourceUrl ? (
+    <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-electric underline decoration-electric/25 underline-offset-4 transition hover:decoration-electric">
+      {article.source}
+    </a>
+  ) : (
+    <span>{article.source}</span>
+  );
+
+  let notice = "Originally written and published in English by Alex Lindholm.";
+
+  if (article.contentSource === "telegram_ru" && article.language === "ru") {
+    notice = "Originally published in Russian on Telegram @cynicschool. Original publication date preserved.";
+  }
+
+  if (article.contentSource === "telegram_ru" && article.language === "en") {
+    notice = "Originally published in Russian on Telegram @cynicschool. This English version was translated with AI and edited for readability. Original publication date preserved.";
+  }
+
+  return (
+    <div className="mt-6 rounded-md border border-ink/10 bg-white p-4 text-sm leading-6 text-graphite/72">
+      <span className="font-medium text-ink">Source note:</span> {notice}
+      <span className="mt-2 block">
+        <span className="font-medium text-ink">Source:</span> {sourceLink}
+      </span>
+    </div>
   );
 }
 

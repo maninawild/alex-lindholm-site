@@ -1,25 +1,30 @@
 ---
-title: "​**Эволюционировать – это больно."
+title: "Эволюционировать – это больно."
 slug: "2020-12-13-evolyutsionirovat-eto-bolno"
 date: "2020-12-13T13:00:28.000Z"
 originalDate: "2020-12-13T13:00:28.000Z"
 tags:
   - "Ethical Technology"
   - "Digital Humanism"
+  - "Cities & Communities"
   - "Communities"
 category: "Ethical Technology"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-12-13-evolyutsionirovat-eto-bolno"
+telegramMessageId: "95"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/95"
+featuredImage: "/media/articles/cynicschool/external-2f86b789606ee9.jpg"
 excerpt: "​ Эволюционировать – это больно. Каждый, у кого хоть раз резался зуб мудрости это поймёт. Адаптивное изменение организма под влиянием внешних условий обесп..."
 metaDescription: "​ Эволюционировать – это больно. Каждый, у кого хоть раз резался зуб мудрости это поймёт. Адаптивное изменение организма под влиянием внешних условий обесп..."
-openGraphTitle: "​**Эволюционировать – это больно."
+openGraphTitle: "Эволюционировать – это больно."
 openGraphDescription: "​ Эволюционировать – это больно. Каждый, у кого хоть раз резался зуб мудрости это поймёт. Адаптивное изменение организма под влиянием внешних условий обесп..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/da73ada47d65771350077.jpg)**Эволюционировать – это больно.**
+​**Эволюционировать – это больно.**
 
 *Каждый, у кого хоть раз резался зуб мудрости это поймёт.*
 

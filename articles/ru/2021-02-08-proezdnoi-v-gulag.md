@@ -1,5 +1,5 @@
 ---
-title: "​**Проездной в ГУЛАГ."
+title: "Проездной в ГУЛАГ."
 slug: "2021-02-08-proezdnoi-v-gulag"
 date: "2021-02-08T06:46:58.000Z"
 originalDate: "2021-02-08T06:46:58.000Z"
@@ -11,17 +11,21 @@ tags:
   - "Future of Work"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2021-02-08-proezdnoi-v-gulag"
+telegramMessageId: "104"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/104"
+featuredImage: "/media/articles/cynicschool/external-e4366ebcd570e7.jpg"
 excerpt: "​ Проездной в ГУЛАГ. Похоже, 2021 ый немногим лучше 2020. Но мы то лучше! Мы стали сильнее, привыкли жить в стрессе. Научились отключать его, дозировать. С..."
 metaDescription: "​ Проездной в ГУЛАГ. Похоже, 2021 ый немногим лучше 2020. Но мы то лучше! Мы стали сильнее, привыкли жить в стрессе. Научились отключать его, дозировать. С..."
-openGraphTitle: "​**Проездной в ГУЛАГ."
+openGraphTitle: "Проездной в ГУЛАГ."
 openGraphDescription: "​ Проездной в ГУЛАГ. Похоже, 2021 ый немногим лучше 2020. Но мы то лучше! Мы стали сильнее, привыкли жить в стрессе. Научились отключать его, дозировать. С..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/7fc9c8694120562943652.jpg)**Проездной в ГУЛАГ.**
+​**Проездной в ГУЛАГ.**
 
 *Похоже, 2021-ый немногим лучше 2020.*
 

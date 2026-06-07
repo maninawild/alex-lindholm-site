@@ -1,5 +1,5 @@
 ---
-title: "​**В Мэрии Парижа задискриминировали мужчин!"
+title: "В Мэрии Парижа задискриминировали мужчин!"
 slug: "2020-12-16-v-merii-parizha-zadiskriminirovali-muzhchin"
 date: "2020-12-16T19:31:06.000Z"
 originalDate: "2020-12-16T19:31:06.000Z"
@@ -7,21 +7,25 @@ tags:
   - "Human-Centered AI"
   - "Digital Humanism"
   - "Future of Work"
+  - "Cities & Communities"
   - "Communities"
-  - "Travel"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-12-16-v-merii-parizha-zadiskriminirovali-muzhchin"
+telegramMessageId: "97"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/97"
+featuredImage: "/media/articles/cynicschool/external-080b82cf699c79.jpg"
 excerpt: "​ В Мэрии Парижа задискриминировали мужчин! Подъехал отличный пример двойной абсурдности мира и принципа “напоролись за что боролись” : мэрию Парижа оштраф..."
 metaDescription: "​ В Мэрии Парижа задискриминировали мужчин! Подъехал отличный пример двойной абсурдности мира и принципа “напоролись за что боролись” : мэрию Парижа оштраф..."
-openGraphTitle: "​**В Мэрии Парижа задискриминировали мужчин!"
+openGraphTitle: "В Мэрии Парижа задискриминировали мужчин!"
 openGraphDescription: "​ В Мэрии Парижа задискриминировали мужчин! Подъехал отличный пример двойной абсурдности мира и принципа “напоролись за что боролись” : мэрию Парижа оштраф..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/7c24d06c13cda4f072c84.jpg)**В Мэрии Парижа задискриминировали мужчин!**
+​**В Мэрии Парижа задискриминировали мужчин!**
 
 Подъехал отличный пример двойной абсурдности мира и принципа *“напоролись за что боролись”*: мэрию Парижа оштрафовали за то, что в ее руководстве слишком много женщин.
 

@@ -10,6 +10,8 @@ tags:
   - "Entrepreneurship"
 category: "Fundraising"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Being a startup founder isn’t that hard. You just need: A good idea. One that solves a real problem. For people who actually care enough to pay. Then you f..."
 openGraphTitle: "Being a startup founder isn’t that hard."
 openGraphDescription: "Being a startup founder isn’t that hard. You just need: A good idea. One that solves a real problem. For people who actually care enough to pay. Then you f..."

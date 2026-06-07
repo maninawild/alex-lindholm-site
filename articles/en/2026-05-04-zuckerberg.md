@@ -10,6 +10,8 @@ tags:
   - "Future of Work"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Something big just happened… as usual quietly. @Chan Zuckerberg Initiative is committing $500M into AI + biology. Not a grant, not a side experiment. A ser..."
 openGraphTitle: "Zuckerberg"
 openGraphDescription: "Something big just happened… as usual quietly. @Chan Zuckerberg Initiative is committing $500M into AI + biology. Not a grant, not a side experiment. A ser..."

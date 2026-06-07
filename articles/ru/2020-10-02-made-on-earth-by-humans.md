@@ -1,5 +1,5 @@
 ---
-title: "​**Made on Earth by humans"
+title: "Made on Earth by humans"
 slug: "2020-10-02-made-on-earth-by-humans"
 date: "2020-10-02T08:00:52.000Z"
 originalDate: "2020-10-02T08:00:52.000Z"
@@ -11,17 +11,21 @@ tags:
   - "Jewish Culture"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-10-02-made-on-earth-by-humans"
+telegramMessageId: "81"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/81"
+featuredImage: "/media/articles/cynicschool/external-051d5354747994.jpg"
 excerpt: "​ Made on Earth by humans Вспомните, были ли в вашем детстве моменты, когда вам хотелось убежать /скрыться /провалиться сквозь землю от происходящего? Чело..."
 metaDescription: "​ Made on Earth by humans Вспомните, были ли в вашем детстве моменты, когда вам хотелось убежать /скрыться /провалиться сквозь землю от происходящего? Чело..."
-openGraphTitle: "​**Made on Earth by humans"
+openGraphTitle: "Made on Earth by humans"
 openGraphDescription: "​ Made on Earth by humans Вспомните, были ли в вашем детстве моменты, когда вам хотелось убежать /скрыться /провалиться сквозь землю от происходящего? Чело..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/b58e3892c0e92ccdef25f.jpg)**Made on Earth by humans**
+​**Made on Earth by humans**
 
 Вспомните, были ли в вашем детстве моменты, когда вам хотелось убежать /скрыться /провалиться сквозь землю от происходящего?
 

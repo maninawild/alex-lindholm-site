@@ -10,6 +10,8 @@ tags:
   - "Fundraising"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Something interesting is happening around The Hague and South Holland. And at the same time, something is clearly missing. We have strong universities. Ser..."
 openGraphTitle: "Something interesting is happening around The Hague and South Holland."
 openGraphDescription: "Something interesting is happening around The Hague and South Holland. And at the same time, something is clearly missing. We have strong universities. Ser..."

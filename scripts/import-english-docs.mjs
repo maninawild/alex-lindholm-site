@@ -130,7 +130,7 @@ function toArticle(entry, sourceUrl) {
 
   return {
     slug,
-    markdown: `---\ntitle: ${yamlString(title)}\nslug: ${yamlString(slug)}\ndate: ${yamlString(date)}\ntags:\n${tags.map((tag) => `  - ${yamlString(tag)}`).join("\n")}\ncategory: ${yamlString(category)}\nlanguage: "en"\nmetaDescription: ${yamlString(metaDescription)}\nopenGraphTitle: ${yamlString(title)}\nopenGraphDescription: ${yamlString(metaDescription)}\nrelatedArticles: []\nsourceUrl: ${yamlString(sourceUrl)}\n---\n\n${body}\n`,
+    markdown: `---\ntitle: ${yamlString(title)}\nslug: ${yamlString(slug)}\ndate: ${yamlString(date)}\ntags:\n${tags.map((tag) => `  - ${yamlString(tag)}`).join("\n")}\ncategory: ${yamlString(category)}\nlanguage: "en"\ncontentSource: "original_en"\nsource: "Alex Lindholm"\nmetaDescription: ${yamlString(metaDescription)}\nopenGraphTitle: ${yamlString(title)}\nopenGraphDescription: ${yamlString(metaDescription)}\nrelatedArticles: []\nsourceUrl: ${yamlString(sourceUrl)}\n---\n\n${body}\n`,
   };
 }
 

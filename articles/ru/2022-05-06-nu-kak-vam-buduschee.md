@@ -1,25 +1,31 @@
 ---
-title: "​**Ну, как вам будущее?"
+title: "Ну, как вам будущее?"
 slug: "2022-05-06-nu-kak-vam-buduschee"
 date: "2022-05-06T21:44:00.000Z"
 originalDate: "2022-05-06T21:44:00.000Z"
 tags:
   - "Human-Centered AI"
+  - "Media & Algorithms"
+  - "Cities & Communities"
   - "Communities"
   - "Travel"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2022-05-06-nu-kak-vam-buduschee"
+telegramMessageId: "109"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/109"
+featuredImage: "/media/articles/cynicschool/external-d0d9d1a2040590.jpg"
 excerpt: "​ Ну, как вам будущее? Последний текст был 9 месяцев назад. Наша жизнь и мир крайне изменились за эти 9 месяцев. Был бы рад ошибаться, но... похоже, Кассан..."
 metaDescription: "​ Ну, как вам будущее? Последний текст был 9 месяцев назад. Наша жизнь и мир крайне изменились за эти 9 месяцев. Был бы рад ошибаться, но... похоже, Кассан..."
-openGraphTitle: "​**Ну, как вам будущее?"
+openGraphTitle: "Ну, как вам будущее?"
 openGraphDescription: "​ Ну, как вам будущее? Последний текст был 9 месяцев назад. Наша жизнь и мир крайне изменились за эти 9 месяцев. Был бы рад ошибаться, но... похоже, Кассан..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/d62c2abf7804d9787e17e.jpg)**Ну, как вам будущее?**
+​**Ну, как вам будущее?**
 *Последний текст был 9 месяцев назад.*
 
 Наша жизнь и мир крайне изменились за эти 9 месяцев.

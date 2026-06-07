@@ -1,5 +1,5 @@
 ---
-title: "​**Зима близко!"
+title: "Зима близко!"
 slug: "2020-10-20-zima-blizko"
 date: "2020-10-20T10:09:09.000Z"
 originalDate: "2020-10-20T10:09:09.000Z"
@@ -8,20 +8,24 @@ tags:
   - "Ethical Technology"
   - "Digital Humanism"
   - "Future of Work"
-  - "Communities"
+  - "Cities & Communities"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-10-20-zima-blizko"
+telegramMessageId: "83"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/83"
+featuredImage: "/media/articles/cynicschool/external-40d097ddd2b449.jpg"
 excerpt: "​ Зима близко! Вы успели запастись дровами, шерстью, строганиной? Сегодня будет сказ о том, как в 2020 м Южане и Северяне из за хвори разладились... С путе..."
 metaDescription: "​ Зима близко! Вы успели запастись дровами, шерстью, строганиной? Сегодня будет сказ о том, как в 2020 м Южане и Северяне из за хвори разладились... С путе..."
-openGraphTitle: "​**Зима близко!"
+openGraphTitle: "Зима близко!"
 openGraphDescription: "​ Зима близко! Вы успели запастись дровами, шерстью, строганиной? Сегодня будет сказ о том, как в 2020 м Южане и Северяне из за хвори разладились... С путе..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/5b3a0043cbdb252b4f652.jpg)**Зима близко!**
+​**Зима близко!**
 
 *Вы успели запастись дровами, шерстью, строганиной?*
 

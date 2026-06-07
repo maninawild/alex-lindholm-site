@@ -1,5 +1,5 @@
 ---
-title: "​​Деньги**или жизнь**!"
+title: "Деньги или жизнь !"
 slug: "2020-07-17-dengi-ili-zhizn"
 date: "2020-07-17T18:09:16.000Z"
 originalDate: "2020-07-17T18:09:16.000Z"
@@ -7,21 +7,25 @@ tags:
   - "Human-Centered AI"
   - "Fundraising"
   - "Future of Work"
-  - "Communities"
-  - "Society"
+  - "Media & Algorithms"
+  - "Cities & Communities"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-07-17-dengi-ili-zhizn"
+telegramMessageId: "60"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/60"
+featuredImage: "/media/articles/cynicschool/external-17b6b6bd411035.jpg"
 excerpt: "​​Деньги или жизнь ! “Биржа это казино.” “Государство всегда обманет”. “Хочу жить на проценты.” “Вложись и разбогатей.” “Это не пирамида.” “Деньги должны р..."
 metaDescription: "​​Деньги или жизнь ! “Биржа это казино.” “Государство всегда обманет”. “Хочу жить на проценты.” “Вложись и разбогатей.” “Это не пирамида.” “Деньги должны р..."
-openGraphTitle: "​​Деньги**или жизнь**!"
+openGraphTitle: "Деньги или жизнь !"
 openGraphDescription: "​​Деньги или жизнь ! “Биржа это казино.” “Государство всегда обманет”. “Хочу жить на проценты.” “Вложись и разбогатей.” “Это не пирамида.” “Деньги должны р..."
 relatedArticles: []
 status: "published"
 ---
 
-​​[Деньги](https://telegra.ph/file/bb246acec298c16fba099.jpg)**или жизнь**!
+​​Деньги**или жизнь**!
 
 *- “Биржа - это казино.”
 - “Государство всегда обманет”.

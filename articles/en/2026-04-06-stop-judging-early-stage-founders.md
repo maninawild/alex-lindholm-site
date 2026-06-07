@@ -10,6 +10,8 @@ tags:
   - "Founder Psychology"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Stop judging early-stage founders. You’re looking at where they are now… not where they’re actually going. Early founders get judged all the time. Usually..."
 openGraphTitle: "Stop judging early-stage founders."
 openGraphDescription: "Stop judging early-stage founders. You’re looking at where they are now… not where they’re actually going. Early founders get judged all the time. Usually..."

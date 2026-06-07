@@ -8,6 +8,8 @@ tags:
   - "Entrepreneurship"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "AI just quietly entered one of the oldest industries on Earth. Farming. A New Zealand startup, Halter, is now valued at ~$2B… for putting AI collars on cow..."
 openGraphTitle: "AI just quietly entered one of the oldest industries on Earth."
 openGraphDescription: "AI just quietly entered one of the oldest industries on Earth. Farming. A New Zealand startup, Halter, is now valued at ~$2B… for putting AI collars on cow..."

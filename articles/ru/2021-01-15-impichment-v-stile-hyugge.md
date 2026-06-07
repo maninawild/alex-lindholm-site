@@ -1,26 +1,31 @@
 ---
-title: "​**Импичмент в стиле хюгге** 🇩🇰"
+title: "Импичмент в стиле хюгге 🇩🇰"
 slug: "2021-01-15-impichment-v-stile-hyugge"
 date: "2021-01-15T14:15:13.000Z"
 originalDate: "2021-01-15T14:15:13.000Z"
 tags:
   - "Human-Centered AI"
   - "Ethical Technology"
+  - "Cities & Communities"
   - "Travel"
   - "Society"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2021-01-15-impichment-v-stile-hyugge"
+telegramMessageId: "102"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/102"
+featuredImage: "/media/articles/cynicschool/external-c2a87c9ecbd6d8.png"
 excerpt: "​ Импичмент в стиле хюгге 🇩🇰 Не разделяю всеобщего психоза на тему импичмента Трампа. По моему, наше поколение умеет сказать нет, если что то не нравится..."
 metaDescription: "​ Импичмент в стиле хюгге 🇩🇰 Не разделяю всеобщего психоза на тему импичмента Трампа. По моему, наше поколение умеет сказать нет, если что то не нравится..."
-openGraphTitle: "​**Импичмент в стиле хюгге** 🇩🇰"
+openGraphTitle: "Импичмент в стиле хюгге 🇩🇰"
 openGraphDescription: "​ Импичмент в стиле хюгге 🇩🇰 Не разделяю всеобщего психоза на тему импичмента Трампа. По моему, наше поколение умеет сказать нет, если что то не нравится..."
 relatedArticles: []
 status: "published"
 ---
 
-[​](https://telegra.ph/file/bfa0661dc9407f05b4be2.png)**Импичмент в стиле хюгге** 🇩🇰
+​**Импичмент в стиле хюгге** 🇩🇰
 
 *Не разделяю всеобщего психоза на тему импичмента Трампа.*
 

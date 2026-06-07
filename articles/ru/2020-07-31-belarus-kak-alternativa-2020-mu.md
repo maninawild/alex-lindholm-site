@@ -1,5 +1,5 @@
 ---
-title: "​​**Беларусь как альтернатива 2020-му."
+title: "Беларусь как альтернатива 2020-му."
 slug: "2020-07-31-belarus-kak-alternativa-2020-mu"
 date: "2020-07-31T23:11:55.000Z"
 originalDate: "2020-07-31T23:11:55.000Z"
@@ -7,21 +7,25 @@ tags:
   - "Human-Centered AI"
   - "Fundraising"
   - "Future of Work"
+  - "Cities & Communities"
   - "Jewish Culture"
-  - "Travel"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-07-31-belarus-kak-alternativa-2020-mu"
+telegramMessageId: "74"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/74"
+featuredImage: "/media/articles/cynicschool/external-31f9ea2b85124b.jpg"
 excerpt: "​​ Беларусь как альтернатива 2020 му. Уже писал про то, как Беларусь может первой выбрать Президента в параллельной реальности… Напишу про эту страну ещё р..."
 metaDescription: "​​ Беларусь как альтернатива 2020 му. Уже писал про то, как Беларусь может первой выбрать Президента в параллельной реальности… Напишу про эту страну ещё р..."
-openGraphTitle: "​​**Беларусь как альтернатива 2020-му."
+openGraphTitle: "Беларусь как альтернатива 2020-му."
 openGraphDescription: "​​ Беларусь как альтернатива 2020 му. Уже писал про то, как Беларусь может первой выбрать Президента в параллельной реальности… Напишу про эту страну ещё р..."
 relatedArticles: []
 status: "published"
 ---
 
-[​​](https://telegra.ph/file/1747bdf424f6e6e41abb8.jpg)**Беларусь как альтернатива 2020-му.**
+​​**Беларусь как альтернатива 2020-му.**
 
 Уже писал про то, как Беларусь может [первой выбрать Президента в параллельной реальности](https://t.me/cynicschool/59)… Напишу  про эту страну ещё раз уж тут оказался.
 

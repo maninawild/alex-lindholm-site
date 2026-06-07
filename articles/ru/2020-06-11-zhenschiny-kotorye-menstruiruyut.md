@@ -1,27 +1,31 @@
 ---
-title: "​​**Женщины, которые менструируют."
+title: "Женщины, которые менструируют."
 slug: "2020-06-11-zhenschiny-kotorye-menstruiruyut"
 date: "2020-06-11T15:38:35.000Z"
 originalDate: "2020-06-11T15:38:35.000Z"
 tags:
   - "Human-Centered AI"
   - "Digital Humanism"
+  - "Media & Algorithms"
+  - "Cities & Communities"
   - "Communities"
-  - "Travel"
-  - "Society"
 category: "Human-Centered AI"
 language: "ru"
+contentSource: "telegram_ru"
+translationKey: "2020-06-11-zhenschiny-kotorye-menstruiruyut"
+telegramMessageId: "55"
 source: "Telegram @cynicschool"
 sourceUrl: "https://t.me/cynicschool/55"
+featuredImage: "/media/articles/cynicschool/external-c22dfd8b0a83d8.jpg"
 excerpt: "​​ Женщины, которые менструируют. Все, наверно уже слышали о скандале с писательницей Джоан Роулинг? Вкратце – она вступилась за концепцию пола и пыталась..."
 metaDescription: "​​ Женщины, которые менструируют. Все, наверно уже слышали о скандале с писательницей Джоан Роулинг? Вкратце – она вступилась за концепцию пола и пыталась..."
-openGraphTitle: "​​**Женщины, которые менструируют."
+openGraphTitle: "Женщины, которые менструируют."
 openGraphDescription: "​​ Женщины, которые менструируют. Все, наверно уже слышали о скандале с писательницей Джоан Роулинг? Вкратце – она вступилась за концепцию пола и пыталась..."
 relatedArticles: []
 status: "published"
 ---
 
-[​​](https://telegra.ph/file/ee376836851f211288364.jpg)**Женщины, которые менструируют.**
+​​**Женщины, которые менструируют.**
 
 *Все, наверно уже слышали о скандале с писательницей Джоан Роулинг?*
 

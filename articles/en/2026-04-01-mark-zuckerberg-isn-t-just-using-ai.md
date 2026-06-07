@@ -10,6 +10,8 @@ tags:
   - "Future of Work"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Mark Zuckerberg isn’t just using AI. He’s building an AI agent to help run Meta 😳 And it’s already happening. What it does: – pulls data across a 78,000-p..."
 openGraphTitle: "Mark Zuckerberg isn’t just using AI."
 openGraphDescription: "Mark Zuckerberg isn’t just using AI. He’s building an AI agent to help run Meta 😳 And it’s already happening. What it does: – pulls data across a 78,000-p..."

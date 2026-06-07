@@ -10,6 +10,8 @@ tags:
   - "Venture Building"
 category: "Human-Centered AI"
 language: "en"
+contentSource: "original_en"
+source: "Alex Lindholm"
 metaDescription: "Is this an iPhone killer… or just a very expensive experiment? OpenAI is reportedly working on an AI-first phone 😳 Not just Twitter noise. There are real..."
 openGraphTitle: "AI-first smartphone"
 openGraphDescription: "Is this an iPhone killer… or just a very expensive experiment? OpenAI is reportedly working on an AI-first phone 😳 Not just Twitter noise. There are real..."
