@@ -110,9 +110,8 @@ function Hero() {
             in uncertain markets.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-bone/78 drop-shadow-[0_1px_14px_rgba(0,0,0,0.22)] sm:text-lg">
-            I help ideas, people, and organizations grow in fast-changing
-            environments by connecting founders, investors, institutions, and
-            unconventional collaborators around work that can actually move.
+            Connecting founders, investors, institutions and operators around
+            ideas worth building.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <ArrowLink href="#work" label="Explore Projects" />
