@@ -662,13 +662,13 @@ function Thinking() {
               ))}
             </div>
           </div>
-          <div className="relative min-h-[360px] overflow-hidden rounded-sm bg-stone shadow-quiet">
+          <div className="relative flex min-h-[390px] items-center justify-center overflow-hidden rounded-sm bg-stone shadow-quiet">
             <Image
-              src="/media/alex/IMG_2789-normalized.jpg"
-              alt="Alex Lindholm in a reflective thinking moment"
+              src="/media/alex/IMG_2396-display.jpg"
+              alt="Alex Lindholm seated beside a wall quote about permanent anxiety"
               fill
               sizes="(min-width: 1024px) 34vw, 100vw"
-              className="object-cover object-[50%_24%]"
+              className="object-contain"
             />
           </div>
         </div>
@@ -737,11 +737,11 @@ function HumanSide() {
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="relative min-h-[440px] overflow-hidden rounded-sm">
             <Image
-              src="/media/alex/IMG_2396-display.jpg"
-              alt="Alex Lindholm during a personal travel moment"
+              src="/media/alex/alex-travel-01.jpg"
+              alt="Alex Lindholm in Tallinn during a personal travel moment"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover object-[50%_45%]"
+              className="object-cover object-[45%_50%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/62 to-transparent" />
           </div>
