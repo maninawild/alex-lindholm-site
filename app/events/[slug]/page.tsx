@@ -73,6 +73,7 @@ export default async function EventPage({ params }: EventPageProps) {
     "@type": "Event",
     name: event.title,
     ...(event.date ? { startDate: event.date } : {}),
+    ...(event.endDate ? { endDate: event.endDate } : {}),
     eventStatus:
       event.status === "past"
         ? "https://schema.org/EventCompleted"
@@ -96,6 +97,111 @@ export default async function EventPage({ params }: EventPageProps) {
     image: `${siteUrl}${event.coverImage}`,
     url: `${siteUrl}/events/${event.slug}`,
   };
+
+  if (event.status === "upcoming") {
+    return (
+      <main className="bg-bone text-ink">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <section className="relative min-h-[70vh] overflow-hidden bg-ink text-bone">
+          <Image
+            src={event.coverImage}
+            alt={`${event.title} event`}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[50%_50%]"
+          />
+          <div className="absolute inset-0 bg-ink/44" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,19,26,0.88)_0%,rgba(16,19,26,0.58)_52%,rgba(16,19,26,0.18)_100%)]" />
+
+          <SiteHeader />
+
+          <div className="relative z-10 mx-auto flex min-h-[70vh] max-w-7xl flex-col justify-end px-5 pb-12 pt-28 sm:px-8 lg:pb-16">
+            <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-bone/72">
+              Upcoming · {event.displayDate}
+            </p>
+            <h1 className="mt-5 max-w-3xl text-5xl font-medium leading-[1.02] tracking-[-0.04em] text-balance sm:text-7xl">
+              {event.title}
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-bone/82">
+              {event.shortDescription}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {event.eventUrl ? (
+                <ExternalButton href={event.eventUrl} label="Open event page" primary />
+              ) : null}
+              {event.externalUrl ? (
+                <ExternalButton href={event.externalUrl} label="MEGATHON site" />
+              ) : null}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-bone py-12 text-ink sm:py-14">
+          <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+            <div>
+              <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
+                Event Details
+              </p>
+              <dl className="mt-6 grid gap-4 border-y border-ink/10 py-5 text-sm sm:grid-cols-2">
+                <EventFact label="Date" value={event.displayDate} />
+                <EventFact label="Location" value={event.location} />
+                <EventFact label="Role" value={event.role} />
+                <EventFact label="Organizer" value={event.organizer} />
+                {event.format ? <EventFact label="Format" value={event.format} /> : null}
+              </dl>
+            </div>
+
+            <div>
+              <p className="text-base leading-7 text-graphite/78">
+                {event.shortDescription}
+              </p>
+              <p className="mt-5 inline-flex rounded-full border border-electric/25 bg-electric/5 px-4 py-2 text-sm font-medium text-electric">
+                Part of Amsterdam Tech Week
+              </p>
+              <div className="mt-7 flex flex-wrap gap-2">
+                {event.partners.map((partner) =>
+                  partner.url ? (
+                    <a
+                      key={partner.name}
+                      href={partner.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full border border-ink/12 px-4 py-2 text-sm text-graphite/78 transition hover:border-electric hover:text-electric"
+                    >
+                      {partner.name}
+                    </a>
+                  ) : (
+                    <span
+                      key={partner.name}
+                      className="rounded-full border border-ink/10 px-4 py-2 text-sm text-graphite/62"
+                    >
+                      {partner.name}
+                    </span>
+                  ),
+                )}
+              </div>
+              <div className="mt-8 flex flex-wrap gap-3">
+                {event.eventUrl ? (
+                  <ExternalButton href={event.eventUrl} label="Open event page" primary />
+                ) : null}
+                <a
+                  href={inviteAlexUrl}
+                  className="inline-flex min-h-11 items-center justify-center gap-3 rounded-md border border-ink/15 px-5 text-sm font-medium text-ink transition duration-300 hover:border-electric hover:bg-electric/5"
+                >
+                  <span>Invite Alex</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    );
+  }
 
   return (
     <main className="bg-bone text-ink">

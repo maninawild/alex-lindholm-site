@@ -529,11 +529,16 @@ function EventsWithAlex() {
               </h3>
               <div className="mt-3">
                 {upcomingEvents.length > 0 ? (
-                  <div className="grid gap-4 md:grid-cols-2">
-                    {upcomingEvents.map((event) => (
-                      <PastEventCard event={event} key={event.slug} />
-                    ))}
-                  </div>
+                  <>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      {upcomingEvents.map((event) => (
+                        <PastEventCard event={event} key={event.slug} />
+                      ))}
+                    </div>
+                    <div className="mt-4">
+                      <InviteEventStrip />
+                    </div>
+                  </>
                 ) : (
                   <InviteEventStrip />
                 )}
@@ -613,7 +618,9 @@ function eventMeta(event: EventItem) {
 function eventPartners(event: EventItem) {
   const partners = event.partners.map((partner) => partner.name).slice(0, 2);
 
-  return partners.length > 0 ? partners.join(", ") : event.organizer;
+  return partners.length > 0
+    ? `${event.organizer} · ${partners.join(", ")}`
+    : event.organizer;
 }
 
 function InviteEventStrip() {
@@ -639,12 +646,21 @@ function InviteEventStrip() {
 }
 
 function PastEventCard({ event }: { event: EventItem }) {
+  const href =
+    event.status === "upcoming" && event.eventUrl
+      ? event.eventUrl
+      : `/events/${event.slug}`;
+  const isExternal = href.startsWith("http");
+  const ctaLabel = event.status === "upcoming" ? "View event" : "View recap";
+
   return (
     <article className="group flex h-full overflow-hidden rounded-sm border border-ink/8 bg-paper shadow-quiet transition duration-300 hover:-translate-y-0.5 hover:border-electric/30">
       <a
-        href={`/events/${event.slug}`}
+        href={href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
         className="flex h-full w-full flex-col"
-        aria-label={`View recap for ${event.title}`}
+        aria-label={`${ctaLabel} for ${event.title}`}
       >
         <div className="relative aspect-[16/10] overflow-hidden bg-ink">
           <Image
@@ -673,7 +689,7 @@ function PastEventCard({ event }: { event: EventItem }) {
             {event.shortDescription}
           </p>
           <div className="mt-auto pt-5 text-sm font-semibold text-electric">
-            <span>View recap</span>
+            <span>{ctaLabel}</span>
             <span aria-hidden="true"> →</span>
           </div>
         </div>

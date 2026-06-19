@@ -12,14 +12,17 @@ export type EventItem = {
   title: string;
   slug: string;
   date: string;
+  endDate?: string;
   displayDate: string;
   status: "past" | "upcoming";
   role: string;
   location: string;
   organizer: string;
+  format?: string;
   partners: EventPartner[];
   shortDescription: string;
   eventUrl?: string;
+  externalUrl?: string;
   linkedInUrl?: string;
   coverImage: string;
   galleryImages: string[];
@@ -39,6 +42,81 @@ export type EventItem = {
 export const inviteAlexUrl = "mailto:hello@alexlindholm.com?subject=Invite%20Alex%20for%20an%20event";
 
 export const events: EventItem[] = [
+  {
+    title: "MEGATHON",
+    slug: "megathon-amsterdam-tech-week-2026",
+    date: "2026-06-19",
+    endDate: "2026-06-21",
+    displayDate: "19–21 June 2026",
+    status: "upcoming",
+    role: "Community / Guest / Ecosystem participant",
+    location: "The HUBB, Jacob Bontiusplaats 9, Amsterdam",
+    organizer: "TAG",
+    format: "Hackathon / Demo weekend / Builder event",
+    partners: [
+      {
+        name: "TAG",
+      },
+      {
+        name: "Amsterdam Tech Week",
+        url: "https://amstechweek.com/",
+      },
+      {
+        name: "OpenAI Codex",
+        url: "https://openai.com/codex/",
+      },
+      {
+        name: "Mollie",
+        url: "https://www.mollie.com/",
+      },
+      {
+        name: "Visa",
+        url: "https://www.visa.com/",
+      },
+      {
+        name: "Base44",
+        url: "https://base44.com/",
+      },
+      {
+        name: "Cognition",
+        url: "https://cognition.ai/",
+      },
+      {
+        name: "Peak",
+        url: "https://peak.capital/",
+      },
+      {
+        name: "Miro",
+        url: "https://miro.com/",
+      },
+      {
+        name: "Netlify",
+        url: "https://www.netlify.com/",
+      },
+    ],
+    shortDescription:
+      "A three-day Amsterdam Tech Week builder event with 500 vetted builders, startup teams, investors, sponsor tracks, and main-stage finals.",
+    eventUrl: "https://luma.com/zf34oolt",
+    externalUrl: "https://megathon.xyz/",
+    coverImage: "/images/events/megathon-amsterdam/cover.jpg",
+    galleryImages: [
+      "/images/events/megathon-amsterdam/gallery-1.jpg",
+      "/images/events/megathon-amsterdam/gallery-2.jpg",
+      "/images/events/megathon-amsterdam/gallery-3.jpg",
+    ],
+    featured: false,
+    subtitle: "Part of Amsterdam Tech Week",
+    keyThemes: [
+      "Hackathon and demo weekend",
+      "Builder teams and sponsor tracks",
+      "Startup ecosystem and main-stage finals",
+    ],
+    seo: {
+      title: "MEGATHON Amsterdam Tech Week 2026",
+      description:
+        "MEGATHON is a three-day Amsterdam Tech Week builder event at The HUBB with vetted builders, startup teams, investors, sponsor tracks, and main-stage finals.",
+    },
+  },
   {
     title: "Build Night #4 @ Mollie",
     slug: "build-night-4-mollie-amsterdam-tech-week-2026",
