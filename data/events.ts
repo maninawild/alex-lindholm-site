@@ -139,6 +139,8 @@ export const events: EventItem[] = [
       "/images/events/sexxxess-night-warsaw/gallery-1.jpg",
       "/images/events/sexxxess-night-warsaw/gallery-2.jpg",
       "/images/events/sexxxess-night-warsaw/gallery-3.jpg",
+      "/images/events/sexxxess-night-warsaw/gallery-4.jpg",
+      "/images/events/sexxxess-night-warsaw/gallery-5.jpg",
     ],
     featured: false,
     speakers: [
