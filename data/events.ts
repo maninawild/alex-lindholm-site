@@ -1,72 +1,83 @@
-export type EventLink = {
-  label: string;
-  href: string;
-};
-
 export type EventPartner = {
   name: string;
-  href?: string;
+  url?: string;
 };
 
 export type EventItem = {
-  slug: string;
   title: string;
+  slug: string;
   date: string;
   displayDate: string;
-  location: string;
   status: "past" | "upcoming";
-  presentedBy: string;
-  hosts: EventLink[];
-  alexRole: string;
-  talkTitle: string;
-  meta: string;
-  homepageDescription: string;
-  subtitle: string;
-  recap: string[];
-  keyThemes: string[];
-  thankYou: string;
-  images: {
-    cover: string;
-    gallery: string[];
-    todo: string;
-  };
-  links: EventLink[];
+  role: string;
+  location: string;
+  organizer: string;
   partners: EventPartner[];
+  shortDescription: string;
+  eventUrl?: string;
+  linkedInUrl?: string;
+  coverImage: string;
+  galleryImages: string[];
+  featured: boolean;
+  talkTitle?: string;
+  subtitle?: string;
+  recap?: string[];
+  keyThemes?: string[];
+  outcome?: string;
   seo: {
     title: string;
     description: string;
   };
 };
 
+export const inviteAlexUrl = "mailto:hello@alexlindholm.com?subject=Invite%20Alex%20for%20an%20event";
+
 export const events: EventItem[] = [
   {
-    slug: "build-night-4-mollie-amsterdam-tech-week-2026",
     title: "Build Night #4 @ Mollie",
+    slug: "build-night-4-mollie-amsterdam-tech-week-2026",
     date: "2026-06-17",
     displayDate: "17 June 2026",
-    location: "Mollie, Keizersgracht 126, Amsterdam",
     status: "past",
-    presentedBy: "DAY42",
-    hosts: [
+    role: "Guest Speaker",
+    location: "Mollie, Keizersgracht 126, Amsterdam",
+    organizer: "DAY42",
+    partners: [
       {
-        label: "Rick Bossenbroek",
-        href: "https://www.linkedin.com/in/rick-bossenbroek/",
+        name: "Mollie",
+        url: "https://www.mollie.com/",
       },
       {
-        label: "Robbin Jansen",
-        href: "https://www.linkedin.com/in/robbin-jansen/",
+        name: "Amsterdam Tech Week",
+        url: "https://amstechweek.com/",
       },
       {
-        label: "AMS Tech Week",
-        href: "https://amstechweek.com/",
+        name: "Consent Studio CMP",
+      },
+      {
+        name: "Lovable",
+        url: "https://lovable.dev/",
+      },
+      {
+        name: "PHAM. Creative",
       },
     ],
-    alexRole: "Guest Speaker",
+    shortDescription:
+      "Alex joined DAY42's Build Night during Amsterdam Tech Week with a talk on ADHD founders, idea filtering, and testing before committing years of your life.",
+    eventUrl: "https://luma.com/jyqmf0xe",
+    linkedInUrl:
+      "https://www.linkedin.com/posts/axlindholm_amsterdamtechweek-adhdfounder-startups-ugcPost-7473675430923948034-YZi4/",
+    coverImage: "/images/events/build-night-4/cover.jpg",
+    galleryImages: [
+      "/images/events/build-night-4/cover.jpg",
+      "/images/events/build-night-4/gallery-1.jpg",
+      "/images/events/build-night-4/gallery-2.jpg",
+      "/images/events/build-night-4/gallery-3.jpg",
+    ],
+    // TODO: Replace with selected high-quality photos from Lightroom gallery.
+    featured: true,
     talkTitle:
       "ADHD Founder Survival Guide: How to Test Ideas Before They Consume (Y)our Life",
-    meta: "Amsterdam Tech Week · DAY42 · 17 June 2026",
-    homepageDescription:
-      "Alex joined DAY42's Build Night during Amsterdam Tech Week with a talk on ADHD founders, idea filtering, and how to test ideas before they consume years of your life.",
     subtitle:
       "A DAY42 builder community event during Amsterdam Tech Week, hosted at Mollie in Amsterdam.",
     recap: [
@@ -81,74 +92,75 @@ export const events: EventItem[] = [
       "Building sincere European startup communities",
       "Less startup theatre, more useful experiments",
     ],
-    thankYou:
-      "Huge thanks to DAY42, Rick Bossenbroek and Robbin Jansen for creating one of the most genuine builder communities in Amsterdam. Thanks also to Mollie, AMS Tech Week, Consent Studio CMP, Lovable, and PHAM. Creative for supporting and capturing the event.",
-    images: {
-      cover: "/images/events/build-night-4/cover.jpg",
-      gallery: [
-        "/images/events/build-night-4/cover.jpg",
-        "/images/events/build-night-4/gallery-1.jpg",
-        "/images/events/build-night-4/gallery-2.jpg",
-        "/images/events/build-night-4/gallery-3.jpg",
-      ],
-      // TODO: Replace with selected high-quality photos from Lightroom gallery.
-      todo: "Replace with selected high-quality photos from Lightroom gallery.",
-    },
-    links: [
-      {
-        label: "Original Luma event",
-        href: "https://luma.com/jyqmf0xe",
-      },
-      {
-        label: "Alex's LinkedIn recap",
-        href: "https://www.linkedin.com/posts/axlindholm_amsterdamtechweek-adhdfounder-startups-ugcPost-7473675430923948034-YZi4/",
-      },
-      {
-        label: "DAY42 LinkedIn",
-        href: "https://www.linkedin.com/company/day42/posts/?feedView=all",
-      },
-      {
-        label: "Rick Bossenbroek",
-        href: "https://www.linkedin.com/in/rick-bossenbroek/",
-      },
-      {
-        label: "Robbin Jansen",
-        href: "https://www.linkedin.com/in/robbin-jansen/",
-      },
-    ],
-    partners: [
-      {
-        name: "Mollie",
-        href: "https://www.mollie.com/",
-      },
-      {
-        name: "AMS Tech Week",
-        href: "https://amstechweek.com/",
-      },
-      {
-        name: "Consent Studio CMP",
-      },
-      {
-        name: "Lovable",
-        href: "https://lovable.dev/",
-      },
-      {
-        name: "PHAM. Creative",
-      },
-    ],
     seo: {
       title: "Build Night #4 @ Mollie",
       description:
         "Alex Lindholm joined DAY42's Build Night during Amsterdam Tech Week at Mollie with a talk on ADHD founders, idea filtering, and testing before committing years of work.",
     },
   },
+  {
+    title: "Dating is Dead. But I’m Not.",
+    slug: "dating-is-dead-locali-hub-inspirexchange",
+    date: "",
+    displayDate: "Date to confirm",
+    status: "past",
+    role: "Co-host",
+    location: "Locali Hub",
+    organizer: "Locali Hub × InspireXchange",
+    partners: [
+      {
+        name: "Locali Hub",
+      },
+      {
+        name: "InspireXchange",
+      },
+      {
+        name: "GUIDE",
+      },
+      {
+        name: "svaha",
+      },
+    ],
+    shortDescription:
+      "A Russian-language community event about dating, loneliness after relocation, AI, matchmaking, and new ways people meet.",
+    coverImage: "/images/events/dating-is-dead-locali/cover.jpg",
+    galleryImages: [
+      "/images/events/dating-is-dead-locali/cover.jpg",
+      "/images/events/dating-is-dead-locali/gallery-1.jpg",
+      "/images/events/dating-is-dead-locali/gallery-2.jpg",
+      "/images/events/dating-is-dead-locali/gallery-3.jpg",
+    ],
+    featured: false,
+    outcome:
+      "GUIDE founder Sophia Mokhar later received €25K in support and further investment commitment.",
+    recap: [
+      "A Russian-language community event about dating, loneliness after relocation, AI, matchmaking, and new ways people meet.",
+      "The conversation connected personal experience with new social products and the practical question of how communities can help people meet with more trust and less performance.",
+    ],
+    keyThemes: [
+      "Dating and loneliness after relocation",
+      "AI, matchmaking, and new meeting patterns",
+      "Community trust and practical support",
+    ],
+    seo: {
+      title: "Dating is Dead. But I’m Not.",
+      description:
+        "A Locali Hub and InspireXchange community event about dating, relocation, AI, matchmaking, and new ways people meet.",
+    },
+  },
 ];
 
 export const featuredPastEvent = events.find(
-  (event) =>
-    event.status === "past" &&
-    event.slug === "build-night-4-mollie-amsterdam-tech-week-2026",
+  (event) => event.status === "past" && event.featured,
 );
+
+export const upcomingEvents = events
+  .filter((event) => event.status === "upcoming")
+  .sort((a, b) => a.date.localeCompare(b.date));
+
+export const pastEvents = events
+  .filter((event) => event.status === "past")
+  .sort((a, b) => (b.date || "0000").localeCompare(a.date || "0000"));
 
 export function getEventBySlug(slug: string) {
   return events.find((event) => event.slug === slug);

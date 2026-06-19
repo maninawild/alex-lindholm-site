@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import {
   collaborations,
   educationHighlights,
@@ -9,7 +10,13 @@ import {
   metrics,
   thinkingTopics,
 } from "@/data/site-content";
-import { featuredPastEvent } from "@/data/events";
+import {
+  featuredPastEvent,
+  inviteAlexUrl,
+  pastEvents,
+  upcomingEvents,
+  type EventItem,
+} from "@/data/events";
 import { SectionHeader } from "@/components/section-header";
 import { ArrowLink } from "@/components/arrow-link";
 import { SiteHeader } from "@/components/site-header";
@@ -482,61 +489,169 @@ function EventsWithAlex() {
   return (
     <section id="events" className="bg-bone pb-16 text-ink sm:pb-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid gap-8 border-b border-ink/10 pb-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+        <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
           <div className="lg:sticky lg:top-24">
             <SectionHeader
-              eyebrow="Events with Alex"
+              eyebrow="Speaking & Events"
               title="Founder rooms, builder communities, and practical talks."
-              intro="Selected gatherings where Alex joins founders, students, builders, and ecosystem people around questions worth testing in public."
+              intro="Selected talks, panels, and community sessions with founders, students, builders, and ecosystem people."
             />
           </div>
 
-          <article className="overflow-hidden rounded-sm border border-ink/8 bg-bone shadow-quiet">
-            <a
-              href={`/events/${featuredPastEvent.slug}`}
-              className="group grid min-h-[460px] gap-0 lg:grid-cols-[1.12fr_0.88fr]"
-              aria-label={`Read event recap for ${featuredPastEvent.title}`}
-            >
-              <div className="relative min-h-[320px] overflow-hidden bg-ink lg:min-h-full">
-                <Image
-                  src={featuredPastEvent.images.cover}
-                  alt={`${featuredPastEvent.title} event at Mollie in Amsterdam`}
-                  fill
-                  sizes="(min-width: 1024px) 42vw, 100vw"
-                  className="object-cover object-[50%_24%] transition duration-700 group-hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/54 via-transparent to-transparent" />
-                <span className="absolute left-5 top-5 rounded-sm border border-bone/24 bg-ink/42 px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-bone backdrop-blur-md">
-                  {featuredPastEvent.alexRole}
-                </span>
-              </div>
+          <div>
+            <FeaturedEventCard event={featuredPastEvent} />
+            <div className="mt-8 grid gap-8 border-t border-ink/10 pt-8 lg:grid-cols-2">
+              <EventGroup title="Upcoming">
+                {upcomingEvents.length > 0 ? (
+                  upcomingEvents.map((event) => (
+                    <CompactEventCard event={event} key={event.slug} />
+                  ))
+                ) : (
+                  <InviteEventCard />
+                )}
+              </EventGroup>
 
-              <div className="flex flex-col justify-between p-6 sm:p-8">
-                <div>
-                  <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
-                    Featured past event
-                  </p>
-                  <h3 className="mt-4 text-3xl font-medium leading-tight tracking-[-0.02em] text-balance sm:text-4xl">
-                    {featuredPastEvent.title}
-                  </h3>
-                  <p className="mt-4 text-sm font-medium text-graphite/56">
-                    {featuredPastEvent.meta}
-                  </p>
-                  <p className="mt-6 text-base leading-7 text-graphite/74">
-                    {featuredPastEvent.homepageDescription}
-                  </p>
-                </div>
-
-                <div className="mt-8 inline-flex min-h-11 items-center justify-center gap-3 self-start rounded-md border border-electric bg-electric px-5 text-sm font-medium text-bone transition duration-300 group-hover:bg-blue-700">
-                  <span>Read event recap</span>
-                  <span aria-hidden="true">→</span>
-                </div>
-              </div>
-            </a>
-          </article>
+              <EventGroup title="Past">
+                {pastEvents.map((event) => (
+                  <CompactEventCard event={event} key={event.slug} />
+                ))}
+              </EventGroup>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function FeaturedEventCard({ event }: { event: EventItem }) {
+  return (
+    <article className="overflow-hidden rounded-sm border border-ink/8 bg-bone shadow-quiet">
+      <a
+        href={`/events/${event.slug}`}
+        className="group grid min-h-[460px] gap-0 lg:grid-cols-[1.12fr_0.88fr]"
+        aria-label={`Read event recap for ${event.title}`}
+      >
+        <div className="relative min-h-[320px] overflow-hidden bg-ink lg:min-h-full">
+          <Image
+            src={event.coverImage}
+            alt={`${event.title} event`}
+            fill
+            sizes="(min-width: 1024px) 42vw, 100vw"
+            className="object-cover object-[50%_24%] transition duration-700 group-hover:scale-[1.03]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/54 via-transparent to-transparent" />
+          <span className="absolute left-5 top-5 rounded-sm border border-bone/24 bg-ink/42 px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-bone backdrop-blur-md">
+            {event.role}
+          </span>
+        </div>
+
+        <div className="flex flex-col justify-between p-6 sm:p-8">
+          <div>
+            <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
+              Featured past event
+            </p>
+            <h3 className="mt-4 text-3xl font-medium leading-tight tracking-[-0.02em] text-balance sm:text-4xl">
+              {event.title}
+            </h3>
+            <p className="mt-4 text-sm font-medium text-graphite/56">
+              {event.organizer} · {event.displayDate}
+            </p>
+            <p className="mt-6 text-base leading-7 text-graphite/74">
+              {event.shortDescription}
+            </p>
+          </div>
+
+          <div className="mt-8 inline-flex min-h-11 items-center justify-center gap-3 self-start rounded-md border border-electric bg-electric px-5 text-sm font-medium text-bone transition duration-300 group-hover:bg-blue-700">
+            <span>Read event recap</span>
+            <span aria-hidden="true">→</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  );
+}
+
+function EventGroup({
+  title,
+  children,
+}: {
+  title: "Upcoming" | "Past";
+  children: ReactNode;
+}) {
+  return (
+    <section aria-labelledby={`${title.toLowerCase()}-events`}>
+      <h3
+        id={`${title.toLowerCase()}-events`}
+        className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-graphite/52"
+      >
+        {title}
+      </h3>
+      <div className="mt-4 grid gap-3">{children}</div>
+    </section>
+  );
+}
+
+function InviteEventCard() {
+  return (
+    <article className="rounded-sm border border-ink/10 bg-paper p-5 shadow-quiet">
+      <h4 className="text-xl font-semibold tracking-[-0.02em]">
+        Planning an event?
+      </h4>
+      <p className="mt-3 text-sm leading-6 text-graphite/70">
+        Invite Alex for a founder talk, panel, or community session.
+      </p>
+      <a
+        href={inviteAlexUrl}
+        className="mt-5 inline-flex min-h-10 items-center justify-center gap-3 rounded-md border border-ink/15 px-4 text-sm font-medium text-ink transition duration-300 hover:border-electric hover:bg-electric/5"
+      >
+        <span>Invite Alex</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </article>
+  );
+}
+
+function CompactEventCard({ event }: { event: EventItem }) {
+  return (
+    <article className="rounded-sm border border-ink/8 bg-paper shadow-quiet transition duration-300 hover:-translate-y-0.5 hover:border-electric/30">
+      <a
+        href={`/events/${event.slug}`}
+        className="grid gap-4 p-4 sm:grid-cols-[116px_1fr]"
+      >
+        <div className="relative min-h-[120px] overflow-hidden rounded-sm bg-ink sm:min-h-full">
+          <Image
+            src={event.coverImage}
+            alt={`${event.title} event thumbnail`}
+            fill
+            sizes="116px"
+            className="object-cover object-[50%_24%]"
+          />
+        </div>
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-graphite/48">
+            {event.displayDate}
+          </p>
+          <h4 className="mt-2 text-lg font-semibold leading-tight tracking-[-0.015em]">
+            {event.title}
+          </h4>
+          <p className="mt-2 text-xs font-medium text-graphite/52">
+            {event.organizer}
+            {event.partners.length > 0 ? ` · ${event.partners.map((partner) => partner.name).slice(0, 2).join(", ")}` : ""}
+          </p>
+          <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-copper">
+            {event.role}
+          </p>
+          <p className="mt-3 text-sm leading-6 text-graphite/70">
+            {event.shortDescription}
+          </p>
+          <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-electric">
+            <span>View recap</span>
+            <span aria-hidden="true">→</span>
+          </div>
+        </div>
+      </a>
+    </article>
   );
 }
 
