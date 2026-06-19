@@ -4,7 +4,6 @@ export const profileLinks = {
   linkedin: "https://www.linkedin.com/in/axlindholm/",
   consultation: "https://zcal.co/axlindholm/1hour",
   whatsapp: "https://wa.me/message/4OIGQ3FHUZQSD1",
-  email: "mailto:hello@alexlindholm.com",
 };
 
 export const sharedKeywords = [

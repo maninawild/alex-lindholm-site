@@ -1011,7 +1011,7 @@ function Contact() {
               <span>Connect on LinkedIn</span>
               <span aria-hidden="true">→</span>
             </a>
-            <ArrowLink href="mailto:hello@alexlindholm.com" label="Start a Conversation" variant="lineDark" />
+            <ArrowLink href="https://zcal.co/axlindholm/1hour" label="Start a Conversation" variant="lineDark" />
           </div>
           <SocialContactLinks />
         </div>

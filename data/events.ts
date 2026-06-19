@@ -39,7 +39,7 @@ export type EventItem = {
   };
 };
 
-export const inviteAlexUrl = "mailto:hello@alexlindholm.com?subject=Invite%20Alex%20for%20an%20event";
+export const inviteAlexUrl = "https://zcal.co/axlindholm/1hour";
 
 export const events: EventItem[] = [
   {
