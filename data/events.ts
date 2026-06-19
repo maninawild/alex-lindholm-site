@@ -75,12 +75,16 @@ export const events: EventItem[] = [
       "https://www.linkedin.com/posts/axlindholm_amsterdamtechweek-adhdfounder-startups-ugcPost-7473675430923948034-YZi4/",
     coverImage: "/images/events/build-night-4/cover.jpg",
     galleryImages: [
-      "/images/events/build-night-4/cover.jpg",
       "/images/events/build-night-4/gallery-1.jpg",
       "/images/events/build-night-4/gallery-2.jpg",
       "/images/events/build-night-4/gallery-3.jpg",
+      "/images/events/build-night-4/gallery-4.jpg",
+      "/images/events/build-night-4/gallery-5.jpg",
+      "/images/events/build-night-4/gallery-6.jpg",
+      "/images/events/build-night-4/gallery-7.jpg",
+      "/images/events/build-night-4/gallery-8.jpg",
+      "/images/events/build-night-4/gallery-9.jpg",
     ],
-    // TODO: Replace with selected high-quality photos from Lightroom gallery.
     featured: true,
     talkTitle:
       "ADHD Founder Survival Guide: How to Test Ideas Before They Consume (Y)our Life",
