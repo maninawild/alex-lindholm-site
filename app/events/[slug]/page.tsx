@@ -112,7 +112,7 @@ export default async function EventPage({ params }: EventPageProps) {
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[50%_24%]"
         />
         <div className="absolute inset-0 bg-ink/42" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,19,26,0.92)_0%,rgba(16,19,26,0.58)_48%,rgba(16,19,26,0.22)_100%)]" />
@@ -194,7 +194,7 @@ export default async function EventPage({ params }: EventPageProps) {
 
       <section className="bg-bone pb-16 text-ink sm:pb-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-7">
             <div>
               <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
                 Photo Gallery
@@ -203,10 +203,6 @@ export default async function EventPage({ params }: EventPageProps) {
                 Moments from Build Night.
               </h2>
             </div>
-            <p className="max-w-sm text-sm leading-6 text-graphite/58">
-              Local optimized event images only. Lightroom is a source, not a
-              hotlinked asset host.
-            </p>
           </div>
 
           <div className="grid gap-3 lg:grid-cols-[1.2fr_0.8fr]">
@@ -305,7 +301,7 @@ function GalleryImage({
         alt={alt}
         fill
         sizes="(min-width: 1024px) 50vw, 100vw"
-        className="object-cover"
+        className="object-cover object-[50%_24%]"
       />
     </div>
   );

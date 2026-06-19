@@ -494,16 +494,16 @@ function EventsWithAlex() {
           <article className="overflow-hidden rounded-sm border border-ink/8 bg-bone shadow-quiet">
             <a
               href={`/events/${featuredPastEvent.slug}`}
-              className="group grid min-h-[420px] gap-0 lg:grid-cols-[1.02fr_0.98fr]"
+              className="group grid min-h-[460px] gap-0 lg:grid-cols-[1.12fr_0.88fr]"
               aria-label={`Read event recap for ${featuredPastEvent.title}`}
             >
-              <div className="relative min-h-[280px] overflow-hidden bg-ink lg:min-h-full">
+              <div className="relative min-h-[320px] overflow-hidden bg-ink lg:min-h-full">
                 <Image
                   src={featuredPastEvent.images.cover}
                   alt={`${featuredPastEvent.title} event at Mollie in Amsterdam`}
                   fill
                   sizes="(min-width: 1024px) 42vw, 100vw"
-                  className="object-cover transition duration-700 group-hover:scale-[1.03]"
+                  className="object-cover object-[50%_24%] transition duration-700 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/54 via-transparent to-transparent" />
                 <span className="absolute left-5 top-5 rounded-sm border border-bone/24 bg-ink/42 px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-bone backdrop-blur-md">
@@ -527,7 +527,7 @@ function EventsWithAlex() {
                   </p>
                 </div>
 
-                <div className="mt-8 inline-flex items-center gap-3 text-sm font-semibold text-electric">
+                <div className="mt-8 inline-flex min-h-11 items-center justify-center gap-3 self-start rounded-md border border-electric bg-electric px-5 text-sm font-medium text-bone transition duration-300 group-hover:bg-blue-700">
                   <span>Read event recap</span>
                   <span aria-hidden="true">→</span>
                 </div>
