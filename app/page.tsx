@@ -630,7 +630,7 @@ function CompactEventCard({ event }: { event: EventItem }) {
         </div>
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-graphite/48">
-            {event.displayDate}
+            {event.displayDate} · {event.location}
           </p>
           <h4 className="mt-2 text-lg font-semibold leading-tight tracking-[-0.015em]">
             {event.title}

@@ -3,6 +3,11 @@ export type EventPartner = {
   url?: string;
 };
 
+export type EventSpeaker = {
+  name: string;
+  role: string;
+};
+
 export type EventItem = {
   title: string;
   slug: string;
@@ -19,6 +24,7 @@ export type EventItem = {
   coverImage: string;
   galleryImages: string[];
   featured: boolean;
+  speakers?: EventSpeaker[];
   talkTitle?: string;
   subtitle?: string;
   recap?: string[];
@@ -96,6 +102,75 @@ export const events: EventItem[] = [
       title: "Build Night #4 @ Mollie",
       description:
         "Alex Lindholm joined DAY42's Build Night during Amsterdam Tech Week at Mollie with a talk on ADHD founders, idea filtering, and testing before committing years of work.",
+    },
+  },
+  {
+    title: "SeXXXess Night: Digital Intimacy & Dating Apps",
+    slug: "sexxxess-night-digital-intimacy-dating-apps",
+    date: "2026-02-12",
+    displayDate: "12 February 2026",
+    status: "past",
+    role: "Speaker",
+    location: "Świetlica Wolności, Warsaw, Poland",
+    organizer: "Ū HUB",
+    partners: [
+      {
+        name: "WeExpert",
+        url: "https://weexpert.io",
+      },
+      {
+        name: "Fotando Global",
+        url: "https://www.fotando.global",
+      },
+      {
+        name: "Zubr Capital",
+        url: "https://zubrcapital.com",
+      },
+    ],
+    shortDescription:
+      "An evening in Warsaw about digital intimacy, dating apps, LoveTech business models, and how people meet, flirt, and build relationships in 2026.",
+    eventUrl: "https://luma.com/ei6ly3jn",
+    coverImage: "/images/events/sexxxess-night-warsaw/cover.jpg",
+    galleryImages: [
+      "/images/events/sexxxess-night-warsaw/gallery-1.jpg",
+      "/images/events/sexxxess-night-warsaw/gallery-2.jpg",
+      "/images/events/sexxxess-night-warsaw/gallery-3.jpg",
+    ],
+    featured: false,
+    speakers: [
+      {
+        name: "Vlad Zely",
+        role: "Head of Product Design at Feeld",
+      },
+      {
+        name: "Anton Neverov",
+        role: "CMO at With",
+      },
+      {
+        name: "Song Kim",
+        role: "Founder & CEO at Zeya Social",
+      },
+      {
+        name: "Alex P. Lindholm",
+        role: "Founder & Managing Partner at InspireXchange",
+      },
+    ],
+    talkTitle: "Swipe Is Dead. But I Am Not.",
+    subtitle: "Experiments in LoveTech Business Models",
+    recap: [
+      "Ū HUB opened the new event year in Warsaw with SeXXXess Night — a warm February evening about digital intimacy, dating apps, and the future of connection.",
+      "Alex joined as a speaker with the talk “Swipe Is Dead. But I Am Not.” The session explored experiments in LoveTech business models and how startup thinking can help redesign the way people meet, flirt, and build relationships in an increasingly digital world.",
+      "The evening brought together founders, product people, dating-app operators, and community builders for talks, open conversations, speed dating, networking, wine, and practical discussion around intimacy, loneliness, algorithms, and human connection.",
+    ],
+    keyThemes: [
+      "Digital intimacy and dating apps",
+      "LoveTech business models",
+      "Loneliness, algorithms, and human connection",
+    ],
+    seo: {
+      title: "SeXXXess Night: Digital Intimacy & Dating Apps",
+      description:
+        "Alex Lindholm spoke at Ū HUB's SeXXXess Night in Warsaw about digital intimacy, dating apps, LoveTech business models, and the future of connection.",
     },
   },
   {

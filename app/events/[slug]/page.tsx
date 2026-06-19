@@ -126,7 +126,7 @@ export default async function EventPage({ params }: EventPageProps) {
             {event.title}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-bone/82">
-            {event.subtitle ?? event.shortDescription}
+            {event.shortDescription}
           </p>
         </div>
       </section>
@@ -164,6 +164,7 @@ export default async function EventPage({ params }: EventPageProps) {
             {event.talkTitle ? (
               <p className="mt-5 border-l border-electric/45 pl-4 text-base leading-7 text-graphite/72">
                 Talk: “{event.talkTitle}”
+                {event.subtitle ? <span className="block">{event.subtitle}</span> : null}
               </p>
             ) : null}
             {event.outcome ? (
@@ -211,7 +212,7 @@ export default async function EventPage({ params }: EventPageProps) {
               Short Recap
             </p>
             <div className="mt-6 space-y-5 text-base leading-7 text-graphite/78">
-              {(event.recap ?? [event.shortDescription]).slice(0, 2).map((paragraph) => (
+              {(event.recap ?? [event.shortDescription]).map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
@@ -253,6 +254,29 @@ export default async function EventPage({ params }: EventPageProps) {
                 ),
               )}
             </div>
+
+            {event.speakers && event.speakers.length > 0 ? (
+              <div className="mt-10">
+                <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
+                  Speakers
+                </p>
+                <div className="mt-5 grid gap-3">
+                  {event.speakers.map((speaker) => (
+                    <article
+                      key={speaker.name}
+                      className="rounded-sm border border-ink/8 bg-paper p-4 shadow-quiet"
+                    >
+                      <h2 className="text-base font-semibold tracking-[-0.01em]">
+                        {speaker.name}
+                      </h2>
+                      <p className="mt-2 text-sm leading-6 text-graphite/64">
+                        {speaker.role}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            ) : null}
 
             <div className="mt-10 rounded-sm border border-ink/10 bg-paper p-6 shadow-quiet">
               <h2 className="text-2xl font-semibold tracking-[-0.02em]">
