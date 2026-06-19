@@ -1,5 +1,4 @@
 import Image from "next/image";
-import type { ReactNode } from "react";
 import {
   collaborations,
   educationHighlights,
@@ -500,23 +499,46 @@ function EventsWithAlex() {
 
           <div>
             <FeaturedEventCard event={featuredPastEvent} />
-            <div className="mt-8 grid gap-8 border-t border-ink/10 pt-8 lg:grid-cols-2">
-              <EventGroup title="Upcoming">
-                {upcomingEvents.length > 0 ? (
-                  upcomingEvents.map((event) => (
-                    <CompactEventCard event={event} key={event.slug} />
-                  ))
-                ) : (
-                  <InviteEventCard />
-                )}
-              </EventGroup>
 
-              <EventGroup title="Past">
+            <div className="mt-8 border-t border-ink/10 pt-8">
+              <div className="flex items-end justify-between gap-4">
+                <h3
+                  id="past-events"
+                  className="text-2xl font-medium leading-tight tracking-[-0.02em] sm:text-3xl"
+                >
+                  Past events
+                </h3>
+              </div>
+
+              <div
+                className="mt-5 grid items-stretch gap-4 md:grid-cols-2 xl:grid-cols-3"
+                aria-labelledby="past-events"
+              >
                 {pastEvents.map((event) => (
-                  <CompactEventCard event={event} key={event.slug} />
+                  <PastEventCard event={event} key={event.slug} />
                 ))}
-              </EventGroup>
+              </div>
             </div>
+
+            <section className="mt-8" aria-labelledby="upcoming-events">
+              <h3
+                id="upcoming-events"
+                className="text-sm font-medium text-graphite/58"
+              >
+                Upcoming
+              </h3>
+              <div className="mt-3">
+                {upcomingEvents.length > 0 ? (
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {upcomingEvents.map((event) => (
+                      <PastEventCard event={event} key={event.slug} />
+                    ))}
+                  </div>
+                ) : (
+                  <InviteEventStrip />
+                )}
+              </div>
+            </section>
           </div>
         </div>
       </div>
@@ -572,38 +594,42 @@ function FeaturedEventCard({ event }: { event: EventItem }) {
   );
 }
 
-function EventGroup({
-  title,
-  children,
-}: {
-  title: "Upcoming" | "Past";
-  children: ReactNode;
-}) {
-  return (
-    <section aria-labelledby={`${title.toLowerCase()}-events`}>
-      <h3
-        id={`${title.toLowerCase()}-events`}
-        className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-graphite/52"
-      >
-        {title}
-      </h3>
-      <div className="mt-4 grid gap-3">{children}</div>
-    </section>
-  );
+function eventCity(event: EventItem) {
+  if (event.location.includes("Warsaw")) {
+    return "Warsaw";
+  }
+
+  if (event.location.includes("Amsterdam")) {
+    return "Amsterdam";
+  }
+
+  return event.location.split(",")[0]?.trim() || event.location;
 }
 
-function InviteEventCard() {
+function eventMeta(event: EventItem) {
+  return `${event.displayDate} · ${eventCity(event)}`;
+}
+
+function eventPartners(event: EventItem) {
+  const partners = event.partners.map((partner) => partner.name).slice(0, 2);
+
+  return partners.length > 0 ? partners.join(", ") : event.organizer;
+}
+
+function InviteEventStrip() {
   return (
-    <article className="rounded-sm border border-ink/10 bg-paper p-5 shadow-quiet">
-      <h4 className="text-xl font-semibold tracking-[-0.02em]">
-        Planning an event?
-      </h4>
-      <p className="mt-3 text-sm leading-6 text-graphite/70">
-        Invite Alex for a founder talk, panel, or community session.
-      </p>
+    <article className="flex flex-col gap-4 rounded-sm border border-ink/10 bg-paper px-5 py-4 shadow-quiet sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <h4 className="text-lg font-semibold tracking-[-0.015em]">
+          Planning an event?
+        </h4>
+        <p className="mt-1 text-sm leading-6 text-graphite/70">
+          Invite Alex for a founder talk, panel, or community session.
+        </p>
+      </div>
       <a
         href={inviteAlexUrl}
-        className="mt-5 inline-flex min-h-10 items-center justify-center gap-3 rounded-md border border-ink/15 px-4 text-sm font-medium text-ink transition duration-300 hover:border-electric hover:bg-electric/5"
+        className="inline-flex min-h-10 shrink-0 items-center justify-center gap-3 rounded-md border border-ink/15 px-4 text-sm font-medium text-ink transition duration-300 hover:border-electric hover:bg-electric/5"
       >
         <span>Invite Alex</span>
         <span aria-hidden="true">→</span>
@@ -612,42 +638,43 @@ function InviteEventCard() {
   );
 }
 
-function CompactEventCard({ event }: { event: EventItem }) {
+function PastEventCard({ event }: { event: EventItem }) {
   return (
-    <article className="rounded-sm border border-ink/8 bg-paper shadow-quiet transition duration-300 hover:-translate-y-0.5 hover:border-electric/30">
+    <article className="group flex h-full overflow-hidden rounded-sm border border-ink/8 bg-paper shadow-quiet transition duration-300 hover:-translate-y-0.5 hover:border-electric/30">
       <a
         href={`/events/${event.slug}`}
-        className="grid gap-4 p-4 sm:grid-cols-[116px_1fr]"
+        className="flex h-full w-full flex-col"
+        aria-label={`View recap for ${event.title}`}
       >
-        <div className="relative min-h-[120px] overflow-hidden rounded-sm bg-ink sm:min-h-full">
+        <div className="relative aspect-[16/10] overflow-hidden bg-ink">
           <Image
             src={event.coverImage}
             alt={`${event.title} event thumbnail`}
             fill
-            sizes="116px"
-            className="object-cover object-[50%_24%]"
+            sizes="(min-width: 1280px) 18vw, (min-width: 768px) 32vw, 100vw"
+            className="object-cover object-[50%_24%] transition duration-700 group-hover:scale-[1.03]"
           />
         </div>
-        <div>
-          <p className="text-xs font-medium uppercase tracking-[0.14em] text-graphite/48">
-            {event.displayDate} · {event.location}
+
+        <div className="flex flex-1 flex-col p-5">
+          <p className="text-sm font-medium text-graphite/56">
+            {eventMeta(event)}
           </p>
-          <h4 className="mt-2 text-lg font-semibold leading-tight tracking-[-0.015em]">
+          <h4 className="mt-3 text-xl font-semibold leading-tight tracking-[-0.018em] text-balance">
             {event.title}
           </h4>
-          <p className="mt-2 text-xs font-medium text-graphite/52">
-            {event.organizer}
-            {event.partners.length > 0 ? ` · ${event.partners.map((partner) => partner.name).slice(0, 2).join(", ")}` : ""}
+          <p className="mt-3 text-sm font-medium text-graphite/58">
+            {eventPartners(event)}
           </p>
-          <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-copper">
+          <p className="mt-3 text-xs font-semibold uppercase tracking-[0.12em] text-copper">
             {event.role}
           </p>
-          <p className="mt-3 text-sm leading-6 text-graphite/70">
+          <p className="mt-4 max-h-12 overflow-hidden text-sm leading-6 text-graphite/70">
             {event.shortDescription}
           </p>
-          <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-electric">
+          <div className="mt-auto pt-5 text-sm font-semibold text-electric">
             <span>View recap</span>
-            <span aria-hidden="true">→</span>
+            <span aria-hidden="true"> →</span>
           </div>
         </div>
       </a>
