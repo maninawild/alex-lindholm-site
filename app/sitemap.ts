@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { events } from "@/data/events";
 import { baseUrl, seoPages } from "@/data/seo-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -6,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/lectures-and-speaking",
     "/articles",
+    ...events.map((event) => `/events/${event.slug}`),
     ...Object.values(seoPages).map((page) => page.path),
   ];
 

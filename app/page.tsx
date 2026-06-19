@@ -9,6 +9,7 @@ import {
   metrics,
   thinkingTopics,
 } from "@/data/site-content";
+import { featuredPastEvent } from "@/data/events";
 import { SectionHeader } from "@/components/section-header";
 import { ArrowLink } from "@/components/arrow-link";
 import { SiteHeader } from "@/components/site-header";
@@ -67,6 +68,7 @@ export default function Home() {
       <SelectedInitiatives />
       <Experience />
       <EducationAndSpeaking />
+      <EventsWithAlex />
       <CredibilitySection />
       <Thinking />
       <Collaborations />
@@ -466,6 +468,72 @@ function EducationAndSpeaking() {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EventsWithAlex() {
+  if (!featuredPastEvent) {
+    return null;
+  }
+
+  return (
+    <section id="events" className="bg-bone pb-16 text-ink sm:pb-20">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="grid gap-8 border-b border-ink/10 pb-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+          <div className="lg:sticky lg:top-24">
+            <SectionHeader
+              eyebrow="Events with Alex"
+              title="Founder rooms, builder communities, and practical talks."
+              intro="Selected gatherings where Alex joins founders, students, builders, and ecosystem people around questions worth testing in public."
+            />
+          </div>
+
+          <article className="overflow-hidden rounded-sm border border-ink/8 bg-bone shadow-quiet">
+            <a
+              href={`/events/${featuredPastEvent.slug}`}
+              className="group grid min-h-[420px] gap-0 lg:grid-cols-[1.02fr_0.98fr]"
+              aria-label={`Read event recap for ${featuredPastEvent.title}`}
+            >
+              <div className="relative min-h-[280px] overflow-hidden bg-ink lg:min-h-full">
+                <Image
+                  src={featuredPastEvent.images.cover}
+                  alt={`${featuredPastEvent.title} event at Mollie in Amsterdam`}
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="object-cover transition duration-700 group-hover:scale-[1.03]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/54 via-transparent to-transparent" />
+                <span className="absolute left-5 top-5 rounded-sm border border-bone/24 bg-ink/42 px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-bone backdrop-blur-md">
+                  {featuredPastEvent.alexRole}
+                </span>
+              </div>
+
+              <div className="flex flex-col justify-between p-6 sm:p-8">
+                <div>
+                  <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
+                    Featured past event
+                  </p>
+                  <h3 className="mt-4 text-3xl font-medium leading-tight tracking-[-0.02em] text-balance sm:text-4xl">
+                    {featuredPastEvent.title}
+                  </h3>
+                  <p className="mt-4 text-sm font-medium text-graphite/56">
+                    {featuredPastEvent.meta}
+                  </p>
+                  <p className="mt-6 text-base leading-7 text-graphite/74">
+                    {featuredPastEvent.homepageDescription}
+                  </p>
+                </div>
+
+                <div className="mt-8 inline-flex items-center gap-3 text-sm font-semibold text-electric">
+                  <span>Read event recap</span>
+                  <span aria-hidden="true">→</span>
+                </div>
+              </div>
+            </a>
+          </article>
         </div>
       </div>
     </section>
