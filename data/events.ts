@@ -14,7 +14,7 @@ export type EventItem = {
   date: string;
   endDate?: string;
   displayDate: string;
-  status: "past" | "upcoming";
+  status?: "past" | "upcoming";
   role: string;
   location: string;
   organizer: string;
@@ -41,14 +41,42 @@ export type EventItem = {
 
 export const inviteAlexUrl = "https://zcal.co/axlindholm/1hour";
 
-export const events: EventItem[] = [
+const AMSTERDAM_TIME_ZONE = "Europe/Amsterdam";
+
+function getAmsterdamDate(date = new Date()) {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: AMSTERDAM_TIME_ZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(date);
+
+  const year = parts.find((part) => part.type === "year")?.value;
+  const month = parts.find((part) => part.type === "month")?.value;
+  const day = parts.find((part) => part.type === "day")?.value;
+
+  return `${year}-${month}-${day}`;
+}
+
+export function getEventStatus(
+  event: Pick<EventItem, "date" | "endDate" | "status">,
+  today = getAmsterdamDate(),
+): "past" | "upcoming" {
+  if (!event.date) {
+    return event.status ?? "past";
+  }
+
+  const finalEventDate = event.endDate ?? event.date;
+  return finalEventDate < today ? "past" : "upcoming";
+}
+
+const eventData: EventItem[] = [
   {
     title: "MEGATHON",
     slug: "megathon-amsterdam-tech-week-2026",
     date: "2026-06-19",
     endDate: "2026-06-21",
     displayDate: "19–21 June 2026",
-    status: "upcoming",
     role: "Community / Guest / Ecosystem participant",
     location: "The HUBB, Jacob Bontiusplaats 9, Amsterdam",
     organizer: "TAG",
@@ -122,7 +150,6 @@ export const events: EventItem[] = [
     slug: "build-night-4-mollie-amsterdam-tech-week-2026",
     date: "2026-06-17",
     displayDate: "17 June 2026",
-    status: "past",
     role: "Guest Speaker",
     location: "Mollie, Keizersgracht 126, Amsterdam",
     organizer: "DAY42",
@@ -191,7 +218,6 @@ export const events: EventItem[] = [
     slug: "sexxxess-night-digital-intimacy-dating-apps",
     date: "2026-02-12",
     displayDate: "12 February 2026",
-    status: "past",
     role: "Speaker",
     location: "Świetlica Wolności, Warsaw, Poland",
     organizer: "Ū HUB",
@@ -308,6 +334,11 @@ export const events: EventItem[] = [
     },
   },
 ];
+
+export const events: EventItem[] = eventData.map((event) => ({
+  ...event,
+  status: getEventStatus(event),
+}));
 
 export const featuredPastEvent = events.find(
   (event) => event.status === "past" && event.featured,
