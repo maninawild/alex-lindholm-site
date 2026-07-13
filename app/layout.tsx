@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import { ConsultationClarity } from "@/components/consultation-clarity";
+import { DiscoveryCallCta } from "@/components/discovery-call-cta";
 import "./globals.css";
 
 const inter = Inter({
@@ -76,6 +77,7 @@ export default function RootLayout({
       <body>
         {children}
         <ConsultationClarity />
+        <DiscoveryCallCta />
       </body>
     </html>
   );
