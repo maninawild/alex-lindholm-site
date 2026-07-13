@@ -122,6 +122,28 @@ a {
   max-width: 100%;
 }
 
+/* Homepage event cards: keep only meta, title, role and CTA. */
+#events article > a[aria-label^="View"] > div:last-child {
+  padding: 1rem 1.25rem 1.1rem;
+}
+
+#events article > a[aria-label^="View"] > div:last-child > p:nth-of-type(2),
+#events article > a[aria-label^="View"] > div:last-child > p:nth-of-type(4) {
+  display: none;
+}
+
+#events article > a[aria-label^="View"] > div:last-child > h4 {
+  margin-top: 0.55rem;
+}
+
+#events article > a[aria-label^="View"] > div:last-child > p:nth-of-type(3) {
+  margin-top: 0.65rem;
+}
+
+#events article > a[aria-label^="View"] > div:last-child > div:last-child {
+  padding-top: 1rem;
+}
+
 @media (min-width: 640px) {
   .section {
     padding: 5.75rem 0;
