@@ -33,6 +33,14 @@ function renderBlock(block: string, key: number) {
     return <h2 key={key}>{renderInline(block.replace(/^##\s+/, ""))}</h2>;
   }
 
+  if (block.startsWith("# ")) {
+    return <h2 key={key}>{renderInline(block.replace(/^#\s+/, ""))}</h2>;
+  }
+
+  if (/^(-{3,}|\*{3,}|_{3,})$/.test(block)) {
+    return <hr key={key} />;
+  }
+
   if (block.startsWith("> ")) {
     return <blockquote key={key}>{renderInlineWithBreaks(block.replace(/^>\s?/gm, ""))}</blockquote>;
   }

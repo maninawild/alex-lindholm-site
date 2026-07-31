@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Lectures & Speaking",
   description:
     "Invite Alex Lindholm for interactive lectures, workshops, cultural salons, university sessions, and private talks on AI, society, Jewish culture, ethics, entrepreneurship, and the human future.",
+  alternates: {
+    canonical: "/lectures-and-speaking",
+  },
   openGraph: {
     title: "Lectures & Speaking | Alex Lindholm",
     description:

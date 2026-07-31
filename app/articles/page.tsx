@@ -14,6 +14,15 @@ export const metadata: Metadata = {
     url: "/articles",
     type: "website",
   },
+  alternates: {
+    canonical: "/articles",
+    types: {
+      "application/rss+xml": [
+        { url: "/feeds/articles-en.xml", title: "English articles RSS" },
+        { url: "/feeds/articles-ru.xml", title: "Russian articles RSS" },
+      ],
+    },
+  },
 };
 
 export default function ArticlesPage() {
