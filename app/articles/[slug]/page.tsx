@@ -103,6 +103,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const isTelegramArticle = article.contentSource === "telegram_ru";
   const articleMedia = getArticleMedia(article);
   const articleContent = isTelegramArticle ? articleMedia.content : article.content;
+  const renderedArticleContent = removeLeadingTitleHeading(articleContent, article.title);
 
   return (
     <main className="bg-bone pt-20 text-ink sm:pt-24">
@@ -156,7 +157,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-8 lg:grid-cols-[minmax(0,720px)_260px] lg:items-start lg:py-16">
           <div>
-            <MarkdownContent content={articleContent} />
+            <MarkdownContent content={renderedArticleContent} />
             {isTelegramArticle ? <RelatedImageSection images={articleMedia.images} /> : null}
           </div>
           <aside className="space-y-5 lg:sticky lg:top-8">
@@ -187,6 +188,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       ) : null}
     </main>
   );
+}
+
+function removeLeadingTitleHeading(content: string, title: string) {
+  const [firstLine, ...remainingLines] = content.split("\n");
+  return firstLine === `# ${title}` ? remainingLines.join("\n").trimStart() : content;
 }
 
 type ArticleImage = {

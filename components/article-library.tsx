@@ -220,9 +220,10 @@ function ArticleCard({ article }: { article: ArticleSummary }) {
 function formatCardDate(date: string | undefined, language: ArticleLanguage) {
   if (!date) return "Undated";
 
+  const monthOnly = /^\d{4}-\d{2}$/.test(date);
   return new Intl.DateTimeFormat(language === "ru" ? "ru-RU" : "en-US", {
     year: "numeric",
     month: "long",
-    day: "numeric",
+    ...(monthOnly ? {} : { day: "numeric" }),
   }).format(new Date(date));
 }

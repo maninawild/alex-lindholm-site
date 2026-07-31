@@ -119,10 +119,11 @@ export function getArticleTranslations(article: Article): ArticleSummary[] {
 export function formatArticleDate(date?: string, language: ArticleLanguage = "en") {
   if (!date) return "Undated";
 
+  const monthOnly = /^\d{4}-\d{2}$/.test(date);
   return new Intl.DateTimeFormat(language === "ru" ? "ru-RU" : "en-US", {
     year: "numeric",
     month: "long",
-    day: "numeric",
+    ...(monthOnly ? {} : { day: "numeric" }),
   }).format(new Date(date));
 }
 
