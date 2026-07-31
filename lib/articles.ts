@@ -119,6 +119,14 @@ export function getArticleTranslations(article: Article): ArticleSummary[] {
 export function formatArticleDate(date?: string, language: ArticleLanguage = "en") {
   if (!date) return "Undated";
 
+  if (/^\d{4}-\d{2}$/.test(date)) {
+    return new Intl.DateTimeFormat(language === "ru" ? "ru-RU" : "en-US", {
+      year: "numeric",
+      month: "long",
+      timeZone: "UTC",
+    }).format(new Date(`${date}-01T00:00:00.000Z`));
+  }
+
   return new Intl.DateTimeFormat(language === "ru" ? "ru-RU" : "en-US", {
     year: "numeric",
     month: "long",
