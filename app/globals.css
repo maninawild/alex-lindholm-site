@@ -49,14 +49,24 @@ a {
 }
 
 .article-prose {
-  color: rgba(43, 48, 56, 0.86);
-  font-size: 1.1rem;
-  line-height: 1.9;
-  max-width: 42rem;
+  color: rgba(43, 48, 56, 0.9);
+  font-size: 1.08rem;
+  line-height: 1.82;
+  max-width: 44rem;
+  overflow-wrap: anywhere;
 }
 
 .article-prose > * + * {
-  margin-top: 1.55rem;
+  margin-top: 1.45rem;
+}
+
+.article-prose p {
+  margin-bottom: 0;
+  text-wrap: pretty;
+}
+
+.article-prose p + p {
+  margin-top: 1.25rem;
 }
 
 .article-prose h2,
@@ -64,17 +74,29 @@ a {
   color: #10131A;
   font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 500;
-  letter-spacing: -0.01em;
-  line-height: 1.1;
-  margin-top: 3rem;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+  text-wrap: balance;
 }
 
 .article-prose h2 {
   font-size: clamp(2rem, 5vw, 2.9rem);
+  margin-top: 3.8rem;
 }
 
 .article-prose h3 {
-  font-size: clamp(1.55rem, 4vw, 2.1rem);
+  font-size: clamp(1.5rem, 4vw, 2.05rem);
+  margin-top: 2.8rem;
+}
+
+.article-prose h2 + p,
+.article-prose h3 + p {
+  margin-top: 1rem;
+}
+
+.article-prose strong {
+  color: #10131A;
+  font-weight: 650;
 }
 
 .article-prose a {
@@ -88,19 +110,24 @@ a {
   border-left: 2px solid rgba(143, 63, 77, 0.42);
   color: rgba(16, 19, 26, 0.76);
   font-family: var(--font-newsreader), Georgia, serif;
-  font-size: clamp(1.35rem, 3vw, 1.72rem);
-  line-height: 1.42;
-  margin: 2.5rem 0;
-  padding: 0.2rem 0 0.2rem 1.35rem;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  line-height: 1.48;
+  margin: 2.75rem 0;
+  padding: 0.35rem 0 0.35rem 1.4rem;
 }
 
 .article-prose ul,
 .article-prose ol {
-  padding-left: 1.35rem;
+  margin-bottom: 0;
+  padding-left: 1.4rem;
+}
+
+.article-prose li {
+  padding-left: 0.2rem;
 }
 
 .article-prose li + li {
-  margin-top: 0.7rem;
+  margin-top: 0.65rem;
 }
 
 .article-prose code {
@@ -112,7 +139,7 @@ a {
 }
 
 .article-prose figure {
-  margin: 2rem 0;
+  margin: 2.5rem 0;
 }
 
 .article-prose img {
