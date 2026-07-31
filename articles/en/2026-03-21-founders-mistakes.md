@@ -14,7 +14,7 @@ metaDescription: "Founders keep asking me one thing: “What should I actually r
 openGraphTitle: "founders’ mistakes"
 openGraphDescription: "Founders keep asking me one thing: “What should I actually read?” 📚 After working with early-stage founders across Europe, one pattern is clear to me: The..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Founders keep asking me one thing:

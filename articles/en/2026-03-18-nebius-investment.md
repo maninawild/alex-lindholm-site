@@ -16,7 +16,7 @@ metaDescription: "From “toxic legacy” to $27B deals. Nebius is scaling fast 
 openGraphTitle: "Nebius investment"
 openGraphDescription: "From “toxic legacy” to $27B deals. Nebius is scaling fast – but to earn trust is a bit different story. Nebius (ex-Yandex N.V.) just signed a $27B AI infra..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 From “toxic legacy” to $27B deals.

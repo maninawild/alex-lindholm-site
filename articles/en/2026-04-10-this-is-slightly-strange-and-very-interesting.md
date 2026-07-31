@@ -15,7 +15,7 @@ metaDescription: "This is slightly strange… and very interesting. Some develop
 openGraphTitle: "This is slightly strange… and very interesting."
 openGraphDescription: "This is slightly strange… and very interesting. Some developer built a 3D map of their own thinking 😳 Not notes. Not folders. A living structure of how id..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 This is slightly strange… and very interesting.

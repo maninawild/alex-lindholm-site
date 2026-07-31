@@ -16,7 +16,7 @@ metaDescription: "Something big just happened… as usual quietly. @Chan Zuckerb
 openGraphTitle: "Zuckerberg"
 openGraphDescription: "Something big just happened… as usual quietly. @Chan Zuckerberg Initiative is committing $500M into AI + biology. Not a grant, not a side experiment. A ser..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Something big just happened… as usual quietly.

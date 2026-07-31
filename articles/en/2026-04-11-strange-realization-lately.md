@@ -16,7 +16,7 @@ metaDescription: "Strange realization lately. The most risky thing about AI… i
 openGraphTitle: "Strange realization lately."
 openGraphDescription: "Strange realization lately. The most risky thing about AI… isn’t hallucination. It’s agreement you make with them 😅 We thought we were building intelligen..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Strange realization lately.

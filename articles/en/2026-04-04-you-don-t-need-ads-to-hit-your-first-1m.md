@@ -16,7 +16,7 @@ metaDescription: "You don’t need ads to hit your first $1M. You need distribut
 openGraphTitle: "You don’t need ads to hit your first $1M."
 openGraphDescription: "You don’t need ads to hit your first $1M. You need distribution. And one of the most underrated places to build it? Reddit. No budgets. No influencers. No..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 You don’t need ads to hit your first $1M.

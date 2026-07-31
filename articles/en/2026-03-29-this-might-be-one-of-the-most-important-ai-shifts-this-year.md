@@ -15,7 +15,7 @@ metaDescription: "This might be one of the most important AI shifts this year. A
 openGraphTitle: "This might be one of the most important AI shifts this year."
 openGraphDescription: "This might be one of the most important AI shifts this year. And almost no one is talking about it. Google just released TurboQuant. And it changes how AI..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 This might be one of the most important AI shifts this year.

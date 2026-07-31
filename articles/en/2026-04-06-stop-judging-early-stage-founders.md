@@ -16,7 +16,7 @@ metaDescription: "Stop judging early-stage founders. You’re looking at where t
 openGraphTitle: "Stop judging early-stage founders."
 openGraphDescription: "Stop judging early-stage founders. You’re looking at where they are now… not where they’re actually going. Early founders get judged all the time. Usually..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Stop judging early-stage founders.

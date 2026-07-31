@@ -16,7 +16,7 @@ metaDescription: "Funny how building software changed. Same goal, very different
 openGraphTitle: "Funny how building software changed."
 openGraphDescription: "Funny how building software changed. Same goal, very different chaos 😅 1 - Waterfall Plan for 12–18 months. Ship what made sense… a year ago. 2 - Agile Sh..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Funny how building software changed.

@@ -16,7 +16,7 @@ metaDescription: "They say Europe is behind in the AI race. No biggest models. N
 openGraphTitle: "AI examples"
 openGraphDescription: "They say Europe is behind in the AI race. No biggest models. No loud hype. And then someone builds an AI agent… to call 3,000 pubs and ask the price of a G..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 They say Europe is behind in the AI race.

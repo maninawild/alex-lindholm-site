@@ -16,7 +16,7 @@ metaDescription: "Founders keep asking: “Where do you actually learn how start
 openGraphTitle: "Founders keep asking:"
 openGraphDescription: "Founders keep asking: “Where do you actually learn how startups work?” 🤔 Not from one book. Not from one mentor. But by consistently following people who..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Founders keep asking:

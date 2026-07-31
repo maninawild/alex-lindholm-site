@@ -16,7 +16,7 @@ metaDescription: "Something interesting is happening around The Hague and South 
 openGraphTitle: "Something interesting is happening around The Hague and South Holland."
 openGraphDescription: "Something interesting is happening around The Hague and South Holland. And at the same time, something is clearly missing. We have strong universities. Ser..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Something interesting is happening around The Hague and South Holland.

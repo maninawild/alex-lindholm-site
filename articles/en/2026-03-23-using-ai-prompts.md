@@ -16,7 +16,7 @@ metaDescription: "Most people are using AI like a chatbot. That’s about 1% of 
 openGraphTitle: "using AI prompts"
 openGraphDescription: "Most people are using AI like a chatbot. That’s about 1% of its real value. The real leverage appears when AI becomes a thinking partner for your business..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Most people are using AI like a chatbot. That’s about 1% of its real value.

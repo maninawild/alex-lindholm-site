@@ -16,7 +16,7 @@ metaDescription: "For years, the narrative was simple: “If you want to build a
 openGraphTitle: "startups statistics"
 openGraphDescription: "For years, the narrative was simple: “If you want to build a generational AI company, move to Silicon Valley.” That narrative is breaking fast. Europe now..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 For years, the narrative was simple:

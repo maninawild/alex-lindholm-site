@@ -16,7 +16,7 @@ metaDescription: "AI made launching startups dramatically easier. And standing o
 openGraphTitle: "AI startup"
 openGraphDescription: "AI made launching startups dramatically easier. And standing out dramatically harder. Because now everyone has: → the same models → the same no-code tools..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/15bah8HCEKXEnATr9w_hWrCwSfC5eK2pItrCnUSZXLfg/edit?usp=sharing"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 AI made launching startups dramatically easier.

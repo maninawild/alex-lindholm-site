@@ -16,7 +16,7 @@ metaDescription: "The GenAI leaderboard in 2026 looks… unreal. A few years ago
 openGraphTitle: "The GenAI leaderboard in 2026 looks… unreal."
 openGraphDescription: "The GenAI leaderboard in 2026 looks… unreal. A few years ago, most of these companies were just decks. Now the top 10 alone are worth $1.7T+ combined. And..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 The GenAI leaderboard in 2026 looks… unreal.

@@ -15,7 +15,7 @@ metaDescription: "Most people think learning AI requires: $1,000 courses. Bootca
 openGraphTitle: "AI YouTube channels"
 openGraphDescription: "Most people think learning AI requires: $1,000 courses. Bootcamps. Certificates. Some “AI guru” selling a roadmap. It doesn’t. We’re living through the fir..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Most people think learning AI requires:
