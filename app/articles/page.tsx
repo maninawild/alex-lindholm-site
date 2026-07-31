@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import { ArticleLibrary } from "@/components/article-library";
+import { Breadcrumbs } from "@/components/insights/breadcrumbs";
+import { InsightsDirectory } from "@/components/insights/directory";
 import { SiteHeader } from "@/components/site-header";
 import { getArticleSummaries } from "@/lib/articles";
+import {
+  getInsightCategories,
+  getInsightTopics,
+  insightBreadcrumbJsonLd,
+  validateInsightsAuthorityGraph,
+} from "@/lib/insights";
 
 export const metadata: Metadata = {
   title: "Articles",
@@ -26,13 +34,25 @@ export const metadata: Metadata = {
 };
 
 export default function ArticlesPage() {
+  validateInsightsAuthorityGraph();
   const articles = getArticleSummaries();
+  const categories = getInsightCategories();
+  const topics = getInsightTopics();
 
   return (
     <main className="bg-bone pt-20 text-ink sm:pt-24">
+      <script
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            insightBreadcrumbJsonLd([{ name: "Insights", href: "/articles" }]),
+          ),
+        }}
+        type="application/ld+json"
+      />
       <SiteHeader transparentAtTop={false} />
       <section className="mx-auto max-w-7xl px-5 pb-12 pt-8 sm:px-8 lg:pb-16 lg:pt-12">
-        <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
+        <Breadcrumbs items={[{ label: "Insights" }]} />
+        <p className="mt-8 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
           Article Library
         </p>
         <div className="mt-5 grid gap-6 lg:grid-cols-[0.9fr_0.55fr] lg:items-end">
@@ -45,6 +65,7 @@ export default function ArticlesPage() {
           </p>
         </div>
       </section>
+      <InsightsDirectory categories={categories} topics={topics} />
       <ArticleLibrary articles={articles} />
     </main>
   );

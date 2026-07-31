@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/insights/breadcrumbs";
 import { MarkdownContent } from "@/components/markdown-content";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -11,10 +13,19 @@ import {
   getAllArticles,
   getArticleBySlug,
   getArticleTranslations,
-  getRelatedArticles,
 } from "@/lib/articles";
 import { articleLanguages } from "@/data/article-taxonomy";
+import { insightAuthor } from "@/data/insights-taxonomy";
 import { absoluteUrl, author } from "@/lib/site";
+import {
+  getFurtherReading,
+  getPillarForArticle,
+  getSupportingArticles,
+  getTopicsForArticle,
+  insightAuthorHref,
+  insightCategoryHref,
+  insightTopicHref,
+} from "@/lib/insights";
 
 const linkedinUrl = "https://www.linkedin.com/in/axlindholm/";
 const consultationUrl = "https://zcal.co/axlindholm/1hour";
@@ -50,7 +61,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   );
 
   return {
-    title: article.title,
+    title: article.seoTitle,
     description: article.metaDescription,
     alternates: {
       canonical: article.href,
@@ -66,7 +77,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       url: article.href,
       type: "article",
       publishedTime: article.originalDate || article.date,
-      modifiedTime: article.date || article.originalDate,
+      modifiedTime: article.lastReviewed || article.date || article.originalDate,
       authors: [author.name],
       tags: article.tags,
       locale: article.language === "ru" ? "ru_RU" : "en_US",
@@ -98,7 +109,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const articleIndex = allArticles.findIndex((item) => item.slug === article.slug);
   const previousArticle = articleIndex >= 0 ? allArticles[articleIndex + 1] : undefined;
   const nextArticle = articleIndex > 0 ? allArticles[articleIndex - 1] : undefined;
-  const related = getRelatedArticles(article);
+  const related = getSupportingArticles(article);
+  const furtherReading = getFurtherReading(
+    article,
+    related.map((item) => item.slug),
+  );
+  const pillar = getPillarForArticle(article);
+  const topics = getTopicsForArticle(article);
+  const categoryHref = insightCategoryHref(article.category);
   const translations = getArticleTranslations(article);
   const isTelegramArticle = article.contentSource === "telegram_ru";
   const articleMedia = getArticleMedia(article);
@@ -113,13 +131,22 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleBreadcrumbJsonLd(article)) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleBreadcrumbJsonLd(article, categoryHref)),
+        }}
       />
       <SiteHeader transparentAtTop={false} />
 
       <article lang={article.language}>
         <header className="mx-auto max-w-4xl px-5 pb-10 pt-8 sm:px-8 lg:pt-12">
-          <a href="/articles" className="mb-8 inline-flex rounded-md border border-ink/10 bg-white px-4 py-2 text-sm text-graphite/72 transition hover:border-electric hover:text-electric">
+          <Breadcrumbs
+            items={[
+              { label: "Insights", href: "/articles" },
+              { label: article.category, href: categoryHref },
+              { label: article.title },
+            ]}
+          />
+          <a href="/articles" className="mb-8 mt-8 inline-flex rounded-md border border-ink/10 bg-white px-4 py-2 text-sm text-graphite/72 transition hover:border-electric hover:text-electric">
             Back to Articles
           </a>
           <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.14em] text-graphite/58">
@@ -128,6 +155,17 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             <time dateTime={article.originalDate || article.date}>{formatArticleDate(article.originalDate || article.date, article.language)}</time>
             <span>/</span>
             <span>{article.readingTime} min read</span>
+            {article.lastReviewed ? (
+              <>
+                <span>/</span>
+                <span>
+                  Last reviewed{" "}
+                  <time dateTime={article.lastReviewed}>
+                    {formatReviewDate(article.lastReviewed, article.language)}
+                  </time>
+                </span>
+              </>
+            ) : null}
             <span>/</span>
             <span>{article.status}</span>
           </div>
@@ -136,13 +174,43 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-graphite/72">{article.metaDescription}</p>
           <div className="mt-8 flex flex-wrap gap-2">
-            <span className="rounded-md bg-ink px-3 py-1.5 text-xs text-white">{article.category}</span>
+            <Link className="rounded-md bg-ink px-3 py-1.5 text-xs text-white transition hover:bg-electric" href={categoryHref}>
+              {article.category}
+            </Link>
             {article.tags.map((tag) => (
               <span key={tag} className="rounded-md border border-ink/10 px-3 py-1.5 text-xs text-graphite/68">
                 {tag}
               </span>
             ))}
           </div>
+          <div className="mt-5 rounded-md border border-ink/10 bg-white p-4">
+            <p className="text-xs font-medium uppercase tracking-[0.16em] text-graphite/52">
+              Pillar guide
+            </p>
+            <Link
+              className="mt-2 inline-flex font-serif text-xl text-electric"
+              href={pillar.href}
+            >
+              {pillar.name}
+            </Link>
+            <p className="mt-2 text-sm leading-6 text-graphite/68">
+              {pillar.description}
+            </p>
+          </div>
+          {topics.length > 1 ? (
+            <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-graphite/58">
+              <span>Also in:</span>
+              {topics.slice(1).map((topic) => (
+                <Link
+                  className="font-medium text-electric underline decoration-electric/25 underline-offset-4"
+                  href={insightTopicHref(topic)}
+                  key={topic.slug}
+                >
+                  {topic.name}
+                </Link>
+              ))}
+            </div>
+          ) : null}
           <LanguageSwitcher currentArticle={article} translations={translations} />
           <ContentSourceNotice article={article} />
         </header>
@@ -159,6 +227,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <div>
             <MarkdownContent content={renderedArticleContent} />
             {isTelegramArticle ? <RelatedImageSection images={articleMedia.images} /> : null}
+            <ArticleUpdateHistory article={article} />
           </div>
           <aside className="space-y-5 lg:sticky lg:top-8">
             <ShareBlock title={article.title} href={article.href} />
@@ -173,14 +242,46 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       {related.length > 0 ? (
         <section className="border-t border-ink/10 bg-white py-16">
           <div className="mx-auto max-w-6xl px-5 sm:px-8">
-            <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">Related Articles</p>
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
+              Related Articles
+            </p>
+            <p className="mt-3 text-sm leading-6 text-graphite/68">
+              Supporting reading from the {pillar.name} knowledge path.
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {related.map((item) => (
                 <a key={item.slug} href={item.href} className="rounded-md border border-ink/10 p-5 transition hover:border-electric/45 hover:shadow-quiet">
                   <p className="text-xs uppercase tracking-[0.14em] text-graphite/50">{item.category}</p>
                   <h2 className="mt-3 font-serif text-2xl leading-tight">{item.title}</h2>
                   <p className="mt-4 text-sm leading-6 text-graphite/70">{item.metaDescription}</p>
                 </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {furtherReading.length > 0 ? (
+        <section className="border-t border-ink/10 bg-bone py-16">
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+            <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
+              Further Reading
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {furtherReading.map((item) => (
+                <Link
+                  className="rounded-md border border-ink/10 bg-white p-5 transition hover:border-electric/45 hover:shadow-quiet"
+                  href={item.href}
+                  key={item.slug}
+                >
+                  <p className="text-xs uppercase tracking-[0.14em] text-graphite/50">
+                    {item.category}
+                  </p>
+                  <h2 className="mt-3 font-serif text-2xl leading-tight">{item.title}</h2>
+                  <p className="mt-4 text-sm leading-6 text-graphite/70">
+                    {item.metaDescription}
+                  </p>
+                </Link>
               ))}
             </div>
           </div>
@@ -193,6 +294,51 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 function removeLeadingTitleHeading(content: string, title: string) {
   const [firstLine, ...remainingLines] = content.split("\n");
   return firstLine === `# ${title}` ? remainingLines.join("\n").trimStart() : content;
+}
+
+function ArticleUpdateHistory({ article }: { article: ArticleSummary }) {
+  if (!article.lastReviewed && article.updateHistory.length === 0) return null;
+
+  return (
+    <section className="mt-14 border-t border-ink/10 pt-8">
+      <p className="text-xs font-medium uppercase tracking-[0.16em] text-copper">
+        Article history
+      </p>
+      {article.lastReviewed ? (
+        <p className="mt-4 text-sm leading-6 text-graphite/72">
+          <span className="font-medium text-ink">Last reviewed:</span>{" "}
+          <time dateTime={article.lastReviewed}>
+            {formatReviewDate(article.lastReviewed, article.language)}
+          </time>
+        </p>
+      ) : null}
+      {article.updateHistory.length > 0 ? (
+        <ol className="mt-5 space-y-3 border-l border-ink/12 pl-5">
+          {article.updateHistory.map((entry, index) => {
+            const [date, ...noteParts] = entry.split("|");
+            const note = noteParts.join("|").trim();
+            return (
+              <li className="text-sm leading-6 text-graphite/72" key={`${entry}-${index}`}>
+                <time className="font-medium text-ink" dateTime={date.trim()}>
+                  {formatReviewDate(date.trim(), article.language)}
+                </time>
+                {note ? ` — ${note}` : null}
+              </li>
+            );
+          })}
+        </ol>
+      ) : null}
+    </section>
+  );
+}
+
+function formatReviewDate(
+  date: string,
+  language: ArticleSummary["language"],
+) {
+  return Number.isNaN(Date.parse(date))
+    ? date
+    : formatArticleDate(date, language);
 }
 
 type ArticleImage = {
@@ -378,13 +524,18 @@ function AuthorBlock() {
   return (
     <section className="rounded-md border border-ink/10 bg-white p-5">
       <p className="text-xs uppercase tracking-[0.16em] text-graphite/52">Author</p>
-      <h2 className="mt-3 text-xl font-semibold">Alex Lindholm</h2>
+      <h2 className="mt-3 text-xl font-semibold">
+        <Link className="transition hover:text-electric" href={insightAuthorHref()}>
+          Alex Lindholm
+        </Link>
+      </h2>
       <p className="mt-3 text-sm leading-6 text-graphite/72">
-        Venture Architect, Human-Centered Technologist, Ecosystem Builder, Lecturer and Founder of InspireXchange.
+        {insightAuthor.role}. Expertise in{" "}
+        {insightAuthor.expertise.slice(0, 3).join(", ")}.
       </p>
-      <a className="mt-4 inline-flex text-sm font-medium text-electric" href={linkedinUrl} target="_blank" rel="noopener noreferrer me">
-        Connect with Alex on LinkedIn →
-      </a>
+      <Link className="mt-4 block text-sm font-medium text-electric" href={insightAuthorHref()}>
+        View expertise and articles →
+      </Link>
     </section>
   );
 }
