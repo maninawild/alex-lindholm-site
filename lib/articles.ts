@@ -6,6 +6,7 @@ import { absoluteUrl, author, siteUrl } from "@/lib/site";
 export type ArticleFrontmatter = {
   id?: string;
   title: string;
+  seoTitle?: string;
   slug?: string;
   date?: string;
   tags?: string[];
@@ -36,6 +37,7 @@ export type ContentSource = "telegram_ru" | "original_en";
 export type Article = {
   id: string;
   title: string;
+  seoTitle: string;
   slug: string;
   date?: string;
   tags: string[];
@@ -231,6 +233,7 @@ function readArticleFile(directory: string, fileName: string, fallbackLanguage: 
   return {
     id,
     title,
+    seoTitle: frontmatter.seoTitle || title,
     slug,
     date: frontmatter.date,
     tags,

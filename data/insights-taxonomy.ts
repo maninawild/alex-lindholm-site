@@ -17,6 +17,10 @@ export type InsightCategoryDefinition = {
 
 export const insightCategoryDefinitions: InsightCategoryDefinition[] = [
   {
+    name: "Startup Visa",
+    description: "Practical guidance on Dutch Startup Visa assessment, preparation, facilitators, refusals, and next-step strategy.",
+  },
+  {
     name: "Startup Ecosystems",
     description: "Startup environments, founder mobility, support systems, and the institutions that help ventures grow.",
   },

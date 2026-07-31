@@ -14,7 +14,8 @@ excerpt: "Thinking about moving your startup to the Netherlands? This guide expl
 metaDescription: "Thinking about moving your startup to the Netherlands? This guide explains how the Dutch Startup Visa really works, what RVO actually evaluates, why promising applications are rejected, and how founders can prepare before investing months into the process."
 openGraphTitle: "Startup Visa Netherlands (2026): The Complete Founder Guide"
 openGraphDescription: "Thinking about moving your startup to the Netherlands? This guide explains how the Dutch Startup Visa really works, what RVO actually evaluates, why promising applications are rejected, and how founders can prepare before investing months into the process."
-relatedArticles: []
+relatedArticles:
+  - "startup-visa-rejected-netherlands-2026"
 status: "published"
 ---
 

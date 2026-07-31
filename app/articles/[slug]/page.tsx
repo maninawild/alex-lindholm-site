@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   );
 
   return {
-    title: article.title,
+    title: article.seoTitle,
     description: article.metaDescription,
     alternates: {
       canonical: article.href,
