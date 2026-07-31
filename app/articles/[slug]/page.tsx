@@ -5,6 +5,7 @@ import { MarkdownContent } from "@/components/markdown-content";
 import { SiteHeader } from "@/components/site-header";
 import {
   type ArticleSummary,
+  articleBreadcrumbJsonLd,
   articleJsonLd,
   formatArticleDate,
   getAllArticles,
@@ -13,6 +14,7 @@ import {
   getRelatedArticles,
 } from "@/lib/articles";
 import { articleLanguages } from "@/data/article-taxonomy";
+import { absoluteUrl, author } from "@/lib/site";
 
 const linkedinUrl = "https://www.linkedin.com/in/axlindholm/";
 const consultationUrl = "https://zcal.co/axlindholm/1hour";
@@ -32,14 +34,31 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   if (!article) {
     return {
       title: "Article not found",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
+
+  const translations = getArticleTranslations(article);
+  const languageAlternates = Object.fromEntries(
+    [article, ...translations].map((translation) => [
+      translation.language,
+      translation.href,
+    ]),
+  );
 
   return {
     title: article.title,
     description: article.metaDescription,
     alternates: {
       canonical: article.href,
+      ...(Object.keys(languageAlternates).length > 1
+        ? {
+            languages: languageAlternates,
+          }
+        : {}),
     },
     openGraph: {
       title: article.openGraphTitle,
@@ -47,8 +66,10 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       url: article.href,
       type: "article",
       publishedTime: article.originalDate || article.date,
-      authors: ["Alex Lindholm"],
+      modifiedTime: article.date || article.originalDate,
+      authors: [author.name],
       tags: article.tags,
+      locale: article.language === "ru" ? "ru_RU" : "en_US",
       images: article.featuredImage
         ? [
             {
@@ -89,9 +110,13 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd(article)) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleBreadcrumbJsonLd(article)) }}
+      />
       <SiteHeader transparentAtTop={false} />
 
-      <article>
+      <article lang={article.language}>
         <header className="mx-auto max-w-4xl px-5 pb-10 pt-8 sm:px-8 lg:pt-12">
           <a href="/articles" className="mb-8 inline-flex rounded-md border border-ink/10 bg-white px-4 py-2 text-sm text-graphite/72 transition hover:border-electric hover:text-electric">
             Back to Articles
@@ -324,9 +349,9 @@ function ArticleNavigation({
 }
 
 function ShareBlock({ title, href }: { title: string; href: string }) {
-  const absoluteUrl = `https://alexlindholm.com${href}`;
-  const linkedInShare = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(absoluteUrl)}`;
-  const telegramShare = `https://t.me/share/url?url=${encodeURIComponent(absoluteUrl)}&text=${encodeURIComponent(title)}`;
+  const articleUrl = absoluteUrl(href);
+  const linkedInShare = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(articleUrl)}`;
+  const telegramShare = `https://t.me/share/url?url=${encodeURIComponent(articleUrl)}&text=${encodeURIComponent(title)}`;
 
   return (
     <section className="rounded-md border border-ink/10 bg-white p-5">

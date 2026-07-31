@@ -164,7 +164,7 @@ function ArticleCard({ article }: { article: ArticleSummary }) {
   const languageLabel = articleLanguages[article.language as ArticleLanguage];
 
   return (
-    <article className="group flex min-h-[420px] flex-col overflow-hidden rounded-md border border-ink/10 bg-white transition duration-300 hover:-translate-y-1 hover:border-electric/40 hover:shadow-quiet">
+    <article lang={article.language} className="group flex min-h-[420px] flex-col overflow-hidden rounded-md border border-ink/10 bg-white transition duration-300 hover:-translate-y-1 hover:border-electric/40 hover:shadow-quiet">
       {article.featuredImage ? (
         <a href={article.href} className="flex aspect-[16/10] items-center justify-center border-b border-ink/8 bg-white p-3">
           <img

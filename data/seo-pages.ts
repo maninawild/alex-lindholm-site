@@ -1,4 +1,6 @@
-export const baseUrl = "https://alexlindholm.com";
+import { author, siteUrl } from "@/lib/site";
+
+export const baseUrl = siteUrl;
 
 export const profileLinks = {
   linkedin: "https://www.linkedin.com/in/axlindholm/",
@@ -173,17 +175,11 @@ export function personSchema(pageKey?: SeoPageKey) {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${baseUrl}/#alex-lindholm`,
-    name: "Alex P. Lindholm",
-    url: baseUrl,
-    sameAs: [profileLinks.linkedin],
-    image: `${baseUrl}/media/alex-portrait.jpg`,
-    jobTitle: [
-      "Venture Architect",
-      "Human-Centered Technologist",
-      "Ecosystem Builder",
-      "Speaker",
-      "Startup Mentor",
-    ],
+    name: author.name,
+    url: author.url,
+    sameAs: [author.linkedIn],
+    image: author.image,
+    jobTitle: author.jobTitle,
     worksFor: {
       "@type": "Organization",
       name: "InspireXchange.nl Accelerator",

@@ -4,6 +4,7 @@ import { ConsultationClarity } from "@/components/consultation-clarity";
 import { DiscoveryCallCta } from "@/components/discovery-call-cta";
 import { LatestArticleWidget } from "@/components/latest-article-widget";
 import { ArticlePresentationCleanup } from "@/components/article-presentation-cleanup";
+import { personJsonLd, siteUrl, websiteJsonLd } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,14 +19,21 @@ const newsreader = Newsreader({
   display: "swap",
 });
 
+const siteDescription =
+  "Alex Lindholm works across venture ecosystems, ethical technology, responsible AI, human-centered innovation, and cross-border collaboration.";
+const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION;
+const bingSiteVerification = process.env.BING_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://alexlindholm.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Alex Lindholm | Venture Architect & Human-Centered Technologist",
     template: "%s | Alex Lindholm",
   },
-  description:
-    "Alex Lindholm works across venture ecosystems, ethical technology, responsible AI, human-centered innovation, and cross-border collaboration.",
+  description: siteDescription,
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "Alex Lindholm",
     "Human-Centered Innovation",
@@ -48,7 +56,7 @@ export const metadata: Metadata = {
     title: "Alex Lindholm | Venture Architect & Ecosystem Builder",
     description:
       "A human-first personal platform for venture architecture, ethical technology, founder ecosystems, and meaningful collaboration.",
-    url: "https://alexlindholm.com",
+    url: siteUrl,
     siteName: "Alex Lindholm",
     images: [
       {
@@ -67,6 +75,16 @@ export const metadata: Metadata = {
     description:
       "Human-centered innovation, venture ecosystems, responsible AI, and cross-border collaboration.",
   },
+  verification: {
+    ...(googleSiteVerification ? { google: googleSiteVerification } : {}),
+    ...(bingSiteVerification
+      ? {
+          other: {
+            "msvalidate.01": bingSiteVerification,
+          },
+        }
+      : {}),
+  },
 };
 
 export default function RootLayout({
@@ -77,6 +95,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${newsreader.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([websiteJsonLd(siteDescription), personJsonLd()]),
+          }}
+        />
         {children}
         <ConsultationClarity />
         <DiscoveryCallCta />

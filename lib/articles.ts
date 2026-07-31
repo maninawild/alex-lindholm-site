@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { articleCategories, type ArticleCategory, type ArticleLanguage } from "@/data/article-taxonomy";
+import { absoluteUrl, author, siteUrl } from "@/lib/site";
 
 export type ArticleFrontmatter = {
   id?: string;
@@ -126,32 +127,59 @@ export function formatArticleDate(date?: string, language: ArticleLanguage = "en
 }
 
 export function articleJsonLd(article: Article) {
+  const canonicalUrl = absoluteUrl(article.href);
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.title,
     description: article.metaDescription,
     datePublished: article.originalDate || article.date,
-    dateModified: article.originalDate || article.date,
+    dateModified: article.date || article.originalDate,
     inLanguage: article.language,
-    image: article.featuredImage ? [article.featuredImage] : undefined,
+    image: article.featuredImage ? [absoluteUrl(article.featuredImage)] : undefined,
     isAccessibleForFree: true,
     articleSection: article.category,
     author: {
       "@type": "Person",
-      name: "Alex Lindholm",
-      url: "https://alexlindholm.com",
-      sameAs: ["https://www.linkedin.com/in/axlindholm/"],
+      "@id": `${siteUrl}/#alex-lindholm`,
+      name: author.name,
+      jobTitle: author.jobTitle,
+      url: author.url,
+      sameAs: [author.linkedIn],
     },
     publisher: {
       "@type": "Person",
-      name: "Alex Lindholm",
+      "@id": `${siteUrl}/#alex-lindholm`,
+      name: author.name,
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://alexlindholm.com${article.href}`,
+      "@id": canonicalUrl,
     },
+    url: canonicalUrl,
     keywords: article.tags,
+  };
+}
+
+export function articleBreadcrumbJsonLd(article: Article) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Articles",
+        item: absoluteUrl("/articles"),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: article.title,
+        item: absoluteUrl(article.href),
+      },
+    ],
   };
 }
 

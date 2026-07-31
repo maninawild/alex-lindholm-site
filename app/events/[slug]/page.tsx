@@ -3,14 +3,13 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { events, getEventBySlug, inviteAlexUrl } from "@/data/events";
 import { SiteHeader } from "@/components/site-header";
+import { siteUrl } from "@/lib/site";
 
 type EventPageProps = {
   params: Promise<{
     slug: string;
   }>;
 };
-
-const siteUrl = "https://alexlindholm.com";
 
 export function generateStaticParams() {
   return events.map((event) => ({
