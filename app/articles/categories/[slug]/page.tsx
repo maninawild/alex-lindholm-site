@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { InsightArticleGrid } from "@/components/insights/article-grid";
 import { InsightsLandingHeader } from "@/components/insights/landing-header";
@@ -7,6 +8,7 @@ import {
   getArticlesForCategory,
   getInsightCategories,
   getInsightCategory,
+  getTopicsForCategory,
   insightBreadcrumbJsonLd,
 } from "@/lib/insights";
 
@@ -45,6 +47,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   if (!category) notFound();
 
   const articles = getArticlesForCategory(slug);
+  const topics = getTopicsForCategory(category.name);
   const breadcrumbs = [
     { name: "Insights", href: "/articles" },
     { name: "Categories", href: "/articles#categories" },
@@ -71,6 +74,24 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         meta={`${articles.length} ${articles.length === 1 ? "article" : "articles"}`}
         title={category.name}
       />
+      {topics.length > 0 ? (
+        <section className="mx-auto max-w-7xl px-5 pb-12 sm:px-8">
+          <p className="text-xs font-medium uppercase tracking-[0.16em] text-copper">
+            Related knowledge paths
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            {topics.map((topic) => (
+              <Link
+                className="rounded-md border border-ink/10 bg-white px-4 py-3 text-sm font-medium transition hover:border-electric hover:text-electric"
+                href={`/articles/topics/${topic.slug}`}
+                key={topic.slug}
+              >
+                {topic.name} · {topic.articleCount}
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
       <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-8">
         <InsightArticleGrid articles={articles} />
       </section>

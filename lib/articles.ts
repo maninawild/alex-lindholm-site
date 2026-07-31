@@ -25,6 +25,8 @@ export type ArticleFrontmatter = {
   translationKey?: string;
   telegramMessageId?: string;
   originalDate?: string;
+  lastReviewed?: string;
+  updateHistory?: string[];
   status?: ArticleStatus;
 };
 
@@ -47,6 +49,8 @@ export type Article = {
   translationKey?: string;
   telegramMessageId?: string;
   originalDate?: string;
+  lastReviewed?: string;
+  updateHistory: string[];
   featuredImage?: string;
   excerpt: string;
   readingTime: number;
@@ -143,7 +147,7 @@ export function articleJsonLd(article: Article) {
     headline: article.title,
     description: article.metaDescription,
     datePublished: article.originalDate || article.date,
-    dateModified: article.date || article.originalDate,
+    dateModified: article.lastReviewed || article.date || article.originalDate,
     inLanguage: article.language,
     image: article.featuredImage ? [absoluteUrl(article.featuredImage)] : undefined,
     isAccessibleForFree: true,
@@ -153,7 +157,7 @@ export function articleJsonLd(article: Article) {
       "@id": `${siteUrl}/#alex-lindholm`,
       name: author.name,
       jobTitle: author.jobTitle,
-      url: author.url,
+      url: absoluteUrl("/articles/authors/alex-lindholm"),
       sameAs: [author.linkedIn],
     },
     publisher: {
@@ -247,6 +251,10 @@ function readArticleFile(directory: string, fileName: string, fallbackLanguage: 
     translationKey: frontmatter.translationKey,
     telegramMessageId: frontmatter.telegramMessageId,
     originalDate: frontmatter.originalDate,
+    lastReviewed: frontmatter.lastReviewed,
+    updateHistory: Array.isArray(frontmatter.updateHistory)
+      ? frontmatter.updateHistory
+      : [],
     featuredImage: frontmatter.featuredImage,
     excerpt,
     readingTime: calculateReadingTime(body, language),

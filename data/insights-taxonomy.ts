@@ -157,4 +157,12 @@ export const insightAuthor = {
   role: "Startup Visa & Facilitator Advocate",
   description:
     "Alex Lindholm writes about startup ecosystems, founder strategy, human-centered technology, and venture building.",
+  expertise: [
+    "Dutch Startup Visa",
+    "Startup facilitators",
+    "Founder readiness",
+    "Startup ecosystems",
+    "Venture building",
+    "Human-centered technology",
+  ],
 } as const;
