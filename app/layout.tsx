@@ -3,6 +3,7 @@ import { Inter, Newsreader } from "next/font/google";
 import { ConsultationClarity } from "@/components/consultation-clarity";
 import { DiscoveryCallCta } from "@/components/discovery-call-cta";
 import { LatestArticleWidget } from "@/components/latest-article-widget";
+import { ArticlePresentationCleanup } from "@/components/article-presentation-cleanup";
 import "./globals.css";
 
 const inter = Inter({
@@ -80,6 +81,7 @@ export default function RootLayout({
         <ConsultationClarity />
         <DiscoveryCallCta />
         <LatestArticleWidget />
+        <ArticlePresentationCleanup />
       </body>
     </html>
   );
