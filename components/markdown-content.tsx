@@ -45,6 +45,36 @@ function renderBlock(block: string, key: number) {
     return <blockquote key={key}>{renderInlineWithBreaks(block.replace(/^>\s?/gm, ""))}</blockquote>;
   }
 
+  if (isMarkdownTable(block)) {
+    const [header, , ...rows] = block.split(/\n/).map(parseTableRow);
+    return (
+      <div className="overflow-x-auto" key={key}>
+        <table className="w-full min-w-[560px] border-collapse text-left text-sm">
+          <thead>
+            <tr>
+              {header.map((cell, index) => (
+                <th className="border border-ink/10 bg-ink px-4 py-3 font-medium text-white" key={`${cell}-${index}`}>
+                  {renderInline(cell)}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, rowIndex) => (
+              <tr className="even:bg-white" key={`${row.join("-")}-${rowIndex}`}>
+                {row.map((cell, cellIndex) => (
+                  <td className="border border-ink/10 px-4 py-3 align-top" key={`${cell}-${cellIndex}`}>
+                    {renderInline(cell)}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
   if (/^[-*]\s+/m.test(block)) {
     return (
       <ul key={key}>
@@ -66,6 +96,23 @@ function renderBlock(block: string, key: number) {
   }
 
   return <p key={key}>{renderInlineWithBreaks(block)}</p>;
+}
+
+function isMarkdownTable(block: string) {
+  const lines = block.split(/\n/);
+  return (
+    lines.length >= 2 &&
+    lines[0].trim().startsWith("|") &&
+    /^\|?[\s:|-]+\|?$/.test(lines[1].trim())
+  );
+}
+
+function parseTableRow(row: string) {
+  return row
+    .trim()
+    .replace(/^\||\|$/g, "")
+    .split("|")
+    .map((cell) => cell.trim());
 }
 
 function renderInline(text: string) {
