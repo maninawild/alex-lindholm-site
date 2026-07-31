@@ -69,6 +69,7 @@ a {
   margin-top: 1.25rem;
 }
 
+.article-prose h1,
 .article-prose h2,
 .article-prose h3 {
   color: #10131A;
@@ -79,6 +80,7 @@ a {
   text-wrap: balance;
 }
 
+.article-prose h1,
 .article-prose h2 {
   font-size: clamp(2rem, 5vw, 2.9rem);
   margin-top: 3.8rem;
@@ -114,6 +116,12 @@ a {
   line-height: 1.48;
   margin: 2.75rem 0;
   padding: 0.35rem 0 0.35rem 1.4rem;
+}
+
+.article-prose hr {
+  border: 0;
+  border-top: 1px solid rgba(16, 19, 26, 0.1);
+  margin: 3rem 0;
 }
 
 .article-prose ul,
