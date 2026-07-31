@@ -10,6 +10,7 @@
     "import:telegram": "node scripts/import-telegram-html.mjs",
     "translate:telegram": "node scripts/translate-telegram-articles.mjs",
     "audit:article-metadata": "node scripts/audit-article-metadata.mjs",
+    "audit:insights": "node scripts/audit-insights-architecture.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs",
     "lint": "eslint ."
   },
