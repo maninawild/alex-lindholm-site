@@ -16,7 +16,7 @@ metaDescription: "Being a startup founder isn’t that hard. You just need: A go
 openGraphTitle: "Being a startup founder isn’t that hard."
 openGraphDescription: "Being a startup founder isn’t that hard. You just need: A good idea. One that solves a real problem. For people who actually care enough to pay. Then you f..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Being a startup founder isn’t that hard.

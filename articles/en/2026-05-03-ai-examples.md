@@ -16,7 +16,7 @@ metaDescription: "Something funny is happening to corporate language. SEC filing
 openGraphTitle: "AI examples"
 openGraphDescription: "Something funny is happening to corporate language. SEC filings are starting to sound… identical 😅 Just a reminder: SEC is one of the most influential org..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Something funny is happening to corporate language.

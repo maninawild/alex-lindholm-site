@@ -16,7 +16,7 @@ metaDescription: "Big update from Anthropic that early-stage founders will proba
 openGraphTitle: "Anthropic materials"
 openGraphDescription: "Big update from Anthropic that early-stage founders will probably love 👀 Claude for Legal. And finally this feels less like “AI chatbot for lawyers”… and..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/15bah8HCEKXEnATr9w_hWrCwSfC5eK2pItrCnUSZXLfg/edit?usp=sharing"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Big update from Anthropic that early-stage founders will probably love 👀

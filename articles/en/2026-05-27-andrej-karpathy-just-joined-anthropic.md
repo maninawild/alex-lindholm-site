@@ -16,7 +16,7 @@ metaDescription: "Big signal from the AI world today 👀 Andrej Karpathy just j
 openGraphTitle: "Andrej Karpathy just joined Anthropic"
 openGraphDescription: "Big signal from the AI world today 👀 Andrej Karpathy just joined Anthropic. For context: – founding member at OpenAI – former Tesla AI lead – one of the m..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/15bah8HCEKXEnATr9w_hWrCwSfC5eK2pItrCnUSZXLfg/edit?usp=sharing"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Big signal from the AI world today 👀

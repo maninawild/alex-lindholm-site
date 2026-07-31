@@ -16,7 +16,7 @@ metaDescription: "Is this an iPhone killer… or just a very expensive experimen
 openGraphTitle: "AI-first smartphone"
 openGraphDescription: "Is this an iPhone killer… or just a very expensive experiment? OpenAI is reportedly working on an AI-first phone 😳 Not just Twitter noise. There are real..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Is this an iPhone killer… or just a very expensive experiment?

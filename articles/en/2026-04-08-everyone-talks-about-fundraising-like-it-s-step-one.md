@@ -16,7 +16,7 @@ metaDescription: "Everyone talks about fundraising like it’s step one. Like yo
 openGraphTitle: "Everyone talks about fundraising like it’s step one."
 openGraphDescription: "Everyone talks about fundraising like it’s step one. Like you need permission before you can build something real. But take a look here please: – Zoho → $1..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Everyone talks about fundraising like it’s step one.

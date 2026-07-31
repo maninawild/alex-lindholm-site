@@ -16,7 +16,7 @@ metaDescription: "Most companies are approaching AI automation backwards. They s
 openGraphTitle: "AI for teams"
 openGraphDescription: "Most companies are approaching AI automation backwards. They start with tools. Not with problems. So they end up with: 10 dashboards 5 disconnected automat..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Most companies are approaching AI automation backwards.

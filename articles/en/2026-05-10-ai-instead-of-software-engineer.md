@@ -16,7 +16,7 @@ metaDescription: "When people hear “software engineer,” they still imagine B
 openGraphTitle: "AI instead of software engineer"
 openGraphDescription: "When people hear “software engineer,” they still imagine Big Tech. Apps. Product teams. Shipping features. Feels a bit outdated now. AI agents are quietly..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 When people hear “software engineer,” they still imagine Big Tech.

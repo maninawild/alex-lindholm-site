@@ -15,7 +15,7 @@ metaDescription: "Everyone wants to invest in “the AI revolution”. Very few 
 openGraphTitle: "Leopold Aschenbrenner"
 openGraphDescription: "Everyone wants to invest in “the AI revolution”. Very few people want to invest in transformers, cooling systems and electricity 😅 And that’s exactly why..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/15bah8HCEKXEnATr9w_hWrCwSfC5eK2pItrCnUSZXLfg/edit?usp=sharing"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Everyone wants to invest in “the AI revolution”.

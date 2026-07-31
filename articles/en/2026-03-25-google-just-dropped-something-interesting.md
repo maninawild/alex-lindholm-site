@@ -13,7 +13,7 @@ metaDescription: "Google just dropped something interesting. Not another “gene
 openGraphTitle: "Google just dropped something interesting."
 openGraphDescription: "Google just dropped something interesting. Not another “generate a UI from a prompt” tool. Something closer to a design teammate. They call it Stitch 🔥 Un..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Google just dropped something interesting.

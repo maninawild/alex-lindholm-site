@@ -16,7 +16,7 @@ metaDescription: "Top 10 things founders say… and what they actually mean 👇
 openGraphTitle: "Top 10 things founders say… and what they actually mean 👇"
 openGraphDescription: "Top 10 things founders say… and what they actually mean 👇 “We built proprietary AI” → we’re calling an API “We grew 200% last month” → from 3 users to 9 “..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Top 10 things founders say… and what they actually mean 👇

@@ -16,7 +16,7 @@ metaDescription: "Hard to believe this sometimes. Jim Simons built the most succ
 openGraphTitle: "Hard to believe this sometimes."
 openGraphDescription: "Hard to believe this sometimes. Jim Simons built the most successful hedge fund in history… starting at 40. No Google. No cloud. No AI copilots. No “startu..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Hard to believe this sometimes.

@@ -16,7 +16,7 @@ metaDescription: "80% of startups don’t fail because the idea is bad. They fai
 openGraphTitle: "80% of startups don’t fail because the idea is bad."
 openGraphDescription: "80% of startups don’t fail because the idea is bad. They fail before they ever get to their first dollar. No traction. No distribution. No clear playbook...."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 80% of startups don’t fail because the idea is bad.

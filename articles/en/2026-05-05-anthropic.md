@@ -15,7 +15,7 @@ metaDescription: "This is worth 15 minutes. Not another AI demo. It shows what m
 openGraphTitle: "Anthropic"
 openGraphDescription: "This is worth 15 minutes. Not another AI demo. It shows what most people still miss: How to use Claude as a thinking partner… not just a chatbot. No hacks...."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 This is worth 15 minutes.

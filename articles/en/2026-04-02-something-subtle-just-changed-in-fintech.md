@@ -15,7 +15,7 @@ metaDescription: "Something subtle just changed in fintech. But it’s bigger th
 openGraphTitle: "Something subtle just changed in fintech."
 openGraphDescription: "Something subtle just changed in fintech. But it’s bigger than it looks. AI can now move money. The problem? No one really trusts it to. So the biggest pla..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Something subtle just changed in fintech.

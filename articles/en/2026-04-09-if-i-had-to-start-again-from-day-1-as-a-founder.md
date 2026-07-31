@@ -16,7 +16,7 @@ metaDescription: "If I had to start again from Day 1 as a founder… I wouldn’
 openGraphTitle: "If I had to start again from Day 1 as a founder…"
 openGraphDescription: "If I had to start again from Day 1 as a founder… I wouldn’t open Figma. I wouldn’t write code. I wouldn’t think about fundraising. I’d start somewhere much..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 If I had to start again from Day 1 as a founder…

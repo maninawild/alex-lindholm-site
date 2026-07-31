@@ -16,7 +16,7 @@ metaDescription: "Paul Graham’s “18 Mistakes That Kill Startups” should be
 openGraphTitle: "founders’ mistakes"
 openGraphDescription: "Paul Graham’s “18 Mistakes That Kill Startups” should be mandatory reading for every founder. Not because it tells you how to build a startup. But because..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Paul Graham’s “18 Mistakes That Kill Startups” should be mandatory reading for every founder.

@@ -16,7 +16,7 @@ metaDescription: "Mark Zuckerberg isn’t just using AI. He’s building an AI a
 openGraphTitle: "Mark Zuckerberg isn’t just using AI."
 openGraphDescription: "Mark Zuckerberg isn’t just using AI. He’s building an AI agent to help run Meta 😳 And it’s already happening. What it does: – pulls data across a 78,000-p..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Mark Zuckerberg isn’t just using AI.

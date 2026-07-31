@@ -16,7 +16,7 @@ metaDescription: "Steve Jobs said something that still feels uncomfortable: “A
 openGraphTitle: "Steve Jobs said something that still feels uncomfortable:"
 openGraphDescription: "Steve Jobs said something that still feels uncomfortable: “All the work I’ve done will be obsolete in a few years.” Coming from the person who shaped the P..."
 relatedArticles: []
-sourceUrl: "https://docs.google.com/document/d/1U3NPtGkMS2MRiuN3qBY95BdCBuVxc7t_v-3N2W_0Mds/edit?tab=t.xe4dgo9p4egz"
+sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---
 
 Steve Jobs said something that still feels uncomfortable:
