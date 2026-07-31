@@ -9,8 +9,9 @@
     "import:url": "node scripts/import-article-url.mjs",
     "import:telegram": "node scripts/import-telegram-html.mjs",
     "translate:telegram": "node scripts/translate-telegram-articles.mjs",
+    "audit:article-metadata": "node scripts/audit-article-metadata.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "next": "latest",

@@ -42,21 +42,6 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   }
 
   const translations = getArticleTranslations(article);
-  const allArticles = getAllArticles();
-  const hasDuplicateTitle = allArticles.some(
-    (item) => item.slug !== article.slug && item.title === article.title,
-  );
-  const hasDuplicateDescription = allArticles.some(
-    (item) =>
-      item.slug !== article.slug &&
-      item.metaDescription === article.metaDescription,
-  );
-  const metadataTitle = hasDuplicateTitle
-    ? `${article.title} · ${article.slug}`
-    : article.title;
-  const metadataDescription = hasDuplicateDescription
-    ? `${article.metaDescription} · ${article.slug}`
-    : article.metaDescription;
   const languageAlternates = Object.fromEntries(
     [article, ...translations].map((translation) => [
       translation.language,
@@ -65,8 +50,8 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   );
 
   return {
-    title: metadataTitle,
-    description: metadataDescription,
+    title: article.title,
+    description: article.metaDescription,
     alternates: {
       canonical: article.href,
       ...(Object.keys(languageAlternates).length > 1
@@ -76,10 +61,8 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
         : {}),
     },
     openGraph: {
-      title: hasDuplicateTitle ? metadataTitle : article.openGraphTitle,
-      description: hasDuplicateDescription
-        ? metadataDescription
-        : article.openGraphDescription,
+      title: article.openGraphTitle,
+      description: article.openGraphDescription,
       url: article.href,
       type: "article",
       publishedTime: article.originalDate || article.date,
@@ -98,10 +81,8 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     },
     twitter: {
       card: article.featuredImage ? "summary_large_image" : "summary",
-      title: hasDuplicateTitle ? metadataTitle : article.openGraphTitle,
-      description: hasDuplicateDescription
-        ? metadataDescription
-        : article.openGraphDescription,
+      title: article.openGraphTitle,
+      description: article.openGraphDescription,
       images: article.featuredImage ? [article.featuredImage] : undefined,
     },
   };
