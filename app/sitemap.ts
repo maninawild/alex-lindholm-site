@@ -2,12 +2,24 @@ import type { MetadataRoute } from "next";
 import { events } from "@/data/events";
 import { baseUrl, seoPages } from "@/data/seo-pages";
 import { getAllArticles, getArticleTranslations } from "@/lib/articles";
+import {
+  getInsightCategories,
+  getInsightTopics,
+  insightAuthorHref,
+} from "@/lib/insights";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = Array.from(new Set([
     "",
     "/lectures-and-speaking",
     "/articles",
+    ...getInsightCategories()
+      .filter((category) => category.articleCount > 0)
+      .map((category) => `/articles/categories/${category.slug}`),
+    ...getInsightTopics()
+      .filter((topic) => topic.articleCount > 0)
+      .map((topic) => `/articles/topics/${topic.slug}`),
+    insightAuthorHref(),
     ...events.map((event) => `/events/${event.slug}`),
     ...Object.values(seoPages).map((page) => page.path),
   ]));

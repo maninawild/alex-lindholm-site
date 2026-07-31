@@ -163,7 +163,10 @@ export function articleJsonLd(article: Article) {
   };
 }
 
-export function articleBreadcrumbJsonLd(article: Article) {
+export function articleBreadcrumbJsonLd(
+  article: Article,
+  categoryHref = "/articles",
+) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -171,12 +174,18 @@ export function articleBreadcrumbJsonLd(article: Article) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "Articles",
+        name: "Insights",
         item: absoluteUrl("/articles"),
       },
       {
         "@type": "ListItem",
         position: 2,
+        name: article.category,
+        item: absoluteUrl(categoryHref),
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
         name: article.title,
         item: absoluteUrl(article.href),
       },
