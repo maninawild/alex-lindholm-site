@@ -4,7 +4,12 @@ import { Breadcrumbs } from "@/components/insights/breadcrumbs";
 import { InsightsDirectory } from "@/components/insights/directory";
 import { SiteHeader } from "@/components/site-header";
 import { getArticleSummaries } from "@/lib/articles";
-import { getInsightCategories, getInsightTopics } from "@/lib/insights";
+import {
+  getInsightCategories,
+  getInsightTopics,
+  insightBreadcrumbJsonLd,
+  validateInsightsAuthorityGraph,
+} from "@/lib/insights";
 
 export const metadata: Metadata = {
   title: "Articles",
@@ -29,12 +34,21 @@ export const metadata: Metadata = {
 };
 
 export default function ArticlesPage() {
+  validateInsightsAuthorityGraph();
   const articles = getArticleSummaries();
   const categories = getInsightCategories();
   const topics = getInsightTopics();
 
   return (
     <main className="bg-bone pt-20 text-ink sm:pt-24">
+      <script
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            insightBreadcrumbJsonLd([{ name: "Insights", href: "/articles" }]),
+          ),
+        }}
+        type="application/ld+json"
+      />
       <SiteHeader transparentAtTop={false} />
       <section className="mx-auto max-w-7xl px-5 pb-12 pt-8 sm:px-8 lg:pb-16 lg:pt-12">
         <Breadcrumbs items={[{ label: "Insights" }]} />

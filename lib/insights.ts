@@ -22,6 +22,13 @@ export type InsightTopic = InsightCluster & {
   articleCount: number;
 };
 
+export type InsightPillar = {
+  name: string;
+  href: string;
+  description: string;
+  kind: "topic" | "category";
+};
+
 export function toInsightSlug(value: string) {
   return value
     .toLowerCase()
@@ -82,6 +89,12 @@ export function getInsightTopic(slug: string) {
   return getInsightTopics().find((topic) => topic.slug === slug);
 }
 
+export function getTopicsForCategory(categoryName: string) {
+  return getInsightTopics().filter((topic) =>
+    topic.categories.includes(categoryName),
+  );
+}
+
 export function getArticlesForTopic(slug: string) {
   const topic = insightClusters.find((cluster) => cluster.slug === slug);
   if (!topic) return [];
@@ -93,10 +106,42 @@ export function getArticlesForTopic(slug: string) {
     });
 }
 
-export function getPrimaryTopic(article: ArticleSummary | Article) {
-  return getInsightTopics()
+export function getPrimaryTopic(
+  article: ArticleSummary | Article,
+  topics = getInsightTopics(),
+) {
+  return topics
     .filter((topic) => articleMatchesCluster(article, topic))
     .sort((left, right) => clusterScore(article, right) - clusterScore(article, left))[0];
+}
+
+export function getPillarForArticle(
+  article: ArticleSummary | Article,
+  topics = getInsightTopics(),
+): InsightPillar {
+  const topic = getPrimaryTopic(article, topics);
+
+  if (topic) {
+    return {
+      name: topic.name,
+      href: insightTopicHref(topic),
+      description: topic.description,
+      kind: "topic",
+    };
+  }
+
+  const category = getInsightCategories().find(
+    (item) => item.name === article.category,
+  );
+
+  return {
+    name: article.category,
+    href: insightCategoryHref(article.category),
+    description:
+      category?.description ||
+      `Articles and field notes filed under ${article.category}.`,
+    kind: "category",
+  };
 }
 
 export function getTopicsForArticle(article: ArticleSummary | Article, limit = 3) {
@@ -104,6 +149,34 @@ export function getTopicsForArticle(article: ArticleSummary | Article, limit = 3
     .filter((topic) => articleMatchesCluster(article, topic))
     .sort((left, right) => clusterScore(article, right) - clusterScore(article, left))
     .slice(0, limit);
+}
+
+export function getSupportingArticles(
+  article: ArticleSummary | Article,
+  limit = 4,
+  candidates = getArticleSummaries(),
+  topics = getInsightTopics(),
+) {
+  const pillar = getPrimaryTopic(article, topics);
+  const explicitSlugs = new Set(article.relatedArticles);
+
+  return candidates
+    .filter((candidate) => candidate.slug !== article.slug)
+    .map((candidate) => ({
+      article: candidate,
+      score:
+        (explicitSlugs.has(candidate.slug) ? 100 : 0) +
+        (pillar && articleMatchesCluster(candidate, pillar) ? 12 : 0) +
+        (candidate.language === article.language ? 5 : 0) +
+        (candidate.category === article.category ? 4 : 0) +
+        candidate.tags.filter((tag) => article.tags.includes(tag)).length * 2,
+    }))
+    .sort((left, right) => {
+      if (left.score !== right.score) return right.score - left.score;
+      return dateValue(right.article) - dateValue(left.article);
+    })
+    .map((candidate) => candidate.article)
+    .slice(0, Math.min(5, Math.max(3, limit)));
 }
 
 export function getFurtherReading(
@@ -119,9 +192,9 @@ export function getFurtherReading(
     .map((candidate) => ({
       article: candidate,
       score:
-        (candidate.language === article.language ? 3 : 0) +
-        (primaryTopic && articleMatchesCluster(candidate, primaryTopic) ? 5 : 0) +
-        (candidate.category !== article.category ? 1 : 0) +
+        (candidate.language === article.language ? 4 : 0) +
+        (primaryTopic && !articleMatchesCluster(candidate, primaryTopic) ? 3 : 0) +
+        (candidate.category !== article.category ? 2 : 0) +
         candidate.tags.filter((tag) => article.tags.includes(tag)).length,
     }))
     .filter((candidate) => candidate.score > 0)
@@ -131,6 +204,40 @@ export function getFurtherReading(
     })
     .map((candidate) => candidate.article)
     .slice(0, limit);
+}
+
+export function validateInsightsAuthorityGraph() {
+  const articles = getArticleSummaries();
+  const topics = getInsightTopics();
+  const failures: string[] = [];
+
+  for (const article of articles) {
+    const pillar = getPillarForArticle(article, topics);
+    const supporting = getSupportingArticles(article, 4, articles, topics);
+
+    if (!pillar.href) {
+      failures.push(`${article.slug}: no pillar page`);
+    }
+    if (supporting.length < 3 || supporting.length > 5) {
+      failures.push(
+        `${article.slug}: expected 3-5 supporting articles, found ${supporting.length}`,
+      );
+    }
+  }
+
+  if (failures.length > 0) {
+    throw new Error(
+      `Insights authority graph validation failed:\n${failures.join("\n")}`,
+    );
+  }
+
+  return {
+    articleCount: articles.length,
+    maxClicksFromInsights: 1,
+    maxClicksFromHomepage: 2,
+    minimumSupportingArticles: 3,
+    maximumSupportingArticles: 5,
+  };
 }
 
 export function insightCategoryHref(category: string) {

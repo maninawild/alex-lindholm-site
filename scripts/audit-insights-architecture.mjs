@@ -20,6 +20,8 @@ const records = files.map((filePath) => {
     title: field(frontmatter, "title"),
     category: field(frontmatter, "category"),
     language: field(frontmatter, "language"),
+    lastReviewed: field(frontmatter, "lastReviewed"),
+    updateHistory: list(frontmatter, "updateHistory"),
     relatedArticles: list(frontmatter, "relatedArticles"),
   };
 });
@@ -49,6 +51,20 @@ for (const record of records) {
   for (const relatedSlug of record.relatedArticles) {
     if (!publishedSlugs.has(relatedSlug)) {
       issues.push(`${relativePath}: related article "${relatedSlug}" does not exist`);
+    }
+  }
+
+  if (
+    record.lastReviewed &&
+    Number.isNaN(Date.parse(record.lastReviewed))
+  ) {
+    issues.push(`${relativePath}: invalid lastReviewed date "${record.lastReviewed}"`);
+  }
+
+  for (const update of record.updateHistory) {
+    const [date] = update.split("|");
+    if (!date?.trim() || Number.isNaN(Date.parse(date.trim()))) {
+      issues.push(`${relativePath}: updateHistory entry needs a valid date: "${update}"`);
     }
   }
 }
