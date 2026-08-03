@@ -2,13 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import Image from "next/image";
 
 type LatestArticle = {
   title: string;
   href: string;
   date?: string;
   excerpt: string;
-  featuredImage?: string;
+  coverImage: string;
+  coverImageAlt: string;
   source: string;
 };
 
@@ -38,20 +40,16 @@ export function LatestArticleWidget() {
     <section className="bg-bone py-10 text-ink sm:py-14" aria-labelledby="latest-writing-heading">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid overflow-hidden rounded-sm border border-ink/10 bg-paper shadow-quiet lg:grid-cols-[0.82fr_1.18fr]">
-          {article.featuredImage ? (
-            <div
-              className="min-h-[260px] bg-cover bg-center lg:min-h-full"
-              style={{ backgroundImage: `url(${article.featuredImage})` }}
-              role="img"
-              aria-label={`Cover image for ${article.title}`}
+          <div className="relative min-h-[260px] overflow-hidden bg-bone lg:min-h-full">
+            <Image
+              src={article.coverImage}
+              alt={article.coverImageAlt}
+              fill
+              sizes="(min-width: 1024px) 42vw, 100vw"
+              className="absolute inset-0 h-full w-full object-cover"
+              priority
             />
-          ) : (
-            <div className="flex min-h-[220px] items-end bg-ink p-6 text-bone lg:min-h-full">
-              <span className="text-xs font-medium uppercase tracking-[0.18em] text-bone/64">
-                Latest writing
-              </span>
-            </div>
-          )}
+          </div>
           <div className="p-6 sm:p-8">
             <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
               Latest from Alex

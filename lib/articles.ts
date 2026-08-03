@@ -12,6 +12,8 @@ export type ArticleFrontmatter = {
   tags?: string[];
   category?: ArticleCategory | string;
   language?: ArticleLanguage;
+  coverImage?: string;
+  coverImageAlt?: string;
   featuredImage?: string;
   excerpt?: string;
   metaDescription?: string;
@@ -53,6 +55,8 @@ export type Article = {
   originalDate?: string;
   lastReviewed?: string;
   updateHistory: string[];
+  coverImage: string;
+  coverImageAlt: string;
   featuredImage?: string;
   excerpt: string;
   readingTime: number;
@@ -70,6 +74,7 @@ export type ArticleSummary = Omit<Article, "body" | "content">;
 
 const articlesRoot = path.join(process.cwd(), "articles");
 const fallbackCategory = "Innovation";
+export const defaultArticleCoverImage = "/media/alex/alex-portrait-01.jpg";
 
 export function getAllArticles(): Article[] {
   return (["en", "ru"] as ArticleLanguage[])
@@ -144,7 +149,7 @@ export function articleJsonLd(article: Article) {
     datePublished: article.originalDate || article.date,
     dateModified: article.lastReviewed || article.date || article.originalDate,
     inLanguage: article.language,
-    image: article.featuredImage ? [absoluteUrl(article.featuredImage)] : undefined,
+    image: [absoluteUrl(article.coverImage)],
     isAccessibleForFree: true,
     articleSection: article.category,
     author: {
@@ -251,6 +256,13 @@ function readArticleFile(directory: string, fileName: string, fallbackLanguage: 
     updateHistory: Array.isArray(frontmatter.updateHistory)
       ? frontmatter.updateHistory
       : [],
+    coverImage:
+      frontmatter.coverImage ||
+      frontmatter.featuredImage ||
+      defaultArticleCoverImage,
+    coverImageAlt:
+      frontmatter.coverImageAlt ||
+      `Portrait of Alex Lindholm for ${title}`,
     featuredImage: frontmatter.featuredImage,
     excerpt,
     readingTime: calculateReadingTime(body, language),
