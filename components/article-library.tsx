@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { articleLanguages, type ArticleLanguage } from "@/data/article-taxonomy";
 import type { ArticleSummary } from "@/lib/articles";
 
@@ -165,16 +166,16 @@ function ArticleCard({ article }: { article: ArticleSummary }) {
 
   return (
     <article lang={article.language} className="group flex min-h-[420px] flex-col overflow-hidden rounded-md border border-ink/10 bg-white transition duration-300 hover:-translate-y-1 hover:border-electric/40 hover:shadow-quiet">
-      {article.featuredImage ? (
-        <a href={article.href} className="flex aspect-[16/10] items-center justify-center border-b border-ink/8 bg-white p-3">
-          <img
-            src={article.featuredImage}
-            alt={article.title}
+      <a href={article.href} className="flex aspect-[16/10] items-center justify-center overflow-hidden border-b border-ink/8 bg-bone">
+          <Image
+            src={article.coverImage}
+            alt={article.coverImageAlt}
+            width={800}
+            height={500}
             loading="lazy"
-            className="h-full w-full object-contain"
+            className="h-full w-full object-cover"
           />
-        </a>
-      ) : null}
+      </a>
 
       <div className="flex flex-1 flex-col justify-between p-6">
         <div>

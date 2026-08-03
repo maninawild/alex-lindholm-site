@@ -81,20 +81,18 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       authors: [author.name],
       tags: article.tags,
       locale: article.language === "ru" ? "ru_RU" : "en_US",
-      images: article.featuredImage
-        ? [
-            {
-              url: article.featuredImage,
-              alt: article.title,
-            },
-          ]
-        : undefined,
+      images: [
+        {
+          url: article.coverImage,
+          alt: article.coverImageAlt,
+        },
+      ],
     },
     twitter: {
-      card: article.featuredImage ? "summary_large_image" : "summary",
+      card: "summary_large_image",
       title: article.openGraphTitle,
       description: article.openGraphDescription,
-      images: article.featuredImage ? [article.featuredImage] : undefined,
+      images: [article.coverImage],
     },
   };
 }
@@ -215,10 +213,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <ContentSourceNotice article={article} />
         </header>
 
-        {article.featuredImage && !isTelegramArticle ? (
+        {!isTelegramArticle ? (
           <div className="mx-auto max-w-6xl px-5 sm:px-8">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-ink/10 bg-white p-3 shadow-quiet sm:aspect-[16/9]">
-              <Image src={article.featuredImage} alt={article.title} fill sizes="(min-width: 1024px) 960px, 100vw" className="object-contain p-3" priority />
+            <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-ink/10 bg-bone shadow-quiet sm:aspect-[16/9]">
+              <Image src={article.coverImage} alt={article.coverImageAlt} fill sizes="(min-width: 1024px) 960px, 100vw" className="object-cover" priority />
             </div>
           </div>
         ) : null}
