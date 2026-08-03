@@ -720,6 +720,7 @@ const credibilityCategories = [
 type CredibilityLogo = {
   name: string;
   src?: string;
+  href?: string;
   treatment?: "standard" | "wide" | "tall" | "dark";
   logoScale?: number;
   maxWidth?: number;
@@ -729,8 +730,9 @@ const credibilityLogoGroups: { title: string; items: CredibilityLogo[] }[] = [
   {
     title: "Built",
     items: [
-      { name: "InspireXchange", src: "/media/logos/inspirexchange.jpg", treatment: "tall", logoScale: 2.15 },
-      { name: "EVI Safety Technology", src: "/media/logos/evi-safety-technology.jpg", treatment: "tall", logoScale: 1.22 },
+      { name: "InspireXchange", src: "/media/logos/inspirexchange.jpg", href: "https://www.inspirexchange.nl/", treatment: "tall", logoScale: 2.15 },
+      { name: "EVI Safety Technology", src: "/media/logos/evi-safety-technology.jpg", href: "https://evist.nl/", treatment: "tall", logoScale: 1.22 },
+      { name: "Bear Grid", href: "https://beargridsolutions.com/" },
     ],
   },
   {
@@ -815,6 +817,7 @@ function CredibilitySection() {
 function LogoCard({ item }: { item: CredibilityLogo }) {
   const treatment = item.treatment ?? "standard";
   const imageSrc = item.src;
+  const isLinked = Boolean(item.href);
 
   const isDark = treatment === "dark";
   const logoScale = item.logoScale ?? 1;
@@ -826,34 +829,64 @@ function LogoCard({ item }: { item: CredibilityLogo }) {
         ? "h-[92px]"
         : "h-[84px]";
 
-  return (
-    <article
-      className={`flex min-h-[136px] items-center justify-center overflow-hidden rounded-md border px-5 py-5 shadow-quiet transition duration-300 hover:-translate-y-0.5 ${
-        isDark
-          ? "border-ink/12 bg-ink text-bone"
-          : "border-ink/8 bg-white text-ink"
-      }`}
-    >
+  const cardClassName = `group relative flex min-h-[136px] items-center justify-center overflow-hidden rounded-md border px-5 py-5 shadow-quiet transition duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-bone ${
+    isDark
+      ? "border-ink/12 bg-ink text-bone"
+      : "border-ink/8 bg-white text-ink"
+  }`;
+
+  const content = (
+    <>
       {!imageSrc ? (
         <p className="max-w-[13rem] text-center text-base font-semibold leading-tight tracking-[-0.01em]">
           {item.name}
         </p>
       ) : (
-      <div
-        className={`relative mx-auto w-full max-w-[230px] ${imageSizeClass}`}
-        style={{ maxWidth, transform: `scale(${logoScale})` }}
-      >
-        <Image
-          src={imageSrc}
-          alt={`${item.name} logo`}
-          fill
-          loading="eager"
-          unoptimized={imageSrc.endsWith(".svg")}
-          sizes="(min-width: 1280px) 220px, (min-width: 640px) 40vw, 80vw"
-          className="object-contain"
-        />
-      </div>
+        <div
+          className={`relative mx-auto w-full max-w-[230px] ${imageSizeClass}`}
+          style={{ maxWidth, transform: `scale(${logoScale})` }}
+        >
+          <Image
+            src={imageSrc}
+            alt={`${item.name} logo`}
+            fill
+            loading="eager"
+            unoptimized={imageSrc.endsWith(".svg")}
+            sizes="(min-width: 1280px) 220px, (min-width: 640px) 40vw, 80vw"
+            className="object-contain"
+          />
+        </div>
       )}
+      {isLinked ? (
+        <span
+          className={`absolute right-3 top-3 text-xs opacity-45 transition group-hover:opacity-80 ${
+            isDark ? "text-bone" : "text-ink"
+          }`}
+          aria-hidden="true"
+        >
+          ↗
+        </span>
+      ) : null}
+    </>
+  );
+
+  if (item.href) {
+    return (
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Open ${item.name} website`}
+        className={cardClassName}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <article className={cardClassName}>
+      {content}
     </article>
   );
 }
