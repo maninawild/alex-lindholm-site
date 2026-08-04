@@ -19,6 +19,7 @@ import {
 import { SectionHeader } from "@/components/section-header";
 import { ArrowLink } from "@/components/arrow-link";
 import { SiteHeader } from "@/components/site-header";
+import { TestimonialsSection } from "@/components/testimonials-section";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -81,6 +82,7 @@ export default function Home() {
       <HumanSide />
       <InstagramFieldNotes />
       <StrategicSession />
+      <TestimonialsSection />
       <Contact />
       <Footer />
     </main>

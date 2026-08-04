@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ArrowLink } from "@/components/arrow-link";
 import { SectionHeader } from "@/components/section-header";
 import { SiteHeader } from "@/components/site-header";
+import { TestimonialsSection } from "@/components/testimonials-section";
 
 const consultationUrl = "https://zcal.co/axlindholm/1hour";
 const linkedinUrl = "https://www.linkedin.com/in/axlindholm/";
@@ -253,6 +254,7 @@ export default function LecturesAndSpeakingPage() {
       <SwipeIsDeadHighlight />
       <TopicClusters />
       <FeaturedSessions />
+      <TestimonialsSection />
       <InviteCta />
       <WhatsAppCta />
     </main>
