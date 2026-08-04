@@ -35,7 +35,7 @@ function TestimonialCard({
     <article
       aria-label={`${index + 1} of ${testimonials.length}: ${testimonial.name}`}
       aria-roledescription="slide"
-      className={`flex w-[86%] shrink-0 snap-start snap-always flex-col justify-between rounded-sm border p-6 transition duration-300 motion-reduce:transform-none motion-reduce:transition-none sm:p-7 lg:w-auto lg:snap-align-none lg:p-7 lg:hover:-translate-y-1 ${
+      className={`flex w-[86%] shrink-0 snap-start snap-always flex-col justify-between rounded-sm border p-6 transition duration-300 motion-reduce:transform-none motion-reduce:transition-none sm:p-7 lg:w-auto lg:snap-none lg:p-7 lg:hover:-translate-y-1 ${
         desktopCardLayouts[index] ?? "lg:col-span-4"
       } ${
         featured
@@ -112,14 +112,14 @@ export function TestimonialsSection() {
       0,
       Math.min(requestedIndex, testimonials.length - 1),
     );
-    const firstCard = track.firstElementChild as HTMLElement | null;
     const nextCard = track.children.item(nextIndex) as HTMLElement | null;
 
-    if (!firstCard || !nextCard) return;
+    if (!nextCard) return;
 
-    track.scrollTo({
-      left: nextCard.offsetLeft - firstCard.offsetLeft,
+    nextCard.scrollIntoView({
       behavior: "smooth",
+      block: "nearest",
+      inline: "start",
     });
     setActiveIndex(nextIndex);
   };
