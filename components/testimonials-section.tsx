@@ -35,6 +35,7 @@ function TestimonialCard({
     <article
       aria-label={`${index + 1} of ${testimonials.length}: ${testimonial.name}`}
       aria-roledescription="slide"
+      tabIndex={-1}
       className={`flex w-[86%] shrink-0 snap-start snap-always flex-col justify-between rounded-sm border p-6 transition duration-300 motion-reduce:transform-none motion-reduce:transition-none sm:p-7 lg:w-auto lg:snap-none lg:p-7 lg:hover:-translate-y-1 ${
         desktopCardLayouts[index] ?? "lg:col-span-4"
       } ${
@@ -116,11 +117,7 @@ export function TestimonialsSection() {
 
     if (!nextCard) return;
 
-    nextCard.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "start",
-    });
+    nextCard.focus({ preventScroll: false });
     setActiveIndex(nextIndex);
   };
 
