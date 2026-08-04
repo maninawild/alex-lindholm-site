@@ -35,15 +35,14 @@ export const testimonials: Testimonial[] = [
       "Thanks for the consultation. Our team wasn't aware of these opportunities and shortcuts.",
   },
   {
-    name: "Brian Winkel",
+    name: "Brian",
     role: "Founder & Advertising Specialist",
     quote:
       "Really enjoyed your talk at BuildNight. Thank you for your time!",
   },
   {
-    name: "Robbin Jansen",
-    role:
-      "CPO-as-a-Service at Future Ready | Building Crelo & Rivilo | Unlocking Europe’s next generation of builders at DAY42",
+    name: "Robbin",
+    role: "CPO-as-a-Service Expert",
     age: 25,
     quote:
       "Many thanks, Alex. It was nice to hear a story like yours from someone with an overflowing idea brain as well. Your 101 on building a start-up fits well with the stage most people in the room are in. We’ll keep pushing for sure. Just getting started.",
