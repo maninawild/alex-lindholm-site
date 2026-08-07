@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title>NVIDIA</title>
+  <desc>Minimal editorial cover visual for an article about Human-Centered AI.</desc>
+  <rect width="1600" height="1000" fill="#F4F1EA"/>
+  <rect x="80" y="80" width="1440" height="840" rx="18" fill="none" stroke="#192734" stroke-opacity=".08"/>
+  <g transform="translate(350 230) scale(1.02)" opacity="0.6599999999999999">
+    
+      <path d="M120 4 H337 M200 90 H720 M290 176 H640" stroke="#192734" stroke-width="1.5" opacity=".24"/>
+      <circle cx="195" cy="4" r="34" fill="#2F6FED" opacity=".86"/>
+      <circle cx="337" cy="164" r="52" fill="none" stroke="#192734" stroke-width="2" opacity=".55"/>
+      <path d="M235 4 C340 180, 440 250, 279 164" fill="none" stroke="#2F6FED" stroke-width="3" opacity=".48"/>
+  </g>
+  <circle cx="1205" cy="153" r="26" fill="#2F6FED" opacity=".18"/>
+  <path d="M190 685 H585" stroke="#192734" stroke-width="2" stroke-opacity=".14"/>
+  <path d="M190 829 H306" stroke="#192734" stroke-width="2" stroke-opacity=".1"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title>80% of startups don’t fail because the idea is bad.</title>
+  <desc>Minimal editorial cover visual for an article about Human-Centered AI.</desc>
+  <rect width="1600" height="1000" fill="#F4F1EA"/>
+  <rect x="80" y="80" width="1440" height="840" rx="18" fill="none" stroke="#192734" stroke-opacity=".08"/>
+  <g transform="translate(350 230) scale(1.02)" opacity="0.72">
+    
+      <path d="M120 113 H694 M200 199 H720 M290 285 H640" stroke="#192734" stroke-width="2.2" opacity=".24"/>
+      <circle cx="95" cy="113" r="34" fill="#2F6FED" opacity=".86"/>
+      <circle cx="694" cy="347" r="52" fill="none" stroke="#192734" stroke-width="2" opacity=".55"/>
+      <path d="M135 113 C340 180, 440 250, 636 347" fill="none" stroke="#2F6FED" stroke-width="3" opacity=".48"/>
+  </g>
+  <circle cx="1305" cy="242" r="18" fill="#2F6FED" opacity=".18"/>
+  <path d="M190 725 H705" stroke="#192734" stroke-width="2" stroke-opacity=".14"/>
+  <path d="M190 744 H520" stroke="#192734" stroke-width="2" stroke-opacity=".1"/>
+</svg>

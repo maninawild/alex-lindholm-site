@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title>Почему опытные основатели часто побеждают</title>
+  <desc>Minimal editorial cover visual for an article about Founder Psychology.</desc>
+  <rect width="1600" height="1000" fill="#F6F1EA"/>
+  <rect x="80" y="80" width="1440" height="840" rx="18" fill="none" stroke="#1F2428" stroke-opacity=".08"/>
+  <g transform="translate(350 230) scale(1.02)" opacity="0.6">
+    
+      <path d="M190 330 C250 180, 390 150, 465 260 C530 355, 642 355, 720 230" fill="none" stroke="#1F2428" stroke-width="2.2" opacity=".42"/>
+      <circle cx="379" cy="148" r="68" fill="#E8DED2" opacity=".92"/>
+      <circle cx="594" cy="316" r="40" fill="#7A8A74" opacity=".78"/>
+      <path d="M245 235 L330 315 L420 230 L512 318" fill="none" stroke="#7A8A74" stroke-width="3" opacity=".58"/>
+  </g>
+  <circle cx="1141" cy="252" r="34" fill="#7A8A74" opacity=".18"/>
+  <path d="M190 721 H589" stroke="#1F2428" stroke-width="2" stroke-opacity=".14"/>
+  <path d="M190 746 H394" stroke="#1F2428" stroke-width="2" stroke-opacity=".1"/>
+</svg>

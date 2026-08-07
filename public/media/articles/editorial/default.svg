@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title>Editorial article</title>
+  <desc>Minimal editorial cover visual for an article about Innovation.</desc>
+  <rect width="1600" height="1000" fill="#F5F0E8"/>
+  <rect x="80" y="80" width="1440" height="840" rx="18" fill="none" stroke="#1F2326" stroke-opacity=".08"/>
+  <g transform="translate(350 230) scale(1.02)" opacity="0.72">
+    
+      <circle cx="374" cy="153" r="82" fill="#D6C6B5" opacity=".92"/>
+      <rect x="299" y="149" width="230" height="150" rx="6" fill="none" stroke="#1F2326" stroke-width="2" opacity=".4"/>
+      <path d="M190 325 C305 255, 420 390, 700 210" fill="none" stroke="#687A61" stroke-width="3" opacity=".58"/>
+      <path d="M150 150 H320 M540 360 H760" stroke="#1F2326" stroke-width="2" opacity=".2"/>
+  </g>
+  <circle cx="1146" cy="134" r="18" fill="#687A61" opacity=".18"/>
+  <path d="M190 746 H544" stroke="#1F2326" stroke-width="2" stroke-opacity=".14"/>
+  <path d="M190 847 H355" stroke="#1F2326" stroke-width="2" stroke-opacity=".1"/>
+</svg>

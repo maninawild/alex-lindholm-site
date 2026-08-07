@@ -12,6 +12,9 @@ export type ArticleFrontmatter = {
   tags?: string[];
   category?: ArticleCategory | string;
   language?: ArticleLanguage;
+  image?: string;
+  imageAlt?: string;
+  imageType?: ArticleImageType;
   coverImage?: string;
   coverImageAlt?: string;
   featuredImage?: string;
@@ -35,6 +38,7 @@ export type ArticleFrontmatter = {
 
 export type ArticleStatus = "published" | "draft";
 export type ContentSource = "telegram_ru" | "original_en";
+export type ArticleImageType = "editorial" | "event" | "interview" | "photo" | "abstract";
 
 export type Article = {
   id: string;
@@ -55,6 +59,9 @@ export type Article = {
   originalDate?: string;
   lastReviewed?: string;
   updateHistory: string[];
+  image: string;
+  imageAlt: string;
+  imageType: ArticleImageType;
   coverImage: string;
   coverImageAlt: string;
   featuredImage?: string;
@@ -74,7 +81,7 @@ export type ArticleSummary = Omit<Article, "body" | "content">;
 
 const articlesRoot = path.join(process.cwd(), "articles");
 const fallbackCategory = "Innovation";
-export const defaultArticleCoverImage = "/media/alex/alex-portrait-01.jpg";
+export const defaultArticleCoverImage = "/media/articles/editorial/default.svg";
 
 export function getAllArticles(): Article[] {
   return (["en", "ru"] as ArticleLanguage[])
@@ -211,7 +218,7 @@ function readLanguageArticles(language: ArticleLanguage): Article[] {
 
   return fs
     .readdirSync(directory)
-    .filter((fileName) => /\.(md|mdx)$/i.test(fileName))
+    .filter((fileName) => /\.(md|mdx)$/i.test(fileName) && !/ \d+\.(md|mdx)$/i.test(fileName))
     .map((fileName) => readArticleFile(directory, fileName, language))
     .filter(Boolean) as Article[];
 }
@@ -234,6 +241,14 @@ function readArticleFile(directory: string, fileName: string, fallbackLanguage: 
   const status = frontmatter.status === "draft" ? "draft" : "published";
   const contentSource = frontmatter.contentSource || inferContentSource(language, frontmatter.sourceUrl);
   const source = frontmatter.source || inferSource(frontmatter.sourceUrl, contentSource);
+  const articleImage = resolveArticleImage({
+    category,
+    contentSource,
+    frontmatter,
+    language,
+    slug,
+    title,
+  });
 
   return {
     id,
@@ -256,13 +271,11 @@ function readArticleFile(directory: string, fileName: string, fallbackLanguage: 
     updateHistory: Array.isArray(frontmatter.updateHistory)
       ? frontmatter.updateHistory
       : [],
-    coverImage:
-      frontmatter.coverImage ||
-      frontmatter.featuredImage ||
-      defaultArticleCoverImage,
-    coverImageAlt:
-      frontmatter.coverImageAlt ||
-      `Portrait of Alex Lindholm for ${title}`,
+    image: articleImage.image,
+    imageAlt: articleImage.imageAlt,
+    imageType: articleImage.imageType,
+    coverImage: articleImage.image,
+    coverImageAlt: articleImage.imageAlt,
     featuredImage: frontmatter.featuredImage,
     excerpt,
     readingTime: calculateReadingTime(body, language),
@@ -275,6 +288,87 @@ function readArticleFile(directory: string, fileName: string, fallbackLanguage: 
     body: body.trim(),
     href: `/articles/${slug}`,
   } satisfies Article;
+}
+
+function resolveArticleImage({
+  category,
+  contentSource,
+  frontmatter,
+  language,
+  slug,
+  title,
+}: {
+  category: ArticleCategory | string;
+  contentSource: ContentSource;
+  frontmatter: ArticleFrontmatter;
+  language: ArticleLanguage;
+  slug: string;
+  title: string;
+}) {
+  const explicitImage = frontmatter.image || frontmatter.coverImage || frontmatter.featuredImage;
+  const imageType =
+    frontmatter.imageType ||
+    inferArticleImageType({ contentSource, frontmatter, slug });
+
+  if (explicitImage) {
+    const explicitAlt =
+      frontmatter.imageAlt ||
+      frontmatter.coverImageAlt ||
+      createImageAlt({ category, imageType, language, title });
+
+    return {
+      image: explicitImage,
+      imageAlt: explicitAlt,
+      imageType,
+    };
+  }
+
+  const editorialImage = `/media/articles/editorial/${slug}.svg`;
+  const publicImagePath = path.join(process.cwd(), "public", editorialImage.replace(/^\//, ""));
+
+  return {
+    image: fs.existsSync(publicImagePath) ? editorialImage : defaultArticleCoverImage,
+    imageAlt: createImageAlt({ category, imageType: "editorial", language, title }),
+    imageType: "editorial" as ArticleImageType,
+  };
+}
+
+function inferArticleImageType({
+  contentSource,
+  frontmatter,
+  slug,
+}: {
+  contentSource: ContentSource;
+  frontmatter: ArticleFrontmatter;
+  slug: string;
+}): ArticleImageType {
+  if (frontmatter.imageType) return frontmatter.imageType;
+  if (slug.includes("interview")) return "interview";
+  if (contentSource === "telegram_ru" && frontmatter.featuredImage) return "photo";
+  if (frontmatter.featuredImage) return "photo";
+  return "editorial";
+}
+
+function createImageAlt({
+  category,
+  imageType,
+  language,
+  title,
+}: {
+  category: ArticleCategory | string;
+  imageType: ArticleImageType;
+  language: ArticleLanguage;
+  title: string;
+}) {
+  if (imageType === "photo") {
+    return language === "ru"
+      ? `Иллюстрация к статье «${title}»`
+      : `Article image for "${title}"`;
+  }
+
+  return language === "ru"
+    ? `Редакционная иллюстрация о теме «${title}»`
+    : `Editorial illustration about ${category}: ${title}`;
 }
 
 function parseFrontmatter(raw: string): { frontmatter: ArticleFrontmatter; body: string } {

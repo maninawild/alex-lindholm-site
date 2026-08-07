@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title>Strange realization lately.</title>
+  <desc>Minimal editorial cover visual for an article about Human-Centered AI.</desc>
+  <rect width="1600" height="1000" fill="#F4F1EA"/>
+  <rect x="80" y="80" width="1440" height="840" rx="18" fill="none" stroke="#192734" stroke-opacity=".08"/>
+  <g transform="translate(350 230) scale(1.02)" opacity="0.6599999999999999">
+    
+      <path d="M120 92 H535 M200 178 H720 M290 264 H640" stroke="#192734" stroke-width="2.2" opacity=".24"/>
+      <circle cx="85" cy="92" r="34" fill="#2F6FED" opacity=".86"/>
+      <circle cx="535" cy="276" r="52" fill="none" stroke="#192734" stroke-width="2" opacity=".55"/>
+      <path d="M125 92 C340 180, 440 250, 477 276" fill="none" stroke="#2F6FED" stroke-width="3" opacity=".48"/>
+  </g>
+  <circle cx="1315" cy="252" r="26" fill="#2F6FED" opacity=".18"/>
+  <path d="M190 715 H515" stroke="#192734" stroke-width="2" stroke-opacity=".14"/>
+  <path d="M190 786 H495" stroke="#192734" stroke-width="2" stroke-opacity=".1"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title>AI just quietly entered one of the oldest industries on Earth.</title>
+  <desc>Minimal editorial cover visual for an article about Human-Centered AI.</desc>
+  <rect width="1600" height="1000" fill="#F3F5EF"/>
+  <rect x="80" y="80" width="1440" height="840" rx="18" fill="none" stroke="#172026" stroke-opacity=".08"/>
+  <g transform="translate(350 230) scale(1.02)" opacity="0.72">
+    
+      <path d="M140 330 C260 150, 450 410, 720 175" fill="none" stroke="#2E6F73" stroke-width="3" opacity=".6"/>
+      <path d="M180 190 H375 V340 H665" fill="none" stroke="#172026" stroke-width="2" opacity=".32"/>
+      <circle cx="243" cy="251" r="42" fill="#DCE7E3" stroke="#172026" opacity=".78"/>
+      <circle cx="667" cy="122" r="22" fill="#2E6F73" opacity=".88"/>
+  </g>
+  <circle cx="1157" cy="228" r="18" fill="#2E6F73" opacity=".18"/>
+  <path d="M190 697 H613" stroke="#172026" stroke-width="2" stroke-opacity=".14"/>
+  <path d="M190 761 H395" stroke="#172026" stroke-width="2" stroke-opacity=".1"/>
+</svg>

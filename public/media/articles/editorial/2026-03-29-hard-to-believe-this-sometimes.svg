@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title>Hard to believe this sometimes.</title>
+  <desc>Minimal editorial cover visual for an article about Human-Centered AI.</desc>
+  <rect width="1600" height="1000" fill="#F3EFE6"/>
+  <rect x="80" y="80" width="1440" height="840" rx="18" fill="none" stroke="#202226" stroke-opacity=".08"/>
+  <g transform="translate(350 230) scale(1.02)" opacity="0.6599999999999999">
+    
+      <rect x="158" y="110" width="170" height="210" rx="4" fill="#F6D365" stroke="#202226" opacity=".86"/>
+      <rect x="378" y="170" width="210" height="120" rx="4" fill="none" stroke="#B9834A" stroke-width="3" opacity=".82"/>
+      <path d="M160 370 C260 310, 380 410, 510 330 S650 285, 760 350" fill="none" stroke="#202226" stroke-width="2" opacity=".36"/>
+      <circle cx="642" cy="123" r="28" fill="#B9834A" opacity=".72"/>
+  </g>
+  <circle cx="1242" cy="201" r="26" fill="#B9834A" opacity=".18"/>
+  <path d="M190 742 H588" stroke="#202226" stroke-width="2" stroke-opacity=".14"/>
+  <path d="M190 736 H455" stroke="#202226" stroke-width="2" stroke-opacity=".1"/>
+</svg>

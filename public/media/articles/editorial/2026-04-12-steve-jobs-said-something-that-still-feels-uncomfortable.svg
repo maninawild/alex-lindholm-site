@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title>Steve Jobs said something that still feels uncomfortable:</title>
+  <desc>Minimal editorial cover visual for an article about Founder Psychology.</desc>
+  <rect width="1600" height="1000" fill="#F4F1EA"/>
+  <rect x="80" y="80" width="1440" height="840" rx="18" fill="none" stroke="#192734" stroke-opacity=".08"/>
+  <g transform="translate(350 230) scale(1.02)" opacity="0.6">
+    
+      <path d="M120 48 H350 M200 134 H720 M290 220 H640" stroke="#192734" stroke-width="2.2" opacity=".24"/>
+      <circle cx="179" cy="48" r="34" fill="#2F6FED" opacity=".86"/>
+      <circle cx="350" cy="175" r="52" fill="none" stroke="#192734" stroke-width="2" opacity=".55"/>
+      <path d="M219 48 C340 180, 440 250, 292 175" fill="none" stroke="#2F6FED" stroke-width="3" opacity=".48"/>
+  </g>
+  <circle cx="1221" cy="175" r="34" fill="#2F6FED" opacity=".18"/>
+  <path d="M190 741 H589" stroke="#192734" stroke-width="2" stroke-opacity=".14"/>
+  <path d="M190 837 H352" stroke="#192734" stroke-width="2" stroke-opacity=".1"/>
+</svg>

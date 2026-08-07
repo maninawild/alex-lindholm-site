@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title>В будущее возьмут не всех: виртуальный Президент как новая безальтернативная реальность.</title>
+  <desc>Minimal editorial cover visual for an article about Human-Centered AI.</desc>
+  <rect width="1600" height="1000" fill="#F4F1EA"/>
+  <rect x="80" y="80" width="1440" height="840" rx="18" fill="none" stroke="#192734" stroke-opacity=".08"/>
+  <g transform="translate(350 230) scale(1.02)" opacity="0.54">
+    
+      <path d="M120 26 H439 M200 112 H720 M290 198 H640" stroke="#192734" stroke-width="1.85" opacity=".24"/>
+      <circle cx="232" cy="26" r="34" fill="#2F6FED" opacity=".86"/>
+      <circle cx="439" cy="190" r="52" fill="none" stroke="#192734" stroke-width="2" opacity=".55"/>
+      <path d="M272 26 C340 180, 440 250, 381 190" fill="none" stroke="#2F6FED" stroke-width="3" opacity=".48"/>
+  </g>
+  <circle cx="1168" cy="144" r="42" fill="#2F6FED" opacity=".18"/>
+  <path d="M190 748 H682" stroke="#192734" stroke-width="2" stroke-opacity=".14"/>
+  <path d="M190 858 H151" stroke="#192734" stroke-width="2" stroke-opacity=".1"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title>За что мы любим и ненавидим телеграмм?</title>
+  <desc>Minimal editorial cover visual for an article about Human-Centered AI.</desc>
+  <rect width="1600" height="1000" fill="#F4F1EA"/>
+  <rect x="80" y="80" width="1440" height="840" rx="18" fill="none" stroke="#192734" stroke-opacity=".08"/>
+  <g transform="translate(350 230) scale(1.02)" opacity="0.6599999999999999">
+    
+      <path d="M120 23 H514 M200 109 H720 M290 195 H640" stroke="#192734" stroke-width="2.2" opacity=".24"/>
+      <circle cx="169" cy="23" r="34" fill="#2F6FED" opacity=".86"/>
+      <circle cx="514" cy="155" r="52" fill="none" stroke="#192734" stroke-width="2" opacity=".55"/>
+      <path d="M209 23 C340 180, 440 250, 456 155" fill="none" stroke="#2F6FED" stroke-width="3" opacity=".48"/>
+  </g>
+  <circle cx="1231" cy="152" r="26" fill="#2F6FED" opacity=".18"/>
+  <path d="M190 711 H559" stroke="#192734" stroke-width="2" stroke-opacity=".14"/>
+  <path d="M190 852 H273" stroke="#192734" stroke-width="2" stroke-opacity=".1"/>
+</svg>
