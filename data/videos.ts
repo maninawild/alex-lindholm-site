@@ -16,7 +16,19 @@ export type VideoItem = {
 };
 
 /** Add verified YouTube appearances here. Keep descriptions factual and useful for search. */
-export const videos: VideoItem[] = [];
+export const videos: VideoItem[] = [
+  {
+    id: "3wVHD-z2ocs",
+    title: "Startup Cemetery: Are You Really Ready to Build a Startup?",
+    description:
+      "In this Tulip Business Talks interview, Alex Lindholm discusses what actually separates a startup founder from a traditional business owner - and why many people underestimate the mindset required to build a startup. The conversation covers founder readiness, the reality of startup life, learning from failure, and why mistakes are part of the process rather than the opposite of success.",
+    type: "Interview",
+    language: "ru",
+    partner: "Tulip Business Talks",
+    topics: ["Startup founders", "Founder mindset", "Startup ecosystem", "Failure & learning"],
+    featured: true,
+  },
+];
 
 export function youtubeUrl(id: string) {
   return `https://www.youtube.com/watch?v=${id}`;
