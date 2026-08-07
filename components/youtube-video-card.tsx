@@ -1,10 +1,6 @@
-"use client";
-
-import { useState } from "react";
 import {
   type VideoItem,
   youtubeEmbedUrl,
-  youtubeThumbnailUrl,
   youtubeUrl,
 } from "@/data/videos";
 
@@ -19,8 +15,6 @@ type YouTubeVideoCardProps = {
 };
 
 export function YouTubeVideoCard({ video, featured = false }: YouTubeVideoCardProps) {
-  const [playing, setPlaying] = useState(false);
-
   return (
     <article
       className={`group overflow-hidden rounded-sm border border-ink/10 bg-bone shadow-quiet ${
@@ -28,34 +22,14 @@ export function YouTubeVideoCard({ video, featured = false }: YouTubeVideoCardPr
       }`}
     >
       <div className="relative aspect-video overflow-hidden bg-ink">
-        {playing ? (
-          <iframe
-            className="absolute inset-0 h-full w-full"
-            src={`${youtubeEmbedUrl(video.id)}?autoplay=1&rel=0`}
-            title={video.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        ) : (
-          <button
-            type="button"
-            onClick={() => setPlaying(true)}
-            className="absolute inset-0 block h-full w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-inset"
-            aria-label={`Play video: ${video.title}`}
-          >
-            <img
-              src={youtubeThumbnailUrl(video.id)}
-              alt={`Video thumbnail: ${video.title}`}
-              className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.015]"
-              loading="lazy"
-              decoding="async"
-            />
-            <span className="absolute inset-0 bg-ink/20 transition group-hover:bg-ink/10" aria-hidden="true" />
-            <span className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-bone text-ink shadow-quiet transition group-hover:scale-105">
-              <span className="ml-0.5 text-lg" aria-hidden="true">▶</span>
-            </span>
-          </button>
-        )}
+        <iframe
+          className="absolute inset-0 h-full w-full"
+          src={`${youtubeEmbedUrl(video.id)}?rel=0&modestbranding=1&playsinline=1`}
+          title={video.title}
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
       </div>
 
       <div className="flex flex-col p-5 sm:p-6">
