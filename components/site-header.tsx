@@ -6,6 +6,7 @@ const navItems = [
   { href: "/#work", label: "Work" },
   { href: "/lectures-and-speaking", label: "Speaking" },
   { href: "/articles", label: "Articles" },
+  { href: "/media", label: "Media" },
   { href: "/#collaborate", label: "Collaborate" },
 ];
 

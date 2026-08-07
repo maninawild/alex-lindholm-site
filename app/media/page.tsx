@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SeoLandingPage } from "@/components/seo-landing-page";
+import { MediaPageContent } from "@/components/media-page";
 import { baseUrl, seoPages } from "@/data/seo-pages";
 
 const page = seoPages.media;
@@ -17,5 +17,5 @@ export const metadata: Metadata = {
 };
 
 export default function MediaPage() {
-  return <SeoLandingPage pageKey="media" />;
+  return <MediaPageContent />;
 }

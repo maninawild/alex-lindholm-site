@@ -1,7 +1,5 @@
 import { ArrowLink } from "@/components/arrow-link";
 import { SiteHeader } from "@/components/site-header";
-import { YouTubeVideoCard } from "@/components/youtube-video-card";
-import { videos, videoObjectSchema } from "@/data/videos";
 import {
   profileLinks,
   SeoPageKey,
@@ -38,9 +36,7 @@ export function SeoLandingPage({ pageKey }: SeoLandingPageProps) {
     personSchema(pageKey),
     serviceSchema(pageKey),
     webPageSchema(pageKey),
-    ...(pageKey === "media" ? videos.map(videoObjectSchema) : []),
   ];
-  const mediaVideos = pageKey === "media" ? videos : [];
 
   return (
     <main className="bg-bone pt-20 text-ink sm:pt-24">
@@ -112,39 +108,6 @@ export function SeoLandingPage({ pageKey }: SeoLandingPageProps) {
           </div>
         </div>
       </section>
-
-      {mediaVideos.length > 0 ? (
-        <section className="bg-bone pb-20" aria-labelledby="video-appearances-heading">
-          <div className="mx-auto max-w-7xl px-5 sm:px-8">
-            <div className="mb-8 grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
-              <div>
-                <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
-                  Video
-                </p>
-                <h2
-                  id="video-appearances-heading"
-                  className="mt-4 text-3xl font-medium leading-tight tracking-[-0.02em] text-balance sm:text-4xl"
-                >
-                  Conversations, interviews and talks.
-                </h2>
-              </div>
-              <p className="max-w-2xl text-base leading-7 text-graphite/72">
-                Selected appearances with founders, partners, media and ecosystem organizations. Watch here or continue to YouTube.
-              </p>
-            </div>
-
-            <div className="grid gap-6 lg:grid-cols-2">
-              {mediaVideos.map((video, index) => (
-                <YouTubeVideoCard
-                  key={video.youtubeId}
-                  video={video}
-                  featured={video.featured ?? index === 0}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
 
       <section className="bg-bone pb-16">
         <div className="mx-auto grid max-w-7xl gap-8 border-y border-ink/10 px-5 py-10 sm:px-8 lg:grid-cols-[0.72fr_1.28fr]">

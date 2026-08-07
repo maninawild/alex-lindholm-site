@@ -20,6 +20,8 @@ import { SectionHeader } from "@/components/section-header";
 import { ArrowLink } from "@/components/arrow-link";
 import { SiteHeader } from "@/components/site-header";
 import { TestimonialsSection } from "@/components/testimonials-section";
+import { YouTubeVideoCard } from "@/components/youtube-video-card";
+import { videos } from "@/data/videos";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -75,6 +77,7 @@ export default function Home() {
       <SelectedInitiatives />
       <Experience />
       <EducationAndSpeaking />
+      <FeaturedVideos />
       <EventsWithAlex />
       <CredibilitySection />
       <Thinking />
@@ -86,6 +89,37 @@ export default function Home() {
       <Contact />
       <Footer />
     </main>
+  );
+}
+
+function FeaturedVideos() {
+  const featuredVideos = videos.filter((video) => video.featured);
+
+  if (featuredVideos.length === 0) return null;
+
+  return (
+    <section className="section bg-bone text-ink" aria-labelledby="featured-videos-heading">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mb-8 flex flex-col gap-4 border-b border-ink/10 pb-7 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
+              Media
+            </p>
+            <h2 id="featured-videos-heading" className="mt-3 text-3xl font-medium leading-tight tracking-[-0.02em] sm:text-4xl">
+              Featured conversations.
+            </h2>
+          </div>
+          <a href="/media" className="text-sm font-medium text-ink underline decoration-ink/20 underline-offset-8 transition hover:decoration-ink">
+            View all media →
+          </a>
+        </div>
+        <div className="grid gap-6">
+          {featuredVideos.map((video) => (
+            <YouTubeVideoCard key={video.youtubeId} video={video} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
