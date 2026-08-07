@@ -4,12 +4,12 @@ import { useRef, useState, type KeyboardEvent } from "react";
 import { testimonials, type Testimonial } from "@/data/testimonials";
 
 const desktopCardLayouts = [
-  "lg:col-span-7 lg:row-span-2",
-  "lg:col-span-5",
-  "lg:col-span-5",
-  "lg:col-span-4",
-  "lg:col-span-4",
-  "lg:col-span-4",
+  "lg:col-span-6",
+  "lg:col-span-6 lg:mt-10",
+  "lg:col-span-7",
+  "lg:col-span-5 lg:mt-8",
+  "lg:col-span-6",
+  "lg:col-span-6 lg:mt-10",
 ];
 
 function getMonogram(name: string) {
@@ -29,69 +29,38 @@ function TestimonialCard({
   testimonial: Testimonial;
   index: number;
 }) {
-  const featured = testimonial.featured === true;
-
   return (
     <article
-      aria-label={`${index + 1} of ${testimonials.length}: ${testimonial.name}`}
+      aria-label={`${testimonial.name} testimonial`}
       aria-roledescription="slide"
       tabIndex={-1}
-      className={`flex w-[86%] shrink-0 snap-start snap-always flex-col justify-between rounded-sm border p-6 transition duration-300 motion-reduce:transform-none motion-reduce:transition-none sm:p-7 lg:w-auto lg:snap-none lg:p-7 lg:hover:-translate-y-1 ${
-        desktopCardLayouts[index] ?? "lg:col-span-4"
-      } ${
-        featured
-          ? "min-h-[430px] border-ink bg-ink text-bone lg:min-h-full lg:p-9"
-          : "min-h-[340px] border-ink/10 bg-[#f6f0e6] text-ink lg:min-h-[280px] lg:hover:border-electric/30"
+      className={`flex w-[86%] shrink-0 snap-start snap-always flex-col justify-between rounded-sm border border-ink/10 bg-paper p-6 text-ink shadow-[0_18px_45px_rgba(16,19,26,0.045)] outline-none transition duration-300 focus-visible:ring-2 focus-visible:ring-electric/35 motion-reduce:transform-none motion-reduce:transition-none sm:p-7 lg:w-auto lg:snap-none lg:p-8 lg:hover:-translate-y-0.5 lg:hover:border-electric/22 lg:hover:shadow-[0_22px_55px_rgba(16,19,26,0.07)] ${
+        desktopCardLayouts[index] ?? "lg:col-span-6"
       }`}
     >
       <div>
-        <div className="flex items-center justify-between gap-4">
-          <p
-            className={`text-[0.68rem] font-semibold uppercase tracking-[0.18em] ${
-              featured ? "text-bone/62" : "text-electric"
-            }`}
-          >
+        <div className="mb-7 flex items-center gap-3">
+          <span className="h-px w-7 bg-electric/45" aria-hidden="true" />
+          <p className="text-[0.68rem] font-semibold uppercase text-electric">
             {testimonial.category}
           </p>
-          <span
-            className={`text-xs tabular-nums ${
-              featured ? "text-bone/38" : "text-graphite/38"
-            }`}
-            aria-hidden="true"
-          >
-            {String(index + 1).padStart(2, "0")}
-          </span>
         </div>
 
-        <blockquote
-          className={`mt-8 tracking-[-0.012em] ${
-            featured
-              ? "text-2xl leading-[1.42] text-bone sm:text-[1.7rem] lg:mt-12"
-              : "text-lg leading-8 text-graphite/82"
-          }`}
-        >
+        <blockquote className="text-[1.08rem] leading-8 text-graphite/86 sm:text-lg sm:leading-8">
           {testimonial.quote}
         </blockquote>
       </div>
 
-      <footer className="mt-10 flex items-start gap-4">
+      <footer className="mt-9 flex items-start gap-4 border-t border-ink/8 pt-6">
         <span
-          className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border text-xs font-semibold tracking-[0.08em] ${
-            featured
-              ? "border-bone/22 bg-bone/8 text-bone"
-              : "border-ink/12 bg-bone text-ink"
-          }`}
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-ink/10 bg-white text-[0.68rem] font-semibold text-ink/72"
           aria-hidden="true"
         >
           {getMonogram(testimonial.name)}
         </span>
         <div className="min-w-0">
-          <p className="text-sm font-semibold">{testimonial.name}</p>
-          <p
-            className={`mt-1 text-sm leading-6 ${
-              featured ? "text-bone/62" : "text-graphite/62"
-            }`}
-          >
+          <p className="text-sm font-semibold text-ink">{testimonial.name}</p>
+          <p className="mt-1 text-sm leading-6 text-graphite/62">
             {testimonial.role}
             {testimonial.age ? `, ${testimonial.age}` : ""}
           </p>
@@ -168,14 +137,14 @@ export function TestimonialsSection() {
       aria-labelledby="testimonials-heading"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <header className="grid gap-6 lg:grid-cols-[0.72fr_1fr] lg:items-end lg:gap-16">
+        <header className="grid gap-6 border-b border-ink/8 pb-10 lg:grid-cols-[0.72fr_1fr] lg:items-end lg:gap-16">
           <div>
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-copper">
+            <p className="text-[0.7rem] font-semibold uppercase text-electric">
               Words from people
             </p>
             <h2
               id="testimonials-heading"
-              className="mt-4 text-4xl font-medium leading-[1.08] tracking-[-0.03em] text-balance sm:text-5xl"
+              className="mt-4 text-4xl font-medium leading-[1.08] text-balance sm:text-5xl"
             >
               What stayed with people
             </h2>
@@ -194,7 +163,7 @@ export function TestimonialsSection() {
           tabIndex={0}
           onKeyDown={handleKeyDown}
           onScroll={handleScroll}
-          className="mt-12 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto overscroll-x-contain pb-3 outline-none scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-electric/45 focus-visible:ring-offset-4 focus-visible:ring-offset-bone [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-12 lg:gap-5 lg:overflow-visible lg:pb-0 lg:focus-visible:ring-0"
+          className="mt-10 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto overscroll-x-contain pb-3 outline-none scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-electric/35 focus-visible:ring-offset-4 focus-visible:ring-offset-bone [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-12 lg:gap-5 lg:overflow-visible lg:pb-0 lg:focus-visible:ring-0"
         >
           {testimonials.map((testimonial, index) => (
             <TestimonialCard
