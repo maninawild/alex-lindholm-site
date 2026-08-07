@@ -115,7 +115,7 @@ function FeaturedVideos() {
         </div>
         <div className="grid gap-6">
           {featuredVideos.map((video) => (
-            <YouTubeVideoCard key={video.youtubeId} video={video} />
+            <YouTubeVideoCard key={video.youtubeId} video={video} variant="homepage" />
           ))}
         </div>
       </div>
