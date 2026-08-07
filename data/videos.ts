@@ -4,13 +4,18 @@ export type VideoLanguage = "en" | "ru";
 export type VideoType = "Interview" | "Conversation" | "Talk" | "Panel" | "Podcast";
 
 export type VideoItem = {
-  id: string;
   title: string;
   description: string;
+  youtubeId: string;
+  thumbnail: {
+    src: string;
+    alt: string;
+  };
   type: VideoType;
   language: VideoLanguage;
-  partner?: string;
-  publishedAt?: string;
+  series?: string;
+  publisher?: string;
+  date?: string;
   topics: string[];
   featured?: boolean;
 };
@@ -18,14 +23,25 @@ export type VideoItem = {
 /** Add verified YouTube appearances here. Keep descriptions factual and useful for search. */
 export const videos: VideoItem[] = [
   {
-    id: "3wVHD-z2ocs",
-    title: "Startup Cemetery: Are You Really Ready to Build a Startup?",
+    title: "Что отличает стартапера от бизнесмена: разговор о готовности строить стартап",
     description:
-      "In this Tulip Business Talks interview, Alex Lindholm discusses what actually separates a startup founder from a traditional business owner - and why many people underestimate the mindset required to build a startup. The conversation covers founder readiness, the reality of startup life, learning from failure, and why mistakes are part of the process rather than the opposite of success.",
+      "В выпуске Tulip Business Talks Алекс Линдхольм говорит о том, что происходит до поиска инвестиций: готов ли сам основатель к среде стартапов и к пути, который ему предстоит пройти. В разговоре — различия между стартапом и традиционным бизнесом, психологическая готовность фаундера, отношение к ошибкам и реальные сложности предпринимательского пути. Это разговор не столько о привлечении инвестиций, сколько о готовности строить компанию и выдерживать неопределённость.",
+    youtubeId: "3wVHD-z2ocs",
+    thumbnail: {
+      src: "https://i.ytimg.com/vi/3wVHD-z2ocs/hqdefault.jpg",
+      alt: "Обложка интервью Tulip Business Talks с Алексом Линдхольмом",
+    },
     type: "Interview",
     language: "ru",
-    partner: "Tulip Business Talks",
-    topics: ["Startup founders", "Founder mindset", "Startup ecosystem", "Failure & learning"],
+    series: "Tulip Business Talks",
+    publisher: "Tulip Business Talks",
+    topics: [
+      "Startup readiness",
+      "Founder mindset",
+      "Startup vs business",
+      "Failure and entrepreneurship",
+      "Dutch startup ecosystem",
+    ],
     featured: true,
   },
 ];
@@ -46,24 +62,26 @@ export function videoObjectSchema(video: VideoItem) {
   return {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    "@id": `${baseUrl}/media#video-${video.id}`,
+    "@id": `${baseUrl}/media#video-${video.youtubeId}`,
     name: video.title,
     description: video.description,
-    thumbnailUrl: [youtubeThumbnailUrl(video.id)],
-    ...(video.publishedAt ? { uploadDate: video.publishedAt } : {}),
+    thumbnailUrl: [video.thumbnail.src],
+    ...(video.date ? { uploadDate: video.date } : {}),
     inLanguage: video.language,
-    embedUrl: youtubeEmbedUrl(video.id),
-    url: youtubeUrl(video.id),
-    creator: {
-      "@type": "Person",
-      "@id": `${baseUrl}/#alex-lindholm`,
-      name: "Alex Lindholm",
-      url: baseUrl,
-    },
+    embedUrl: youtubeEmbedUrl(video.youtubeId),
+    contentUrl: youtubeUrl(video.youtubeId),
+    ...(video.publisher
+      ? {
+          publisher: {
+            "@type": "Organization",
+            name: video.publisher,
+          },
+        }
+      : {}),
     keywords: video.topics.join(", "),
     potentialAction: {
       "@type": "WatchAction",
-      target: youtubeUrl(video.id),
+      target: youtubeUrl(video.youtubeId),
     },
   };
 }

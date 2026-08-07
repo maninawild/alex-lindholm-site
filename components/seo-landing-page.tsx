@@ -136,7 +136,7 @@ export function SeoLandingPage({ pageKey }: SeoLandingPageProps) {
             <div className="grid gap-6 lg:grid-cols-2">
               {mediaVideos.map((video, index) => (
                 <YouTubeVideoCard
-                  key={video.id}
+                  key={video.youtubeId}
                   video={video}
                   featured={video.featured ?? index === 0}
                 />
