@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
-import { ConsultationClarity } from "@/components/consultation-clarity";
-import { DiscoveryCallCta } from "@/components/discovery-call-cta";
-import { LatestArticleWidget } from "@/components/latest-article-widget";
-import { ArticlePresentationCleanup } from "@/components/article-presentation-cleanup";
+import { PublicOnlyEnhancements } from "@/components/public-only-enhancements";
 import { personJsonLd, siteUrl, websiteJsonLd } from "@/lib/site";
 import "./globals.css";
 
@@ -102,10 +99,7 @@ export default function RootLayout({
           }}
         />
         {children}
-        <ConsultationClarity />
-        <DiscoveryCallCta />
-        <LatestArticleWidget />
-        <ArticlePresentationCleanup />
+        <PublicOnlyEnhancements />
       </body>
     </html>
   );

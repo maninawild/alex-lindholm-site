@@ -7,12 +7,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: ["Googlebot", "Bingbot", "OAI-SearchBot", "ChatGPT-User", "PerplexityBot"],
         allow: "/",
-        disallow: "/api/",
+        disallow: ["/api/", "/private/"],
       },
       {
         userAgent: "*",
         allow: "/",
-        disallow: "/api/",
+        disallow: ["/api/", "/private/"],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
