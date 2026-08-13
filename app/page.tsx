@@ -411,8 +411,12 @@ function SelectedInitiatives() {
         </div>
         <div className="mt-8 divide-y divide-ink/10 border-y border-ink/10">
           {initiatives.map((project, index) => (
-            <article
-              className="grid gap-4 py-6 transition duration-300 hover:bg-ink/[0.02] md:grid-cols-[0.16fr_0.34fr_1fr]"
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${project.title}`}
+              className="group grid gap-4 py-6 transition duration-300 hover:bg-ink/[0.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-bone md:grid-cols-[0.16fr_0.34fr_1fr]"
               key={project.title}
             >
               <div className="flex items-center justify-between text-xs uppercase tracking-[0.18em] text-graphite/46 md:block">
@@ -421,12 +425,29 @@ function SelectedInitiatives() {
               <div className="text-xs font-semibold uppercase tracking-[0.18em] text-graphite/44">
                 {project.type}
               </div>
-              <h3 className="text-2xl font-semibold tracking-[-0.02em]">{project.title}</h3>
+              <h3 className="text-2xl font-semibold tracking-[-0.02em]">
+                {project.title}
+                <span
+                  aria-hidden="true"
+                  className="ml-2 inline-block text-base text-graphite/32 transition group-hover:translate-x-0.5 group-hover:text-electric"
+                >
+                  ↗
+                </span>
+              </h3>
               <p className="text-base leading-7 text-graphite/68 md:col-start-3">
                 {project.text}
               </p>
-            </article>
+            </a>
           ))}
+        </div>
+        <div className="mt-8">
+          <a
+            href="/private"
+            className="inline-flex min-h-12 items-center justify-center gap-3 rounded-md border border-ink/15 bg-white px-6 text-sm font-medium text-ink transition duration-300 hover:border-electric focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
+          >
+            <span>Other Projects</span>
+            <span aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </section>

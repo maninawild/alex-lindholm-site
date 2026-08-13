@@ -36,26 +36,31 @@ export const initiatives = [
     title: "InspireXchange Accelerator",
     type: "Accelerator",
     text: "Human-centered accelerator for founders: PMF testing, market validation, mentoring, ecosystem access, investor readiness, and execution support.",
+    href: "https://inspirexchange.nl/",
   },
   {
     title: "Venture Boutique / Deal Room",
     type: "Venture",
     text: "Private venture-building and investor-founder matching format for fundraising-ready teams, curated deal flow, honest feedback, and serious investor conversations.",
+    href: "https://www.inspirexchange.nl/venture",
   },
   {
     title: "LINDHOME / Prefab Housing Lifestyle",
     type: "Housing",
     text: "Modular prefab homes in Bulgaria, combining turnkey land, design, construction, furnishing, lifestyle relocation, second-home use, and investment logic.",
+    href: "https://www.lind.homes/",
   },
   {
     title: "Private Founder Gatherings",
     type: "Community",
     text: "Curated rooms for founders, investors, operators, and ecosystem partners where trust, signal, and direct conversation matter more than volume.",
+    href: "https://www.krewcommunity.com/",
   },
   {
     title: "Strategic Sessions",
     type: "Consultation",
     text: "Paid 1-hour consultations for founders, investors, operators, and partners who need a sharp external view on a concrete decision.",
+    href: "https://zcal.co/axlindholm/1hour",
   },
 ];
 
