@@ -31,6 +31,78 @@ const credentials = [
   ["NRU HSE", "Project Management in the Social Sector"],
 ];
 
+const erasmusProjects = [
+  {
+    eyebrow: "Hamburg · 2016",
+    title: "Changemakers",
+    summary:
+      "A German–Ukrainian–Russian youth encounter on minority rights, participation and social activism.",
+    details:
+      "Held in Hamburg from 2–7 October 2016, the meet-up brought together young people from Germany, Ukraine and Russia, including participants from minority and migrant communities. The program addressed xenophobia, stigma, European values, solidarity and youth-led change, concluding with a participant-created photo exhibition.",
+    href: "https://jubuk.wordpress.com/2019/01/21/meet-up-german-ukrainian-russian-youth-encounter-changemakers/",
+  },
+  {
+    eyebrow: "Wuppertal · 2017",
+    title: "Youth Exchange “Roots”",
+    summary:
+      "An Erasmus+ exchange connecting young people from Russia and Germany through history, inclusion and intercultural learning.",
+    details:
+      "Implemented in Wuppertal from 1–8 March 2017 by JuBuK and Hillel Russia, the exchange used history as a route into mutual respect, cultural diversity, social inclusion and justice. It also supported youth mobility and practical intercultural cooperation.",
+    href: "https://jubuk.wordpress.com/2019/01/22/youth-exchange-roots/",
+    videoId: "4QSZS4RbvII",
+  },
+  {
+    eyebrow: "Saint Petersburg · 2018",
+    title: "Youth Exchange “Roots 2gether”",
+    summary:
+      "A follow-up to Roots, bringing the German–Russian youth exchange to Saint Petersburg.",
+    details:
+      "Held from 25 April–2 May 2018 and organised by JuBuK with Hillel Russia, Roots 2gether continued the Erasmus+ partnership established in Germany in 2017. The project centred historical awareness, anti-discrimination, mobility and respectful cooperation across cultures.",
+    href: "https://jubuk.wordpress.com/2019/01/22/youth-exchange-roots-2gether/",
+  },
+  {
+    eyebrow: "Berlin · 2023",
+    title: "Roots Reloaded",
+    summary:
+      "A later Roots follow-up connecting young people from Germany and Israel around history, diversity and mobility.",
+    details:
+      "Organised in Berlin from 21–28 February 2023 by JuBuK with Hillel Israel Ltd., the project extended the Roots 2gether model to German–Israeli cooperation. Its focus included historical understanding, mutual respect, social inclusion, anti-discrimination and access for participants facing social, economic or geographic barriers.",
+    href: "https://jubuk.wordpress.com/2023/04/10/roots-reloaded/",
+  },
+];
+
+const articles = [
+  {
+    source: "JEvents · 2017",
+    title: "Sweden with a Jewish Accent · Part I",
+    href: "https://jevents.ru/2017/shvetsiya-s-evrejskim-aktsentom-chast-pervaya/",
+  },
+  {
+    source: "JEvents · 2018",
+    title: "The Scandinavian Compromise of Stockholm · Part II",
+    href: "https://jevents.ru/2018/shvetsiya-s-evrejskim-aktsentom-chast-vtoraya-skandinavskij-kompromiss-stokgolma/",
+  },
+  {
+    source: "JEvents · 2019",
+    title: "Swedish National Character · Part III",
+    href: "https://jevents.ru/2019/shvetsiya-s-evrejskim-aktsentom-chast-tretya-natsionalnyj-harakter-shvedov/",
+  },
+  {
+    source: "JEvents · 2017",
+    title: "Interview with Lyonya Landa",
+    href: "https://jevents.ru/2017/intervyu-s-lyonej-landa/",
+  },
+  {
+    source: "JEPS",
+    title: "Alex Puzin: “A joke is, first of all, a technology”",
+    href: "https://news.jeps.ru/kultura/evrejskij-yumor-konkurs-stend-apa-gilel.html",
+    photos: [
+      "https://news.jeps.ru/images/news/kultura/konkurs-stend-apa-gilel_f1.jpg",
+      "https://news.jeps.ru/images/news/kultura/konkurs-stend-apa-gilel_f2.jpg",
+    ],
+  },
+];
+
 export default async function JewishPrivatePage() {
   await connection();
   const session = await getPrivateSession(pageDefinition.id);
@@ -125,18 +197,65 @@ export default async function JewishPrivatePage() {
             </div>
             <div className="mt-10 border-b border-ink/12">
               <PrivateProjectCard eyebrow="Leadership" title="Maximum Jewish Leadership Program" summary="Chief curator role focused on youth leadership and project development, 2015–2016.">
-                Program leadership built on earlier work with the madrichim school and recurring educational initiatives at Hillel St. Petersburg. Responsibilities recorded in the source materials include mentoring participants, helping ideas become workable programs, coordinating delivery, and supporting community engagement.
+                <p>Program leadership built on earlier work with the madrichim school and recurring educational initiatives at Hillel St. Petersburg. Responsibilities recorded in the source materials include mentoring participants, helping ideas become workable programs, coordinating delivery, and supporting community engagement.</p>
+                <a href="https://hillel.ru/maximum/" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex font-semibold text-electric hover:underline">Maximum program reference ↗</a>
               </PrivateProjectCard>
               <PrivateProjectCard eyebrow="Community" title="Hillel St. Petersburg" summary="Five years across program management, program direction, education and participant-led initiatives.">
-                From 2012 to 2016, Alex moved through program management, program direction, and leadership-program curation. The work covered event and program planning, community communications, stakeholder coordination, volunteer and participant support, and the development of educational and social projects.
-              </PrivateProjectCard>
-              <PrivateProjectCard eyebrow="Cross-border" title="ROOTS Youth Seminar" summary="Initiator and organiser of a youth seminar in Germany, 2016.">
-                Listed among Alex’s initiated and organised projects, ROOTS brought the community-development practice into a cross-border setting. Additional program notes and photography can be added here once cleared for publication.
+                <p>From 2012 to 2016, Alex moved through program management, program direction, and leadership-program curation. The work covered event and program planning, community communications, stakeholder coordination, volunteer and participant support, and the development of educational and social projects.</p>
+                <a href="https://hillel.ru/city/spb/" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex font-semibold text-electric hover:underline">Hillel St. Petersburg ↗</a>
               </PrivateProjectCard>
               <PrivateProjectCard eyebrow="Culture" title="Festivals, camps and public formats" summary="A portfolio of youth, cultural and community projects developed between 2012 and 2015.">
                 The documented portfolio includes Days of Jewish Culture at St. Petersburg State University, the Jewish Beauty Contest, Humour With No Limits Jewish stand-up competition, MEL Jewish Youth Camp, and the Shop of Israel at two international Christmas festivals in St. Petersburg.
               </PrivateProjectCard>
             </div>
+          </div>
+        </section>
+
+        <section className="border-t border-ink/10 bg-paper py-16 sm:py-24">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8">
+            <div className="grid gap-8 lg:grid-cols-[0.48fr_1fr]">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">International exchange</p>
+                <h2 className="mt-4 font-serif text-4xl font-medium tracking-[-0.035em] sm:text-5xl">Erasmus+ Exchange Projects</h2>
+                <p className="mt-5 max-w-md text-base leading-7 text-graphite/66">A four-project sequence spanning Germany, Russia, Ukraine and Israel, with history and intercultural cooperation as shared foundations.</p>
+              </div>
+              <div className="border-b border-ink/12">
+                {erasmusProjects.map((project) => (
+                  <PrivateProjectCard key={project.title} eyebrow={project.eyebrow} title={project.title} summary={project.summary}>
+                    <p>{project.details}</p>
+                    {project.videoId ? (
+                      <div className="mt-6 overflow-hidden rounded-sm border border-ink/10 bg-black shadow-quiet">
+                        <div className="aspect-video">
+                          <iframe
+                            src={`https://www.youtube-nocookie.com/embed/${project.videoId}`}
+                            title="Project Roots by JuBuK Germany and Hillel Russia"
+                            className="h-full w-full"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                          />
+                        </div>
+                      </div>
+                    ) : null}
+                    <a href={project.href} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex font-semibold text-electric hover:underline">Project archive ↗</a>
+                  </PrivateProjectCard>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section aria-label="Community archive photographs" className="bg-white py-4 sm:py-6">
+          <div className="mx-auto grid max-w-7xl gap-3 px-5 sm:grid-cols-3 sm:px-8">
+            {[
+              ["/media/jewish/community-01.jpg", "Jewish community archive photograph in New York"],
+              ["/media/jewish/community-02.jpg", "Portrait from a Hillel community event"],
+              ["/media/jewish/community-03.jpg", "Illustration from a Hillel cultural program"],
+            ].map(([src, alt]) => (
+              <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-sm bg-bone">
+                <Image src={src} alt={alt} fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover" />
+              </div>
+            ))}
           </div>
         </section>
 
@@ -193,11 +312,34 @@ export default async function JewishPrivatePage() {
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">Writing &amp; field research</p>
               <h2 className="mt-4 font-serif text-4xl font-medium tracking-[-0.035em] sm:text-5xl">Jewish life across places.</h2>
               <p className="mt-5 text-base leading-8 text-graphite/72">For JEvents, Alex developed interviews and a three-part “Sweden with a Jewish Accent” series, combining historical research, lived experience in Stockholm, community observation and cross-cultural interpretation.</p>
-              <div className="mt-7 flex flex-col gap-3 text-sm font-semibold text-electric">
-                <a href="https://jevents.ru/2017/shvetsiya-s-evrejskim-aktsentom-chast-pervaya/" target="_blank" rel="noopener noreferrer" className="hover:underline">Sweden with a Jewish Accent · Part I ↗</a>
-                <a href="https://jevents.ru/2018/shvetsiya-s-evrejskim-aktsentom-chast-vtoraya-skandinavskij-kompromiss-stokgolma/" target="_blank" rel="noopener noreferrer" className="hover:underline">The Scandinavian Compromise of Stockholm · Part II ↗</a>
-                <a href="https://jevents.ru/2019/shvetsiya-s-evrejskim-aktsentom-chast-tretya-natsionalnyj-harakter-shvedov/" target="_blank" rel="noopener noreferrer" className="hover:underline">Swedish National Character · Part III ↗</a>
-                <a href="https://jevents.ru/2017/intervyu-s-lyonej-landa/" target="_blank" rel="noopener noreferrer" className="hover:underline">Interview with Lyonya Landa ↗</a>
+              <p className="mt-5 text-sm leading-6 text-graphite/58">The full reading list, including an interview on Jewish humour and stand-up, appears below.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-ink/10 bg-bone py-16 sm:py-24">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8">
+            <div className="grid gap-10 lg:grid-cols-[0.48fr_1fr]">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">Reading</p>
+                <h2 className="mt-4 font-serif text-4xl font-medium tracking-[-0.035em] sm:text-5xl">Selected articles</h2>
+              </div>
+              <div className="border-t border-ink/12">
+                {articles.map((article) => (
+                  <article key={article.href} className="grid gap-3 border-b border-ink/12 py-5 sm:grid-cols-[8rem_1fr] sm:gap-6">
+                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.15em] text-copper">{article.source}</p>
+                    <div>
+                      <a href={article.href} target="_blank" rel="noopener noreferrer" className="text-lg font-semibold leading-6 text-ink hover:text-electric hover:underline">{article.title} ↗</a>
+                      {article.photos ? (
+                        <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-graphite/55">
+                          {article.photos.map((photo, index) => (
+                            <a key={photo} href={photo} target="_blank" rel="noopener noreferrer" className="hover:text-electric hover:underline">Event photo {index + 1} ↗</a>
+                          ))}
+                        </div>
+                      ) : null}
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
           </div>
