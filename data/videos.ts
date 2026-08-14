@@ -56,6 +56,104 @@ export const videos: VideoItem[] = [
     ],
     featured: true,
   },
+  {
+    title: "Плюсы и минусы жизни в Нидерландах после США и Израиля",
+    description:
+      "Алекс Линдхольм делится личным опытом жизни в Нидерландах после США, Израиля, Швеции и России. В разговоре — причины переезда, преимущества и ограничения жизни в стране, а также практический взгляд на адаптацию и предпринимательство в Нидерландах.",
+    youtubeId: "4aWk_cRlS7U",
+    thumbnail: {
+      src: "https://i.ytimg.com/vi/4aWk_cRlS7U/hqdefault.jpg",
+      alt: "Плюсы и минусы жизни в Нидерландах после США и Израиля",
+    },
+    type: "Talk",
+    language: "ru",
+    date: "2024-11-17T06:47:08-08:00",
+    topics: ["Relocation to the Netherlands", "Founder experience", "Life in the Netherlands"],
+  },
+  {
+    title: "Фасилитатор для проекта в Нидерландах: как попасть на программу, нюансы работы и инновационность",
+    description:
+      "Алекс объясняет, как основателям подготовиться к работе с фасилитаторами в Нидерландах: какие проекты получают внимание, как подтверждать инновационность и какие ошибки в питч-деке чаще всего мешают пройти отбор.",
+    youtubeId: "1cS-r8FC3OM",
+    thumbnail: {
+      src: "https://i.ytimg.com/vi/1cS-r8FC3OM/hqdefault.jpg",
+      alt: "Разговор о фасилитаторах и инновационных проектах в Нидерландах",
+    },
+    type: "Interview",
+    language: "ru",
+    date: "2024-05-24T07:59:00-07:00",
+    topics: ["Startup visa", "Innovation", "Pitch deck"],
+  },
+  {
+    title: "Создание Digital-акселератора Нидерландах: получение стартап-визы и удаленное обучение",
+    description:
+      "Разговор о запуске InspireXchange и о том, как устроена программа акселератора: от преодоления ранних рисков и проверки PMF до онлайн- и офлайн-встреч, стартап-визы и отбора в программу.",
+    youtubeId: "TnOutMGGqGs",
+    thumbnail: {
+      src: "https://i.ytimg.com/vi/TnOutMGGqGs/hqdefault.jpg",
+      alt: "Разговор о создании digital-акселератора в Нидерландах",
+    },
+    type: "Interview",
+    language: "ru",
+    date: "2024-03-18T08:00:32-07:00",
+    topics: ["InspireXchange", "Startup accelerator", "Product-market fit"],
+  },
+  {
+    title: "Русские стартапы в Нидерландах: сотрудник акселератора отвечает на вопросы",
+    description:
+      "Q&A о внутренней логике голландской стартап-экосистемы: отбор в акселераторы, роль фасилитаторов, иммиграционные программы, налоговые условия и выход на международные рынки из Нидерландов.",
+    youtubeId: "9RGJLAwug8I",
+    thumbnail: {
+      src: "https://i.ytimg.com/vi/9RGJLAwug8I/hqdefault.jpg",
+      alt: "Вопросы и ответы о стартапах в Нидерландах",
+    },
+    type: "Interview",
+    language: "ru",
+    date: "2023-08-15T06:22:45-07:00",
+    topics: ["Dutch startup ecosystem", "Startup visa", "Market entry"],
+  },
+  {
+    title: "США vs Нидерланды: лучшая страна для развития стартапа!",
+    description:
+      "Алекс сравнивает США и Нидерланды с позиции основателя: возможности для развития стартапа, бюрократию, особенности стартап-визы, культурный контекст и практические плюсы и ограничения обеих стран.",
+    youtubeId: "YWA8k69-L5c",
+    thumbnail: {
+      src: "https://i.ytimg.com/vi/YWA8k69-L5c/hqdefault.jpg",
+      alt: "Сравнение США и Нидерландов для развития стартапа",
+    },
+    type: "Talk",
+    language: "ru",
+    date: "2023-09-06T08:21:32-07:00",
+    topics: ["Startup ecosystems", "United States", "Netherlands"],
+  },
+  {
+    title: "Грузия и Нидерланды - сравнение стран для жизни и бизнеса!",
+    description:
+      "Сравнение Грузии и Нидерландов для жизни и ведения бизнеса: безопасность, интеграция, государственные процессы, налоги, образование, уровень комфорта и долгосрочные стратегии переезда.",
+    youtubeId: "f3wDRRfuAaI",
+    thumbnail: {
+      src: "https://i.ytimg.com/vi/f3wDRRfuAaI/hqdefault.jpg",
+      alt: "Сравнение Грузии и Нидерландов для жизни и бизнеса",
+    },
+    type: "Talk",
+    language: "ru",
+    date: "2024-08-25T03:45:29-07:00",
+    topics: ["Relocation", "Georgia", "Netherlands"],
+  },
+  {
+    title: "Личный опыт: как я переехал в Нидерланды по стартап-визе",
+    description:
+      "Личный рассказ Алекса о переезде в Нидерланды по стартап-визе: выбор страны, первый неудавшийся переезд, повторная попытка, работа с фасилитаторами и возможности для привлечения инвестиций на ранней стадии.",
+    youtubeId: "fHezcrqI_vw",
+    thumbnail: {
+      src: "https://i.ytimg.com/vi/fHezcrqI_vw/hqdefault.jpg",
+      alt: "Личный опыт переезда в Нидерланды по стартап-визе",
+    },
+    type: "Talk",
+    language: "ru",
+    date: "2023-09-26T08:07:06-07:00",
+    topics: ["Startup visa", "Relocation to the Netherlands", "Founder journey"],
+  },
 ];
 
 export function youtubeUrl(id: string) {
