@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { connection } from "next/server";
 import { PrivateAccessGate } from "@/components/private/private-access-gate";
 import { PrivatePageShell } from "@/components/private/private-page-shell";
@@ -110,15 +109,6 @@ export default async function JewishPrivatePage() {
 
   return (
     <PrivatePageShell>
-      <header className="border-b border-ink/10 bg-[#10131a] text-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
-          <Link href="/" className="text-sm font-bold tracking-[-0.01em]">Alex Lindholm</Link>
-          <span className="rounded-full border border-white/15 px-3 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-white/72">
-            Private &amp; Confidential
-          </span>
-        </div>
-      </header>
-
       <main>
         <section className="relative overflow-hidden bg-[#10131a] text-white">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_20%,rgba(143,63,77,0.35),transparent_36%),radial-gradient(circle_at_15%_90%,rgba(37,99,235,0.18),transparent_32%)]" />
@@ -346,15 +336,6 @@ export default async function JewishPrivatePage() {
         </section>
       </main>
 
-      <footer className="border-t border-ink/10 bg-bone">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-xs leading-5 text-graphite/52 sm:px-8 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="font-semibold uppercase tracking-[0.15em] text-ink/72">Private &amp; Confidential</p>
-            <p className="mt-2 max-w-2xl">Shared personally with you. Please do not copy, forward or redistribute this content without permission.</p>
-          </div>
-          <p className="shrink-0">Confidential · Alex Lindholm © 2026</p>
-        </div>
-      </footer>
     </PrivatePageShell>
   );
 }
