@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { PublicOnlyEnhancements } from "@/components/public-only-enhancements";
 import { personJsonLd, siteUrl, websiteJsonLd } from "@/lib/site";
 import "./globals.css";
@@ -17,7 +19,7 @@ const newsreader = Newsreader({
 });
 
 const siteDescription =
-  "Alex Lindholm advises founders, investors and organizations on venture strategy, startup validation, fundraising readiness and complex decisions.";
+  "Alex Lindholm is a product and venture leader with 10+ years in startup incubation, product discovery, venture building, portfolio analysis and business development.";
 const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION;
 const bingSiteVerification = process.env.BING_SITE_VERIFICATION;
 
@@ -33,26 +35,20 @@ export const metadata: Metadata = {
   },
   keywords: [
     "Alex Lindholm",
-    "Human-Centered Innovation",
-    "Ethical Technology",
-    "Responsible AI",
-    "Venture Ecosystems",
-    "Systems Thinking",
-    "Innovation Leadership",
-    "Human-Centric AI",
-    "Digital Humanism",
-    "Future of Entrepreneurship",
-    "Ecosystem Design",
-    "Technology Ethics",
-    "Strategic Foresight",
-    "European Innovation",
-    "Human Networks",
-    "Meaningful Technology",
+    "Product and Venture Mentor",
+    "Venture Builder Netherlands",
+    "Accelerator Program Director",
+    "Startup Incubation",
+    "Product Discovery",
+    "Innovation and Incubation",
+    "Entrepreneur in Residence",
+    "Portfolio Analyst",
+    "Business Development Netherlands",
   ],
   openGraph: {
     title: "Alex Lindholm | Venture Architect & Founder Advisor",
     description:
-      "Strategic guidance for founders, investors and organizations navigating startup validation, fundraising and uncertain markets.",
+      "Product and venture leadership across startup incubation, product discovery, venture building, portfolio analysis and business development.",
     url: siteUrl,
     siteName: "Alex Lindholm",
     images: [
@@ -100,6 +96,8 @@ export default function RootLayout({
         />
         {children}
         <PublicOnlyEnhancements />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

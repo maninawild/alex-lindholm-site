@@ -3,7 +3,7 @@ export const siteName = "Alex Lindholm";
 
 export const author = {
   name: "Alex Lindholm",
-  jobTitle: "Venture Architect and Founder Advisor",
+  jobTitle: "Product and Venture Mentor",
   url: `${siteUrl}/`,
   linkedIn: "https://www.linkedin.com/in/axlindholm/",
   image: `${siteUrl}/media/alex-portrait.jpg`,
@@ -23,6 +23,23 @@ export function personJsonLd() {
     url: author.url,
     image: author.image,
     sameAs: [author.linkedIn],
+    homeLocation: {
+      "@type": "Country",
+      name: "Netherlands",
+    },
+    knowsLanguage: ["English", "Russian", "Hebrew", "Ukrainian", "Dutch"],
+    knowsAbout: [
+      "Product discovery and validation",
+      "Startup incubation and acceleration",
+      "Venture building",
+      "Investment strategy and portfolio analysis",
+      "Business development",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "InspireXchange.nl Accelerator",
+      url: "https://www.inspirexchange.nl/",
+    },
   };
 }
 

@@ -1,19 +1,16 @@
+import { readFile } from "node:fs/promises";
+
 const siteUrl = "https://www.axlindholm.nl";
-const key = process.env.INDEXNOW_KEY;
+const key = (await readFile(new URL("../public/indexnow.txt", import.meta.url), "utf8")).trim();
 const requestedUrls = process.argv.slice(2);
 
-if (!key) {
-  console.error("INDEXNOW_KEY is required.");
-  process.exit(1);
-}
-
 if (!/^[A-Za-z0-9-]{8,128}$/.test(key)) {
-  console.error("INDEXNOW_KEY must be 8–128 characters using letters, numbers, or hyphens.");
+  console.error("public/indexnow.txt must contain an 8–128 character IndexNow key.");
   process.exit(1);
 }
 
 if (requestedUrls.length === 0) {
-  console.error("Provide at least one deployed article URL.");
+  console.error("Provide at least one deployed public URL.");
   process.exit(1);
 }
 
@@ -24,8 +21,12 @@ const urls = requestedUrls.map((value) => {
     throw new Error(`Refusing URL outside www.axlindholm.nl: ${url.toString()}`);
   }
 
-  if (!url.pathname.startsWith("/articles/")) {
-    throw new Error(`IndexNow submissions are limited to article URLs: ${url.toString()}`);
+  if (url.username || url.password || url.port || url.search || url.hash) {
+    throw new Error(`Refusing URL with credentials, port, query or fragment: ${url.toString()}`);
+  }
+
+  if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/private")) {
+    throw new Error(`Refusing non-public URL: ${url.toString()}`);
   }
 
   return url.toString();
@@ -49,4 +50,4 @@ if (!response.ok) {
   throw new Error(`IndexNow returned ${response.status}: ${body}`);
 }
 
-console.log(`Submitted ${urls.length} deployed article URL(s) to IndexNow.`);
+console.log(`Submitted ${urls.length} deployed public URL(s) to IndexNow.`);

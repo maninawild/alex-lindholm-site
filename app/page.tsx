@@ -252,21 +252,29 @@ function WhoIAm() {
 function ProfessionalFit() {
   const roles = [
     {
-      title: "Co-founder & Managing Partner, InspireXchange.nl",
-      text: "Accelerator programs, startup assessment, venture strategy and partnerships.",
+      period: "2024 - Present",
+      title: "Co-Founder & Managing Partner, InspireXchange.nl Accelerator",
+      text: "Startup incubation, product validation and PMF, supporting up to 20 teams in parallel through discovery, research, hypothesis testing and experiments.",
     },
     {
-      title: "Founder & CEO, Bear Grid Holding B.V.",
-      text: "Product development and venture building.",
+      period: "2021 - 2023",
+      title: "Co-Founder & Business Developer, Bear Grid B.V.",
+      text: "Led an early-stage product from concept to market validation, coordinating technical, research and business stakeholders.",
     },
     {
-      title: "Co-founder, LINDHOME / BOXMATE",
-      text: "Modular housing, product strategy and business development.",
+      period: "2020 - 2022",
+      title: "Co-Founder & Venture Builder, BOXMATE",
+      text: "Built a modular housing product line from discovery and customer interviews through MVP definition, pricing experiments and fundraising support.",
+    },
+    {
+      period: "2020 - 2022",
+      title: "Investment Consultant & Portfolio Analyst, Private Equity",
+      text: "Evaluated venture viability, market hypotheses, traction and scalability across a diversified investment portfolio.",
     },
   ];
 
   return (
-    <section className="bg-bone pb-16 text-ink" aria-labelledby="professional-fit-heading">
+    <section id="experience" className="scroll-mt-24 bg-bone pb-16 text-ink" aria-labelledby="professional-fit-heading">
       <div className="mx-auto grid max-w-7xl gap-8 border-y border-ink/10 px-5 py-10 sm:px-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
         <div>
           <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
@@ -279,11 +287,18 @@ function ProfessionalFit() {
             Product, venture and innovation leadership in uncertain environments.
           </h2>
           <p className="mt-5 max-w-xl text-base leading-7 text-graphite/74">
-            I work at the intersection of product strategy, venture building,
-            accelerator programs and business development. My experience includes
-            building companies, directing startup programs, advising founders and
-            turning ambiguous opportunities into practical decisions and execution plans.
+            Product and venture mentor with 10+ years of experience building,
+            validating and scaling early-stage products. I work across product
+            discovery, startup incubation, portfolio analysis and business development.
           </p>
+          <div className="mt-7 border-l border-ink/12 pl-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-copper">
+              Languages
+            </p>
+            <p className="mt-3 text-sm leading-6 text-graphite/72">
+              English fluent · Russian native · Hebrew intermediate · Ukrainian intermediate · Dutch beginner
+            </p>
+          </div>
         </div>
 
         <div>
@@ -293,7 +308,10 @@ function ProfessionalFit() {
                 key={role.title}
                 className="rounded-sm border border-ink/8 bg-bone p-5 shadow-quiet"
               >
-                <h3 className="text-lg font-semibold leading-tight tracking-[-0.015em]">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-copper">
+                  {role.period}
+                </p>
+                <h3 className="mt-2 text-lg font-semibold leading-tight tracking-[-0.015em]">
                   {role.title}
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-graphite/70">
@@ -303,13 +321,18 @@ function ProfessionalFit() {
             ))}
           </div>
 
+          <p className="mt-5 text-sm leading-6 text-graphite/66">
+            Earlier leadership: Development Director, World Federation of Georgian Jewry (2019 - 2020); Director of Business Development, KIDZ Design (2015 - 2017); Program Director and Product Manager, Hillel St. Petersburg (2011 - 2015).
+          </p>
+
           <div className="mt-6 border-l border-electric pl-5">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-copper">
               Open to
             </p>
             <p className="mt-3 max-w-2xl text-base leading-7 text-graphite/78">
-              Product strategy, venture building, accelerator leadership,
-              innovation and business development roles in the Netherlands or remotely.
+              Product management, venture building, innovation and incubation,
+              accelerator or program leadership, entrepreneur-in-residence,
+              business development and portfolio roles.
             </p>
             <a
               href={socialLinks.linkedin}
@@ -317,7 +340,7 @@ function ProfessionalFit() {
               rel="noopener noreferrer me"
               className="mt-5 inline-flex min-h-11 items-center justify-center gap-3 rounded-md border border-ink/15 px-5 text-sm font-medium text-ink transition hover:border-electric hover:bg-electric/5"
             >
-              <span>View LinkedIn Profile</span>
+              <span>Discuss a role or contract</span>
               <span aria-hidden="true">→</span>
             </a>
           </div>
