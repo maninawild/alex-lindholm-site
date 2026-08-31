@@ -18,6 +18,7 @@ export async function unlockPrivatePage(
   formData: FormData,
 ): Promise<PrivateAccessState> {
   const slug = String(formData.get("page") ?? "");
+  const requestedReturnPath = String(formData.get("returnPath") ?? "");
   const submittedCode = String(formData.get("accessCode") ?? "");
   const page = getPrivatePageBySlug(slug);
 
@@ -52,5 +53,10 @@ export async function unlockPrivatePage(
     };
   }
 
-  redirect(`/private/${page.slug}`);
+  const defaultReturnPath = `/private/${page.slug}`;
+  const returnPath = /^\/private\/ideas\/[a-z0-9-]+$/.test(requestedReturnPath)
+    ? requestedReturnPath
+    : defaultReturnPath;
+
+  redirect(returnPath);
 }

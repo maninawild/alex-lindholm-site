@@ -8,9 +8,10 @@ const initialState: PrivateAccessState = { error: null };
 
 type PrivateAccessGateProps = {
   pageSlug: string;
+  returnPath?: string;
 };
 
-export function PrivateAccessGate({ pageSlug }: PrivateAccessGateProps) {
+export function PrivateAccessGate({ pageSlug, returnPath }: PrivateAccessGateProps) {
   const [state, formAction, pending] = useActionState(unlockPrivatePage, initialState);
 
   return (
@@ -29,6 +30,7 @@ export function PrivateAccessGate({ pageSlug }: PrivateAccessGateProps) {
 
         <form action={formAction} className="mt-9">
           <input type="hidden" name="page" value={pageSlug} />
+          {returnPath ? <input type="hidden" name="returnPath" value={returnPath} /> : null}
           <label htmlFor="access-code" className="text-sm font-semibold text-white/84">
             Access code
           </label>
