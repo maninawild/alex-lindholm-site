@@ -3,7 +3,8 @@ export const siteName = "Alex Lindholm";
 
 export const author = {
   name: "Alex Lindholm",
-  jobTitle: "Startup Visa & Facilitator Advocate",
+  alternateName: "Alex P. Lindholm",
+  jobTitle: "Venture Architect & Human-Centered Technologist",
   url: `${siteUrl}/`,
   linkedIn: "https://www.linkedin.com/in/axlindholm/",
   image: `${siteUrl}/media/alex-portrait.jpg`,
@@ -19,6 +20,7 @@ export function personJsonLd() {
     "@type": "Person",
     "@id": `${siteUrl}/#alex-lindholm`,
     name: author.name,
+    alternateName: author.alternateName,
     jobTitle: author.jobTitle,
     url: author.url,
     image: author.image,
