@@ -23,37 +23,6 @@ import { TestimonialsSection } from "@/components/testimonials-section";
 import { YouTubeVideoCard } from "@/components/youtube-video-card";
 import { videos } from "@/data/videos";
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Alex Lindholm",
-  sameAs: ["https://www.linkedin.com/in/axlindholm/"],
-  jobTitle: [
-    "Venture Architect",
-    "Human-Centered Technologist",
-    "Ecosystem Builder",
-  ],
-  description:
-    "Alex Lindholm works across startups, venture ecosystems, ethical technology, responsible AI, human-centered innovation, and cross-border partnerships.",
-  knowsAbout: [
-    "Human-Centered Innovation",
-    "Ethical Technology",
-    "Responsible AI",
-    "Venture Ecosystems",
-    "Systems Thinking",
-    "Innovation Leadership",
-    "Human-Centric AI",
-    "Digital Humanism",
-    "Future of Entrepreneurship",
-    "Ecosystem Design",
-    "Technology Ethics",
-    "Strategic Foresight",
-    "European Innovation",
-    "Human Networks",
-    "Meaningful Technology",
-  ],
-};
-
 const socialLinks = {
   linkedin: "https://www.linkedin.com/in/axlindholm/",
   telegram: "https://t.me/alexinspirexchange",
@@ -65,12 +34,9 @@ const socialLinks = {
 export default function Home() {
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Hero />
       <WhoIAm />
+      <ProfessionalFit />
       <FieldNotes />
       <OperatingPhilosophy />
       <ExploreGrid />
@@ -147,7 +113,7 @@ function Hero() {
       >
         <div className="w-full min-w-0 max-w-[21rem] sm:max-w-3xl lg:pr-8">
           <p className="mb-4 max-w-[20rem] text-[0.64rem] font-medium uppercase tracking-[0.08em] text-bone/68 sm:text-[0.72rem] sm:tracking-[0.18em]">
-            Venture Architect | Human-Centered Technologist | Ecosystem Builder
+            Venture Architect | Founder Advisor | Accelerator Program Director
           </p>
           <h1 className="max-w-full text-[1.92rem] font-medium leading-[1.08] tracking-[-0.03em] text-balance text-bone drop-shadow-[0_1px_18px_rgba(0,0,0,0.24)] sm:text-5xl xl:text-[3.75rem]">
             I help founders, investors and organizations make better decisions
@@ -158,8 +124,8 @@ function Hero() {
             ideas worth building.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <ArrowLink href="#work" label="Explore Projects" />
-            <ArrowLink href={socialLinks.strategicSession} label="Book a Strategic Session" variant="light" />
+            <ArrowLink href={socialLinks.strategicSession} label="Book a €100 Strategic Session" />
+            <ArrowLink href="#work" label="Explore Projects" variant="light" />
           </div>
         </div>
         <div className="w-full min-w-0 max-w-[21rem] sm:max-w-[430px] lg:ml-0 lg:max-w-[420px] lg:translate-x-32 xl:translate-x-48">
@@ -276,6 +242,84 @@ function WhoIAm() {
               creating situations where long-term partnerships, trust, and
               shared vision become more valuable than short-term transactions.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProfessionalFit() {
+  const roles = [
+    {
+      title: "Co-founder & Managing Partner, InspireXchange.nl",
+      text: "Accelerator programs, startup assessment, venture strategy and partnerships.",
+    },
+    {
+      title: "Founder & CEO, Bear Grid Holding B.V.",
+      text: "Product development and venture building.",
+    },
+    {
+      title: "Co-founder, LINDHOME / BOXMATE",
+      text: "Modular housing, product strategy and business development.",
+    },
+  ];
+
+  return (
+    <section className="bg-bone pb-16 text-ink" aria-labelledby="professional-fit-heading">
+      <div className="mx-auto grid max-w-7xl gap-8 border-y border-ink/10 px-5 py-10 sm:px-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+        <div>
+          <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
+            Experience & Professional Fit
+          </p>
+          <h2
+            id="professional-fit-heading"
+            className="mt-4 max-w-xl text-3xl font-medium leading-tight tracking-[-0.02em] text-balance sm:text-4xl"
+          >
+            Product, venture and innovation leadership in uncertain environments.
+          </h2>
+          <p className="mt-5 max-w-xl text-base leading-7 text-graphite/74">
+            I work at the intersection of product strategy, venture building,
+            accelerator programs and business development. My experience includes
+            building companies, directing startup programs, advising founders and
+            turning ambiguous opportunities into practical decisions and execution plans.
+          </p>
+        </div>
+
+        <div>
+          <div className="grid gap-3">
+            {roles.map((role) => (
+              <article
+                key={role.title}
+                className="rounded-sm border border-ink/8 bg-bone p-5 shadow-quiet"
+              >
+                <h3 className="text-lg font-semibold leading-tight tracking-[-0.015em]">
+                  {role.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-graphite/70">
+                  {role.text}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-6 border-l border-electric pl-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-copper">
+              Open to
+            </p>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-graphite/78">
+              Product strategy, venture building, accelerator leadership,
+              innovation and business development roles in the Netherlands or remotely.
+            </p>
+            <a
+              href={socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer me"
+              className="mt-5 inline-flex min-h-11 items-center justify-center gap-3 rounded-md border border-ink/15 px-5 text-sm font-medium text-ink transition hover:border-electric hover:bg-electric/5"
+            >
+              <span>View LinkedIn Profile</span>
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
       </div>
@@ -461,7 +505,7 @@ function Experience() {
         <SectionHeader
           eyebrow="Experience / Social Proof"
           title="A few useful signals."
-          intro="The work has moved through founder calls, universities, accelerators, volunteer initiatives, innovation ecosystems, speaking rooms, and partnership tables."
+          intro="The work has moved through founder problem-solving sessions, universities, accelerators, volunteer initiatives, innovation ecosystems, speaking rooms, and partnership tables."
         />
         <div className="mt-8 grid gap-x-8 gap-y-6 border-y border-ink/10 py-8 sm:grid-cols-2">
           {metrics.map((metric) => (
@@ -493,9 +537,8 @@ function EducationAndSpeaking() {
               Education, lectures & community work.
             </h2>
             <p className="mt-4 max-w-xl text-base leading-7 text-graphite/75">
-              Alex also works as an educator, lecturer, community builder, and
-              cultural thinker across technology, ethics, entrepreneurship, and
-              society.
+              Alex also works as an educator, lecturer, and cultural thinker
+              across technology, ethics, entrepreneurship, and society.
             </p>
             <a
               href="/lectures-and-speaking"
@@ -1101,7 +1144,7 @@ function Contact() {
               <span>Connect on LinkedIn</span>
               <span aria-hidden="true">→</span>
             </a>
-            <ArrowLink href="https://zcal.co/axlindholm/1hour" label="Start a Conversation" variant="lineDark" />
+            <ArrowLink href="https://zcal.co/axlindholm/1hour" label="Book a €100 Strategic Session" variant="lineDark" />
           </div>
           <SocialContactLinks />
         </div>
@@ -1214,6 +1257,9 @@ function StrategicSession() {
             <h2 className="mt-4 text-3xl font-medium leading-tight tracking-[-0.025em] text-balance sm:text-4xl">
               Book a Strategic Session
             </h2>
+            <p className="mt-3 text-base font-semibold tracking-[-0.01em] text-ink">
+              60 minutes · €100 · Paid consultation
+            </p>
             <p className="mt-5 max-w-2xl text-base leading-7 text-graphite/75">
               For founders, operators, investors, and partners who need a clear
               external perspective, a sharp challenge to their idea, or a
@@ -1239,7 +1285,7 @@ function StrategicSession() {
               rel="noopener noreferrer"
               className="mt-7 inline-flex min-h-12 items-center justify-center rounded-md border border-electric bg-electric px-6 text-sm font-medium text-white transition duration-300 hover:bg-blue-700"
             >
-              Book 1-hour strategic session
+              Book 60-min session · €100
             </a>
           </div>
         </div>

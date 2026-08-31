@@ -59,13 +59,13 @@ export const initiatives = [
   {
     title: "Strategic Sessions",
     type: "Consultation",
-    text: "Paid 1-hour consultations for founders, investors, operators, and partners who need a sharp external view on a concrete decision.",
+    text: "Paid €100, 60-minute consultations for founders, investors, operators, and partners who need a sharp external view on a concrete decision.",
     href: "https://zcal.co/axlindholm/1hour",
   },
 ];
 
 export const metrics = [
-  { value: "1000+", label: "founder calls" },
+  { value: "1000+", label: "founder problem-solving sessions" },
   { value: "500+", label: "lectures, workshops & strategy sessions" },
 ];
 

@@ -17,14 +17,14 @@ const newsreader = Newsreader({
 });
 
 const siteDescription =
-  "Alex Lindholm works across venture ecosystems, ethical technology, responsible AI, human-centered innovation, and cross-border collaboration.";
+  "Alex Lindholm advises founders, investors and organizations on venture strategy, startup validation, fundraising readiness and complex decisions.";
 const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION;
 const bingSiteVerification = process.env.BING_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Alex Lindholm | Venture Architect & Human-Centered Technologist",
+    default: "Alex Lindholm | Venture Architect & Founder Advisor",
     template: "%s | Alex Lindholm",
   },
   description: siteDescription,
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     "Meaningful Technology",
   ],
   openGraph: {
-    title: "Alex Lindholm | Venture Architect & Ecosystem Builder",
+    title: "Alex Lindholm | Venture Architect & Founder Advisor",
     description:
-      "A human-first personal platform for venture architecture, ethical technology, founder ecosystems, and meaningful collaboration.",
+      "Strategic guidance for founders, investors and organizations navigating startup validation, fundraising and uncertain markets.",
     url: siteUrl,
     siteName: "Alex Lindholm",
     images: [
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Alex Lindholm | Venture Architect",
     description:
-      "Human-centered innovation, venture ecosystems, responsible AI, and cross-border collaboration.",
+      "Venture strategy, startup validation, fundraising readiness, and complex decisions in uncertain markets.",
   },
   verification: {
     ...(googleSiteVerification ? { google: googleSiteVerification } : {}),

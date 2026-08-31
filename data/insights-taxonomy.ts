@@ -158,7 +158,7 @@ export const insightClusters: InsightCluster[] = [
 export const insightAuthor = {
   slug: "alex-lindholm",
   name: "Alex Lindholm",
-  role: "Startup Visa & Facilitator Advocate",
+  role: "Venture Architect and Founder Advisor",
   description:
     "Alex Lindholm writes about startup ecosystems, founder strategy, human-centered technology, and venture building.",
   expertise: [

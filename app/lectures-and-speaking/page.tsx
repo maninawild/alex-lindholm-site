@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 const credibility = [
   "4.6/5+ audience rating",
-  "1000+ lectures, workshops & strategy sessions",
+  "500+ lectures, workshops & strategy sessions",
   "Erasmus University guest lecturer",
   "Paideia / Yad Vashem / BCI / ANU background",
   "65+ countries explored",

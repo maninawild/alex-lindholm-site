@@ -3,7 +3,7 @@ export const siteName = "Alex Lindholm";
 
 export const author = {
   name: "Alex Lindholm",
-  jobTitle: "Startup Visa & Facilitator Advocate",
+  jobTitle: "Venture Architect and Founder Advisor",
   url: `${siteUrl}/`,
   linkedIn: "https://www.linkedin.com/in/axlindholm/",
   image: `${siteUrl}/media/alex-portrait.jpg`,

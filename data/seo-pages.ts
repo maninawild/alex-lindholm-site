@@ -141,7 +141,7 @@ export const seoPages = {
     eyebrow: "Media",
     title: "Commentary on startups, AI, ecosystems, culture and human-centered technology.",
     description:
-      "Media and interview page for Alex Lindholm: venture architect, human-centered technologist, ecosystem builder, speaker and founder/investor connector.",
+      "Media and interview page for Alex Lindholm: venture architect, founder advisor, speaker and founder/investor connector.",
     audience:
       "For journalists, podcast hosts, event producers, university media teams, innovation publications and ecosystem partners.",
     primaryCta: "Connect on LinkedIn",
