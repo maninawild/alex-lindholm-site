@@ -1,14 +1,21 @@
 import "server-only";
 
 import { cookies } from "next/headers";
-import { privateSessionMaxAge, signPrivateSession, verifyPrivateSession } from "./crypto";
-import type { PrivateAccessCode, PrivatePageId } from "./types";
+import { privateSessionMaxAge, signPrivateSession } from "./crypto";
+import type { PrivateAccessCode, PrivatePageId, PrivateSession } from "./types";
 
 const COOKIE_NAME = "alex_private_session";
 
-export async function getPrivateSession(pageId: PrivatePageId) {
-  const token = (await cookies()).get(COOKIE_NAME)?.value;
-  return token ? verifyPrivateSession(token, pageId) : null;
+export async function getPrivateSession(pageId: PrivatePageId): Promise<PrivateSession> {
+  const now = Math.floor(Date.now() / 1000);
+
+  return {
+    codeId: "direct-link-access",
+    label: "Direct link access",
+    pages: [pageId],
+    issuedAt: now,
+    expiresAt: now + privateSessionMaxAge,
+  };
 }
 
 export async function createPrivateSession(code: PrivateAccessCode) {
