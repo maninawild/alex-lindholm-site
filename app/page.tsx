@@ -334,15 +334,24 @@ function ProfessionalFit() {
               accelerator or program leadership, entrepreneur-in-residence,
               business development and portfolio roles.
             </p>
-            <a
-              href={socialLinks.linkedin}
-              target="_blank"
-              rel="noopener noreferrer me"
-              className="mt-5 inline-flex min-h-11 items-center justify-center gap-3 rounded-md border border-ink/15 px-5 text-sm font-medium text-ink transition hover:border-electric hover:bg-electric/5"
-            >
-              <span>Discuss a role or contract</span>
-              <span aria-hidden="true">→</span>
-            </a>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="/product-venture-leader"
+                className="inline-flex min-h-11 items-center justify-center gap-3 rounded-md border border-electric bg-electric px-5 text-sm font-medium text-white transition hover:bg-blue-700"
+              >
+                <span>View full professional profile</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <a
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer me"
+                className="inline-flex min-h-11 items-center justify-center gap-3 rounded-md border border-ink/15 px-5 text-sm font-medium text-ink transition hover:border-electric hover:bg-electric/5"
+              >
+                <span>Discuss a role or contract</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@ import {
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = Array.from(new Set([
     "",
+    "/product-venture-leader",
     "/lectures-and-speaking",
     "/articles",
     ...getInsightCategories()
