@@ -9,7 +9,13 @@ const concepts = [
     href: "/private/ideas/youth-exchange/roots-what-we-carry",
     ready: true,
   },
-  { number: "02", title: "Youth Exchange Concept 02", subtitle: "Content pending", href: "/private/ideas/youth-exchange/concept-02", ready: false },
+  {
+    number: "02",
+    title: "BUILD WITHOUT BARRIERS",
+    subtitle: "The Vibe Coding Youth Exchange",
+    href: "/private/ideas/youth-exchange/build-without-barriers",
+    ready: true,
+  },
   { number: "03", title: "Youth Exchange Concept 03", subtitle: "Content pending", href: "/private/ideas/youth-exchange/concept-03", ready: false },
   { number: "04", title: "Youth Exchange Concept 04", subtitle: "Content pending", href: "/private/ideas/youth-exchange/concept-04", ready: false },
 ] as const;
@@ -24,12 +30,8 @@ export function YouthExchangeIdeasHub() {
               ← New Development Ideas
             </Link>
             <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-[#d9a6af]">Private Development Concept</p>
-            <h1 className="mt-4 max-w-4xl font-serif text-5xl font-medium leading-[0.98] tracking-[-0.045em] text-balance sm:text-7xl">
-              Youth Exchange Ideas
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/66">
-              Four concepts developed as separate youth-exchange proposals using one shared project structure.
-            </p>
+            <h1 className="mt-4 max-w-4xl font-serif text-5xl font-medium leading-[0.98] tracking-[-0.045em] text-balance sm:text-7xl">Youth Exchange Ideas</h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/66">Four concepts developed as separate youth-exchange proposals using one shared project structure.</p>
           </div>
         </section>
 
