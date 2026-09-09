@@ -5,7 +5,7 @@ const concepts = [
   { number: "01", title: "ROOTS: WHAT WE CARRY", subtitle: "From Inherited Memory to Shared Action Against Hate", href: "/private/ideas/youth-exchange/roots-what-we-carry", ready: true },
   { number: "02", title: "BUILD WITHOUT BARRIERS", subtitle: "The Vibe Coding Youth Exchange", href: "/private/ideas/youth-exchange/build-without-barriers", ready: true },
   { number: "03", title: "MOSAIC: ROOTS IN MOTION", subtitle: "From Migration Stories to Local Action", href: "/private/ideas/youth-exchange/mosaic-roots-in-motion", ready: true },
-  { number: "04", title: "Youth Exchange Concept 04", subtitle: "Content pending", href: "/private/ideas/youth-exchange/concept-04", ready: false },
+  { number: "04", title: "BEYOND THE COMMENTS", subtitle: "Young Creators Turning Online Hate into Real-World Dialogue", href: "/private/ideas/youth-exchange/beyond-the-comments", ready: true },
 ] as const;
 
 export function YouthExchangeIdeasHub() {
