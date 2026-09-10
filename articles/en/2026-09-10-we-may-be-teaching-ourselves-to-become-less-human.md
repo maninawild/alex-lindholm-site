@@ -9,6 +9,9 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 translationKey: "2026-09-10-we-may-be-teaching-ourselves-to-become-less-human"
+image: "/media/articles/editorial/2026-09-10-human-ai-verification.webp"
+imageAlt: "Illustration questioning whether increasingly human-like AI changes how we perceive human behavior"
+imageType: "editorial"
 metaDescription: "As AI becomes more human-like, it may also change what we consider normal human behavior and how we treat one another."
 relatedArticles: []
 ---
