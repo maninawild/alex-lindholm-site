@@ -11,6 +11,9 @@ originalSlug: "2026-09-10-we-may-be-teaching-ourselves-to-become-less-human"
 translationKey: "2026-09-10-we-may-be-teaching-ourselves-to-become-less-human"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
+image: "/media/articles/editorial/2026-09-10-human-ai-verification.webp"
+imageAlt: "Иллюстрация о том, как похожий на человека AI меняет восприятие человеческого поведения"
+imageType: "editorial"
 metaDescription: "По мере того как AI становится более похожим на человека, он может менять и наше представление о нормальном человеческом поведении."
 relatedArticles: []
 ---
