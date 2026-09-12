@@ -57,4 +57,11 @@ export const testimonials: Testimonial[] = [
     quote:
       "Thanks for the consultation. Our team wasn’t aware of these opportunities and shortcuts.",
   },
+  {
+    name: "Katerina Sviridova",
+    role: "Founder",
+    category: "Startup Visa Advisory",
+    quote:
+      "Alex, I’m very grateful for our conversation. It gave me a much broader understanding of the options, and I realized I had a somewhat mistaken idea of how startup applications should be approached. I’m very grateful for both your professional support and the human side of your help. Thank you so much.",
+  },
 ];
