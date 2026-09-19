@@ -20,11 +20,17 @@ const linkedinUrl = "https://www.linkedin.com/in/axlindholm/";
 type SiteHeaderProps = {
   transparentAtTop?: boolean;
   privateZone?: boolean;
+  languageSwitch?: {
+    href: string;
+    label: string;
+    ariaLabel: string;
+  };
 };
 
 export function SiteHeader({
   transparentAtTop = true,
   privateZone = false,
+  languageSwitch,
 }: SiteHeaderProps) {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -84,19 +90,34 @@ export function SiteHeader({
             </Link>
           ))}
         </div>
-        <button
-          type="button"
-          className={`inline-flex min-h-11 items-center justify-center rounded-md border px-3 text-sm font-semibold transition md:hidden ${
-            isSolid
-              ? "border-ink/12 bg-white text-ink"
-              : "border-white/45 bg-ink/18 text-white backdrop-blur-md [text-shadow:0_1px_8px_rgba(0,0,0,0.72)]"
-          }`}
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-site-menu"
-          onClick={() => setIsMenuOpen((value) => !value)}
-        >
-          {isMenuOpen ? "Close" : "Menu"}
-        </button>
+        <div className="flex items-center gap-2">
+          {languageSwitch ? (
+            <Link
+              href={languageSwitch.href}
+              aria-label={languageSwitch.ariaLabel}
+              className={`inline-flex min-h-11 min-w-12 items-center justify-center rounded-md border px-3 text-sm font-bold tracking-[0.08em] transition ${
+                isSolid
+                  ? "border-[#8F3F4D]/35 bg-white text-[#8F3F4D] hover:bg-[#8F3F4D] hover:text-white"
+                  : "border-white/55 bg-ink/24 text-white backdrop-blur-md hover:bg-white hover:text-ink"
+              }`}
+            >
+              {languageSwitch.label}
+            </Link>
+          ) : null}
+          <button
+            type="button"
+            className={`inline-flex min-h-11 items-center justify-center rounded-md border px-3 text-sm font-semibold transition md:hidden ${
+              isSolid
+                ? "border-ink/12 bg-white text-ink"
+                : "border-white/45 bg-ink/18 text-white backdrop-blur-md [text-shadow:0_1px_8px_rgba(0,0,0,0.72)]"
+            }`}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-site-menu"
+            onClick={() => setIsMenuOpen((value) => !value)}
+          >
+            {isMenuOpen ? "Close" : "Menu"}
+          </button>
+        </div>
       </nav>
       {isMenuOpen ? (
         <div id="mobile-site-menu" className="pointer-events-auto border-t border-ink/10 bg-white px-5 py-4 text-ink shadow-quiet md:hidden">

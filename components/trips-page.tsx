@@ -4,82 +4,74 @@ import { SiteHeader } from "@/components/site-header";
 
 const whatsappUrl = "https://wa.me/message/4OIGQ3FHUZQSD1";
 
+const sharedTrips = [
+  { date: "24.06.2023", image: "/media/trips/IMG_1228.jpeg", position: "50% 78%" },
+  { date: "25.06, 02.07, 15.07.2023", image: "/media/trips/IMG_1226.jpeg", position: "50% 63%" },
+  { date: "16.07.2023", image: "/media/trips/IMG_1226.jpeg", position: "50% 35%" },
+  { date: "22.07, 29.07, 05.08.2023", image: "/media/trips/IMG_1223.jpeg", position: "50% 62%" },
+  { date: "12.08.2023", image: "/media/trips/IMG_1223.jpeg", position: "50% 64%" },
+  { date: "13.08.2023", image: "/media/trips/IMG_1223.jpeg", position: "50% 34%" },
+  { date: "29.06, 06.07, 13.07.2024", image: "/media/trips/IMG_1222.jpeg", position: "50% 38%" },
+  { date: "23.08–01.09.2024", image: "/media/trips/IMG_1221.jpeg", position: "50% 34%" },
+  { date: "05.07.2025", image: "/media/trips/IMG_1220.jpeg", position: "50% 64%" },
+  { date: "06.07.2025", image: "/media/trips/IMG_1220.jpeg", position: "50% 34%" },
+] as const;
+
 const copy = {
   en: {
-    lang: "EN",
-    switchHref: "/ru/trips",
-    switchLabel: "RU",
-    eyebrow: "Trips with Alex",
-    title: "See places through more than one lens.",
-    intro:
-      "Small-group trips shaped by history, culture, nature, people and the conversations that happen along the way.",
-    navUpcoming: "Next trip",
-    navPast: "Past experiences",
-    navFormats: "Formats",
-    upcomingEyebrow: "Coming in October 2026",
-    upcomingTitle: "Kröller-Müller & De Hoge Veluwe",
-    upcomingText:
-      "A day around modern art, architecture and one of the Netherlands’ most distinctive landscapes. Full details and the date will follow.",
-    languageNote: "This trip is for Russian-speaking participants.",
-    interest: "I’m interested",
-    pastEyebrow: "Past experiences",
-    pastTitle: "Not one standard tour, but many ways to travel.",
-    pastIntro:
-      "Over the years I have hosted dozens of trips in different roles: guide, organizer, educator, connector and fellow traveller.",
-    experiences: [
-      ["The Netherlands from the inside", "Cities, water, local life and the stories usually missed on a standard route."],
-      ["Art and nature", "Museums, landscapes and long conversations without rushing between checkpoints."],
-      ["Cross-border weekends", "Belgium, Zeeland and nearby places connected through history, food and people."],
-      ["Trips with a purpose", "Sailing, community visits and field trips for founders, investors and curious professionals."],
+    switchHref: "/ru/trips", switchLabel: "RU", switchAria: "Open the Russian version",
+    eyebrow: "Trips with Alex", title: "Trips with me.",
+    intro: "Cities, museums, national parks and small-group journeys.",
+    navUpcoming: "Next trip", navPast: "Past trips", navFormats: "Formats",
+    upcomingEyebrow: "October 2026", upcomingTitle: "Kröller-Müller & De Hoge Veluwe",
+    upcomingText: "The date and full programme will be announced shortly.",
+    languageNote: "This trip is for Russian-speaking participants.", interest: "I’m interested",
+    pastTitle: "Past trips", pastIntro: "Selected trips I organized between 2023 and 2025.",
+    trips: [
+      ["Art trip to Kröller-Müller", "Kröller-Müller Museum and De Hoge Veluwe."],
+      ["One day to feel local in the Netherlands", "A one-day route around the Netherlands."],
+      ["Zeeland: sea, castles, wine and oysters", "A networking trip through Zeeland."],
+      ["Two Hollands and five cities", "A series of routes across North and South Holland."],
+      ["Fairytale Bruges", "A day in Bruges."],
+      ["Van Gogh without the crowds", "Van Gogh and De Hoge Veluwe National Park."],
+      ["Belgium in one weekend", "Brussels and Bruges."],
+      ["A week on a yacht around Greece", "Seven days sailing around Greece."],
+      ["Onboarding trip: two Hollands and five cities", "A small-group route through five cities."],
+      ["Sunny Hobbiton and moody Urk", "A networking trip in the Netherlands."],
     ],
-    formatsEyebrow: "Formats",
-    formatsTitle: "A trip can be a day out or the beginning of a project.",
-    formats: ["Day trips", "Culture & history", "Nature", "Investment & discovery trips"],
-    whyTitle: "Why travel with me",
-    whyText:
-      "I trained as a historian and have worked across education, communities, startups and investment. I connect the place to the wider context, introduce people and leave room for the unexpected.",
-    finalTitle: "Want to join the next trip?",
-    finalText: "Message me on WhatsApp. Payment and ticketing will be added later.",
-    finalCta: "Message Alex",
-    home: "Home",
+    formatsTitle: "Formats",
+    formats: ["Day trips", "Culture and history", "Nature", "Investment and discovery trips"],
+    backgroundTitle: "Background",
+    backgroundText: "Historian by education. Experience in education, communities, startups and investment.",
+    finalTitle: "Join the next trip", finalText: "Message me on WhatsApp.", finalCta: "Message Alex", home: "Home",
   },
   ru: {
-    lang: "RU",
-    switchHref: "/trips",
-    switchLabel: "EN",
-    eyebrow: "Поездки с Алексом",
-    title: "Смотреть на места сразу с нескольких сторон.",
-    intro:
-      "Небольшие поездки, где история, культура, природа и люди соединяются с живым разговором по дороге.",
-    navUpcoming: "Ближайшая поездка",
-    navPast: "Прошлые поездки",
-    navFormats: "Форматы",
-    upcomingEyebrow: "Октябрь 2026",
-    upcomingTitle: "Крёллер-Мюллер и Де-Хоге-Велюве",
-    upcomingText:
-      "Один день вокруг современного искусства, архитектуры и одного из самых необычных ландшафтов Нидерландов. Дату и программу добавим скоро.",
-    languageNote: "Поездка пройдет на русском языке.",
-    interest: "Мне интересно",
-    pastEyebrow: "Прошлые поездки",
-    pastTitle: "Не одна стандартная экскурсия, а разные способы путешествовать.",
-    pastIntro:
-      "За эти годы я провел десятки поездок в разных ролях: гид, организатор, преподаватель, человек, который знакомит людей, и просто попутчик.",
-    experiences: [
-      ["Нидерланды изнутри", "Города, вода, местная жизнь и истории, которые обычно не попадают в стандартный маршрут."],
-      ["Искусство и природа", "Музеи, ландшафты и долгие разговоры без гонки между обязательными точками."],
-      ["Выходные через границу", "Бельгия, Зеландия и близкие места через историю, еду и людей."],
-      ["Поездки с целью", "Яхта, сообщества и исследовательские поездки для предпринимателей, инвесторов и любопытных профессионалов."],
+    switchHref: "/trips", switchLabel: "EN", switchAria: "Открыть английскую версию",
+    eyebrow: "Поездки с Алексом", title: "Поездки со мной.",
+    intro: "Города, музеи, национальные парки и поездки небольшими группами.",
+    navUpcoming: "Ближайшая поездка", navPast: "Прошлые поездки", navFormats: "Форматы",
+    upcomingEyebrow: "Октябрь 2026", upcomingTitle: "Крёллер-Мюллер и Де-Хоге-Велюве",
+    upcomingText: "Точная дата и полная программа появятся позднее.",
+    languageNote: "Поездка пройдет на русском языке.", interest: "Мне интересно",
+    pastTitle: "Прошлые поездки", pastIntro: "Некоторые поездки, которые я организовывал с 2023 по 2025 год.",
+    trips: [
+      ["Арт-путешествие в Крёллер-Мюллер", "Музей Крёллер-Мюллер и Де-Хоге-Велюве."],
+      ["Один день, чтобы почувствовать себя местным", "Однодневный маршрут по Нидерландам."],
+      ["Зеландия: море, замки, вино и устрицы", "Нетворкинг-поездка по Зеландии."],
+      ["Две Голландии и пять городов", "Серия маршрутов по Северной и Южной Голландии."],
+      ["Сказочный Брюгге", "Один день в Брюгге."],
+      ["Ван Гог без толп", "Ван Гог и национальный парк Де-Хоге-Велюве."],
+      ["Бельгия за один выходной", "Брюссель и Брюгге."],
+      ["Неделя на яхте вокруг Греции", "Семь дней под парусом вокруг Греции."],
+      ["Онбординг-поездка: две Голландии и пять городов", "Маршрут небольшой группой через пять городов."],
+      ["Солнечный Хоббитон и угрюмый Урк", "Нетворкинг-поездка по Нидерландам."],
     ],
-    formatsEyebrow: "Форматы",
-    formatsTitle: "Поездка может быть одним днем или началом нового проекта.",
+    formatsTitle: "Форматы",
     formats: ["Однодневные поездки", "Культура и история", "Природа", "Инвестиционные и исследовательские поездки"],
-    whyTitle: "Почему со мной",
-    whyText:
-      "По образованию я историк, а работал в образовании, сообществах, стартапах и инвестициях. Я связываю место с широким контекстом, знакомлю людей и оставляю пространство для неожиданного.",
-    finalTitle: "Хотите поехать в следующий раз?",
-    finalText: "Напишите мне в WhatsApp. Оплату и покупку билетов добавим позже.",
-    finalCta: "Написать Алексу",
-    home: "Главная",
+    backgroundTitle: "Обо мне",
+    backgroundText: "Историк по образованию. Опыт работы в образовании, сообществах, стартапах и инвестициях.",
+    finalTitle: "Присоединиться к следующей поездке", finalText: "Напишите мне в WhatsApp.",
+    finalCta: "Написать Алексу", home: "Главная",
   },
 } as const;
 
@@ -90,35 +82,16 @@ export function TripsPage({ locale }: TripsPageProps) {
 
   return (
     <main className="bg-white text-ink">
-      <SiteHeader />
+      <SiteHeader languageSwitch={{ href: t.switchHref, label: t.switchLabel, ariaLabel: t.switchAria }} />
 
-      <section className="relative min-h-[84svh] overflow-hidden bg-ink text-white">
-        <Image
-          src="/media/alex/alex-travel-01.jpg"
-          alt={locale === "ru" ? "Алекс Линдхольм в путешествии" : "Alex Lindholm travelling in Tallinn"}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[55%_50%]"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,19,26,0.92)_0%,rgba(16,19,26,0.72)_42%,rgba(16,19,26,0.22)_78%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/72 via-transparent to-ink/35" />
-
-        <div className="relative z-10 mx-auto flex min-h-[84svh] max-w-7xl flex-col justify-end px-5 pb-10 pt-28 sm:px-8 sm:pb-16">
+      <section className="relative min-h-[78svh] overflow-hidden bg-ink text-white">
+        <Image src="/media/alex/alex-travel-01.jpg" alt={locale === "ru" ? "Алекс Линдхольм в путешествии" : "Alex Lindholm travelling in Tallinn"} fill priority sizes="100vw" className="object-cover object-[55%_50%]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,19,26,0.92)_0%,rgba(16,19,26,0.70)_44%,rgba(16,19,26,0.20)_80%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-ink/35" />
+        <div className="relative z-10 mx-auto flex min-h-[78svh] max-w-7xl flex-col justify-end px-5 pb-10 pt-28 sm:px-8 sm:pb-16">
           <div className="max-w-3xl">
-            <div className="mb-5 flex items-center gap-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/72">{t.eyebrow}</p>
-              <Link
-                href={t.switchHref}
-                className="rounded-full border border-white/35 px-3 py-1 text-xs font-semibold text-white transition hover:bg-white hover:text-ink"
-                hrefLang={t.switchLabel.toLowerCase()}
-              >
-                {t.switchLabel}
-              </Link>
-            </div>
-            <h1 className="max-w-2xl text-4xl font-medium leading-[1.04] tracking-[-0.035em] text-balance sm:text-6xl">
-              {t.title}
-            </h1>
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-white/72">{t.eyebrow}</p>
+            <h1 className="max-w-2xl text-4xl font-medium leading-[1.04] tracking-[-0.035em] text-balance sm:text-6xl">{t.title}</h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/82 sm:text-lg">{t.intro}</p>
             <nav className="mt-7 flex flex-wrap gap-2" aria-label={locale === "ru" ? "Разделы страницы" : "Page sections"}>
               <a href="#next-trip" className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-ink">{t.navUpcoming}</a>
@@ -131,27 +104,17 @@ export function TripsPage({ locale }: TripsPageProps) {
 
       <section id="next-trip" className="scroll-mt-24 border-b border-ink/10 bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <article className="grid overflow-hidden rounded-sm border border-ink/10 bg-[#F4F6F8] lg:grid-cols-[0.75fr_1.25fr]">
-            <div className="flex min-h-56 flex-col justify-between bg-electric p-6 text-white sm:p-8">
+          <article className="grid overflow-hidden rounded-sm border border-ink/10 bg-[#F5F3F2] lg:grid-cols-[0.75fr_1.25fr]">
+            <div className="flex min-h-56 flex-col justify-between bg-[#8F3F4D] p-6 text-white sm:p-8">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/76">{t.upcomingEyebrow}</p>
-              <div>
-                <p className="text-5xl font-semibold leading-none">{locale === "ru" ? "ОКТ" : "OCT"}</p>
-                <p className="mt-3 text-sm uppercase tracking-[0.18em]">2026</p>
-              </div>
+              <div><p className="text-5xl font-semibold leading-none">{locale === "ru" ? "ОКТ" : "OCT"}</p><p className="mt-3 text-sm tracking-[0.18em]">2026</p></div>
             </div>
             <div className="p-6 sm:p-10 lg:p-12">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">{t.navUpcoming}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8F3F4D]">{t.navUpcoming}</p>
               <h2 className="mt-4 max-w-2xl text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-5xl">{t.upcomingTitle}</h2>
               <p className="mt-5 max-w-2xl text-base leading-7 text-graphite/76 sm:text-lg">{t.upcomingText}</p>
               <p className="mt-4 text-xs text-graphite/55">{t.languageNote}</p>
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-7 inline-flex min-h-12 items-center justify-center rounded-md bg-ink px-5 text-sm font-semibold text-white transition hover:bg-graphite"
-              >
-                {t.interest} <span className="ml-2" aria-hidden="true">→</span>
-              </a>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex min-h-12 items-center justify-center rounded-md bg-ink px-5 text-sm font-semibold text-white transition hover:bg-graphite">{t.interest}<span className="ml-2" aria-hidden="true">→</span></a>
             </div>
           </article>
         </div>
@@ -159,60 +122,44 @@ export function TripsPage({ locale }: TripsPageProps) {
 
       <section id="past-trips" className="scroll-mt-24 bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">{t.pastEyebrow}</p>
-              <h2 className="mt-4 text-3xl font-medium leading-tight tracking-[-0.025em] text-balance sm:text-4xl">{t.pastTitle}</h2>
-              <p className="mt-5 max-w-lg text-base leading-7 text-graphite/72">{t.pastIntro}</p>
-            </div>
-            <div className="grid gap-px overflow-hidden rounded-sm border border-ink/10 bg-ink/10 sm:grid-cols-2">
-              {t.experiences.map(([title, text], index) => (
-                <article key={title} className="min-h-56 bg-white p-6 sm:p-7">
-                  <p className="text-xs font-semibold tabular-nums text-copper">0{index + 1}</p>
-                  <h3 className="mt-8 text-xl font-semibold tracking-[-0.015em]">{title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-graphite/68">{text}</p>
+          <div className="mb-10 max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8F3F4D]">{t.navPast}</p>
+            <h2 className="mt-4 text-3xl font-medium tracking-[-0.025em] sm:text-4xl">{t.pastTitle}</h2>
+            <p className="mt-4 text-base leading-7 text-graphite/68">{t.pastIntro}</p>
+          </div>
+          <div className="border-t border-ink/12">
+            {sharedTrips.map((trip, index) => {
+              const [title, description] = t.trips[index];
+              return (
+                <article key={`${trip.date}-${title}`} className="grid gap-5 border-b border-ink/12 py-6 md:grid-cols-[9rem_16rem_1fr] md:items-center md:gap-8">
+                  <time className="text-sm font-semibold tabular-nums text-[#8F3F4D]">{trip.date}</time>
+                  <div className="relative h-40 overflow-hidden rounded-sm bg-[#F5F3F2]">
+                    <Image src={trip.image} alt="" fill sizes="(min-width: 768px) 16rem, 100vw" className="scale-[1.06] object-cover" style={{ objectPosition: trip.position }} />
+                  </div>
+                  <div><h3 className="text-xl font-semibold tracking-[-0.015em] sm:text-2xl">{title}</h3><p className="mt-2 text-sm leading-6 text-graphite/66 sm:text-base">{description}</p></div>
                 </article>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       <section id="formats" className="scroll-mt-24 bg-ink py-16 text-white sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-2">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/58">{t.formatsEyebrow}</p>
-            <h2 className="mt-4 max-w-xl text-3xl font-medium leading-tight tracking-[-0.025em] text-balance sm:text-4xl">{t.formatsTitle}</h2>
-            <div className="mt-8 flex flex-wrap gap-2">
-              {t.formats.map((format) => (
-                <span key={format} className="rounded-full border border-white/20 px-4 py-2 text-sm text-white/82">{format}</span>
-              ))}
-            </div>
-          </div>
-          <div className="border-l border-white/16 pl-6 sm:pl-8">
-            <h2 className="text-2xl font-medium tracking-[-0.02em]">{t.whyTitle}</h2>
-            <p className="mt-5 max-w-xl text-base leading-8 text-white/72 sm:text-lg">{t.whyText}</p>
-          </div>
+          <div><h2 className="text-3xl font-medium tracking-[-0.025em] sm:text-4xl">{t.formatsTitle}</h2><div className="mt-8 flex flex-wrap gap-2">{t.formats.map((format) => <span key={format} className="rounded-full border border-white/20 px-4 py-2 text-sm text-white/82">{format}</span>)}</div></div>
+          <div className="border-l border-white/16 pl-6 sm:pl-8"><h2 className="text-2xl font-medium tracking-[-0.02em]">{t.backgroundTitle}</h2><p className="mt-5 max-w-xl text-base leading-8 text-white/72 sm:text-lg">{t.backgroundText}</p></div>
         </div>
       </section>
 
-      <section className="bg-electric py-16 text-white sm:py-20">
+      <section className="bg-[#8F3F4D] py-16 text-white sm:py-20">
         <div className="mx-auto flex max-w-7xl flex-col gap-7 px-5 sm:px-8 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <h2 className="text-3xl font-medium tracking-[-0.025em] sm:text-4xl">{t.finalTitle}</h2>
-            <p className="mt-3 max-w-2xl text-base leading-7 text-white/76">{t.finalText}</p>
-          </div>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-md bg-white px-5 text-sm font-semibold text-ink transition hover:bg-white/90">
-            {t.finalCta} <span className="ml-2" aria-hidden="true">→</span>
-          </a>
+          <div><h2 className="text-3xl font-medium tracking-[-0.025em] sm:text-4xl">{t.finalTitle}</h2><p className="mt-3 text-base text-white/76">{t.finalText}</p></div>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-md bg-white px-5 text-sm font-semibold text-ink transition hover:bg-white/90">{t.finalCta}<span className="ml-2" aria-hidden="true">→</span></a>
         </div>
       </section>
 
       <footer className="border-t border-ink/10 bg-white py-7 text-sm text-graphite/62">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
-          <p>© {new Date().getFullYear()} Alex Lindholm</p>
-          <Link href="/" className="font-medium text-ink hover:text-electric">{t.home}</Link>
-        </div>
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 sm:px-8"><p>© {new Date().getFullYear()} Alex Lindholm</p><Link href="/" className="font-medium text-ink hover:text-[#8F3F4D]">{t.home}</Link></div>
       </footer>
     </main>
   );
