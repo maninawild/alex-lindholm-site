@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/product-venture-leader",
     "/lectures-and-speaking",
+    "/trips",
+    "/ru/trips",
     "/articles",
     ...getInsightCategories()
       .filter((category) => category.articleCount > 0)

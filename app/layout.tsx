@@ -7,7 +7,7 @@ import { personJsonLd, siteUrl, websiteJsonLd } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
   variable: "--font-inter",
   display: "swap",
 });
