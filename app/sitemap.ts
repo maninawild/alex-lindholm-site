@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/lectures-and-speaking",
     "/trips",
     "/ru/trips",
+    "/ru/trips/hoge-veluwe",
     "/articles",
     ...getInsightCategories()
       .filter((category) => category.articleCount > 0)
