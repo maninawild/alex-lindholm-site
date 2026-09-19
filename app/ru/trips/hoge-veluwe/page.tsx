@@ -2,18 +2,19 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
-import { TripReviews } from "@/components/trip-reviews";
+import { TestimonialsSection } from "@/components/testimonials-section";
+import { TripPartnershipNote } from "@/components/trip-reviews";
 import { siteUrl } from "@/lib/site";
 
 const whatsappUrl = "https://wa.me/message/4OIGQ3FHUZQSD1";
 
 export const metadata: Metadata = {
-  title: "Поездка в Hoge Veluwe и музей Крёллер-Мюллер",
+  title: "Hoge Veluwe",
   description:
     "Поездка в национальный парк Hoge Veluwe и музей Крёллер-Мюллер 3 и 17 октября 2026 года.",
   alternates: { canonical: `${siteUrl}/ru/trips/hoge-veluwe` },
   openGraph: {
-    title: "Поездка в Hoge Veluwe",
+    title: "Hoge Veluwe: Ван Гог и осенний парк",
     description: "Ван Гог, велосипеды, осенний лес и музей Крёллер-Мюллер.",
     url: "/ru/trips/hoge-veluwe",
     type: "website",
@@ -42,33 +43,38 @@ export default function HogeVeluweTripPage() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,19,26,0.94)_0%,rgba(16,19,26,0.70)_48%,rgba(16,19,26,0.22)_82%)]" />
         <div className="relative z-10 mx-auto flex min-h-[68svh] max-w-7xl flex-col justify-end px-5 pb-10 pt-28 sm:px-8 sm:pb-16">
           <Link href="/ru/trips" className="mb-8 text-sm font-semibold text-white/72 hover:text-white">← Все поездки</Link>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">3 и 17 октября 2026</p>
-          <h1 className="mt-4 max-w-4xl text-4xl font-medium leading-[1.04] tracking-[-0.035em] text-balance sm:text-6xl">Поездка в Hoge Veluwe</h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-white/82 sm:text-lg">Музей Крёллер-Мюллер, Ван Гог, велосипеды и осенний лес.</p>
+          <h1 className="max-w-4xl text-4xl font-medium leading-[1.04] tracking-[-0.035em] text-balance sm:text-6xl">Hoge Veluwe: Ван Гог и осенний парк</h1>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-white/82 sm:text-lg">Однодневная поездка в музей Крёллер-Мюллер и национальный парк.</p>
         </div>
       </section>
 
-      <section className="border-b border-ink/10 py-12 sm:py-16">
-        <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="grid gap-3 sm:grid-cols-2">
+      <section className="border-b border-ink/10 py-10 sm:py-12">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <div className="flex flex-col gap-3 border-b border-ink/10 pb-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8F3F4D]">Бронирование</p>
+              <h2 className="mt-2 text-2xl font-medium tracking-[-0.02em]">Выберите дату</h2>
+            </div>
+            <p className="text-sm text-graphite/68"><strong className="text-ink">€90</strong> Гаага и Роттердам · <strong className="text-ink">€99</strong> Амстердам</p>
+          </div>
+          <div>
             {dates.map((item) => (
-              <article key={item.date} className="rounded-sm border border-ink/10 bg-[#F4F6F8] p-5">
-                <p className="text-xl font-semibold">{item.date}</p>
-                <p className="mt-1 text-sm text-graphite/68">{item.time} · поездка на целый день</p>
-                <div className="mt-5 flex items-center gap-1.5" aria-label={`Осталось ${item.places} места`}>
-                  {[0, 1, 2, 3].map((place) => <span key={place} className={`h-2.5 flex-1 rounded-full ${place < item.places ? "bg-electric" : "bg-ink/10"}`} />)}
+              <article key={item.date} className="grid gap-4 border-b border-ink/10 py-5 sm:grid-cols-[1fr_auto_auto] sm:items-center sm:gap-8">
+                <div>
+                  <p className="text-lg font-semibold">{item.date}</p>
+                  <p className="mt-1 text-sm text-graphite/68">{item.time}</p>
                 </div>
-                <p className="mt-2 text-sm font-semibold">Осталось: {item.places} {item.places === 4 ? "места" : "места"}</p>
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-md bg-ink px-4 text-sm font-semibold text-white transition hover:bg-graphite">Я еду!</a>
+                <div className="flex items-center gap-3">
+                  <div className="flex gap-1.5" aria-hidden="true">
+                    {[0, 1, 2, 3].map((place) => <span key={place} className={`h-2.5 w-7 rounded-full ${place < item.places ? "bg-[#8F3F4D]" : "bg-ink/10"}`} />)}
+                  </div>
+                  <p className="whitespace-nowrap text-sm font-semibold">{item.places} места</p>
+                </div>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-md bg-[#8F3F4D] px-5 text-sm font-semibold text-white transition hover:bg-ink">Я еду!</a>
               </article>
             ))}
           </div>
-          <aside className="rounded-sm bg-electric p-6 text-white sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/68">Цена</p>
-            <div className="mt-4 flex items-end gap-3"><span className="text-4xl font-semibold">€90</span><span className="pb-1 text-sm text-white/75">Гаага и Роттердам</span></div>
-            <div className="mt-3 flex items-end gap-3"><span className="text-3xl font-semibold">€99</span><span className="pb-1 text-sm text-white/75">Амстердам</span></div>
-            <p className="mt-5 text-sm leading-6 text-white/78">Включены билеты в национальный парк и музей, а также транспорт. При покупке билета укажите свой адрес.</p>
-          </aside>
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-graphite/68">В цену включены билеты в национальный парк и музей, а также транспорт. При покупке билета укажите свой адрес.</p>
         </div>
       </section>
 
@@ -103,14 +109,8 @@ export default function HogeVeluweTripPage() {
         </div>
       </section>
 
-      <TripReviews locale="ru" />
-
-      <section className="bg-electric py-12 text-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 sm:px-8 md:flex-row md:items-center md:justify-between">
-          <h2 className="text-2xl font-medium">Забронировать место</h2>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-md bg-white px-5 text-sm font-semibold text-ink">Я еду!</a>
-        </div>
-      </section>
+      <TestimonialsSection locale="ru" />
+      <TripPartnershipNote locale="ru" />
     </main>
   );
 }

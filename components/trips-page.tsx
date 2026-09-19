@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
-import { TripReviews } from "@/components/trip-reviews";
+import { TestimonialsSection } from "@/components/testimonials-section";
+import { TripPartnershipNote } from "@/components/trip-reviews";
 
 const whatsappUrl = "https://wa.me/message/4OIGQ3FHUZQSD1";
 
@@ -192,7 +193,8 @@ export function TripsPage({ locale }: TripsPageProps) {
         </div>
       </section>
 
-      <TripReviews locale={locale} />
+      <TestimonialsSection locale={locale} />
+      <TripPartnershipNote locale={locale} />
 
       <section id="formats" className="scroll-mt-24 bg-ink py-16 text-white sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-2">

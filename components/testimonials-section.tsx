@@ -70,7 +70,8 @@ function TestimonialCard({
   );
 }
 
-export function TestimonialsSection() {
+export function TestimonialsSection({ locale = "en" }: { locale?: "en" | "ru" }) {
+  const ru = locale === "ru";
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -140,25 +141,26 @@ export function TestimonialsSection() {
         <header className="grid gap-6 border-b border-ink/8 pb-10 lg:grid-cols-[0.72fr_1fr] lg:items-end lg:gap-16">
           <div>
             <p className="text-[0.7rem] font-semibold uppercase text-electric">
-              Words from people
+              {ru ? "Отзывы" : "Words from people"}
             </p>
             <h2
               id="testimonials-heading"
               className="mt-4 text-4xl font-medium leading-[1.08] text-balance sm:text-5xl"
             >
-              What stayed with people
+              {ru ? "Что говорят люди" : "What stayed with people"}
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-7 text-graphite/72 lg:pb-1 lg:text-lg lg:leading-8">
-            Selected feedback after talks, founder sessions, consultations and
-            collaborations.
+            {ru
+              ? "Отзывы после выступлений, консультаций, совместной работы и других проектов."
+              : "Selected feedback after talks, founder sessions, consultations and collaborations."}
           </p>
         </header>
 
         <div
           ref={trackRef}
           role="region"
-          aria-label="Testimonials carousel"
+          aria-label={ru ? "Отзывы" : "Testimonials carousel"}
           aria-roledescription="carousel"
           tabIndex={0}
           onKeyDown={handleKeyDown}
@@ -198,7 +200,7 @@ export function TestimonialsSection() {
               type="button"
               onClick={() => scrollToIndex(activeIndex - 1)}
               disabled={activeIndex === 0}
-              aria-label="Previous testimonial"
+              aria-label={ru ? "Предыдущий отзыв" : "Previous testimonial"}
               className="flex h-11 w-11 items-center justify-center rounded-full border border-ink/14 text-lg text-ink transition hover:border-electric hover:text-electric focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 disabled:cursor-not-allowed disabled:opacity-30"
             >
               <span aria-hidden="true">←</span>
@@ -207,7 +209,7 @@ export function TestimonialsSection() {
               type="button"
               onClick={() => scrollToIndex(activeIndex + 1)}
               disabled={activeIndex === testimonials.length - 1}
-              aria-label="Next testimonial"
+              aria-label={ru ? "Следующий отзыв" : "Next testimonial"}
               className="flex h-11 w-11 items-center justify-center rounded-full border border-ink/14 text-lg text-ink transition hover:border-electric hover:text-electric focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 disabled:cursor-not-allowed disabled:opacity-30"
             >
               <span aria-hidden="true">→</span>
