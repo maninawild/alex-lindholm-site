@@ -22,21 +22,23 @@ const clinic = [
 ] as const;
 
 function Cell({ children }: { children: string }) {
-  return <span className="whitespace-pre-line">{children}</span>;
+  return <span className="whitespace-pre-line break-words text-pretty">{children.replace(/\n{2,}/g, "\n")}</span>;
 }
 
 export function BuildWhatHateCantPage() {
+  const whatsappUrl = "https://wa.me/message/4OIGQ3FHUZQSD1";
+
   return (
     <PrivatePageShell>
       <main className="bg-paper">
-        <section className="border-b border-white/10 bg-[#10131a] text-white">
+        <section className="border-b border-white/10 bg-[#171921] text-white">
           <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20">
             <Link href="/private#development-ideas" className="text-xs font-semibold uppercase tracking-[0.16em] text-white/52 transition hover:text-white">
               ← New Development Ideas
             </Link>
             <p className="mt-8 inline-flex border border-white/20 px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/72">Private space · All rights reserved</p>
-            <Image src="/logos/inspirexchange.jpg" alt="InspireXchange" width={900} height={900} priority className="mt-8 h-14 w-64 object-cover object-center" />
-            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-electric">Private Development Concept</p>
+            <Image src="/logos/inspirexchange-wordmark-dark.svg" alt="InspireXchange" width={232} height={29} priority className="mt-8 h-auto w-[232px]" />
+            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-[#FF6F61]">Private Development Concept</p>
             <h1 className="mt-4 max-w-5xl font-serif text-5xl font-medium leading-[0.98] tracking-[-0.045em] text-balance sm:text-7xl">
               InspireXchange Workshops Track for “Build What Hate Can’t” Hackathon
             </h1>
@@ -48,16 +50,16 @@ export function BuildWhatHateCantPage() {
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <div className="max-w-3xl space-y-6 text-base leading-8 text-graphite/76 sm:text-lg">
               <p>Designed for builders and non-builders working together, this programme applies startup practices to real challenges facing Jewish communities: problem definition, creative experimentation, user validation, focused development and viable partnerships. Our goal is to equip builders with the tools and approaches that maximise their work and help them to build the repetitive and scalable project.</p>
-              <blockquote className="border-l-2 border-electric pl-5 font-serif text-2xl leading-9 tracking-[-0.02em] text-ink sm:text-3xl sm:leading-10">
-                Inspired by <a href="https://voices.sefaria.org/sheets/246875" target="_blank" rel="noopener noreferrer" className="font-semibold text-electric underline decoration-electric/30 underline-offset-4 hover:decoration-electric">Olam Chesed Yibaneh</a>, “the world is built with kindness,” we bring that principle into practice: building this world from love through useful, collaborative action. <a href="https://voices.sefaria.org/sheets/246875" target="_blank" rel="noopener noreferrer" className="text-base font-sans font-medium text-electric underline decoration-electric/30 underline-offset-4 hover:decoration-electric">Voices on Sefaria ↗</a>
+              <blockquote className="border-l-2 border-[#FF6F61] pl-5 font-serif text-2xl leading-9 tracking-[-0.02em] text-ink sm:text-3xl sm:leading-10">
+                Inspired by <a href="https://voices.sefaria.org/sheets/246875" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-[#FF6F61]/60 underline-offset-4 hover:decoration-[#FF6F61]">Olam Chesed Yibaneh</a>, “the world is built with kindness,” we bring that principle into practice: building this world from love through useful, collaborative action. <a href="https://voices.sefaria.org/sheets/246875" target="_blank" rel="noopener noreferrer" className="text-base font-sans font-medium text-[#424449] underline decoration-[#FF6F61]/60 underline-offset-4 hover:decoration-[#FF6F61]">Voices on Sefaria ↗</a>
               </blockquote>
               <p>Our aim is to help each initiative become a tested solution with a clear path to adoption, growth, partnerships and potential funding. Reusable materials, documented learning and partner handovers allow projects to continue through future seminars and hackathons, reducing the risk of abandonment after the closing event.</p>
               <p>Seven online workshops, 40 minutes each: 10 minutes of introduction, 20 minutes of guided work and 10 minutes of feedback. Teams develop their own projects throughout the programme.</p>
             </div>
 
             <div className="mt-14 overflow-x-auto border border-ink/10">
-              <table className="min-w-[44rem] w-full border-collapse text-left text-sm leading-6 text-graphite/76" aria-label="Workshop programme">
-                <thead className="bg-ink text-white">
+              <table className="min-w-[38rem] w-full border-collapse text-left text-sm leading-6 text-graphite/76" aria-label="Workshop programme">
+                <thead className="bg-[#171921] text-white">
                   <tr>
                     <th scope="col" className="w-[25%] p-5 font-semibold">Workshop</th>
                     <th scope="col" className="p-5 font-semibold">Programme details</th>
@@ -68,9 +70,9 @@ export function BuildWhatHateCantPage() {
                     <tr key={workshop} className="border-t border-ink/10 align-top even:bg-ink/[0.025]">
                       <th scope="row" className="p-5 font-semibold text-ink"><Cell>{workshop}</Cell></th>
                       <td className="space-y-5 p-5">
-                        <div><p className="text-xs font-semibold uppercase tracking-[0.14em] text-electric">Focus</p><p className="mt-2"><Cell>{focus}</Cell></p></div>
-                        <div><p className="text-xs font-semibold uppercase tracking-[0.14em] text-electric">Deliverables</p><p className="mt-2"><Cell>{deliverables}</Cell></p></div>
-                        <div><p className="text-xs font-semibold uppercase tracking-[0.14em] text-electric">Format &amp; workspace</p><p className="mt-2"><Cell>{format}</Cell></p></div>
+                        <div><p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#424449]">Focus</p><p className="mt-2"><Cell>{focus}</Cell></p></div>
+                        <div><p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#424449]"><span aria-hidden="true" className="mr-1 text-[#FF6F61]">✓</span>Deliverables</p><p className="mt-2"><Cell>{deliverables}</Cell></p></div>
+                        <div><p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#424449]">Format &amp; workspace</p><p className="mt-2"><Cell>{format}</Cell></p></div>
                       </td>
                     </tr>
                   ))}
@@ -82,10 +84,10 @@ export function BuildWhatHateCantPage() {
 
         <section className="border-t border-ink/10 bg-bone py-14 sm:py-20">
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-electric">IX Product Clinic | In person at the closing event</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#424449]">IX Product Clinic | In person at the closing event</p>
             <div className="mt-8 overflow-x-auto border border-ink/10 bg-white">
               <table className="min-w-[44rem] w-full border-collapse text-left text-sm leading-6 text-graphite/76">
-                <thead className="bg-ink text-white">
+                <thead className="bg-[#171921] text-white">
                   <tr><th scope="col" className="w-[24%] p-5 font-semibold">Element</th><th scope="col" className="p-5 font-semibold">Description</th></tr>
                 </thead>
                 <tbody>
@@ -101,9 +103,24 @@ export function BuildWhatHateCantPage() {
           </div>
         </section>
 
+        <section className="bg-[#171921] py-14 text-white sm:py-20">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8">
+            <a href="https://www.inspirexchange.nl/" target="_blank" rel="noopener noreferrer" className="inline-block" aria-label="Visit InspireXchange">
+              <Image src="/logos/inspirexchange-wordmark-dark.svg" alt="InspireXchange" width={232} height={29} className="h-auto w-[232px]" />
+            </a>
+            <div className="mt-8 max-w-3xl border-l-2 border-[#FF6F61] pl-5 sm:pl-7">
+              <p className="text-4xl font-medium leading-none text-[#FF6F61]" aria-hidden="true">!</p>
+              <h2 className="mt-3 text-2xl font-medium tracking-[-0.02em]">Additional bonuses for participants.</h2>
+              <p className="mt-4 text-lg leading-8 text-white/74">Each hackathon participant will receive 1-hour free consultation from the InspireXchange team (worth €150) and the chance to win €5 000 educational grant (covers 6 months of acceleration program).</p>
+              <a href="https://www.inspirexchange.nl/" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex text-sm font-semibold text-white underline decoration-[#FF6F61] decoration-2 underline-offset-4">InspireXchange.nl ↗</a>
+            </div>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex min-h-12 items-center justify-center rounded-md bg-[#FF6F61] px-5 text-sm font-semibold text-[#171921] transition hover:bg-white">Request more details <span className="ml-2" aria-hidden="true">→</span></a>
+          </div>
+        </section>
+
         <footer className="border-t border-ink/10 bg-white py-8">
           <div className="mx-auto flex max-w-7xl items-center gap-4 px-5 sm:px-8">
-            <Image src="/logos/inspirexchange.jpg" alt="InspireXchange" width={900} height={900} className="h-14 w-64 object-cover object-center" />
+            <Image src="/logos/inspirexchange-wordmark.jpg" alt="InspireXchange" width={593} height={71} className="h-auto w-[220px]" />
             <p className="text-sm leading-6 text-graphite/62">© InspireXchange. All programme ideas and materials are protected by copyright.</p>
           </div>
         </footer>
