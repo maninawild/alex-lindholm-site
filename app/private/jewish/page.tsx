@@ -4,6 +4,7 @@ import { connection } from "next/server";
 import { PrivateAccessGate } from "@/components/private/private-access-gate";
 import { PrivatePageShell } from "@/components/private/private-page-shell";
 import { PrivateProjectCard } from "@/components/private/private-project-card";
+import { privateIdeas } from "@/data/private-ideas";
 import { getPrivatePageBySlug } from "@/lib/private-access/config";
 import { getPrivateSession } from "@/lib/private-access/session";
 
@@ -261,6 +262,38 @@ export default async function JewishPrivatePage() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        <section
+          id="development-ideas"
+          className="relative overflow-hidden bg-[#10131a] px-5 py-16 text-white sm:px-8 sm:py-24"
+          aria-labelledby="development-ideas-title"
+        >
+          <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-electric/25 blur-3xl" />
+          <div className="relative mx-auto max-w-7xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-electric">Private concepts</p>
+            <h2 id="development-ideas-title" className="mt-3 font-serif text-4xl font-medium tracking-[-0.04em] sm:text-5xl">
+              New Development Ideas
+            </h2>
+            <nav aria-label="New development ideas" className="mt-8 grid gap-3 md:grid-cols-3">
+              {privateIdeas.map((idea, index) => (
+                <Link
+                  key={idea.slug}
+                  href={`/private/ideas/${idea.slug}`}
+                  className="group flex min-h-44 flex-col justify-between rounded-sm border border-white/14 bg-white/[0.065] p-5 transition hover:-translate-y-0.5 hover:border-electric/65 hover:bg-white/[0.1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric"
+                >
+                  <span className="flex items-center justify-between gap-3 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-white/42">
+                    <span>{idea.status}</span>
+                    <span aria-hidden="true">0{index + 1}</span>
+                  </span>
+                  <span className="flex items-end justify-between gap-4">
+                    <span className="font-serif text-2xl font-medium leading-tight tracking-[-0.025em]">{idea.title}</span>
+                    <span className="shrink-0 text-electric transition group-hover:translate-x-1" aria-hidden="true">→</span>
+                  </span>
+                </Link>
+              ))}
+            </nav>
           </div>
         </section>
 
