@@ -34,7 +34,7 @@ export default function PrivateLandingPage() {
               Travel &amp; Excursions <span aria-hidden="true">↗</span>
             </a>
             <Link href="/private/jewish" className="flex min-h-14 items-center justify-between rounded-md bg-[#8F3F4D] px-5 text-base font-semibold text-white transition hover:bg-[#73333f]">
-              Learn more about Private Projects <span aria-hidden="true">→</span>
+              Jewish Experience &amp; Projects <span aria-hidden="true">→</span>
             </Link>
           </nav>
         </section>

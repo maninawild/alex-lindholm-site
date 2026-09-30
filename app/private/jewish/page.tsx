@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { connection } from "next/server";
 import { PrivateAccessGate } from "@/components/private/private-access-gate";
 import { PrivatePageShell } from "@/components/private/private-page-shell";
@@ -124,6 +125,14 @@ export default async function JewishPrivatePage() {
               <div className="mt-9 max-w-2xl border-l border-white/20 pl-5 text-sm leading-6 text-white/58">
                 Shared personally with you. Please do not copy, forward or redistribute this content without permission.
               </div>
+              <nav aria-label="Private section navigation" className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold">
+                <Link href="/private" className="text-white/68 transition hover:text-white">
+                  ← Private overview
+                </Link>
+                <Link href="/private#development-ideas" className="text-white/68 transition hover:text-white">
+                  Explore New Development Ideas →
+                </Link>
+              </nav>
             </div>
             <div className="relative min-h-[300px] overflow-hidden rounded-sm border border-white/10 bg-white/5 shadow-[0_28px_80px_rgba(0,0,0,0.28)] sm:min-h-[390px]">
               <Image
