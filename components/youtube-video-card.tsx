@@ -41,7 +41,7 @@ export function YouTubeVideoCard({ video, variant = "media" }: YouTubeVideoCardP
               className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
             />
             <span className="absolute inset-0 bg-ink/15 transition group-hover:bg-ink/25" />
-            <span className="absolute left-1/2 top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#ff0033] text-xl text-white shadow-lg" aria-hidden="true">
+            <span className="absolute left-1/2 top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-xl text-ink shadow-lg" aria-hidden="true">
               ▶
             </span>
           </button>

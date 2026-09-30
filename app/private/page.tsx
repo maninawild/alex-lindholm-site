@@ -33,7 +33,7 @@ export default function PrivateLandingPage() {
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex min-h-14 items-center justify-between rounded-md border border-ink/12 bg-white px-5 text-base font-semibold text-ink transition hover:border-copper hover:text-copper">
               Travel &amp; Excursions <span aria-hidden="true">↗</span>
             </a>
-            <Link href="/private/jewish" className="flex min-h-14 items-center justify-between rounded-md bg-[#8F3F4D] px-5 text-base font-semibold text-white transition hover:bg-[#73333f]">
+            <Link href="/private/jewish" className="flex min-h-14 items-center justify-between rounded-md bg-ink px-5 text-base font-semibold text-white transition hover:bg-graphite">
               Jewish Experience &amp; Projects <span aria-hidden="true">→</span>
             </Link>
           </nav>
@@ -44,9 +44,9 @@ export default function PrivateLandingPage() {
           className="relative mt-16 overflow-hidden rounded-sm bg-[#10131a] px-5 py-8 text-white shadow-[0_24px_70px_rgba(16,19,26,0.18)] sm:px-8 sm:py-10"
           aria-labelledby="development-ideas-title"
         >
-          <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#8F3F4D]/45 blur-3xl" />
+          <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-electric/25 blur-3xl" />
           <div className="relative">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d9a6af]">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-electric">
               Private concepts
             </p>
             <h2
@@ -60,7 +60,7 @@ export default function PrivateLandingPage() {
                 <Link
                   key={idea.slug}
                   href={`/private/ideas/${idea.slug}`}
-                  className="group flex min-h-44 flex-col justify-between rounded-sm border border-white/14 bg-white/[0.065] p-5 transition hover:-translate-y-0.5 hover:border-[#d9a6af]/65 hover:bg-white/[0.1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d9a6af]"
+                  className="group flex min-h-44 flex-col justify-between rounded-sm border border-white/14 bg-white/[0.065] p-5 transition hover:-translate-y-0.5 hover:border-electric/65 hover:bg-white/[0.1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric"
                 >
                   <span className="flex items-center justify-between gap-3 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-white/42">
                     <span>{idea.status}</span>
@@ -70,7 +70,7 @@ export default function PrivateLandingPage() {
                     <span className="font-serif text-2xl font-medium leading-tight tracking-[-0.025em]">
                       {idea.title}
                     </span>
-                    <span className="shrink-0 text-[#d9a6af] transition group-hover:translate-x-1" aria-hidden="true">
+                    <span className="shrink-0 text-electric transition group-hover:translate-x-1" aria-hidden="true">
                       →
                     </span>
                   </span>

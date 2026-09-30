@@ -49,13 +49,13 @@ export function PrivateIdeaPage({ title }: { title: string }) {
             >
               ← New Development Ideas
             </Link>
-            <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-[#d9a6af]">
+            <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-electric">
               Private Development Concept
             </p>
             <h1 className="mt-4 max-w-4xl font-serif text-5xl font-medium leading-[0.98] tracking-[-0.045em] text-balance sm:text-7xl">
               {title}
             </h1>
-            <div className="mt-8 max-w-3xl border-l border-[#d9a6af]/45 pl-5 text-sm leading-6 text-white/66">
+            <div className="mt-8 max-w-3xl border-l border-electric/45 pl-5 text-sm leading-6 text-white/66">
               <p className="font-semibold text-white/88">Private concept by Alex Lindholm</p>
               <p className="mt-2">
                 This material contains private development concepts and intellectual property shared for individual review only. Copying, forwarding, redistribution or reuse without permission is prohibited.

@@ -36,7 +36,7 @@ function ProjectShell({ number, title, subtitle, children }: { number: string; t
         <section className="border-b border-white/10 bg-[#10131a] text-white">
           <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20">
             <Link href="/private/ideas/youth-exchange" className="text-xs font-semibold uppercase tracking-[0.16em] text-white/52 transition hover:text-white">← Youth Exchange Ideas</Link>
-            <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-[#d9a6af]">Youth Exchange Concept {number}</p>
+            <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-electric">Youth Exchange Concept {number}</p>
             <h1 className="mt-4 max-w-5xl font-serif text-5xl font-medium leading-[0.98] tracking-[-0.045em] text-balance sm:text-7xl">{title}</h1>
             <h2 className="mt-6 max-w-4xl text-xl font-medium leading-8 text-white/72 sm:text-2xl">{subtitle}</h2>
           </div>
@@ -55,7 +55,7 @@ function ReservedConcept({ concept }: { concept: string }) {
         <section className="bg-[#10131a] text-white">
           <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20">
             <Link href="/private/ideas/youth-exchange" className="text-xs font-semibold uppercase tracking-[0.16em] text-white/52 hover:text-white">← Youth Exchange Ideas</Link>
-            <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-[#d9a6af]">Concept {number}</p>
+            <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-electric">Concept {number}</p>
             <h1 className="mt-4 font-serif text-5xl font-medium tracking-[-0.045em] sm:text-7xl">Youth Exchange Concept {number}</h1>
             <p className="mt-6 text-lg text-white/58">Content pending.</p>
           </div>

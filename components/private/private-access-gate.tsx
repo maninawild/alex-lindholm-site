@@ -16,7 +16,7 @@ export function PrivateAccessGate({ pageSlug, returnPath }: PrivateAccessGatePro
 
   return (
     <main className="relative flex min-h-[calc(100vh-7rem)] items-center justify-center overflow-hidden bg-[#0d1117] px-5 py-16 text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(143,63,77,0.34),transparent_36%),radial-gradient(circle_at_85%_80%,rgba(37,99,235,0.2),transparent_34%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_80%,rgba(37,99,235,0.2),transparent_34%)]" />
       <section className="relative w-full max-w-md rounded-sm border border-white/12 bg-white/[0.055] p-7 shadow-[0_32px_90px_rgba(0,0,0,0.42)] backdrop-blur-xl sm:p-9" aria-labelledby="private-access-title">
         <Link href="/" className="text-sm font-semibold tracking-[-0.01em] text-white/78 transition hover:text-white">
           Alex Lindholm
@@ -49,7 +49,7 @@ export function PrivateAccessGate({ pageSlug, returnPath }: PrivateAccessGatePro
             Codes are case-sensitive. Your session will remain active for seven days.
           </p>
           {state.error ? (
-            <p id="access-error" role="alert" className="mt-3 rounded-md border border-red-300/20 bg-red-300/10 px-3 py-2 text-sm leading-5 text-red-100">
+            <p id="access-error" role="alert" className="mt-3 rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm leading-5 text-white/85">
               {state.error}
             </p>
           ) : null}

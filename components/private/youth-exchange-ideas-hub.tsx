@@ -15,7 +15,7 @@ export function YouthExchangeIdeasHub() {
         <section className="border-b border-white/10 bg-[#10131a] text-white">
           <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20">
             <Link href="/private#development-ideas" className="text-xs font-semibold uppercase tracking-[0.16em] text-white/52 transition hover:text-white">← New Development Ideas</Link>
-            <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-[#d9a6af]">Private Development Concept</p>
+            <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-electric">Private Development Concept</p>
             <h1 className="mt-4 max-w-4xl font-serif text-5xl font-medium leading-[0.98] tracking-[-0.045em] text-balance sm:text-7xl">Youth Exchange Ideas</h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/66">Four concepts developed as separate youth-exchange proposals using one shared project structure.</p>
           </div>
