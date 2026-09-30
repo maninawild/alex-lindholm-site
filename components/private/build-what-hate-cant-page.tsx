@@ -34,9 +34,11 @@ export function BuildWhatHateCantPage() {
             <Link href="/private#development-ideas" className="text-xs font-semibold uppercase tracking-[0.16em] text-white/52 transition hover:text-white">
               ← New Development Ideas
             </Link>
-            <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-electric">Private Development Concept</p>
+            <p className="mt-8 inline-flex border border-white/20 px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/72">Private space · All rights reserved</p>
+            <Image src="/logos/inspirexchange.jpg" alt="InspireXchange" width={900} height={900} priority className="mt-8 h-14 w-64 object-cover object-center" />
+            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-electric">Private Development Concept</p>
             <h1 className="mt-4 max-w-5xl font-serif text-5xl font-medium leading-[0.98] tracking-[-0.045em] text-balance sm:text-7xl">
-              InspireXchange Workshop Programme | Build What Hate Can’t
+              InspireXchange Workshops Track for “Build What Hate Can’t” Hackathon
             </h1>
             <p className="mt-6 max-w-3xl text-xl leading-8 text-white/72">From community challenges to working solutions with a future.</p>
           </div>
@@ -46,25 +48,30 @@ export function BuildWhatHateCantPage() {
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <div className="max-w-3xl space-y-6 text-base leading-8 text-graphite/76 sm:text-lg">
               <p>Designed for builders and non-builders working together, this programme applies startup practices to real challenges facing Jewish communities: problem definition, creative experimentation, user validation, focused development and viable partnerships. Our goal is to equip builders with the tools and approaches that maximise their work and help them to build the repetitive and scalable project.</p>
-              <p>Inspired by Olam Chesed Yibaneh, “the world is built with kindness,” we bring that principle into practice: building this world from love through useful, collaborative action. Voices on Sefaria</p>
+              <blockquote className="border-l-2 border-electric pl-5 font-serif text-2xl leading-9 tracking-[-0.02em] text-ink sm:text-3xl sm:leading-10">
+                Inspired by <a href="https://voices.sefaria.org/sheets/246875" target="_blank" rel="noopener noreferrer" className="font-semibold text-electric underline decoration-electric/30 underline-offset-4 hover:decoration-electric">Olam Chesed Yibaneh</a>, “the world is built with kindness,” we bring that principle into practice: building this world from love through useful, collaborative action. <a href="https://voices.sefaria.org/sheets/246875" target="_blank" rel="noopener noreferrer" className="text-base font-sans font-medium text-electric underline decoration-electric/30 underline-offset-4 hover:decoration-electric">Voices on Sefaria ↗</a>
+              </blockquote>
               <p>Our aim is to help each initiative become a tested solution with a clear path to adoption, growth, partnerships and potential funding. Reusable materials, documented learning and partner handovers allow projects to continue through future seminars and hackathons, reducing the risk of abandonment after the closing event.</p>
               <p>Seven online workshops, 40 minutes each: 10 minutes of introduction, 20 minutes of guided work and 10 minutes of feedback. Teams develop their own projects throughout the programme.</p>
             </div>
 
             <div className="mt-14 overflow-x-auto border border-ink/10">
-              <table className="min-w-[70rem] w-full border-collapse text-left text-sm leading-6 text-graphite/76">
+              <table className="min-w-[44rem] w-full border-collapse text-left text-sm leading-6 text-graphite/76" aria-label="Workshop programme">
                 <thead className="bg-ink text-white">
                   <tr>
-                    {["Workshop", "Focus", "Deliverables", "Format & workspace"].map((heading) => <th key={heading} scope="col" className="p-5 font-semibold">{heading}</th>)}
+                    <th scope="col" className="w-[25%] p-5 font-semibold">Workshop</th>
+                    <th scope="col" className="p-5 font-semibold">Programme details</th>
                   </tr>
                 </thead>
                 <tbody>
                   {workshops.map(([workshop, focus, deliverables, format]) => (
                     <tr key={workshop} className="border-t border-ink/10 align-top even:bg-ink/[0.025]">
-                      <th scope="row" className="w-[18%] p-5 font-semibold text-ink"><Cell>{workshop}</Cell></th>
-                      <td className="w-[31%] p-5"><Cell>{focus}</Cell></td>
-                      <td className="w-[27%] p-5"><Cell>{deliverables}</Cell></td>
-                      <td className="w-[24%] p-5"><Cell>{format}</Cell></td>
+                      <th scope="row" className="p-5 font-semibold text-ink"><Cell>{workshop}</Cell></th>
+                      <td className="space-y-5 p-5">
+                        <div><p className="text-xs font-semibold uppercase tracking-[0.14em] text-electric">Focus</p><p className="mt-2"><Cell>{focus}</Cell></p></div>
+                        <div><p className="text-xs font-semibold uppercase tracking-[0.14em] text-electric">Deliverables</p><p className="mt-2"><Cell>{deliverables}</Cell></p></div>
+                        <div><p className="text-xs font-semibold uppercase tracking-[0.14em] text-electric">Format &amp; workspace</p><p className="mt-2"><Cell>{format}</Cell></p></div>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -96,7 +103,7 @@ export function BuildWhatHateCantPage() {
 
         <footer className="border-t border-ink/10 bg-white py-8">
           <div className="mx-auto flex max-w-7xl items-center gap-4 px-5 sm:px-8">
-            <Image src="/logos/inspirexchange.jpg" alt="InspireXchange" width={48} height={48} className="h-12 w-12 rounded-sm object-cover" />
+            <Image src="/logos/inspirexchange.jpg" alt="InspireXchange" width={900} height={900} className="h-14 w-64 object-cover object-center" />
             <p className="text-sm leading-6 text-graphite/62">© InspireXchange. All programme ideas and materials are protected by copyright.</p>
           </div>
         </footer>

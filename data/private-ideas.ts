@@ -11,7 +11,7 @@ export const privateIdeas = [
   },
   {
     slug: "build-what-hate-cant",
-    title: "InspireXchange Workshop Programme | Build What Hate Can’t",
+    title: "InspireXchange Workshops Track for “Build What Hate Can’t” Hackathon",
     status: "Private Development Concept",
   },
   {
