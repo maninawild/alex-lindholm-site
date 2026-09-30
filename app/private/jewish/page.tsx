@@ -173,6 +173,9 @@ export default async function JewishPrivatePage() {
               <p>
                 The recurring theme is practical community infrastructure: creating formats where identity, learning, leadership, culture, and trusted relationships reinforce one another.
               </p>
+              <p>
+                Since 2023, Alex has served as an adviser to the <a href="https://globaljewry.org/about-us/alex-lindholm/" target="_blank" rel="noopener noreferrer" className="font-semibold text-electric hover:underline">Global Jewry initiative ↗</a>, aligning with its mission of building the relationships, shared awareness, and mutual trust that make collective action possible. This role extends more than a decade of work across international and local Jewish organisations in six countries, including mentoring counter-hate media initiatives.
+              </p>
             </div>
           </div>
         </section>
