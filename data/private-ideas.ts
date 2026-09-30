@@ -10,6 +10,11 @@ export const privateIdeas = [
     status: "Private Development Concept",
   },
   {
+    slug: "build-what-hate-cant",
+    title: "InspireXchange Workshop Programme | Build What Hate Can’t",
+    status: "Private Development Concept",
+  },
+  {
     slug: "gesharim-netherlands",
     title: "Gesharim Netherlands",
     status: "Private Development Concept",

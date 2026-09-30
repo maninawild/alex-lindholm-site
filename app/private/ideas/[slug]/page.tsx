@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PrivateIdeaPage } from "@/components/private/private-idea-page";
+import { BuildWhatHateCantPage } from "@/components/private/build-what-hate-cant-page";
 import { YouthExchangeIdeasHub } from "@/components/private/youth-exchange-ideas-hub";
 import { getPrivateIdea } from "@/data/private-ideas";
 
@@ -27,6 +28,10 @@ export default async function PrivateIdeaRoute({
 
   if (slug === "youth-exchange") {
     return <YouthExchangeIdeasHub />;
+  }
+
+  if (slug === "build-what-hate-cant") {
+    return <BuildWhatHateCantPage />;
   }
 
   return <PrivateIdeaPage title={idea.title} />;
