@@ -39,6 +39,8 @@ const erasmusProjects = [
       "A German–Ukrainian–Russian youth encounter on minority rights, participation and social activism.",
     details:
       "Held in Hamburg from 2–7 October 2016, the meet-up brought together young people from Germany, Ukraine and Russia, including participants from minority and migrant communities. The program addressed xenophobia, stigma, European values, solidarity and youth-led change, concluding with a participant-created photo exhibition.",
+    image: "/media/jewish/exchange/changemakers-hamburg-2016.jpg",
+    imageAlt: "Changemakers participants gathered in Hamburg in 2016",
     href: "https://jubuk.wordpress.com/2019/01/21/meet-up-german-ukrainian-russian-youth-encounter-changemakers/",
   },
   {
@@ -48,6 +50,8 @@ const erasmusProjects = [
       "An Erasmus+ exchange connecting young people from Russia and Germany through history, inclusion and intercultural learning.",
     details:
       "Implemented in Wuppertal from 1–8 March 2017 by JuBuK and Hillel Russia, the exchange used history as a route into mutual respect, cultural diversity, social inclusion and justice. It also supported youth mobility and practical intercultural cooperation.",
+    image: "/media/jewish/exchange/roots-wuppertal-2017.jpg",
+    imageAlt: "Youth Exchange Roots participants in a workshop in Wuppertal in 2017",
     href: "https://jubuk.wordpress.com/2019/01/22/youth-exchange-roots/",
     videoId: "4QSZS4RbvII",
   },
@@ -58,6 +62,8 @@ const erasmusProjects = [
       "A follow-up to Roots, bringing the German–Russian youth exchange to Saint Petersburg.",
     details:
       "Held from 25 April–2 May 2018 and organised by JuBuK with Hillel Russia, Roots 2gether continued the Erasmus+ partnership established in Germany in 2017. The project centred historical awareness, anti-discrimination, mobility and respectful cooperation across cultures.",
+    image: "/media/jewish/exchange/roots-2gether-saint-petersburg-2018.jpg",
+    imageAlt: "Roots 2gether participants outside the Grand Choral Synagogue in Saint Petersburg in 2018",
     href: "https://jubuk.wordpress.com/2019/01/22/youth-exchange-roots-2gether/",
   },
   {
@@ -67,6 +73,8 @@ const erasmusProjects = [
       "A later Roots follow-up connecting young people from Germany and Israel around history, diversity and mobility.",
     details:
       "Organised in Berlin from 21–28 February 2023 by JuBuK with Hillel Israel Ltd., the project extended the Roots 2gether model to German–Israeli cooperation. Its focus included historical understanding, mutual respect, social inclusion, anti-discrimination and access for participants facing social, economic or geographic barriers.",
+    image: "/media/jewish/exchange/roots-reloaded-berlin-2023.jpg",
+    imageAlt: "Roots Reloaded participants gathered in Berlin in 2023",
     href: "https://jubuk.wordpress.com/2023/04/10/roots-reloaded/",
   },
 ];
@@ -112,7 +120,7 @@ export default async function JewishPrivatePage() {
     <PrivatePageShell>
       <main>
         <section className="relative overflow-hidden bg-[#10131a] text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_20%,rgba(143,63,77,0.35),transparent_36%),radial-gradient(circle_at_15%_90%,rgba(37,99,235,0.18),transparent_32%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_90%,rgba(37,99,235,0.18),transparent_32%)]" />
           <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.08fr_0.72fr] lg:items-end lg:py-28">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/55">Selected record · 2012–present</p>
@@ -217,10 +225,22 @@ export default async function JewishPrivatePage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">International exchange</p>
                 <h2 className="mt-4 font-serif text-4xl font-medium tracking-[-0.035em] sm:text-5xl">Erasmus+ Exchange Projects</h2>
                 <p className="mt-5 max-w-md text-base leading-7 text-graphite/66">A four-project sequence spanning Germany, Russia, Ukraine and Israel, with history and intercultural cooperation as shared foundations.</p>
+                <Link href="/private/ideas/youth-exchange" className="mt-6 inline-flex font-semibold text-electric hover:underline">
+                  Explore Youth Exchange Ideas →
+                </Link>
               </div>
               <div className="border-b border-ink/12">
                 {erasmusProjects.map((project) => (
                   <PrivateProjectCard key={project.title} eyebrow={project.eyebrow} title={project.title} summary={project.summary}>
+                    <div className="relative mb-6 aspect-[16/10] overflow-hidden rounded-sm border border-ink/10 bg-bone shadow-quiet">
+                      <Image
+                        src={project.image}
+                        alt={project.imageAlt}
+                        fill
+                        sizes="(min-width: 1024px) 52vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
                     <p>{project.details}</p>
                     {project.videoId ? (
                       <div className="mt-6 overflow-hidden rounded-sm border border-ink/10 bg-black shadow-quiet">
