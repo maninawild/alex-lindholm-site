@@ -130,12 +130,12 @@ export function SafeInvestingCoursePage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-2 lg:items-start">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">Почему три урока</p>
-            <h2 className="mt-4 text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-4xl">Не незаконченный курс, а пилотный базовый блок</h2>
+            <h2 className="mt-4 text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-4xl">3 базовых урока торговли</h2>
             <p className="mt-5 text-base leading-8 text-graphite/74">
               Курс был разработан по заказу образовательной платформы Universus. В 2021 году были записаны три первых урока. Сейчас они собраны в отдельный компактный курс.
             </p>
             <p className="mt-4 text-base leading-8 text-graphite/74">
-              Если курс окажется востребованным, я запишу продолжение: выбор брокера, создание портфеля, диверсификация и правила безопасной торговли.
+              Если курс покажется вам интересным - дайте мне знать, вы бесплатно получите продолжение.
             </p>
           </div>
           <div id="access" className="scroll-mt-24 rounded-sm border border-ink/10 bg-[#F4F6F8] p-6 sm:p-8">
@@ -157,7 +157,6 @@ export function SafeInvestingCoursePage() {
             >
               {checkoutLabel}
             </a>
-            {!configuredCheckout ? <p className="mt-3 text-xs leading-5 text-graphite/52">Пока доступ оформляется напрямую. Оплата Stripe будет подключена перед публикацией.</p> : null}
           </div>
         </div>
       </section>
