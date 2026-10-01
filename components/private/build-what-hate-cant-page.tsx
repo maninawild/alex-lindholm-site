@@ -48,13 +48,21 @@ export function BuildWhatHateCantPage() {
 
         <section className="py-14 sm:py-20">
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
-            <div className="max-w-3xl space-y-6 text-base leading-8 text-graphite/76 sm:text-lg">
-              <p>Designed for builders and non-builders working together, this programme applies startup practices to real challenges facing Jewish communities: problem definition, creative experimentation, user validation, focused development and viable partnerships. Our goal is to equip builders with the tools and approaches that maximise their work and help them to build the repetitive and scalable project.</p>
-              <blockquote className="border-l-2 border-[#FF6F61] pl-5 font-serif text-2xl leading-9 tracking-[-0.02em] text-ink sm:text-3xl sm:leading-10">
-                Inspired by <a href="https://voices.sefaria.org/sheets/246875" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-[#FF6F61]/60 underline-offset-4 hover:decoration-[#FF6F61]">Olam Chesed Yibaneh</a>, “the world is built with kindness,” we bring that principle into practice: building this world from love through useful, collaborative action. <a href="https://voices.sefaria.org/sheets/246875" target="_blank" rel="noopener noreferrer" className="text-base font-sans font-medium text-[#424449] underline decoration-[#FF6F61]/60 underline-offset-4 hover:decoration-[#FF6F61]">Voices on Sefaria ↗</a>
-              </blockquote>
-              <p>Our aim is to help each initiative become a tested solution with a clear path to adoption, growth, partnerships and potential funding. Reusable materials, documented learning and partner handovers allow projects to continue through future seminars and hackathons, reducing the risk of abandonment after the closing event.</p>
-              <p>Seven online workshops, 40 minutes each: 10 minutes of introduction, 20 minutes of guided work and 10 minutes of feedback. Teams develop their own projects throughout the programme.</p>
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(15rem,1fr)] lg:gap-16">
+              <div className="max-w-3xl space-y-6 text-base leading-8 text-graphite/76 sm:text-lg">
+                <p>Designed for builders and non-builders working together, this programme applies startup practices to real challenges facing Jewish communities: problem definition, creative experimentation, user validation, focused development and viable partnerships. It is intended for projects and startup practitioners countering antisemitism and hate locally and online. Our goal is to equip builders with the tools and approaches that maximise their work and help them to build the repetitive and scalable project.</p>
+                <blockquote className="border-l-2 border-[#FF6F61] pl-5 font-serif text-2xl leading-9 tracking-[-0.02em] text-ink sm:text-3xl sm:leading-10">
+                  <p>Inspired by <a href="https://voices.sefaria.org/sheets/246875" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-[#FF6F61]/60 underline-offset-4 hover:decoration-[#FF6F61]">Olam Chesed Yibaneh</a>, “the world is built with kindness,” we bring that principle into practice: building this world from love through useful, collaborative action.</p>
+                  <a href="https://voices.sefaria.org/sheets/246875" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex text-sm font-sans font-medium text-[#424449] underline decoration-[#FF6F61]/60 underline-offset-4 hover:decoration-[#FF6F61]">Voices on Sefaria ↗</a>
+                </blockquote>
+                <p>Our aim is to help each initiative become a tested solution with a clear path to adoption, growth, partnerships and potential funding. Reusable materials, documented learning and partner handovers allow projects to continue through future seminars and hackathons, reducing the risk of abandonment after the closing event.</p>
+                <p>Seven online workshops, 40 minutes each: 10 minutes of introduction, 20 minutes of guided work and 10 minutes of feedback. Teams develop their own projects throughout the programme.</p>
+              </div>
+              <aside className="self-start border-l border-ink/12 pl-5 text-sm italic leading-6 text-graphite/58">
+                <p><a href="https://www.cidi.nl/antisemitisme/antisemitisme-monitors/" target="_blank" rel="noopener noreferrer" className="font-semibold not-italic text-ink hover:text-electric">CIDI monitor ↗</a></p>
+                <p className="mt-3">Antisemitic incidents in the Netherlands reached 281 in 2025, and 421 in 2024, against an average of 138 across 2012 to 2022. Around 15% of registered discrimination incidents in police data are online. Most online hate incidents are not officially registered.</p>
+                <p className="mt-3">Despite the lower number reported in 2025, <a href="https://www.cidi.nl/persbericht-cidi-monitor-antisemitische-incidenten-2025-antisemitisme-nog-altijd-hoog-toenemende-meldingsmoeheid/" target="_blank" rel="noopener noreferrer" className="font-semibold not-italic text-ink hover:text-electric">CIDI ↗</a> warns of growing reluctance of victims to report incidents. The lower recorded total should not be treated as evidence that the problem has been resolved.</p>
+              </aside>
             </div>
 
             <div className="mt-14 overflow-x-auto border border-ink/10">
