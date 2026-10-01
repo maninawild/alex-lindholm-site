@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 
 const freeLessonId = "B4JWAl1TTDo";
-const whatsappUrl = "https://wa.me/message/4OIGQ3FHUZQSD1";
+const checkoutUrl = "https://buy.stripe.com/3cI6oI0z6f8eahW6wK7AI06";
 
 const lessons = [
   {
@@ -29,10 +29,6 @@ const lessons = [
 ] as const;
 
 export function SafeInvestingCoursePage() {
-  const configuredCheckout = process.env.NEXT_PUBLIC_SAFE_INVESTING_CHECKOUT_URL;
-  const checkoutUrl = configuredCheckout || whatsappUrl;
-  const checkoutLabel = configuredCheckout ? "Получить доступ за €19" : "Запросить доступ за €19";
-
   return (
     <main className="bg-white text-ink">
       <SiteHeader />
@@ -151,11 +147,9 @@ export function SafeInvestingCoursePage() {
             </ul>
             <a
               href={checkoutUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-md bg-electric px-5 text-sm font-semibold text-white transition hover:bg-blue-700"
             >
-              {checkoutLabel}
+              Получить доступ за €19
             </a>
           </div>
         </div>
