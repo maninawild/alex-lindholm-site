@@ -1,8 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { PrivatePageShell } from "./private-page-shell";
 
 const whatsappUrl = "https://wa.me/message/4OIGQ3FHUZQSD1";
+const inspireXchangeUrl = "https://www.inspirexchange.nl/";
+const nadavFoundationUrl = "https://nadavfoundation.org/";
 
 const deliveries = [
   ["Seven 40-minute online workshops", "problem definition, creative responses, user testing, the core product feature, responsible AI use, viable partnerships and preparation for a pilot."],
@@ -20,9 +23,10 @@ export function CommunityImpactTrackPage() {
           <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20">
             <Link href="/private#development-ideas" className="text-xs font-semibold uppercase tracking-[0.16em] text-white/52 transition hover:text-white">← New Development Ideas</Link>
             <p className="mt-8 inline-flex border border-white/20 px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/72">Private space · All rights reserved</p>
+            <a href={inspireXchangeUrl} target="_blank" rel="noopener noreferrer" className="mt-8 inline-block" aria-label="Visit InspireXchange"><Image src="/logos/inspirexchange-wordmark-dark.svg" alt="InspireXchange" width={232} height={29} priority className="h-auto w-[232px]" /></a>
             <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-electric">Private Funding Proposal</p>
             <h1 className="mt-4 max-w-5xl font-serif text-5xl font-medium leading-[0.98] tracking-[-0.045em] text-balance sm:text-7xl">Community Impact Track 2027 Proposal</h1>
-            <p className="mt-6 max-w-3xl text-xl leading-8 text-white/72">A funding proposal from InspireXchange to a partner organisation (FOUNDATION X)</p>
+            <p className="mt-6 max-w-3xl text-xl leading-8 text-white/72">A funding proposal from <BrandLink dark>InspireXchange</BrandLink> to a partner organisation (FOUNDATION X)</p>
           </div>
         </section>
 
@@ -34,7 +38,7 @@ export function CommunityImpactTrackPage() {
               </ProposalSection>
               <ProposalSection title="Context and independence">
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-electric hover:underline">Request by messaging us. ↗</a>
-                <p className="mt-5 font-semibold text-ink">We are seeking a Partnership funding for a dedicated InspireXchange Community Impact Track in 2027.</p>
+                <p className="mt-5 font-semibold text-ink">We are seeking a Partnership funding for a dedicated <BrandLink>InspireXchange</BrandLink> Community Impact Track in 2027.</p>
                 <p className="mt-5">This proposal concerns our own delivery and project support. Any connection to the organisers’ programme would be discussed with them separately.</p>
               </ProposalSection>
               <ProposalSection title="Proposed pilot">
@@ -46,7 +50,7 @@ export function CommunityImpactTrackPage() {
             <section className="mt-14 border-y border-ink/10 bg-bone py-10 sm:mt-20 sm:py-14" aria-labelledby="deliver-title">
               <div className="max-w-4xl">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-electric">Programme</p>
-                <h2 id="deliver-title" className="mt-3 font-serif text-4xl font-medium tracking-[-0.035em] text-ink sm:text-5xl">What InspireXchange delivers</h2>
+                <h2 id="deliver-title" className="mt-3 font-serif text-4xl font-medium tracking-[-0.035em] text-ink sm:text-5xl">What <BrandLink>InspireXchange</BrandLink> delivers</h2>
                 <div className="mt-8 divide-y divide-ink/10 border-y border-ink/10">
                   {deliveries.map(([title, description]) => (
                     <div key={title} className="grid gap-2 py-5 sm:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] sm:gap-8">
@@ -64,8 +68,8 @@ export function CommunityImpactTrackPage() {
                 <p className="mt-5">The aim is to reduce project abandonment after events and build a repeatable process for developing useful community initiatives.</p>
               </ProposalSection>
               <ProposalSection title="Proposed role for Partner">
-                <p>We invite Nadav Foundation to fund the pilot’s programme design, workshop delivery, mentoring, partner research and follow-up evaluation. Nadav could also help shape the thematic priorities and identify relevant community partners.</p>
-                <p className="mt-5">InspireXchange would manage delivery and report on agreed milestones. Scope, budget and partner responsibilities would be defined together before launch.</p>
+                <p>We invite <a href={nadavFoundationUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-electric hover:underline">Nadav Foundation ↗</a> to fund the pilot’s programme design, workshop delivery, mentoring, partner research and follow-up evaluation. <a href={nadavFoundationUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-electric hover:underline">Nadav ↗</a> could also help shape the thematic priorities and identify relevant community partners.</p>
+                <p className="mt-5"><BrandLink>InspireXchange</BrandLink> would manage delivery and report on agreed milestones. Scope, budget and partner responsibilities would be defined together before launch.</p>
               </ProposalSection>
               <ProposalSection title="Next step">
                 A short discussion to assess alignment with Nadav’s 2027 priorities, followed by a costed pilot proposal.
@@ -79,9 +83,25 @@ export function CommunityImpactTrackPage() {
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex min-h-12 items-center justify-center rounded-md bg-electric px-5 text-sm font-semibold text-white transition hover:bg-ink">Message Alex <span className="ml-2" aria-hidden="true">→</span></a>
           </div>
         </section>
+
+        <section className="bg-[#171921] py-14 text-white sm:py-20">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8">
+            <a href={inspireXchangeUrl} target="_blank" rel="noopener noreferrer" className="inline-block" aria-label="Visit InspireXchange"><Image src="/logos/inspirexchange-wordmark-dark.svg" alt="InspireXchange" width={232} height={29} className="h-auto w-[232px]" /></a>
+            <div className="mt-8 max-w-3xl border-l-2 border-[#FF6F61] pl-5 sm:pl-7">
+              <p className="text-4xl font-medium leading-none text-[#FF6F61]" aria-hidden="true">!</p>
+              <h2 className="mt-3 text-2xl font-medium tracking-[-0.02em]">Additional bonuses for participants.</h2>
+              <p className="mt-4 text-lg leading-8 text-white/74">Each hackathon participant will receive 1-hour free consultation from the <BrandLink dark>InspireXchange</BrandLink> team (worth €150) and the chance to win €5 000 educational grant (covers 6 months of acceleration program).</p>
+              <a href={inspireXchangeUrl} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex text-sm font-semibold text-white underline decoration-[#FF6F61] decoration-2 underline-offset-4">InspireXchange.nl ↗</a>
+            </div>
+          </div>
+        </section>
       </main>
     </PrivatePageShell>
   );
+}
+
+function BrandLink({ children, dark = false }: { children: ReactNode; dark?: boolean }) {
+  return <a href={inspireXchangeUrl} target="_blank" rel="noopener noreferrer" className={dark ? "font-semibold text-white underline decoration-[#FF6F61] underline-offset-4" : "font-semibold text-electric hover:underline"}>{children}</a>;
 }
 
 function ProposalSection({ title, children }: { title: string; children: ReactNode }) {
