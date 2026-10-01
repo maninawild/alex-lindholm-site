@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { YouTubeVideoCard } from "@/components/youtube-video-card";
 import { videos, videoObjectSchema } from "@/data/videos";
@@ -30,6 +31,19 @@ export function MediaPageContent() {
           <p className="max-w-xl text-base leading-7 text-graphite/74">
             Selected discussions on founder readiness, startups, technology and the people building through uncertainty.
           </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-10 sm:px-8 sm:pb-12">
+        <div className="flex flex-col gap-6 rounded-sm border border-ink/10 bg-ink px-6 py-7 text-white sm:px-8 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/52">Курс на русском</p>
+            <h2 className="mt-3 text-2xl font-medium tracking-[-0.025em] sm:text-3xl">Безопасные инвестиции для начинающих</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-white/68">Три базовых урока о рынках, инструментах и рисках. Первый урок доступен бесплатно.</p>
+          </div>
+          <Link href="/ru/courses/safe-investing" className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-md bg-white px-5 text-sm font-semibold text-ink transition hover:bg-white/90">
+            Смотреть курс <span className="ml-2" aria-hidden="true">→</span>
+          </Link>
         </div>
       </section>
 
