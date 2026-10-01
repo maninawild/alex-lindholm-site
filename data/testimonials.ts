@@ -27,11 +27,11 @@ export const testimonials: Testimonial[] = [
   {
     name: "Robbin Jansen",
     role:
-      "CPO-as-a-Service at Future Ready | Building Crelo & Rivilo | Unlocking Europe’s next generation of builders at DAY42",
+      "CPO at Future Ready / co-founder of DAY42",
     age: 25,
     category: "Speaking",
     quote:
-      "Many thanks, Alex. It was nice to hear a story like yours from someone with an overflowing idea brain as well. Your 101 on building a start-up fits well with the stage most people in the room are in. We’ll keep pushing for sure. Just getting started.",
+      "Many thanks, Alex. It was nice to hear a story like yours from someone with an overflowing idea brain as well. Your 101 on building a start-up fits well with the stage most people in the room are in.",
   },
   {
     name: "Alexander",
