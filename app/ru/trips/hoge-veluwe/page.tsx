@@ -52,7 +52,7 @@ export default function HogeVeluweTripPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="flex flex-col gap-3 border-b border-ink/10 pb-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-electric">Бронирование</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">Бронирование</p>
               <h2 className="mt-2 text-2xl font-medium tracking-[-0.02em]">Выберите дату</h2>
             </div>
             <p className="text-sm text-graphite/68"><strong className="text-ink">€90</strong> Гаага и Роттердам · <strong className="text-ink">€99</strong> Амстердам</p>
@@ -66,11 +66,11 @@ export default function HogeVeluweTripPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="flex gap-1.5" aria-hidden="true">
-                    {[0, 1, 2, 3].map((place) => <span key={place} className={`h-2.5 w-7 rounded-full ${place < item.places ? "bg-electric" : "bg-ink/10"}`} />)}
+                    {[0, 1, 2, 3].map((place) => <span key={place} className={`h-2.5 w-7 rounded-full ${place < item.places ? "bg-copper" : "bg-ink/10"}`} />)}
                   </div>
                   <p className="whitespace-nowrap text-sm font-semibold">{item.places} места</p>
                 </div>
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-md bg-electric px-5 text-sm font-semibold text-white transition hover:bg-ink">Я еду!</a>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-md bg-ink px-5 text-sm font-semibold text-white transition hover:bg-electric">Я еду!</a>
               </article>
             ))}
           </div>
