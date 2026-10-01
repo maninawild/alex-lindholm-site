@@ -55,13 +55,13 @@ const copy = {
     formatsTitle: "A trip can be a day out or the beginning of a project.",
     formats: ["Day trips", "Culture & history", "Nature", "Investment & discovery trips"],
     backgroundTitle: "Why travel with me",
-    backgroundText: "I trained as a historian and have worked across education, communities, startups and investment. I connect the place to the wider context, introduce people and leave room for the unexpected.",
+    backgroundText: ["I trained as a historian and have worked across education, communities, startups and investment. I connect the place to the wider context, introduce people and leave room for the unexpected."],
     finalTitle: "Want to join the next trip?", finalText: "Message me on WhatsApp. Payment and ticketing will be added later.", finalCta: "Message Alex", home: "Home",
   },
   ru: {
     switchHref: "/trips", switchLabel: "EN", switchAria: "Открыть английскую версию",
-    eyebrow: "Поездки с Алексом", title: "Смотреть на места сразу с нескольких сторон.",
-    intro: "Небольшие поездки, где история, культура, природа и люди соединяются с живым разговором по дороге.",
+    eyebrow: "Поездки с еврейским акцентом", title: "Взгляд на место сразу с нескольких сторон.",
+    intro: "Небольшие уникальные трипы на день или на несколько дней, в которых история, культура, природа и люди соединяются. Живой диалог участников в дороге - один из самых важных и незабываемых жизненных опытов. В наших группах используются подходы неформального образования - можно чувствовать себя легко и свободно, узнавая новое в легкой форме.",
     navUpcoming: "Ближайшая поездка", navPast: "Прошлые поездки", navFormats: "Форматы",
     upcomingEyebrow: "Октябрь 2026", upcomingTitle: "Крёллер-Мюллер и Де-Хоге-Велюве",
     upcomingText: "Один день вокруг современного искусства, архитектуры и одного из самых необычных ландшафтов Нидерландов. Дату и программу добавим скоро.",
@@ -90,10 +90,19 @@ const copy = {
       ["Солнечный Хоббитон и угрюмый Урк", "Нетворкинг-поездка по Нидерландам."],
     ],
     formatsEyebrow: "Форматы",
-    formatsTitle: "Поездка может быть одним днем или началом нового проекта.",
-    formats: ["Однодневные поездки", "Культура и история", "Природа", "Инвестиционные и исследовательские поездки"],
+    formatsTitle: "Форматы",
+    formats: [
+      "Однодневные путешествия в Нидерландах и вокруг",
+      "Путешествия на 3-5 дней в страны Европы",
+      "Авторские туры по \"моим\" городам (Стокгольм, Берлин, Гаага, Роттердам, Нью-Йорк, Бостон).",
+      "Яхт-путешествия в частной компании",
+      "Инвест-трипы в регионы",
+    ],
     backgroundTitle: "Почему со мной",
-    backgroundText: "По образованию я историк, а работал в образовании, сообществах, стартапах и инвестициях. Я связываю место с широким контекстом, знакомлю людей и оставляю пространство для неожиданного.",
+    backgroundText: [
+      "По базовому образованию я историк, хотя вместо архива предпочту изучить развалины; работал в неформальном образовании, еврейских комьюнити, включая закрытые и религиозные, сейчас занимаюсь консалтингом стартапов и частными инвестициями.",
+      "Я связываю место и пространство с широким общемировым контекстом и \"гениями места\", всегда знакомлю участников между собой и оставляю пространство для проявления самих гостей, оставляя их потом с эмоцией привязанной к месту, с полезными контактами и приятным послевкусием.",
+    ],
     finalTitle: "Хотите поехать в следующий раз?", finalText: "Напишите мне в WhatsApp. Оплату и покупку билетов добавим позже.",
     finalCta: "Написать Алексу", home: "Главная",
   },
@@ -198,8 +207,8 @@ export function TripsPage({ locale }: TripsPageProps) {
 
       <section id="formats" className="scroll-mt-24 bg-ink py-16 text-white sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-2">
-          <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/58">{t.formatsEyebrow}</p><h2 className="mt-4 max-w-xl text-3xl font-medium leading-tight tracking-[-0.025em] text-balance sm:text-4xl">{t.formatsTitle}</h2><div className="mt-8 flex flex-wrap gap-2">{t.formats.map((format) => <span key={format} className="rounded-full border border-white/20 px-4 py-2 text-sm text-white/82">{format}</span>)}</div></div>
-          <div className="border-l border-white/16 pl-6 sm:pl-8"><h2 className="text-2xl font-medium tracking-[-0.02em]">{t.backgroundTitle}</h2><p className="mt-5 max-w-xl text-base leading-8 text-white/72 sm:text-lg">{t.backgroundText}</p></div>
+          <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/58">{t.formatsEyebrow}</p><h2 className="mt-4 max-w-xl text-3xl font-medium leading-tight tracking-[-0.025em] text-balance sm:text-4xl">{t.formatsTitle}</h2><div className="mt-8 border-t border-white/16">{t.formats.map((format, index) => <div key={format} className="grid grid-cols-[2rem_1fr] gap-3 border-b border-white/16 py-3 text-sm leading-6 text-white/82"><span className="text-white/40">0{index + 1}</span><span>{format}</span></div>)}</div></div>
+          <div className="border-l border-white/16 pl-6 sm:pl-8"><h2 className="text-2xl font-medium tracking-[-0.02em]">{t.backgroundTitle}</h2><div className="mt-5 max-w-xl space-y-5 text-base leading-8 text-white/72 sm:text-lg">{t.backgroundText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></div>
         </div>
       </section>
 
