@@ -11,6 +11,8 @@
     "translate:telegram": "node scripts/translate-telegram-articles.mjs",
     "audit:article-metadata": "node scripts/audit-article-metadata.mjs",
     "audit:insights": "node scripts/audit-insights-architecture.mjs",
+    "validate:article-images": "node scripts/validate-article-images.mjs",
+    "prebuild": "npm run validate:article-images",
     "indexnow": "node scripts/submit-indexnow.mjs",
     "private:access": "node --env-file-if-exists=.env.local scripts/private-access.mjs",
     "lint": "eslint ."
