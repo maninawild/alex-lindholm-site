@@ -81,7 +81,7 @@ export function SiteHeader({
                         ? pathname.startsWith("/private")
                           ? "border-copper bg-copper text-white"
                           : "border-copper/30 bg-copper/8 text-copper hover:bg-copper hover:text-white"
-                        : "border-white/40 bg-ink/82 text-white hover:bg-ink"
+                        : "border-white/40 bg-[#8F3F4D]/82 text-white hover:bg-[#8F3F4D]"
                     }`
                   : `transition ${isSolid ? "hover:text-ink" : "hover:text-white"}`
               }
@@ -97,7 +97,7 @@ export function SiteHeader({
               aria-label={languageSwitch.ariaLabel}
               className={`inline-flex min-h-11 min-w-12 items-center justify-center rounded-md border px-3 text-sm font-bold tracking-[0.08em] transition ${
                 isSolid
-                  ? "border-ink/20 bg-white text-ink hover:bg-ink hover:text-white"
+                  ? "border-electric/30 bg-white text-electric hover:bg-electric hover:text-white"
                   : "border-white/55 bg-ink/24 text-white backdrop-blur-md hover:bg-white hover:text-ink"
               }`}
             >
