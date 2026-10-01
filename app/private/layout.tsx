@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
+import { CopyDeterrence } from "@/components/private/copy-deterrence";
+import { PrivateNotice } from "@/components/private/private-notice";
 
 export const metadata: Metadata = {
   title: "Private Access",
@@ -39,13 +41,16 @@ export default function PrivateLayout({ children }: { children: React.ReactNode 
         </div>
       </div>
       <SiteHeader transparentAtTop={false} privateZone />
-      <div className="pt-[6.7rem] sm:pt-[7.15rem]">{children}</div>
-      <footer className="border-t border-ink/10 bg-[#10131a] px-5 py-6 text-white sm:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 text-[0.68rem] leading-5 text-white/52 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Alex Lindholm. All rights reserved.</p>
-          <p>Private &amp; Confidential. Access is personal and non-transferable; no copying, forwarding, publication or redistribution without prior written permission.</p>
-        </div>
-      </footer>
+      <CopyDeterrence>
+        <div className="pt-[6.7rem] sm:pt-[7.15rem]">{children}</div>
+        <footer className="border-t border-ink/10 bg-[#10131a] px-5 py-6 text-white sm:px-8">
+          <div className="mx-auto flex max-w-7xl flex-col gap-2 text-[0.68rem] leading-5 text-white/52 sm:flex-row sm:items-center sm:justify-between">
+            <p>© 2026 Alex Lindholm. All rights reserved.</p>
+            <p>Private &amp; Confidential. Access is personal and non-transferable; no copying, forwarding, publication or redistribution without prior written permission.</p>
+          </div>
+        </footer>
+      </CopyDeterrence>
+      <PrivateNotice />
     </div>
   );
 }

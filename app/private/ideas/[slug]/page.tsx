@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PrivateIdeaPage } from "@/components/private/private-idea-page";
 import { BuildWhatHateCantPage } from "@/components/private/build-what-hate-cant-page";
+import { CommunityImpactTrackPage } from "@/components/private/community-impact-track-page";
 import { YouthExchangeIdeasHub } from "@/components/private/youth-exchange-ideas-hub";
 import { getPrivateIdea } from "@/data/private-ideas";
 
@@ -32,6 +33,10 @@ export default async function PrivateIdeaRoute({
 
   if (slug === "build-what-hate-cant") {
     return <BuildWhatHateCantPage />;
+  }
+
+  if (slug === "community-impact-track-2027") {
+    return <CommunityImpactTrackPage />;
   }
 
   return <PrivateIdeaPage title={idea.title} />;

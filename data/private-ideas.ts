@@ -15,6 +15,11 @@ export const privateIdeas = [
     status: "Private Development Concept",
   },
   {
+    slug: "community-impact-track-2027",
+    title: "Community Impact Track 2027 Proposal",
+    status: "Private Funding Proposal",
+  },
+  {
     slug: "gesharim-netherlands",
     title: "Gesharim Netherlands",
     status: "Private Development Concept",
