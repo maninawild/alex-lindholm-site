@@ -27,10 +27,14 @@ const dates = [
 ] as const;
 
 const gallery = [
-  { src: "/media/trips/IMG_1228.jpeg", position: "50% 78%" },
-  { src: "/media/trips/IMG_1223.jpeg", position: "50% 34%" },
-  { src: "/media/trips/IMG_1222.jpeg", position: "50% 38%" },
-  { src: "/media/trips/IMG_1221.jpeg", position: "50% 34%" },
+  { src: "/media/trips/IMG_1971.jpeg", width: 720, height: 1280 },
+  { src: "/media/trips/IMG_1965.jpeg", width: 864, height: 1536 },
+  { src: "/media/trips/IMG_1955.jpeg", width: 720, height: 1280 },
+  { src: "/media/trips/IMG_1946.jpeg", width: 1152, height: 1536 },
+  { src: "/media/trips/IMG_2678.jpeg", width: 1152, height: 1536 },
+  { src: "/media/trips/IMG_2680.jpeg", width: 1536, height: 1152 },
+  { src: "/media/trips/IMG_2683.jpeg", width: 1152, height: 1536 },
+  { src: "/media/trips/IMG_2677.jpeg", width: 1152, height: 1536 },
 ] as const;
 
 export default function HogeVeluweTripPage() {
@@ -99,10 +103,10 @@ export default function HogeVeluweTripPage() {
       <section className="bg-ink py-14 text-white sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <h2 className="text-2xl font-medium tracking-[-0.02em] sm:text-3xl">Фотографии предыдущих поездок</h2>
-          <div className="mt-7 grid grid-cols-2 gap-3 lg:grid-cols-4">
+          <div className="mt-7 columns-2 gap-3 lg:columns-4">
             {gallery.map((image) => (
-              <div key={`${image.src}-${image.position}`} className="relative aspect-[4/3] overflow-hidden rounded-sm bg-white/5">
-                <Image src={image.src} alt="" fill sizes="(min-width: 1024px) 25vw, 50vw" className="scale-[1.06] object-cover" style={{ objectPosition: image.position }} />
+              <div key={image.src} className="mb-3 break-inside-avoid overflow-hidden rounded-sm bg-white/5">
+                <Image src={image.src} alt="" width={image.width} height={image.height} sizes="(min-width: 1024px) 25vw, 50vw" className="h-auto w-full" />
               </div>
             ))}
           </div>
