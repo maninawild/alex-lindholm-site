@@ -5,7 +5,6 @@ import { PrivatePageShell } from "./private-page-shell";
 
 const whatsappUrl = "https://wa.me/message/4OIGQ3FHUZQSD1";
 const inspireXchangeUrl = "https://www.inspirexchange.nl/";
-const nadavFoundationUrl = "https://nadavfoundation.org/";
 
 const deliveries = [
   ["Seven 40-minute online workshops", "problem definition, creative responses, user testing, the core product feature, responsible AI use, viable partnerships and preparation for a pilot."],
@@ -68,11 +67,11 @@ export function CommunityImpactTrackPage() {
                 <p className="mt-5">The aim is to reduce project abandonment after events and build a repeatable process for developing useful community initiatives.</p>
               </ProposalSection>
               <ProposalSection title="Proposed role for Partner">
-                <p>We invite <a href={nadavFoundationUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-electric hover:underline">Nadav Foundation ↗</a> to fund the pilot’s programme design, workshop delivery, mentoring, partner research and follow-up evaluation. <a href={nadavFoundationUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-electric hover:underline">Nadav ↗</a> could also help shape the thematic priorities and identify relevant community partners.</p>
+                <p>We invite Potential Partners to fund the pilot’s programme design, workshop delivery, mentoring, partner research and follow-up evaluation. Potential Partners could also help shape the thematic priorities and identify relevant community partners.</p>
                 <p className="mt-5"><BrandLink>InspireXchange</BrandLink> would manage delivery and report on agreed milestones. Scope, budget and partner responsibilities would be defined together before launch.</p>
               </ProposalSection>
               <ProposalSection title="Next step">
-                A short discussion to assess alignment with Nadav’s 2027 priorities, followed by a costed pilot proposal.
+                A short discussion to assess alignment with Potential Partners’ 2027 priorities, followed by a costed pilot proposal.
               </ProposalSection>
             </div>
 
