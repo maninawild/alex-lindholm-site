@@ -74,11 +74,14 @@ export async function verifyStripeCoursePayment(sessionId: string) {
   const session = await stripeGet(
     `checkout/sessions/${encodeURIComponent(sessionId)}`,
   );
+  const validPaymentStatus =
+    session?.payment_status === "paid" ||
+    session?.payment_status === "no_payment_required";
+
   if (
     !session ||
-    session.payment_status !== "paid" ||
-    session.currency !== "eur" ||
-    session.amount_total !== 1900 ||
+    session.status !== "complete" ||
+    !validPaymentStatus ||
     typeof session.payment_link !== "string"
   ) {
     return false;
