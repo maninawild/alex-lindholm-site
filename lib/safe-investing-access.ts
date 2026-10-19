@@ -64,7 +64,7 @@ async function stripeGet(path: string) {
     headers: { Authorization: `Bearer ${secret}` },
     cache: "no-store",
   });
-  if (!response.ok) return null;
+  if (!response.ok) {\n    console.error("Stripe API request failed", { path: path.split("?")[0], status: response.status });\n    return null;\n  }
   return response.json() as Promise<Record<string, unknown>>;
 }
 
@@ -74,7 +74,7 @@ export async function verifyStripeCoursePayment(sessionId: string) {
   const session = await stripeGet(
     `checkout/sessions/${encodeURIComponent(sessionId)}`,
   );
-  const validPaymentStatus =
+  console.info("Stripe checkout verification", {\n    found: Boolean(session),\n    status: session?.status,\n    paymentStatus: session?.payment_status,\n    currency: session?.currency,\n    amountSubtotal: session?.amount_subtotal,\n    hasPaymentLink: typeof session?.payment_link === "string",\n  });\n  const validPaymentStatus =
     session?.payment_status === "paid" ||
     session?.payment_status === "no_payment_required";
 
