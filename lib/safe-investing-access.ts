@@ -57,7 +57,10 @@ export function verifyCourseAccessToken(token?: string) {
 }
 
 async function stripeGet(path: string) {
-  const reversedRestrictedKey = Object.keys(process.env).find((key) =>\n    key.startsWith("rk_live_"),\n  );\n  const secret = process.env.STRIPE_SECRET_KEY || reversedRestrictedKey;
+  const reversedRestrictedKey = Object.keys(process.env).find((key) =>
+    key.startsWith("rk_live_"),
+  );
+  const secret = process.env.STRIPE_SECRET_KEY || reversedRestrictedKey;
   if (!secret) return null;
 
   const response = await fetch(`https://api.stripe.com/v1/${path}`, {
