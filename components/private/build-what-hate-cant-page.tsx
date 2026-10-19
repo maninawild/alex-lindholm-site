@@ -23,7 +23,7 @@ export function BuildWhatHateCantPage() {
         <h1 className="mt-5 max-w-4xl text-balance text-4xl font-normal leading-[1.08] tracking-[-0.04em] text-[#EEF2F6] sm:text-6xl">From community challenges to working solutions with a future.</h1>
         <p className="mt-7 max-w-2xl text-lg leading-8 text-[#C5C9D5] sm:text-xl">Bring an idea, a community challenge or your skills. Work with others to research, build and test a practical response to antisemitism and hate.</p>
         <a href="#programme" className="mt-8 inline-flex min-h-12 items-center rounded-lg bg-[#FF6F61] px-6 py-3 font-medium text-[#171921] hover:bg-[#EEF2F6]">Explore the programme ↓</a>
-        <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-[#3A3D48] pt-6 text-sm text-[#C5C9D5]"><span>Weekly · 2 hours online</span><span>3 connected modules</span><span>Closing event · Live demos</span></div>
+        <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-[#3A3D48] pt-6 text-sm text-[#C5C9D5]"><span>Weekly · 2 hours online</span><span>3 connected modules</span><span>6 weeks · 6 workshops</span><span>Final Day · Hybrid event with an in-person gathering</span></div>
       </section>
       <section className="bg-[#EEF2F6] py-14 text-[#424449] sm:py-16">
         <div className={`${wrap} grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(14rem,1fr)]`}>
@@ -61,7 +61,7 @@ export function BuildWhatHateCantPage() {
               </div>
             </article>)}
           </div>
-          <p className="text-sm leading-6 text-[#555969]">Module lengths and the schedule are agreed with organisers. Design & Build content is adapted after the research module.</p>
+          <p className="text-sm leading-6 text-[#555969]">Six weekly workshops lead to the Final Day, a hybrid event with an in-person gathering. Design & Build content is adapted after the research module.</p>
         </div>
       </section>
       <section className="bg-[#171921] py-14 text-[#EEF2F6] sm:py-16"><div className={wrap}>
@@ -78,7 +78,19 @@ export function BuildWhatHateCantPage() {
         <div className="grid gap-10 lg:grid-cols-2"><div><p className="text-xs font-medium uppercase tracking-[0.16em] text-[#FF6F61]">Built for continuity</p><h2 className="mt-3 text-3xl font-normal tracking-tight text-[#EEF2F6] sm:text-4xl">The work continues after the final demo.</h2></div><p className="leading-8 text-[#C5C9D5]">Each team works towards a tested solution, evidence of user need, a pilot proposal and an identified owner for the next stage. Reusable materials and documented learning support further development through future seminars and hackathons.</p></div>
         <div className="mt-12 border-t border-[#3A3D48] pt-10"><h2 className="text-2xl font-medium text-[#EEF2F6]">Additional bonuses for participants</h2><div className="mt-7 grid gap-8 sm:grid-cols-2"><div><p className="text-4xl text-[#FF6F61]">1 hour</p><p className="mt-3 leading-7 text-[#C5C9D5]">Free consultation for each hackathon participant with the InspireXchange team, worth €150.</p></div><div><p className="text-4xl text-[#FF6F61]">€5,000</p><p className="mt-3 leading-7 text-[#C5C9D5]">The chance to win an educational grant covering six months of the acceleration programme.</p></div></div><a href="https://www.inspirexchange.nl/" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block text-sm text-[#EEF2F6] underline decoration-[#FF6F61] underline-offset-4">InspireXchange.nl ↗</a></div>
         <div className="mt-12 border-t border-[#3A3D48] pt-8"><h2 className="text-2xl font-medium text-[#EEF2F6]">Discuss the programme</h2><p className="mt-3 text-[#C5C9D5]">Scope, cohort size and delivery agreed with the organisers.</p><a href="https://wa.me/message/4OIGQ3FHUZQSD1" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex min-h-12 items-center rounded-lg bg-[#FF6F61] px-6 py-3 font-medium text-[#171921] hover:bg-[#EEF2F6]">Request more details ↗</a></div>
-        <footer className="mt-12 space-y-5 border-t border-[#3A3D48] pt-7 text-sm leading-6 text-[#C5C9D5]"><p>Build What Hate Can’t is organised by Israel’s Ministry of Foreign Affairs through the Embassy in The Hague and Israeli Techies NL. This online accelerator track is proposed by InspireXchange, with final scope and delivery agreed with the organisers.</p><p>© InspireXchange. All programme ideas and materials are protected by copyright.</p><p>Private & Confidential. Access is personal and non-transferable; no copying, forwarding, publication or redistribution without prior written permission.</p></footer>
+        <section aria-labelledby="programme-partners" className="mt-12 border-t border-[#3A3D48] pt-8">
+          <h2 id="programme-partners" className="text-2xl font-medium text-[#EEF2F6]">Programme partners</h2>
+          <div aria-hidden="true" className="mt-6 flex flex-wrap items-center gap-4">
+            {[0, 1, 2, 3].map((item) => <div key={item} className="flex h-20 w-36 items-center justify-center gap-3 rounded-lg bg-[#24262D]">
+              <div className="flex items-center gap-2 opacity-60 blur-[5px]">
+                <span className={item % 2 === 0 ? "block h-7 w-7 rounded-full bg-[#C5C9D5]" : "block h-7 w-7 rotate-45 bg-[#C5C9D5]"} />
+                <span className="flex flex-col gap-2"><span className="block h-2 w-14 rounded bg-[#C5C9D5]" /><span className="block h-2 w-10 rounded bg-[#C5C9D5]" /></span>
+              </div>
+            </div>)}
+          </div>
+          <p className="mt-5 text-sm leading-6 text-[#C5C9D5]">Partners will be announced soon. <a href="https://wa.me/message/4OIGQ3FHUZQSD1" target="_blank" rel="noopener noreferrer" className="text-[#EEF2F6] underline decoration-[#FF6F61] underline-offset-4">Request more details</a> to learn more about the partner network.</p>
+        </section>
+        <footer className="mt-12 space-y-5 border-t border-[#3A3D48] pt-7 text-sm leading-6 text-[#C5C9D5]"><p>© InspireXchange. All programme ideas and materials are protected by copyright.</p><p>Private & Confidential. Access is personal and non-transferable; no copying, forwarding, publication or redistribution without prior written permission.</p></footer>
       </div></section>
     </main>
   </PrivatePageShell>;
