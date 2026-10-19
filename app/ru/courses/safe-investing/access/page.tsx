@@ -80,7 +80,7 @@ export default async function SafeInvestingAccessPage() {
             Безопасные инвестиции
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-white/70">
-            Все три урока доступны на этой странице в течение 30 дней на этом устройстве.
+            Все три урока доступны на этой странице.
           </p>
         </div>
       </section>
