@@ -3,7 +3,7 @@ import "server-only";
 import { createHmac, timingSafeEqual } from "node:crypto";
 
 export const courseAccessCookie = "safe_investing_access";
-export const courseAccessMaxAge = 60 * 60 * 24 * 30;
+export const courseAccessMaxAge = 60 * 60 * 24 * 365 * 10;
 
 const allowedCoursePrices = new Set(["eur:1900", "usd:2215"]);
 
@@ -46,11 +46,7 @@ export function verifyCourseAccessToken(token?: string) {
       sessionId?: string;
       expiresAt?: number;
     };
-    return Boolean(
-      data.sessionId &&
-        data.expiresAt &&
-        data.expiresAt > Math.floor(Date.now() / 1000),
-    );
+    return Boolean(data.sessionId);
   } catch {
     return false;
   }
