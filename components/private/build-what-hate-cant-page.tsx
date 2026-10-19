@@ -19,9 +19,10 @@ export function BuildWhatHateCantPage() {
           <span>Private & Confidential · Programme proposal</span>
         </div>
         <a href="https://www.inspirexchange.nl/" target="_blank" rel="noopener noreferrer" className="mt-12 inline-block"><Image src="/logos/inspirexchange-wordmark-dark.svg" alt="InspireXchange" width={232} height={29} priority /></a>
-        <p className="mt-10 text-xs font-medium uppercase tracking-[0.16em] text-[#FF6F61]">Build What Hate Can’t / Online accelerator track</p>
+        <p className="mt-10 text-xs font-medium uppercase tracking-[0.16em] text-[#FF6F61]">Build What Hate Can’t / Hybrid accelerator programme</p>
         <h1 className="mt-5 max-w-4xl text-balance text-4xl font-normal leading-[1.08] tracking-[-0.04em] text-[#EEF2F6] sm:text-6xl">From community challenges to working solutions with a future.</h1>
         <p className="mt-7 max-w-2xl text-lg leading-8 text-[#C5C9D5] sm:text-xl">Bring an idea, a community challenge or your skills. Work with others to research, build and test a practical response to antisemitism and hate.</p>
+        <p className="mt-5 max-w-3xl text-base leading-7 text-[#C5C9D5]">A six-week hybrid programme combining online workshops and in-person sessions. Three acceleration modules take participants from idea to tangible result in an online hackathon format, followed by a hybrid Final Day.</p>
         <a href="#programme" className="mt-8 inline-flex min-h-12 items-center rounded-lg bg-[#FF6F61] px-6 py-3 font-medium text-[#171921] hover:bg-[#EEF2F6]">Explore the programme ↓</a>
         <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-[#3A3D48] pt-6 text-sm text-[#C5C9D5]"><span>Weekly · 2 hours online</span><span>3 connected modules</span><span>6 weeks · 6 workshops</span><span>Final Day · Hybrid event with an in-person gathering</span></div>
       </section>
