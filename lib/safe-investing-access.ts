@@ -5,7 +5,7 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 export const courseAccessCookie = "safe_investing_access";
 export const courseAccessMaxAge = 60 * 60 * 24 * 30;
 
-const courseProductName = "Безопасные инвестиции для начинающих курс 3 урока";
+const allowedCoursePrices = new Set(["eur:1900", "usd:2215"]);
 
 function signingSecret() {
   const secret = process.env.PRIVATE_SESSION_SECRET;
@@ -87,16 +87,9 @@ export async function verifyStripeCoursePayment(sessionId: string) {
     return false;
   }
 
-  const lineItems = await stripeGet(
-    `checkout/sessions/${encodeURIComponent(sessionId)}/line_items?limit=2`,
-  );
-  const items = Array.isArray(lineItems?.data)
-    ? (lineItems.data as Array<Record<string, unknown>>)
-    : [];
-
   return (
-    items.length === 1 &&
-    items[0]?.description === courseProductName &&
-    items[0]?.quantity === 1
+    typeof session.currency === "string" &&
+    typeof session.amount_subtotal === "number" &&
+    allowedCoursePrices.has(`${session.currency}:${session.amount_subtotal}`)
   );
 }
