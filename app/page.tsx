@@ -24,6 +24,7 @@ import { YouTubeVideoCard } from "@/components/youtube-video-card";
 import { videos } from "@/data/videos";
 
 const socialLinks = {
+  email: "mailto:alex@inspirexchange.nl",
   linkedin: "https://www.linkedin.com/in/axlindholm/",
   telegram: "https://t.me/alexinspirexchange",
   whatsapp: "https://wa.me/message/4OIGQ3FHUZQSD1",
@@ -1165,19 +1166,20 @@ function Contact() {
             reason to connect.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={socialLinks.linkedin}
-              target="_blank"
-              rel="noopener noreferrer me"
-              className="inline-flex min-h-12 items-center justify-center gap-3 rounded-md border border-electric bg-electric px-6 text-sm font-medium text-bone transition duration-300 hover:bg-blue-700"
-              aria-label="Connect with Alex Lindholm on LinkedIn"
-            >
-              <SocialMark type="linkedin" />
-              <span>Connect on LinkedIn</span>
-              <span aria-hidden="true">→</span>
-            </a>
-            <ArrowLink href="https://zcal.co/axlindholm/1hour" label="Book a €100 Strategic Session" variant="lineDark" />
+            <ArrowLink href={socialLinks.strategicSession} label="Book a €100 Strategic Session" />
+            <ArrowLink href={socialLinks.email} label="Email Alex" variant="lineDark" />
           </div>
+          <a
+            href={socialLinks.linkedin}
+            target="_blank"
+            rel="noopener noreferrer me"
+            className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-graphite/70 underline decoration-ink/20 underline-offset-8 transition hover:text-ink hover:decoration-ink"
+            aria-label="Connect with Alex Lindholm on LinkedIn"
+          >
+            <SocialMark type="linkedin" />
+            <span>Connect on LinkedIn</span>
+            <span aria-hidden="true">→</span>
+          </a>
           <SocialContactLinks />
         </div>
         <LinkedInProfileCard tone="light" />
@@ -1567,6 +1569,13 @@ function Footer() {
               Media
             </a>
           </div>
+          <a
+            href={socialLinks.email}
+            className="font-medium text-ink underline decoration-ink/25 underline-offset-8 transition hover:decoration-ink"
+            aria-label="Email Alex Lindholm at alex@inspirexchange.nl"
+          >
+            Email Alex
+          </a>
           <a
             href={socialLinks.linkedin}
             target="_blank"
