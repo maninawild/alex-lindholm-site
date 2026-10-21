@@ -10,6 +10,10 @@ source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 translationKey: "2026-09-14-glm-5-3-flash-and-the-open-source-middle"
 metaDescription: "GLM-5.3-Flash illustrates how open-weight models are capturing the middle of the AI market on cost, context and flexibility."
+coverImage: "/media/articles/editorial/2026-09-14-glm-5-3-flash-and-the-open-source-middle.webp"
+coverImageAlt: "Open laptop displaying an open-source model benchmark beside a compact GPU workstation."
+image: "/media/articles/editorial/2026-09-14-glm-5-3-flash-and-the-open-source-middle.webp"
+imageAlt: "Open laptop displaying an open-source model benchmark beside a compact GPU workstation."
 relatedArticles: []
 ---
 

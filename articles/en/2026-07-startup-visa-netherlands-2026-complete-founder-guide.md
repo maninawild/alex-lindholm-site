@@ -10,8 +10,8 @@ category: "Startup Ecosystems"
 language: "en"
 contentSource: "original_en"
 source: "Alex Lindholm"
-coverImage: "/media/articles/startup-visa/founder-guide-netherlands-2026.jpg"
-coverImageAlt: "Founder planning a startup from a workspace overlooking a Dutch canal"
+coverImage: "/media/articles/editorial/2026-07-startup-visa-guide.png"
+coverImageAlt: "Planning documents and an Amsterdam map beside a canal-side window."
 excerpt: "Thinking about moving your startup to the Netherlands? This guide explains how the Dutch Startup Visa really works, what RVO actually evaluates, why promising applications are rejected, and how founders can prepare before investing months into the process."
 metaDescription: "Thinking about moving your startup to the Netherlands? This guide explains how the Dutch Startup Visa really works, what RVO actually evaluates, why promising applications are rejected, and how founders can prepare before investing months into the process."
 openGraphTitle: "Startup Visa Netherlands (2026): The Complete Founder Guide"
@@ -19,6 +19,9 @@ openGraphDescription: "Thinking about moving your startup to the Netherlands? Th
 relatedArticles:
   - "startup-visa-rejected-netherlands-2026"
 status: "published"
+image: "/media/articles/editorial/2026-07-startup-visa-guide.png"
+imageAlt: "Planning documents and an Amsterdam map beside a canal-side window."
+imageType: "editorial"
 ---
 
 # Startup Visa Netherlands (2026): The Complete Founder Guide

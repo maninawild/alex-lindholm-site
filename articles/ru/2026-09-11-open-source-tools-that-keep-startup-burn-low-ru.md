@@ -12,6 +12,10 @@ translationKey: "2026-09-11-open-source-tools-that-keep-startup-burn-low"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Практический open-source stack для раннего стартапа: меньше burn, выше скорость до product-market fit."
+coverImage: "/media/articles/editorial/2026-09-11-open-source-tools-that-keep-startup-burn-low.webp"
+coverImageAlt: "Ноутбук, микрофон и блокнот с бюджетом стартапа."
+image: "/media/articles/editorial/2026-09-11-open-source-tools-that-keep-startup-burn-low.webp"
+imageAlt: "Ноутбук, микрофон и блокнот с бюджетом стартапа."
 relatedArticles: []
 ---
 

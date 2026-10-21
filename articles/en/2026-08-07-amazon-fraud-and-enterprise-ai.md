@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "A fraud case at Amazon shows why enterprise AI should focus on reviewing every invoice, contract and shipment discrepancy."
+coverImage: "/media/articles/editorial/2026-08-07-amazon-fraud-and-enterprise-ai.webp"
+coverImageAlt: "Warehouse invoices with one discrepancy marked in red pencil."
+image: "/media/articles/editorial/2026-08-07-amazon-fraud-and-enterprise-ai.webp"
+imageAlt: "Warehouse invoices with one discrepancy marked in red pencil."
 relatedArticles: []
 ---
 

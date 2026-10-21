@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Robotics valuations increasingly separate the physical robot from the intelligence layer, with investors betting that the brain carries the margin."
+coverImage: "/media/articles/editorial/2026-08-26-robotics-startups-the-money-is-moving-to-the-brain.webp"
+coverImageAlt: "Industrial robot arm operating in a robotics startup workshop."
+image: "/media/articles/editorial/2026-08-26-robotics-startups-the-money-is-moving-to-the-brain.webp"
+imageAlt: "Industrial robot arm operating in a robotics startup workshop."
 relatedArticles: []
 ---
 

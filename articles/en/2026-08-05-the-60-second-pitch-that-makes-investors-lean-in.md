@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "A practical 60-second pitch structure for founders: hook, problem, solution, traction, market, team and ask."
+coverImage: "/media/articles/editorial/2026-08-05-the-60-second-pitch-that-makes-investors-lean-in.webp"
+coverImageAlt: "Founder presenting a product prototype to investors beside a stopwatch."
+image: "/media/articles/editorial/2026-08-05-the-60-second-pitch-that-makes-investors-lean-in.webp"
+imageAlt: "Founder presenting a product prototype to investors beside a stopwatch."
 relatedArticles: []
 ---
 

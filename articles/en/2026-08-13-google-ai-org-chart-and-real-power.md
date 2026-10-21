@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Google's AI leadership reshuffle is a reminder that titles describe accountability better than they describe actual influence."
+coverImage: "/media/articles/editorial/2026-08-13-google-ai-org-chart-and-real-power.webp"
+coverImageAlt: "Printed company org chart with a key role circled in blue pencil."
+image: "/media/articles/editorial/2026-08-13-google-ai-org-chart-and-real-power.webp"
+imageAlt: "Printed company org chart with a key role circled in blue pencil."
 relatedArticles: []
 ---
 

@@ -10,6 +10,10 @@ source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 translationKey: "2026-09-11-open-source-tools-that-keep-startup-burn-low"
 metaDescription: "A practical early-stage open-source stack for keeping burn low and product velocity high before product-market fit."
+coverImage: "/media/articles/editorial/2026-09-11-open-source-tools-that-keep-startup-burn-low.webp"
+coverImageAlt: "Laptop, microphone and a handwritten startup budget notebook."
+image: "/media/articles/editorial/2026-09-11-open-source-tools-that-keep-startup-burn-low.webp"
+imageAlt: "Laptop, microphone and a handwritten startup budget notebook."
 relatedArticles: []
 ---
 

@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "More agents do not remove product judgment. They move the critical decisions further upstream, where founders must validate assumptions."
+coverImage: "/media/articles/editorial/2026-08-12-automation-does-not-remove-judgment.webp"
+coverImageAlt: "Person reviewing an automated workflow and making a final decision on paper."
+image: "/media/articles/editorial/2026-08-12-automation-does-not-remove-judgment.webp"
+imageAlt: "Person reviewing an automated workflow and making a final decision on paper."
 relatedArticles: []
 ---
 

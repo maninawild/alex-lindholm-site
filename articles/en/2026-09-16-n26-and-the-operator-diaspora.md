@@ -9,6 +9,9 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 translationKey: "2026-09-16-n26-and-the-operator-diaspora"
+imageType: "editorial"
+imageAlt: "Mobile banking app on a phone on a Berlin street."
+image: "/media/articles/editorial/2026-09-16-n26-operator-diaspora.png"
 metaDescription: "The lasting asset of N26 may be the operators who learned to scale a regulated product and now feed Berlin's next startup wave."
 relatedArticles: []
 ---

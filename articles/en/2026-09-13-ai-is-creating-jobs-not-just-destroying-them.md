@@ -10,6 +10,10 @@ source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 translationKey: "2026-09-13-ai-is-creating-jobs-not-just-destroying-them"
 metaDescription: "AI is shifting labor-market bottlenecks and creating new layers of work even as some roles decline."
+coverImage: "/media/articles/editorial/2026-09-13-ai-is-creating-jobs-not-just-destroying-them.webp"
+coverImageAlt: "Technician learning an AI-assisted repair workflow at a workbench."
+image: "/media/articles/editorial/2026-09-13-ai-is-creating-jobs-not-just-destroying-them.webp"
+imageAlt: "Technician learning an AI-assisted repair workflow at a workbench."
 relatedArticles: []
 ---
 

@@ -9,6 +9,9 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 translationKey: "2026-09-15-411-rejections-to-close-a-single-seed-round"
+imageType: "editorial"
+imageAlt: "Editorial cover with the number 411 and the word rejections."
+image: "/media/articles/editorial/2026-09-15-411-rejections.png"
 metaDescription: "A strong product does not guarantee capital: investor segmentation, geography, capital efficiency and network quality matter."
 relatedArticles: []
 ---

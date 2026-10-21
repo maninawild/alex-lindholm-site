@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "A tiny C implementation running a trillion-parameter model on 8 GB of RAM is a useful lesson in questioning inherited constraints."
+coverImage: "/media/articles/editorial/2026-08-14-a-2-78-trillion-parameter-model-on-8gb-ram.webp"
+coverImageAlt: "Laptop running a local model beside an 8 GB memory module and external drive."
+image: "/media/articles/editorial/2026-08-14-a-2-78-trillion-parameter-model-on-8gb-ram.webp"
+imageAlt: "Laptop running a local model beside an 8 GB memory module and external drive."
 relatedArticles: []
 ---
 

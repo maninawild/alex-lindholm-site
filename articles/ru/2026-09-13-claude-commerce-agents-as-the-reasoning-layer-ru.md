@@ -12,6 +12,10 @@ translationKey: "2026-09-13-claude-commerce-agents-as-the-reasoning-layer"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Claude Commerce Agents показывают стратегию владения интеллектом поверх существующей инфраструктуры ритейлеров."
+coverImage: "/media/articles/editorial/2026-09-13-claude-commerce-agents-as-the-reasoning-layer.webp"
+coverImageAlt: "Покупатель сравнивает товары на телефоне и ноутбуке рядом с посылкой."
+image: "/media/articles/editorial/2026-09-13-claude-commerce-agents-as-the-reasoning-layer.webp"
+imageAlt: "Покупатель сравнивает товары на телефоне и ноутбуке рядом с посылкой."
 relatedArticles: []
 ---
 

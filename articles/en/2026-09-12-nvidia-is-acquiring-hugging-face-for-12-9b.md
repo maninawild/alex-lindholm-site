@@ -10,6 +10,10 @@ source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 translationKey: "2026-09-12-nvidia-is-acquiring-hugging-face-for-12-9b"
 metaDescription: "The strategic logic behind Nvidia's reported $12.9B acquisition of Hugging Face and what it means for open-source AI."
+coverImage: "/media/articles/editorial/2026-09-12-nvidia-is-acquiring-hugging-face-for-12-9b.webp"
+coverImageAlt: "GPU beside an open model repository displayed on a laptop."
+image: "/media/articles/editorial/2026-09-12-nvidia-is-acquiring-hugging-face-for-12-9b.webp"
+imageAlt: "GPU beside an open model repository displayed on a laptop."
 relatedArticles: []
 ---
 

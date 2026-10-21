@@ -10,6 +10,10 @@ source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 translationKey: "2026-09-13-claude-commerce-agents-as-the-reasoning-layer"
 metaDescription: "Claude Commerce Agents suggest a strategy of owning the intelligence layer while retailers keep their existing commerce infrastructure."
+coverImage: "/media/articles/editorial/2026-09-13-claude-commerce-agents-as-the-reasoning-layer.webp"
+coverImageAlt: "Customer comparing products on a phone and laptop beside a parcel."
+image: "/media/articles/editorial/2026-09-13-claude-commerce-agents-as-the-reasoning-layer.webp"
+imageAlt: "Customer comparing products on a phone and laptop beside a parcel."
 relatedArticles: []
 ---
 

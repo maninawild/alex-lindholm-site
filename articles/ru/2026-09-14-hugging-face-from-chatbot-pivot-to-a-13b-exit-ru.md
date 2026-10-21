@@ -12,6 +12,10 @@ translationKey: "2026-09-14-hugging-face-from-chatbot-pivot-to-a-13b-exit"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Путь Hugging Face от неудавшегося consumer chatbot к open-source AI infrastructure и сделке на $13 млрд."
+coverImage: "/media/articles/editorial/2026-09-14-hugging-face-from-chatbot-pivot-to-a-13b-exit.webp"
+coverImageAlt: "Графический процессор рядом с карточками моделей и экраном репозитория."
+image: "/media/articles/editorial/2026-09-14-hugging-face-from-chatbot-pivot-to-a-13b-exit.webp"
+imageAlt: "Графический процессор рядом с карточками моделей и экраном репозитория."
 relatedArticles: []
 ---
 

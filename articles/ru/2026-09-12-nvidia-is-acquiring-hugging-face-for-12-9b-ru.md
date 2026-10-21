@@ -12,6 +12,10 @@ translationKey: "2026-09-12-nvidia-is-acquiring-hugging-face-for-12-9b"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Стратегическая логика предполагаемого приобретения Hugging Face компанией Nvidia и последствия для open-source AI."
+coverImage: "/media/articles/editorial/2026-09-12-nvidia-is-acquiring-hugging-face-for-12-9b.webp"
+coverImageAlt: "Графический процессор рядом с открытым репозиторием моделей на ноутбуке."
+image: "/media/articles/editorial/2026-09-12-nvidia-is-acquiring-hugging-face-for-12-9b.webp"
+imageAlt: "Графический процессор рядом с открытым репозиторием моделей на ноутбуке."
 relatedArticles: []
 ---
 

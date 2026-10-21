@@ -12,6 +12,10 @@ translationKey: "2026-09-13-ai-is-creating-jobs-not-just-destroying-them"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "AI меняет узкие места рынка труда и создаёт новые слои занятости, хотя некоторые роли сокращаются."
+coverImage: "/media/articles/editorial/2026-09-13-ai-is-creating-jobs-not-just-destroying-them.webp"
+coverImageAlt: "Техник осваивает ремонт с помощью AI за рабочим столом."
+image: "/media/articles/editorial/2026-09-13-ai-is-creating-jobs-not-just-destroying-them.webp"
+imageAlt: "Техник осваивает ремонт с помощью AI за рабочим столом."
 relatedArticles: []
 ---
 

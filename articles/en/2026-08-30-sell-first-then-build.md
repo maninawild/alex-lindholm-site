@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Founders should validate willingness to pay before building for six months. Real payment is a stronger signal than waitlists or market-size slides."
+coverImage: "/media/articles/editorial/2026-08-30-sell-first-then-build.webp"
+coverImageAlt: "Founder validating a prototype with a customer at a small table."
+image: "/media/articles/editorial/2026-08-30-sell-first-then-build.webp"
+imageAlt: "Founder validating a prototype with a customer at a small table."
 relatedArticles: []
 ---
 

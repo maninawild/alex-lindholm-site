@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Harvey's Tenet model is a bet that applied AI moats will sit in domain-specific systems rather than generic frontier intelligence."
+coverImage: "/media/articles/editorial/2026-08-25-harvey-built-its-own-legal-ai-model.webp"
+coverImageAlt: "Lawyer reviewing a contract beside a legal AI interface on a laptop."
+image: "/media/articles/editorial/2026-08-25-harvey-built-its-own-legal-ai-model.webp"
+imageAlt: "Lawyer reviewing a contract beside a legal AI interface on a laptop."
 relatedArticles: []
 ---
 

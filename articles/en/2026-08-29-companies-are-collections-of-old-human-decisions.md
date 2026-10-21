@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Old org charts, processes and industry assumptions are human decisions, not physics. Founders should question the constraints everyone stopped noticing."
+coverImage: "/media/articles/editorial/2026-08-29-companies-are-collections-of-old-human-decisions.webp"
+coverImageAlt: "Old process charts and marked-up organizational decisions pinned to a wall."
+image: "/media/articles/editorial/2026-08-29-companies-are-collections-of-old-human-decisions.webp"
+imageAlt: "Old process charts and marked-up organizational decisions pinned to a wall."
 relatedArticles: []
 ---
 
