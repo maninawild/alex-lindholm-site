@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "The next major AI job may not have a name yet"
 slug: "2026-08-10-the-next-major-ai-job-may-not-have-a-name-yet"
 date: "2026-08-10T09:00:00.000Z"
@@ -9,10 +10,6 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "AI implementation specialists may become the next major service category for millions of businesses adopting existing AI tools."
-coverImage: "/media/articles/editorial/2026-08-10-the-next-major-ai-job-may-not-have-a-name-yet.webp"
-coverImageAlt: "Technician learning an AI tool from a colleague at a repair counter."
-image: "/media/articles/editorial/2026-08-10-the-next-major-ai-job-may-not-have-a-name-yet.webp"
-imageAlt: "Technician learning an AI tool from a colleague at a repair counter."
 relatedArticles: []
 ---
 

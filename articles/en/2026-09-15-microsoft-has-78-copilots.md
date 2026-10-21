@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Microsoft has 78 Copilots"
 slug: "2026-09-15-microsoft-has-78-copilots"
 date: "2026-09-15T09:00:00.000Z"
@@ -9,8 +10,8 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 translationKey: "2026-09-15-microsoft-has-78-copilots"
-image: "/media/articles/editorial/2026-09-15-microsoft-copilot-key.png"
-imageAlt: "Close-up of a dedicated Copilot key on a laptop keyboard."
+image: "/media/articles/editorial/2026-09-15-microsoft-copilot-overload.webp"
+imageAlt: "Satirical Microsoft Copilot naming graphic asking which Copilot are you"
 imageType: "editorial"
 metaDescription: "When every Microsoft tool becomes Copilot, the brand risks losing the meaning it was supposed to create."
 relatedArticles: []

@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Израиль - страна экспериментальная, особенная."
 slug: "2020-07-19-izrail-strana-eksperimentalnaya-osobennaya"
 date: "2020-07-19T14:07:35.000Z"

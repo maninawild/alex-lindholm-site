@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Something subtle just changed in fintech."
 slug: "2026-04-02-something-subtle-just-changed-in-fintech"
 date: "2026-04-02T09:00:00.000Z"

@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "GLM-5.3-Flash и open-source середина рынка"
 slug: "2026-09-14-glm-5-3-flash-and-the-open-source-middle-ru"
 date: "2026-09-14T10:00:00.000Z"
@@ -12,10 +13,6 @@ translationKey: "2026-09-14-glm-5-3-flash-and-the-open-source-middle"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "GLM-5.3-Flash показывает, как open-weight модели захватывают середину AI-рынка за счёт цены, контекста и гибкости."
-coverImage: "/media/articles/editorial/2026-09-14-glm-5-3-flash-and-the-open-source-middle.webp"
-coverImageAlt: "Ноутбук с тестированием открытой модели рядом с компактной рабочей станцией."
-image: "/media/articles/editorial/2026-09-14-glm-5-3-flash-and-the-open-source-middle.webp"
-imageAlt: "Ноутбук с тестированием открытой модели рядом с компактной рабочей станцией."
 relatedArticles: []
 ---
 

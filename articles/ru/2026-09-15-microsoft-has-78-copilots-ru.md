@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "У Microsoft уже 78 Copilot"
 slug: "2026-09-15-microsoft-has-78-copilots-ru"
 date: "2026-09-15T09:00:00.000Z"
@@ -11,8 +12,8 @@ originalSlug: "2026-09-15-microsoft-has-78-copilots"
 translationKey: "2026-09-15-microsoft-has-78-copilots"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
-image: "/media/articles/editorial/2026-09-15-microsoft-copilot-key.png"
-imageAlt: "Крупный план клавиши Copilot на клавиатуре ноутбука."
+image: "/media/articles/editorial/2026-09-15-microsoft-copilot-overload.webp"
+imageAlt: "Сатирическая графика о множестве продуктов Microsoft под названием Copilot"
 imageType: "editorial"
 metaDescription: "Когда каждый инструмент Microsoft называется Copilot, бренд рискует перестать что-либо означать."
 relatedArticles: []

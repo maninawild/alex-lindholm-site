@@ -34,9 +34,11 @@ export type ArticleFrontmatter = {
   lastReviewed?: string;
   updateHistory?: string[];
   status?: ArticleStatus;
+  robots?: ArticleRobots;
 };
 
 export type ArticleStatus = "published" | "draft";
+export type ArticleRobots = "index" | "noindex";
 export type ContentSource = "telegram_ru" | "original_en";
 export type ArticleImageType = "editorial" | "event" | "interview" | "photo" | "abstract";
 
@@ -72,6 +74,7 @@ export type Article = {
   openGraphTitle: string;
   openGraphDescription: string;
   status: ArticleStatus;
+  robots: ArticleRobots;
   content: string;
   body: string;
   href: string;
@@ -96,6 +99,10 @@ export function getAllArticles(): Article[] {
 
 export function getArticleSummaries(): ArticleSummary[] {
   return getAllArticles().map(({ body, content, ...summary }) => summary);
+}
+
+export function getIndexableArticles(): Article[] {
+  return getAllArticles().filter((article) => article.robots === "index");
 }
 
 export function getArticleBySlug(slug: string): Article | undefined {
@@ -239,6 +246,7 @@ function readArticleFile(directory: string, fileName: string, fallbackLanguage: 
   const excerpt = frontmatter.excerpt || frontmatter.metaDescription || createDescription(body);
   const metaDescription = frontmatter.metaDescription || excerpt;
   const status = frontmatter.status === "draft" ? "draft" : "published";
+  const robots = frontmatter.robots === "noindex" ? "noindex" : "index";
   const contentSource = frontmatter.contentSource || inferContentSource(language, frontmatter.sourceUrl);
   const source = frontmatter.source || inferSource(frontmatter.sourceUrl, contentSource);
   const articleImage = resolveArticleImage({
@@ -284,6 +292,7 @@ function readArticleFile(directory: string, fileName: string, fallbackLanguage: 
     openGraphTitle: frontmatter.openGraphTitle || title,
     openGraphDescription: frontmatter.openGraphDescription || metaDescription,
     status,
+    robots,
     content: body.trim(),
     body: body.trim(),
     href: `/articles/${slug}`,

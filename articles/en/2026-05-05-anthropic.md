@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Anthropic"
 slug: "2026-05-05-anthropic"
 date: "2026-05-05T09:00:00.000Z"

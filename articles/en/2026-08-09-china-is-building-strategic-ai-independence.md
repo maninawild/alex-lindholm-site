@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "China is building strategic AI independence"
 slug: "2026-08-09-china-is-building-strategic-ai-independence"
 date: "2026-08-09T09:00:00.000Z"
@@ -9,10 +10,6 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Qwen and DeepSeek point to a broader shift: AI is becoming part of China's industrial strategy and technological independence."
-coverImage: "/media/articles/editorial/2026-08-09-china-is-building-strategic-ai-independence.webp"
-coverImageAlt: "Technician inspecting servers in a modern data center."
-image: "/media/articles/editorial/2026-08-09-china-is-building-strategic-ai-independence.webp"
-imageAlt: "Technician inspecting servers in a modern data center."
 relatedArticles: []
 ---
 

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { events } from "@/data/events";
 import { baseUrl, seoPages } from "@/data/seo-pages";
-import { getAllArticles, getArticleTranslations } from "@/lib/articles";
+import { getArticleTranslations, getIndexableArticles } from "@/lib/articles";
 import {
   getInsightCategories,
   getInsightTopics,
@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1 : 0.75,
   }));
 
-  const articles: MetadataRoute.Sitemap = getAllArticles().map((article) => {
+  const articles: MetadataRoute.Sitemap = getIndexableArticles().map((article) => {
     const translations = getArticleTranslations(article);
     const languages = Object.fromEntries(
       [article, ...translations].map((translation) => [

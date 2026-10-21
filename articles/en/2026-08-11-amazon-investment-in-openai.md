@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Amazon signed a $50 billion investment into OpenAI"
 slug: "2026-08-11-amazon-investment-in-openai"
 date: "2026-08-11T08:00:00.000Z"
@@ -9,10 +10,6 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Amazon's reported $50B investment into OpenAI illustrates how quickly Big Tech is consolidating positions in AI infrastructure."
-coverImage: "/media/articles/editorial/2026-08-11-amazon-investment-in-openai.webp"
-coverImageAlt: "Investment agreement on a boardroom table with a data center on screen."
-image: "/media/articles/editorial/2026-08-11-amazon-investment-in-openai.webp"
-imageAlt: "Investment agreement on a boardroom table with a data center on screen."
 relatedArticles: []
 ---
 

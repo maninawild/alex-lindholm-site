@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Неделя начинается с праздника, который, скажем прямо, не для всех."
 slug: "2020-04-19-nedelya-nachinaetsya-s-prazdnika-kotoryi-skazhem-pryamo-ne-dlya-vseh"
 date: "2020-04-19T20:40:06.000Z"

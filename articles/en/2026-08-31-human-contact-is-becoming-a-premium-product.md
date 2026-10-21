@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Human contact is becoming a premium product"
 slug: "2026-08-31-human-contact-is-becoming-a-premium-product"
 date: "2026-08-31T09:00:00.000Z"
@@ -10,9 +11,6 @@ source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "As AI makes communication cheaper and more scalable, real human contact, trust and in-person interaction become more valuable."
 relatedArticles: []
-image: "/media/articles/editorial/2026-08-31-human-contact.png"
-imageAlt: "Two people talking across a cafe table."
-imageType: "editorial"
 ---
 
 AI will automate a lot. But it will not replace everything obviously.

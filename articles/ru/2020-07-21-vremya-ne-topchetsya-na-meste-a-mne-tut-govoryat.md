@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Время не топчется на месте, а мне тут говорят:"
 slug: "2020-07-21-vremya-ne-topchetsya-na-meste-a-mne-tut-govoryat"
 date: "2020-07-21T08:10:08.000Z"

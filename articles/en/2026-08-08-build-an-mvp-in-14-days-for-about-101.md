@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Build an MVP in 14 days for about $101"
 slug: "2026-08-08-build-an-mvp-in-14-days-for-about-101"
 date: "2026-08-08T09:00:00.000Z"
@@ -9,10 +10,6 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "A practical low-cost stack for taking a startup idea from blank page to a working MVP in two weeks."
-coverImage: "/media/articles/editorial/2026-08-08-build-an-mvp-in-14-days-for-about-101.webp"
-coverImageAlt: "Laptop prototype, two-week calendar and a small project receipt on a desk."
-image: "/media/articles/editorial/2026-08-08-build-an-mvp-in-14-days-for-about-101.webp"
-imageAlt: "Laptop prototype, two-week calendar and a small project receipt on a desk."
 relatedArticles: []
 ---
 

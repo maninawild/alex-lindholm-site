@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "AI examples"
 slug: "2026-05-03-ai-examples"
 date: "2026-05-03T09:00:00.000Z"
