@@ -15,6 +15,11 @@ source: "Alex Lindholm"
 metaDescription: "AI made launching startups dramatically easier. And standing out dramatically harder. Because now everyone has: → the same models → the same no-code tools..."
 openGraphTitle: "AI startup"
 openGraphDescription: "AI made launching startups dramatically easier. And standing out dramatically harder. Because now everyone has: → the same models → the same no-code tools..."
+coverImage: "/media/articles/editorial/2026-05-26-ai-startup.webp"
+coverImageAlt: "Founder demonstrates a product to visitors at a busy market stall."
+image: "/media/articles/editorial/2026-05-26-ai-startup.webp"
+imageAlt: "Founder demonstrates a product to visitors at a busy market stall."
+imageType: "editorial"
 relatedArticles: []
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---

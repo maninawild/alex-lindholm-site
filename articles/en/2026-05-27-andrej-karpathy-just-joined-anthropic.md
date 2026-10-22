@@ -15,6 +15,11 @@ source: "Alex Lindholm"
 metaDescription: "Big signal from the AI world today 👀 Andrej Karpathy just joined Anthropic. For context: – founding member at OpenAI – former Tesla AI lead – one of the m..."
 openGraphTitle: "Andrej Karpathy just joined Anthropic"
 openGraphDescription: "Big signal from the AI world today 👀 Andrej Karpathy just joined Anthropic. For context: – founding member at OpenAI – former Tesla AI lead – one of the m..."
+coverImage: "/media/articles/editorial/2026-05-27-andrej-karpathy-just-joined-anthropic.webp"
+coverImageAlt: "A researcher’s desk at a collaborative AI lab, with a packed bag and open notebook."
+image: "/media/articles/editorial/2026-05-27-andrej-karpathy-just-joined-anthropic.webp"
+imageAlt: "A researcher’s desk at a collaborative AI lab, with a packed bag and open notebook."
+imageType: "editorial"
 relatedArticles: []
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---

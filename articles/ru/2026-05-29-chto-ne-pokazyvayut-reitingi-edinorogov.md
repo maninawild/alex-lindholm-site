@@ -17,6 +17,11 @@ sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Лидеры рейтинга инвесторов в единорогов не всегда играют в ту же игру, что и инвесторы ранних стадий."
 openGraphTitle: "О чём молчат рейтинги инвесторов в единорогов"
 openGraphDescription: "Лидеры рейтинга инвесторов в единорогов не всегда играют в ту же игру, что и инвесторы ранних стадий."
+coverImage: "/media/articles/editorial/2026-05-29-investors-list.webp"
+coverImageAlt: "Венчурный рейтинг под лупой: важные детали скрыты в сносках."
+image: "/media/articles/editorial/2026-05-29-investors-list.webp"
+imageAlt: "Венчурный рейтинг под лупой: важные детали скрыты в сносках."
+imageType: "editorial"
 relatedArticles: []
 ---
 

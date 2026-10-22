@@ -17,6 +17,11 @@ sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Новому поколению стартап-инвесторов нужны техническая компетентность, близость к основателям и практический due diligence."
 openGraphTitle: "Стартап-инвестиции после Theranos"
 openGraphDescription: "Новому поколению стартап-инвесторов нужны техническая компетентность, близость к основателям и практический due diligence."
+coverImage: "/media/articles/editorial/2026-05-29-startup-investing-after-theranos.webp"
+coverImageAlt: "Инвестор изучает пробирку для анализа через увеличительное стекло."
+image: "/media/articles/editorial/2026-05-29-startup-investing-after-theranos.webp"
+imageAlt: "Инвестор изучает пробирку для анализа через увеличительное стекло."
+imageType: "editorial"
 relatedArticles: []
 ---
 

@@ -17,6 +17,11 @@ sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "ИИ ускоряет создание продукта, но с той же скоростью увеличивает цену отказа от проверки реального спроса."
 openGraphTitle: "ИИ ускорил разработку — и ускорил потерю времени"
 openGraphDescription: "ИИ ускоряет создание продукта, но с той же скоростью увеличивает цену отказа от проверки реального спроса."
+coverImage: "/media/articles/editorial/2026-05-29-ai-founder-trap.webp"
+coverImageAlt: "Основатель среди повторных прототипов и календаря с зачёркнутыми днями."
+image: "/media/articles/editorial/2026-05-29-ai-founder-trap.webp"
+imageAlt: "Основатель среди повторных прототипов и календаря с зачёркнутыми днями."
+imageType: "editorial"
 relatedArticles: []
 ---
 

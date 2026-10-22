@@ -17,6 +17,11 @@ sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Исследования опровергают миф о 22-летнем основателе и заставляют по-новому взглянуть на сильные стороны поколений."
 openGraphTitle: "Почему опытные основатели часто побеждают"
 openGraphDescription: "Исследования опровергают миф о 22-летнем основателе и заставляют по-новому взглянуть на сильные стороны поколений."
+coverImage: "/media/articles/editorial/2026-05-29-experienced-founders.webp"
+coverImageAlt: "Опытный основатель вместе с молодым коллегой разбирают прототип."
+image: "/media/articles/editorial/2026-05-29-experienced-founders.webp"
+imageAlt: "Опытный основатель вместе с молодым коллегой разбирают прототип."
+imageType: "editorial"
 relatedArticles: []
 ---
 

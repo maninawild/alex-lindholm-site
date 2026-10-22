@@ -15,6 +15,11 @@ sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "The highest-ranked unicorn investors are not always playing the same game as early-stage believers."
 openGraphTitle: "What Unicorn Rankings Miss"
 openGraphDescription: "The highest-ranked unicorn investors are not always playing the same game as early-stage believers."
+coverImage: "/media/articles/editorial/2026-05-29-investors-list.webp"
+coverImageAlt: "A venture ranking sheet under a magnifying glass reveals the important fine print."
+image: "/media/articles/editorial/2026-05-29-investors-list.webp"
+imageAlt: "A venture ranking sheet under a magnifying glass reveals the important fine print."
+imageType: "editorial"
 relatedArticles: []
 ---
 
