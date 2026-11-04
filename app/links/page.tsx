@@ -20,6 +20,8 @@ const links = [
   { id: "discovery", title: "15 min Discovery Call", detail: "Scouting / networking", href: "https://zcal.co/axlindholm/discovery", image: "/media/alex/alex-speaking-01.jpg" },
   { id: "consultation", title: "Book one hour consultation", detail: "€100", href: "https://zcal.co/axlindholm/1hour", image: "/media/alex/alex-workshop-01.jpg" },
   { id: "website", title: "Explore my website", detail: "Work, ideas and stories", href: "/", image: "/media/alex/alex-storyteller-01.jpg" },
+  { id: "materials", title: "Relocation / Acceleration Materials", detail: "Guides, presentations and resources", href: "/media", image: "/media/alex/alex-workshop-01.jpg" },
+  { id: "donate", title: "Donate", detail: "Support Alex's Charity initiatives", href: "/donate", image: "/media/alex/alex-storyteller-01.jpg" },
   { id: "linkedin", title: "LinkedIn", detail: "Connect professionally", href: "https://www.linkedin.com/in/axlindholm/", image: "/media/alex/alex-portrait-01.jpg" },
   { id: "instagram", title: "Instagram", detail: "Going a bit personal", href: "https://www.instagram.com/alexplindholm", image: "/media/alex/alex-travel-01.jpg" },
 ];
@@ -65,7 +67,7 @@ export default function LinksPage() {
               <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg sm:h-14 sm:w-14">
                 <Image src={link.image} alt="" fill sizes="56px" className="object-cover" />
               </span>
-              <span className="min-w-0 flex-1"><span className="block text-base font-semibold sm:text-lg">{link.title}</span><span className={`mt-1 block text-sm text-white/80`}>{link.detail}</span></span>
+              <span className="min-w-0 flex-1"><span className="block text-base font-semibold sm:text-lg">{link.title}{link.id === "donate" && <span className="ml-2 inline-block rounded-full bg-white/15 px-2 py-0.5 align-middle text-[10px] font-medium uppercase tracking-wide">Coming soon</span>}</span><span className={`mt-1 block text-sm text-white/80`}>{link.detail}</span></span>
               <span aria-hidden="true" className={`px-2 text-xl transition group-hover:translate-x-1 text-white`}>↗</span>
             </TrackedLink>
           ))}
