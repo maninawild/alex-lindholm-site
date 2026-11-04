@@ -5,14 +5,25 @@ import type { ReactNode } from "react";
 import { TrackedLink } from "@/components/tracked-link";
 
 export const metadata: Metadata = {
-  title: "Connect",
-  description: "Connect with Alex Lindholm, book a call, and find his social profiles.",
-  alternates: { canonical: "/links" },
+  title: "Links, Materials & Consultations",
+  description: "Book a consultation with Alex Lindholm, explore relocation and acceleration materials, find social profiles and charity initiatives.",
+  alternates: { canonical: "https://www.axlindholm.nl/links" },
+  robots: { index: true, follow: true, "max-image-preview": "large" },
   openGraph: {
     title: "Connect with Alex Lindholm",
-    description: "Book a call and find Alex Lindholm on social media.",
-    url: "/links",
-    images: [{ url: "/media/alex/linktree-portrait.jpg", alt: "Alex Lindholm" }],
+    description: "Consultations, relocation & acceleration materials, social profiles and charity initiatives. All links in one place.",
+    url: "https://www.axlindholm.nl/links",
+    siteName: "Alex Lindholm",
+    type: "website",
+    locale: "en_US",
+    images: [{ url: "https://www.axlindholm.nl/links/opengraph-image", width: 1200, height: 630, type: "image/png", alt: "Alex Lindholm - consultations, relocation and acceleration materials" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Connect with Alex Lindholm",
+    description: "Consultations, relocation & acceleration materials, social profiles and charity initiatives. All links in one place.",
+    creator: "@AxLindholm",
+    images: [{ url: "https://www.axlindholm.nl/links/opengraph-image", alt: "Alex Lindholm - consultations, relocation and acceleration materials" }],
   },
 };
 
@@ -37,6 +48,18 @@ const socialProfiles: { id: string; label: string; href: string; color: string; 
 export default function LinksPage() {
   return (
     <main className="min-h-screen bg-paper px-5 pb-16 pt-7 text-ink sm:pt-10">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          "@id": "https://www.axlindholm.nl/links#webpage",
+          url: "https://www.axlindholm.nl/links",
+          name: "Connect with Alex Lindholm",
+          description: "Consultations, relocation and acceleration materials, social profiles and charity initiatives.",
+          isPartOf: { "@id": "https://www.axlindholm.nl/#website" },
+          mainEntity: { "@id": "https://www.axlindholm.nl/#alex-lindholm" },
+          primaryImageOfPage: { "@type": "ImageObject", url: "https://www.axlindholm.nl/links/opengraph-image", width: 1200, height: 630 },
+          inLanguage: "en",
+        }) }} />
       <div className="mx-auto max-w-xl">
         <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.16em]">
           <Link href="/" className="transition hover:text-electric">Alex Lindholm</Link>
