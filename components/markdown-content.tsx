@@ -2,14 +2,24 @@ import React from "react";
 
 type MarkdownContentProps = {
   content: string;
+  afterLead?: React.ReactNode;
 };
 
-export function MarkdownContent({ content }: MarkdownContentProps) {
+export function MarkdownContent({ content, afterLead }: MarkdownContentProps) {
   const blocks = content.split(/\n{2,}/).filter((block) => block.trim());
+
+  // Keep a lead-in sentence and its quotation/list together.
+  let leadIndex = Math.min(1, blocks.length - 1);
+  while (leadIndex < blocks.length - 1 && (/[:：]$/.test(blocks[leadIndex].trim()) || /^#{1,3} /.test(blocks[leadIndex]))) leadIndex += 1;
 
   return (
     <div className="article-prose">
-      {blocks.map((block, index) => renderBlock(block.trim(), index))}
+      {blocks.map((block, index) => (
+        <React.Fragment key={index}>
+          {renderBlock(block.trim(), index)}
+          {afterLead && index === leadIndex ? afterLead : null}
+        </React.Fragment>
+      ))}
     </div>
   );
 }

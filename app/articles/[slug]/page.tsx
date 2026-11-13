@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/insights/breadcrumbs";
 import { MarkdownContent } from "@/components/markdown-content";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -14,7 +13,6 @@ import {
   getArticleBySlug,
   getArticleTranslations,
 } from "@/lib/articles";
-import { articleLanguages } from "@/data/article-taxonomy";
 import { insightAuthor } from "@/data/insights-taxonomy";
 import { absoluteUrl, author } from "@/lib/site";
 import {
@@ -123,7 +121,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const isTelegramArticle = article.contentSource === "telegram_ru";
   const articleMedia = getArticleMedia(article);
   const articleContent = isTelegramArticle ? articleMedia.content : article.content;
-  const renderedArticleContent = removeLeadingTitleHeading(articleContent, article.title);
+  const preparedContent = removeLeadingTitleHeading(articleContent, article.title);
+  const { body: renderedArticleContent, translationNote } = splitTranslationNote(preparedContent);
+  const ru = article.language === "ru";
+  const originalLanguage = article.translatedFrom || (isTelegramArticle ? "ru" : "en");
+  const isTranslation = originalLanguage !== article.language;
+  const counterpart = translations[0];
 
   return (
     <main className="bg-bone pt-20 text-ink sm:pt-24">
@@ -137,107 +140,82 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           __html: JSON.stringify(articleBreadcrumbJsonLd(article, categoryHref)),
         }}
       />
-      <SiteHeader transparentAtTop={false} />
+      <SiteHeader
+        transparentAtTop={false}
+        contentLanguage={article.language}
+        languageSwitch={counterpart ? {
+          href: counterpart.href,
+          label: counterpart.language.toUpperCase(),
+          ariaLabel: counterpart.language === "ru" ? "Читать по-русски" : "Read in English",
+        } : undefined}
+      />
 
-      <article lang={article.language}>
-        <header className="mx-auto max-w-4xl px-5 pb-10 pt-8 sm:px-8 lg:pt-12">
-          <Breadcrumbs
-            items={[
-              { label: "Insights", href: "/articles" },
-              { label: article.category, href: categoryHref },
-              { label: article.title },
-            ]}
-          />
-          <a href="/articles" className="mb-8 mt-8 inline-flex rounded-md border border-ink/10 bg-white px-4 py-2 text-sm text-graphite/72 transition hover:border-electric hover:text-electric">
-            Back to Articles
-          </a>
-          <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.14em] text-graphite/58">
-            <span>{articleLanguages[article.language]}</span>
-            <span>/</span>
-            <time dateTime={article.originalDate || article.date}>{formatArticleDate(article.originalDate || article.date, article.language)}</time>
-            <span>/</span>
-            <span>{article.readingTime} min read</span>
-            {article.lastReviewed ? (
-              <>
-                <span>/</span>
-                <span>
-                  Last reviewed{" "}
-                  <time dateTime={article.lastReviewed}>
-                    {formatReviewDate(article.lastReviewed, article.language)}
-                  </time>
-                </span>
-              </>
-            ) : null}
-            <span>/</span>
-            <span>{article.status}</span>
-          </div>
-          <h1 className="mt-6 font-serif text-5xl font-medium leading-[0.98] tracking-[-0.02em] text-balance sm:text-6xl lg:text-7xl">
+      <article lang={article.language} className="article-reading">
+        <header className="mx-auto max-w-[52rem] px-5 pb-6 pt-5 sm:px-8 sm:pt-8">
+          <nav aria-label={ru ? "Навигация статьи" : "Article navigation"} className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-graphite/65">
+            <Link className="inline-flex min-h-11 items-center transition hover:text-electric" href="/articles">
+              {ru ? "← Все статьи" : "← Articles"}
+            </Link>
+            <span aria-hidden="true">/</span>
+            <Link className="inline-flex min-h-11 items-center transition hover:text-electric" href={categoryHref}>{article.category}</Link>
+          </nav>
+          <h1 className="mt-3 font-serif text-[2rem] font-medium leading-[1.08] tracking-[-0.02em] text-balance sm:text-[2.75rem] lg:text-[3.25rem]">
             {article.title}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-graphite/72">{article.metaDescription}</p>
-          <div className="mt-8 flex flex-wrap gap-2">
-            <Link className="rounded-md bg-ink px-3 py-1.5 text-xs text-white transition hover:bg-electric" href={categoryHref}>
-              {article.category}
-            </Link>
-            {article.tags.map((tag) => (
-              <span key={tag} className="rounded-md border border-ink/10 px-3 py-1.5 text-xs text-graphite/68">
-                {tag}
-              </span>
-            ))}
+          <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm leading-6 text-graphite/70">
+            <Link className="font-medium text-ink hover:text-electric" href={insightAuthorHref()}>Alex Lindholm</Link>
+            <span aria-hidden="true">·</span>
+            <time dateTime={article.originalDate || article.date}>{formatArticleDate(article.originalDate || article.date, article.language)}</time>
+            <span aria-hidden="true">·</span>
+            <span>{article.readingTime} {ru ? "мин чтения" : "min read"}</span>
           </div>
-          <div className="mt-5 rounded-md border border-ink/10 bg-white p-4">
-            <p className="text-xs font-medium uppercase tracking-[0.16em] text-graphite/52">
-              Pillar guide
-            </p>
-            <Link
-              className="mt-2 inline-flex font-serif text-xl text-electric"
-              href={pillar.href}
-            >
-              {pillar.name}
-            </Link>
-            <p className="mt-2 text-sm leading-6 text-graphite/68">
-              {pillar.description}
-            </p>
+          <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-graphite/65">
+            <span>{ru ? "Русский" : "English"}{isTranslation ? (ru ? " · перевод с английского" : " · translated from Russian") : (ru ? " · оригинал" : " · original")}</span>
+            <LanguageSwitcher currentArticle={article} translations={translations} />
           </div>
-          {topics.length > 1 ? (
-            <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-graphite/58">
-              <span>Also in:</span>
-              {topics.slice(1).map((topic) => (
-                <Link
-                  className="font-medium text-electric underline decoration-electric/25 underline-offset-4"
-                  href={insightTopicHref(topic)}
-                  key={topic.slug}
-                >
-                  {topic.name}
-                </Link>
-              ))}
-            </div>
-          ) : null}
-          <LanguageSwitcher currentArticle={article} translations={translations} />
-          <ContentSourceNotice article={article} />
         </header>
 
-        {!isTelegramArticle ? (
-          <div className="mx-auto max-w-6xl px-5 sm:px-8">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-ink/10 bg-bone shadow-quiet sm:aspect-[16/9]">
-              <Image src={article.coverImage} alt={article.coverImageAlt} fill sizes="(min-width: 1024px) 960px, 100vw" className="object-cover" priority />
-            </div>
-          </div>
-        ) : null}
-
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-8 lg:grid-cols-[minmax(0,720px)_260px] lg:items-start lg:py-16">
-          <div>
-            <MarkdownContent content={renderedArticleContent} />
+        <div className="mx-auto max-w-[52rem] px-5 pb-12 sm:px-8 sm:pb-16">
+          <div className="article-body" id="article-body">
+            <MarkdownContent content={renderedArticleContent} afterLead={!isTelegramArticle ? (
+              <figure className="article-cover">
+                <Image
+                  src={article.coverImage}
+                  alt={article.coverImageAlt}
+                  width={960}
+                  height={540}
+                  sizes="(min-width: 832px) 768px, 100vw"
+                  className="h-auto max-h-[20rem] w-full rounded-md object-contain"
+                />
+              </figure>
+            ) : undefined} />
             {isTelegramArticle ? <RelatedImageSection images={articleMedia.images} /> : null}
-            <ArticleUpdateHistory article={article} />
           </div>
-          <aside className="space-y-5 lg:sticky lg:top-8">
-            <ShareBlock title={article.title} href={article.href} />
-            <AuthorBlock />
-            <CtaBlock />
-          </aside>
+
+          <footer className="mt-10 space-y-6 border-t border-ink/10 pt-6">
+            <ContentSourceNotice article={article} translationNote={translationNote} />
+            <div className="text-sm leading-7 text-graphite/70">
+              <p>
+                <span className="font-medium text-ink">{ru ? "По теме: " : "Explore: "}</span>
+                <Link className="text-electric underline underline-offset-4" href={pillar.href}>{pillar.name}</Link>
+                {topics.slice(1).map((topic) => (
+                  <span key={topic.slug}> · <Link className="text-electric underline underline-offset-4" href={insightTopicHref(topic)}>{topic.name}</Link></span>
+                ))}
+              </p>
+              <p className="mt-2">{article.tags.join(" · ")}</p>
+            </div>
+            <ArticleUpdateHistory article={article} />
+          </footer>
         </div>
       </article>
+
+      <section aria-label={ru ? "Об авторе и контакты" : "Author and contact"} className="border-t border-ink/10 bg-white py-8">
+        <div className="mx-auto grid max-w-6xl gap-4 px-5 sm:px-8 md:grid-cols-3">
+          <AuthorBlock />
+          <ShareBlock title={article.title} href={article.href} />
+          <CtaBlock />
+        </div>
+      </section>
 
       <ArticleNavigation previousArticle={previousArticle} nextArticle={nextArticle} />
 
@@ -411,61 +389,42 @@ function RelatedImageSection({ images }: { images: ArticleImage[] }) {
   );
 }
 
-function LanguageSwitcher({
-  currentArticle,
-  translations,
-}: {
-  currentArticle: ArticleSummary;
-  translations: ArticleSummary[];
-}) {
+function LanguageSwitcher({ currentArticle, translations }: { currentArticle: ArticleSummary; translations: ArticleSummary[] }) {
   if (translations.length === 0) return null;
-
   return (
-    <div className="mt-6 flex flex-wrap items-center gap-2 rounded-md border border-ink/10 bg-white p-3 text-sm">
-      <span className="mr-1 text-xs font-medium uppercase tracking-[0.16em] text-graphite/52">Read in</span>
-      <span className="rounded-md bg-ink px-3 py-1.5 text-xs text-white">
-        {articleLanguages[currentArticle.language]}
-      </span>
+    <nav aria-label={currentArticle.language === "ru" ? "Другие языки" : "Other languages"} className="flex flex-wrap gap-3">
       {translations.map((translation) => (
-        <a
-          key={translation.slug}
-          href={translation.href}
-          className="rounded-md border border-ink/10 px-3 py-1.5 text-xs text-graphite/72 transition hover:border-electric hover:text-electric"
-        >
-          {articleLanguages[translation.language]}
-        </a>
+        <Link key={translation.slug} href={translation.href} hrefLang={translation.language} lang={translation.language}
+          className="inline-flex min-h-11 items-center text-electric underline decoration-electric/30 underline-offset-4 hover:decoration-electric">
+          {translation.language === "ru" ? "Читать по-русски" : "Read in English"}
+        </Link>
       ))}
-    </div>
+    </nav>
   );
 }
 
-function ContentSourceNotice({ article }: { article: ArticleSummary }) {
-  const sourceLink = article.sourceUrl ? (
-    <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-electric underline decoration-electric/25 underline-offset-4 transition hover:decoration-electric">
-      {article.source}
-    </a>
-  ) : (
-    <span>{article.source}</span>
-  );
-
-  let notice = "Originally written and published in English by Alex Lindholm.";
-
-  if (article.contentSource === "telegram_ru" && article.language === "ru") {
-    notice = "Originally published in Russian on Telegram @cynicschool. Original publication date preserved.";
-  }
-
-  if (article.contentSource === "telegram_ru" && article.language === "en") {
-    notice = "Originally published in Russian on Telegram @cynicschool. This English version was translated with AI and edited for readability. Original publication date preserved.";
-  }
-
+function ContentSourceNotice({ article, translationNote }: { article: ArticleSummary; translationNote?: string }) {
+  const ru = article.language === "ru";
   return (
-    <div className="mt-6 rounded-md border border-ink/10 bg-white p-4 text-sm leading-6 text-graphite/72">
-      <span className="font-medium text-ink">Source note:</span> {notice}
-      <span className="mt-2 block">
-        <span className="font-medium text-ink">Source:</span> {sourceLink}
-      </span>
-    </div>
+    <section className="article-source text-sm leading-6 text-graphite/70" aria-label={ru ? "Источник и перевод" : "Source and translation"}>
+      {translationNote ? <MarkdownContent content={translationNote.replace(/^>\s?/gm, "")} /> : null}
+      <p className={translationNote ? "mt-3" : ""}>
+        <span className="font-medium text-ink">{ru ? "Источник: " : "Source: "}</span>
+        {article.sourceUrl ? (
+          <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-electric underline decoration-electric/25 underline-offset-4">{article.source}</a>
+        ) : article.source}
+      </p>
+    </section>
   );
+}
+
+// Relocate only explicit editorial translation disclosures, never a quoted argument.
+function splitTranslationNote(content: string) {
+  const blocks = content.trimStart().split(/\n{2,}/);
+  if (/^> (?:Перевод с английского|Translated (?:from|with)|Translation (?:from|into))/i.test(blocks[0] || "")) {
+    return { translationNote: blocks[0], body: blocks.slice(1).join("\n\n") };
+  }
+  return { body: content, translationNote: undefined };
 }
 
 function ArticleNavigation({
