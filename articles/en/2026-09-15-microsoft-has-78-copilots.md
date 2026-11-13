@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Microsoft has 78 Copilots"
 slug: "2026-09-15-microsoft-has-78-copilots"
 date: "2026-09-15T09:00:00.000Z"

@@ -9,6 +9,9 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 translationKey: "2026-09-12-what-us-unicorn-founders-studied"
+imageType: "editorial"
+imageAlt: "Bar chart of undergraduate fields studied by U.S. unicorn founders."
+image: "/media/articles/editorial/2026-09-12-unicorn-founders-education.png"
 metaDescription: "Nearly 30% of U.S. unicorn founders studied Computer Science, but 42.7% came from outside STEM."
 relatedArticles: []
 ---

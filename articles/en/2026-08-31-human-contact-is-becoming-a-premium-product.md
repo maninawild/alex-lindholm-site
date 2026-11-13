@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Human contact is becoming a premium product"
 slug: "2026-08-31-human-contact-is-becoming-a-premium-product"
 date: "2026-08-31T09:00:00.000Z"

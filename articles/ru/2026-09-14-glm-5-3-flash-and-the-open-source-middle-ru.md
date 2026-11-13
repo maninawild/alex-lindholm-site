@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "GLM-5.3-Flash и open-source середина рынка"
 slug: "2026-09-14-glm-5-3-flash-and-the-open-source-middle-ru"
 date: "2026-09-14T10:00:00.000Z"

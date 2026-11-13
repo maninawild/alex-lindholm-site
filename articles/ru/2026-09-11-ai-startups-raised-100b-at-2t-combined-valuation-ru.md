@@ -12,6 +12,10 @@ translationKey: "2026-09-11-ai-startups-raised-100b-at-2t-combined-valuation"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Летом 2026 капитал в AI сместился к инфраструктуре, реальной выручке и стратегическим инвесторам."
+coverImage: "/media/articles/editorial/2026-09-11-ai-startups-raised-100b-at-2t-combined-valuation.webp"
+coverImageAlt: "Печатный обзор рынка с данными о финансировании AI-стартапов и растущей диаграммой."
+image: "/media/articles/editorial/2026-09-11-ai-startups-raised-100b-at-2t-combined-valuation.webp"
+imageAlt: "Печатный обзор рынка с данными о финансировании AI-стартапов и растущей диаграммой."
 relatedArticles: []
 ---
 

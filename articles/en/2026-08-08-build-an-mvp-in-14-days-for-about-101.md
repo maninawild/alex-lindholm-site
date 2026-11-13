@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Build an MVP in 14 days for about $101"
 slug: "2026-08-08-build-an-mvp-in-14-days-for-about-101"
 date: "2026-08-08T09:00:00.000Z"

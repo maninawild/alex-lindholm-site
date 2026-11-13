@@ -10,6 +10,10 @@ source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 translationKey: "2026-09-11-ai-startups-raised-100b-at-2t-combined-valuation"
 metaDescription: "Summer 2026 AI funding shifted toward infrastructure, real revenue and strategic capital at unprecedented scale."
+coverImage: "/media/articles/editorial/2026-09-11-ai-startups-raised-100b-at-2t-combined-valuation.webp"
+coverImageAlt: "Printed market report showing AI startup funding and a rising bar chart."
+image: "/media/articles/editorial/2026-09-11-ai-startups-raised-100b-at-2t-combined-valuation.webp"
+imageAlt: "Printed market report showing AI startup funding and a rising bar chart."
 relatedArticles: []
 ---
 

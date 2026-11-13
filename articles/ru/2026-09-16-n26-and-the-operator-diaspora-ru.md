@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "N26 и диаспора операторов"
 slug: "2026-09-16-n26-and-the-operator-diaspora-ru"
 date: "2026-09-16T09:00:00.000Z"

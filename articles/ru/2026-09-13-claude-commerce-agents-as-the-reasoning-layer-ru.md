@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Claude Commerce Agents как reasoning layer"
 slug: "2026-09-13-claude-commerce-agents-as-the-reasoning-layer-ru"
 date: "2026-09-13T10:00:00.000Z"

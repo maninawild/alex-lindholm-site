@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Nvidia приобретает Hugging Face за $12,9 млрд"
 slug: "2026-09-12-nvidia-is-acquiring-hugging-face-for-12-9b-ru"
 date: "2026-09-12T09:00:00.000Z"

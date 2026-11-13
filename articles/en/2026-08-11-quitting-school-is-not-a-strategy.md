@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "The dropout-founder myth survives because it is dramatic, but depth, networks and judgment usually take time to build."
+coverImage: "/media/articles/editorial/2026-08-11-quitting-school-is-not-a-strategy.webp"
+coverImageAlt: "Student working on a practical project at a university library desk."
+image: "/media/articles/editorial/2026-08-11-quitting-school-is-not-a-strategy.webp"
+imageAlt: "Student working on a practical project at a university library desk."
 relatedArticles: []
 ---
 

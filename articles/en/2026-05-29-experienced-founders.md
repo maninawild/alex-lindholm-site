@@ -15,6 +15,11 @@ sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Research challenges the myth of the 22-year-old founder and raises a better question about generational strengths."
 openGraphTitle: "Why Experienced Founders Often Win"
 openGraphDescription: "Research challenges the myth of the 22-year-old founder and raises a better question about generational strengths."
+coverImage: "/media/articles/editorial/2026-05-29-experienced-founders.webp"
+coverImageAlt: "Experienced founder and younger colleague work together on a prototype."
+image: "/media/articles/editorial/2026-05-29-experienced-founders.webp"
+imageAlt: "Experienced founder and younger colleague work together on a prototype."
+imageType: "editorial"
 relatedArticles: []
 ---
 

@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Real AI productivity comes from matching specific tools to specific friction, not collecting more logos or using one chatbot for everything."
+coverImage: "/media/articles/editorial/2026-08-15-most-peoples-ai-use-stops-at-chatgpt-for-everything.webp"
+coverImageAlt: "Person using an AI chat on a laptop and voice transcription on a phone."
+image: "/media/articles/editorial/2026-08-15-most-peoples-ai-use-stops-at-chatgpt-for-everything.webp"
+imageAlt: "Person using an AI chat on a laptop and voice transcription on a phone."
 relatedArticles: []
 ---
 

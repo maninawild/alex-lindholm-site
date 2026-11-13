@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "China is building strategic AI independence"
 slug: "2026-08-09-china-is-building-strategic-ai-independence"
 date: "2026-08-09T09:00:00.000Z"

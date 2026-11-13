@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Automation does not remove the judgment call"
 slug: "2026-08-12-automation-does-not-remove-judgment"
 date: "2026-08-12T09:00:00.000Z"

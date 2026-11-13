@@ -1,9 +1,10 @@
+import { CompanyMentions } from "@/components/company-mentions";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { events, getEventBySlug, inviteAlexUrl } from "@/data/events";
 import { SiteHeader } from "@/components/site-header";
-import { siteUrl } from "@/lib/site";
+import { eventStructuredData } from "@/lib/event-structured-data";
 
 type EventPageProps = {
   params: Promise<{
@@ -67,35 +68,7 @@ export default async function EventPage({ params }: EventPageProps) {
     notFound();
   }
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    name: event.title,
-    ...(event.date ? { startDate: event.date } : {}),
-    ...(event.endDate ? { endDate: event.endDate } : {}),
-    eventStatus:
-      event.status === "past"
-        ? "https://schema.org/EventCompleted"
-        : "https://schema.org/EventScheduled",
-    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    location: {
-      "@type": "Place",
-      name: event.location,
-      address: event.location,
-    },
-    organizer: {
-      "@type": "Organization",
-      name: event.organizer,
-    },
-    performer: {
-      "@type": "Person",
-      name: "Alex Lindholm",
-      url: siteUrl,
-    },
-    description: event.seo.description,
-    image: `${siteUrl}${event.coverImage}`,
-    url: `${siteUrl}/events/${event.slug}`,
-  };
+  const jsonLd = eventStructuredData(event);
 
   if (event.status === "upcoming") {
     return (
@@ -125,9 +98,7 @@ export default async function EventPage({ params }: EventPageProps) {
             <h1 className="mt-5 max-w-3xl text-5xl font-medium leading-[1.02] tracking-[-0.04em] text-balance sm:text-7xl">
               {event.title}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-bone/82">
-              {event.shortDescription}
-            </p>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-bone/82"><CompanyMentions text={event.shortDescription} /></p>
             <div className="mt-8 flex flex-wrap gap-3">
               {event.eventUrl ? (
                 <ExternalButton href={event.eventUrl} label="Open event page" primary />
@@ -155,9 +126,7 @@ export default async function EventPage({ params }: EventPageProps) {
             </div>
 
             <div>
-              <p className="text-base leading-7 text-graphite/78">
-                {event.shortDescription}
-              </p>
+              <p className="text-base leading-7 text-graphite/78"><CompanyMentions text={event.shortDescription} /></p>
               <p className="mt-5 inline-flex rounded-full border border-electric/25 bg-electric/5 px-4 py-2 text-sm font-medium text-electric">
                 Part of Amsterdam Tech Week
               </p>
@@ -170,16 +139,12 @@ export default async function EventPage({ params }: EventPageProps) {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="rounded-full border border-ink/12 px-4 py-2 text-sm text-graphite/78 transition hover:border-electric hover:text-electric"
-                    >
-                      {partner.name}
-                    </a>
+                    >{partner.name}</a>
                   ) : (
                     <span
                       key={partner.name}
                       className="rounded-full border border-ink/10 px-4 py-2 text-sm text-graphite/62"
-                    >
-                      {partner.name}
-                    </span>
+                    ><CompanyMentions text={partner.name} /></span>
                   ),
                 )}
               </div>
@@ -230,9 +195,7 @@ export default async function EventPage({ params }: EventPageProps) {
           <h1 className="mt-5 max-w-3xl text-4xl font-medium leading-[1.03] tracking-[-0.035em] text-balance sm:text-6xl">
             {event.title}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-bone/82">
-            {event.shortDescription}
-          </p>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-bone/82"><CompanyMentions text={event.shortDescription} /></p>
         </div>
       </section>
 
@@ -263,9 +226,7 @@ export default async function EventPage({ params }: EventPageProps) {
           </div>
 
           <div>
-            <p className="text-base leading-7 text-graphite/78">
-              {event.shortDescription}
-            </p>
+            <p className="text-base leading-7 text-graphite/78"><CompanyMentions text={event.shortDescription} /></p>
             {event.talkTitle ? (
               <p className="mt-5 border-l border-electric/45 pl-4 text-base leading-7 text-graphite/72">
                 Talk: “{event.talkTitle}”
@@ -290,13 +251,13 @@ export default async function EventPage({ params }: EventPageProps) {
             Event moments.
           </h2>
 
-          <div className="mt-7 grid gap-3 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className={`mt-7 grid gap-3 ${event.galleryImages.length > 1 ? "lg:grid-cols-[1.2fr_0.8fr]" : "mx-auto max-w-5xl"}`}>
             <GalleryImage
               src={event.galleryImages[0]}
               alt={`${event.title} gallery image 1`}
               className="min-h-[360px] lg:min-h-[580px]"
             />
-            <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+            {event.galleryImages.length > 1 ? <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
               {event.galleryImages.slice(1).map((image, index) => (
                 <GalleryImage
                   key={image}
@@ -305,7 +266,7 @@ export default async function EventPage({ params }: EventPageProps) {
                   className="min-h-[220px] lg:min-h-[184px]"
                 />
               ))}
-            </div>
+            </div> : null}
           </div>
         </div>
       </section>
@@ -318,7 +279,7 @@ export default async function EventPage({ params }: EventPageProps) {
             </p>
             <div className="mt-6 space-y-5 text-base leading-7 text-graphite/78">
               {(event.recap ?? [event.shortDescription]).map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph}><CompanyMentions text={paragraph} /></p>
               ))}
             </div>
             {event.keyThemes && event.keyThemes.length > 0 ? (
@@ -346,16 +307,12 @@ export default async function EventPage({ params }: EventPageProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-full border border-ink/12 px-4 py-2 text-sm text-graphite/78 transition hover:border-electric hover:text-electric"
-                  >
-                    {partner.name}
-                  </a>
+                  >{partner.name}</a>
                 ) : (
                   <span
                     key={partner.name}
                     className="rounded-full border border-ink/10 px-4 py-2 text-sm text-graphite/62"
-                  >
-                    {partner.name}
-                  </span>
+                  ><CompanyMentions text={partner.name} /></span>
                 ),
               )}
             </div>
@@ -374,9 +331,7 @@ export default async function EventPage({ params }: EventPageProps) {
                       <h2 className="text-base font-semibold tracking-[-0.01em]">
                         {speaker.name}
                       </h2>
-                      <p className="mt-2 text-sm leading-6 text-graphite/64">
-                        {speaker.role}
-                      </p>
+                      <p className="mt-2 text-sm leading-6 text-graphite/64"><CompanyMentions text={speaker.role} /></p>
                     </article>
                   ))}
                 </div>
@@ -408,7 +363,7 @@ function EventFact({ label, value }: { label: string; value: string }) {
       <dt className="text-[0.68rem] font-medium uppercase tracking-[0.16em] text-graphite/48">
         {label}
       </dt>
-      <dd className="mt-2 leading-6 text-graphite/84">{value}</dd>
+      <dd className="mt-2 leading-6 text-graphite/84"><CompanyMentions text={value} /></dd>
     </div>
   );
 }

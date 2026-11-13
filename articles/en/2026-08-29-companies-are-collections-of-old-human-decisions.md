@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Companies are collections of old human decisions"
 slug: "2026-08-29-companies-are-collections-of-old-human-decisions"
 date: "2026-08-29T09:00:00.000Z"

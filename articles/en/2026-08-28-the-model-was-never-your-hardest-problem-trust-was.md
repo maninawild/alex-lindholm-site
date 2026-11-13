@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Capability leaps and adoption timelines run on different clocks. For enterprise AI, trust and change management remain the bottleneck."
+coverImage: "/media/articles/editorial/2026-08-28-the-model-was-never-your-hardest-problem-trust-was.webp"
+coverImageAlt: "A person checking an AI workflow against a printed decision sheet."
+image: "/media/articles/editorial/2026-08-28-the-model-was-never-your-hardest-problem-trust-was.webp"
+imageAlt: "A person checking an AI workflow against a printed decision sheet."
 relatedArticles: []
 ---
 

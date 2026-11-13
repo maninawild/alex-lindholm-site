@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "In applied AI, the moat often sits between the model and the person: workflow, trust, data access, evaluation and change management."
+coverImage: "/media/articles/editorial/2026-08-27-the-most-valuable-part-of-ai-is-the-applied-layer.webp"
+coverImageAlt: "Engineers reviewing how AI tools fit into a working software product."
+image: "/media/articles/editorial/2026-08-27-the-most-valuable-part-of-ai-is-the-applied-layer.webp"
+imageAlt: "Engineers reviewing how AI tools fit into a working software product."
 relatedArticles: []
 ---
 

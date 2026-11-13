@@ -15,6 +15,11 @@ sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "The next generation of startup investing needs technical judgment, founder proximity and hands-on due diligence."
 openGraphTitle: "Startup Investing After Theranos"
 openGraphDescription: "The next generation of startup investing needs technical judgment, founder proximity and hands-on due diligence."
+coverImage: "/media/articles/editorial/2026-05-29-startup-investing-after-theranos.webp"
+coverImageAlt: "Investor examines a biotech test vial through a magnifying glass."
+image: "/media/articles/editorial/2026-05-29-startup-investing-after-theranos.webp"
+imageAlt: "Investor examines a biotech test vial through a magnifying glass."
+imageType: "editorial"
 relatedArticles: []
 ---
 

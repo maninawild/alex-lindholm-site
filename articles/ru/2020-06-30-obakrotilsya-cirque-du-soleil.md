@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "😱Обакротился Cirque du Soleil."
 slug: "2020-06-30-obakrotilsya-cirque-du-soleil"
 date: "2020-06-30T10:35:44.000Z"

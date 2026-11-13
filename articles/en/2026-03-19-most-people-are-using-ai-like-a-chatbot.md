@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Most people are using AI like a chatbot."
 slug: "2026-03-19-most-people-are-using-ai-like-a-chatbot"
 date: "2026-03-19T09:00:00.000Z"

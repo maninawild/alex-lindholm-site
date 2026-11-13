@@ -169,6 +169,7 @@ export function youtubeThumbnailUrl(id: string) {
 }
 
 export function videoObjectSchema(video: VideoItem) {
+  if (!video.date || !Number.isFinite(Date.parse(video.date))) return null;
   return {
     "@context": "https://schema.org",
     "@type": "VideoObject",

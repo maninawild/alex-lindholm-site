@@ -63,6 +63,10 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   return {
     title: article.seoTitle,
     description: article.metaDescription,
+    robots: {
+      index: article.robots === "index",
+      follow: true,
+    },
     alternates: {
       canonical: article.href,
       ...(Object.keys(languageAlternates).length > 1

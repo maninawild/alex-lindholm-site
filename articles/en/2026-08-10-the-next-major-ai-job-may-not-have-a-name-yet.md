@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "The next major AI job may not have a name yet"
 slug: "2026-08-10-the-next-major-ai-job-may-not-have-a-name-yet"
 date: "2026-08-10T09:00:00.000Z"

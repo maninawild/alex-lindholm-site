@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Open-source инструменты, которые снижают burn стартапа"
 slug: "2026-09-11-open-source-tools-that-keep-startup-burn-low-ru"
 date: "2026-09-11T11:00:00.000Z"

@@ -1,3 +1,5 @@
+import { CountUp } from "@/components/count-up";
+import { CompanyMentions } from "@/components/company-mentions";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
@@ -138,25 +140,22 @@ export default function ProductVentureLeaderPage() {
       <section className="mx-auto grid max-w-7xl gap-10 px-5 pb-14 pt-10 sm:px-8 lg:grid-cols-[1.22fr_0.78fr] lg:items-end lg:pt-14">
         <div>
           <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
-            Professional Profile
+            For hiring teams
           </p>
           <h1 className="mt-5 max-w-4xl text-4xl font-medium leading-[1.06] tracking-[-0.035em] text-balance sm:text-6xl">
-            Product, venture and innovation leader based in the Netherlands.
+            Product, venture and programme leadership.
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-graphite/76">
-            I bring 10+ years of experience across product discovery, startup
-            incubation, venture building, accelerator programs, portfolio analysis
-            and business development. I work best where the market is uncertain,
-            the problem is complex and a team needs a practical route forward.
+            I help teams test product ideas, build ventures and run startup programmes.
+            10+ years across startups, product discovery and business development.
+            Based in the Netherlands.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href={linkedinUrl}
-              target="_blank"
-              rel="noopener noreferrer me"
+              href="mailto:alex@inspirexchange.nl?subject=Role%20or%20project%20for%20Alex"
               className="inline-flex min-h-12 items-center justify-center rounded-md border border-electric bg-electric px-6 text-sm font-medium text-white transition hover:bg-blue-700"
             >
-              Discuss a role or contract
+              Discuss a role or project
             </a>
             <Link
               href="/#work"
@@ -190,7 +189,7 @@ export default function ProductVentureLeaderPage() {
             ["500+", "lectures, workshops and strategy sessions"],
           ].map(([value, label]) => (
             <div className="px-5 py-7 sm:border-l sm:border-ink/10 sm:px-8" key={label}>
-              <p className="text-3xl font-semibold tracking-[-0.025em]">{value}</p>
+              <p className="text-3xl font-semibold tracking-[-0.025em]"><CountUp value={value} /></p>
               <p className="mt-2 text-sm leading-6 text-graphite/66">{label}</p>
             </div>
           ))}
@@ -209,8 +208,8 @@ export default function ProductVentureLeaderPage() {
             {roles.map((role) => (
               <article className="rounded-sm border border-ink/8 bg-white p-5 shadow-quiet sm:p-6" key={role.title}>
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-copper">{role.period}</p>
-                <h3 className="mt-2 text-lg font-semibold leading-tight tracking-[-0.015em]">{role.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-graphite/72">{role.text}</p>
+                <h3 className="mt-2 text-lg font-semibold leading-tight tracking-[-0.015em]"><CompanyMentions text={role.title} /></h3>
+                <p className="mt-3 text-sm leading-6 text-graphite/72"><CompanyMentions text={role.text} /></p>
               </article>
             ))}
             <p className="mt-3 text-sm leading-6 text-graphite/66">
@@ -243,9 +242,7 @@ export default function ProductVentureLeaderPage() {
         <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-2">
           <article className="rounded-sm border border-ink/8 bg-white p-6 shadow-quiet">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-copper">Education & Programs</p>
-            <p className="mt-4 text-base leading-7 text-graphite/76">
-              Saint Petersburg State University, National Research University Higher School of Economics, Masterschool, Paideia, Yad Vashem, BCI and ANU Museum of the Jewish People.
-            </p>
+            <p className="mt-4 text-base leading-7 text-graphite/76"><CompanyMentions text={"Saint Petersburg State University, National Research University Higher School of Economics, Masterschool, Paideia, Yad Vashem, BCI and ANU Museum of the Jewish People."} /></p>
           </article>
           <article className="rounded-sm border border-ink/8 bg-white p-6 shadow-quiet">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-copper">Languages</p>
@@ -265,12 +262,10 @@ export default function ProductVentureLeaderPage() {
             </h2>
           </div>
           <a
-            href={linkedinUrl}
-            target="_blank"
-            rel="noopener noreferrer me"
+            href="mailto:alex@inspirexchange.nl?subject=Role%20or%20project%20for%20Alex"
             className="inline-flex min-h-12 items-center justify-center rounded-md border border-white/20 bg-white px-6 text-sm font-medium text-ink transition hover:bg-bone"
           >
-            Contact Alex on LinkedIn
+            Email Alex
           </a>
         </div>
       </section>

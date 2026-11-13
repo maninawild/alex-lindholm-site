@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "AI deployment is still fragmented. For startups, that heterogeneity is an opportunity to define categories before standards harden."
+coverImage: "/media/articles/editorial/2026-08-16-build-for-the-ai-mess-not-the-consensus.webp"
+coverImageAlt: "Several practical product dashboards and a founder’s workflow notebook."
+image: "/media/articles/editorial/2026-08-16-build-for-the-ai-mess-not-the-consensus.webp"
+imageAlt: "Several practical product dashboards and a founder’s workflow notebook."
 relatedArticles: []
 ---
 

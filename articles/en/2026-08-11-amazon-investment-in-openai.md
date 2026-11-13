@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Amazon signed a $50 billion investment into OpenAI"
 slug: "2026-08-11-amazon-investment-in-openai"
 date: "2026-08-11T08:00:00.000Z"

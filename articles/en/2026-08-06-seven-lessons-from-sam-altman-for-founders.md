@@ -9,6 +9,10 @@ contentSource: "original_en"
 source: "LinkedIn"
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "Seven lessons for founders from Sam Altman on conviction, timing, ambition, experimentation and customer understanding."
+coverImage: "/media/articles/editorial/2026-08-06-seven-lessons-from-sam-altman-for-founders.webp"
+coverImageAlt: "Conference speaker on stage with an audience member taking notes."
+image: "/media/articles/editorial/2026-08-06-seven-lessons-from-sam-altman-for-founders.webp"
+imageAlt: "Conference speaker on stage with an audience member taking notes."
 relatedArticles: []
 ---
 

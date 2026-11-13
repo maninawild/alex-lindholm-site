@@ -15,6 +15,11 @@ sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 metaDescription: "AI accelerates product building, but it also accelerates the cost of avoiding customer validation."
 openGraphTitle: "AI Made Building Faster—and Wasting Time Faster"
 openGraphDescription: "AI accelerates product building, but it also accelerates the cost of avoiding customer validation."
+coverImage: "/media/articles/editorial/2026-05-29-ai-founder-trap.webp"
+coverImageAlt: "Founder surrounded by repeated prototypes and a calendar of crossed-out days."
+image: "/media/articles/editorial/2026-05-29-ai-founder-trap.webp"
+imageAlt: "Founder surrounded by repeated prototypes and a calendar of crossed-out days."
+imageType: "editorial"
 relatedArticles: []
 ---
 

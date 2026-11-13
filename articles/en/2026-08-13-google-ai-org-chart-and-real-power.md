@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Google AI, org charts and where real power sits"
 slug: "2026-08-13-google-ai-org-chart-and-real-power"
 date: "2026-08-13T09:00:00.000Z"

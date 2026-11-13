@@ -14,6 +14,11 @@ source: "Alex Lindholm"
 metaDescription: "Everyone wants to invest in “the AI revolution”. Very few people want to invest in transformers, cooling systems and electricity 😅 And that’s exactly why..."
 openGraphTitle: "Leopold Aschenbrenner"
 openGraphDescription: "Everyone wants to invest in “the AI revolution”. Very few people want to invest in transformers, cooling systems and electricity 😅 And that’s exactly why..."
+coverImage: "/media/articles/editorial/2026-05-26-leopold-aschenbrenner.webp"
+coverImageAlt: "Technician checks power and cooling equipment in a data center."
+image: "/media/articles/editorial/2026-05-26-leopold-aschenbrenner.webp"
+imageAlt: "Technician checks power and cooling equipment in a data center."
+imageType: "editorial"
 relatedArticles: []
 sourceUrl: "https://www.linkedin.com/in/axlindholm/"
 ---

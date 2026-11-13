@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "Вот так, друзья, выглядит враньё - ‘эвакуация из города не требуется’. Чернобыль."
 slug: "2020-04-26-vot-tak-druzya-vyglyadit-vrane-evakuatsiya-iz-goroda-ne-trebuetsya-chernobyl"
 date: "2020-04-26T17:25:48.000Z"

@@ -1,4 +1,5 @@
 ---
+robots: "noindex"
 title: "founders’ mistakes"
 slug: "2026-03-21-founders-mistakes"
 date: "2026-03-21T09:00:00.000Z"
