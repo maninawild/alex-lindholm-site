@@ -40,3 +40,7 @@ No environment variables are required for the current static version.
 ## Content Notes
 
 The current site uses local media in `public/media/` and `public/logos/`. Add future speaking, travel, project, or partner assets there and reference them through Next/Image.
+
+## Design canon
+
+Read [DESIGN.md](DESIGN.md) before changing page layouts, typography or article templates. It defines reading-first hierarchy, language/source handling, image placement and viewport acceptance checks.

@@ -220,3 +220,38 @@ a {
     transform: translateY(0);
   }
 }
+
+/* Editorial canon: the article owns the page; supporting UI follows the text. */
+.article-reading .article-body > .article-prose {
+  max-width: none;
+  color: #242831;
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+.article-reading .article-body > .article-prose > :first-child {
+  margin-top: 0;
+}
+.article-reading .article-body > .article-prose > p:first-child {
+  color: #10131a;
+  font-size: 1.1875rem;
+  line-height: 1.65;
+}
+.article-reading .article-prose .article-cover {
+  margin: 1.75rem 0;
+}
+.article-reading .article-prose .article-cover img {
+  box-shadow: none;
+}
+.article-reading .article-source .article-prose {
+  max-width: none;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+@media (min-width: 640px) {
+  .article-reading .article-body > .article-prose {
+    font-size: 1.25rem;
+  }
+  .article-reading .article-body > .article-prose > p:first-child {
+    font-size: 1.375rem;
+  }
+}
