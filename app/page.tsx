@@ -27,6 +27,7 @@ import { YouTubeVideoCard } from "@/components/youtube-video-card";
 import { videos } from "@/data/videos";
 
 const socialLinks = {
+  email: "mailto:alex@inspirexchange.nl",
   linkedin: "https://www.linkedin.com/in/axlindholm/",
   telegram: "https://t.me/alexinspirexchange",
   whatsapp: "https://wa.me/message/4OIGQ3FHUZQSD1",
@@ -1144,13 +1145,24 @@ function Contact() {
           <p className="mt-5 max-w-2xl text-base leading-7 text-graphite/75">
             A few lines are enough to start. Tell me what needs to happen.
           </p>
-          <div className="mt-7 flex flex-wrap gap-4">
-            <a href="mailto:alex@inspirexchange.nl" className="text-base font-semibold text-electric underline underline-offset-4">alex@inspirexchange.nl ↗</a>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <ArrowLink href={socialLinks.strategicSession} label="Book a €100 Strategic Session" />
+            <ArrowLink href={socialLinks.email} label="Email Alex" variant="lineDark" />
           </div>
           <p className="mt-5 text-sm leading-6 text-graphite/70">No presentation required. Unfinished thoughts welcome.</p>
-          <div className="mt-6 flex flex-wrap gap-4">
-            <ArrowLink href="https://zcal.co/axlindholm/1hour" label="Book a €100 Strategic Session" variant="lineDark" />
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-3">
             <a href="https://zcal.co/axlindholm/discovery" className="inline-flex min-h-12 items-center text-sm font-medium text-electric underline underline-offset-4">15 min Discovery Call</a>
+          <a
+            href={socialLinks.linkedin}
+            target="_blank"
+            rel="noopener noreferrer me"
+            className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-graphite/70 underline decoration-ink/20 underline-offset-8 transition hover:text-ink hover:decoration-ink"
+            aria-label="Connect with Alex Lindholm on LinkedIn"
+          >
+            <SocialMark type="linkedin" />
+            <span>Connect on LinkedIn</span>
+            <span aria-hidden="true">→</span>
+          </a>
           </div>
           <SocialContactLinks />
         </div>
@@ -1435,6 +1447,13 @@ function Footer() {
               Media
             </a>
           </div>
+          <a
+            href={socialLinks.email}
+            className="font-medium text-ink underline decoration-ink/25 underline-offset-8 transition hover:decoration-ink"
+            aria-label="Email Alex Lindholm at alex@inspirexchange.nl"
+          >
+            Email Alex
+          </a>
           <a
             href={socialLinks.linkedin}
             target="_blank"

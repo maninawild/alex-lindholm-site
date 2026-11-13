@@ -6,6 +6,7 @@ export const author = {
   jobTitle: "Product and Venture Mentor",
   url: `${siteUrl}/`,
   linkedIn: "https://www.linkedin.com/in/axlindholm/",
+  email: "alex@inspirexchange.nl",
   image: `${siteUrl}/media/alex-portrait.jpg`,
 } as const;
 
@@ -22,6 +23,7 @@ export function personJsonLd() {
     jobTitle: author.jobTitle,
     url: author.url,
     image: author.image,
+    email: author.email,
     sameAs: [author.linkedIn],
     homeLocation: {
       "@type": "Country",
