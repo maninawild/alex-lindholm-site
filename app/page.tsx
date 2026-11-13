@@ -1,3 +1,6 @@
+import { ContactNoteForm } from "@/components/contact-note-form";
+import { CompanyMentions } from "@/components/company-mentions";
+import { officialCompanyUrl } from "@/data/company-links";
 import Image from "next/image";
 import {
   collaborations,
@@ -109,7 +112,7 @@ function Hero() {
 
       <div
         id="top"
-        className="relative z-10 mx-auto grid min-h-[calc(100vh-5.5rem)] max-w-7xl items-center gap-10 px-5 pb-14 pt-10 sm:px-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(380px,460px)] lg:gap-8 lg:pb-20 lg:pt-10"
+        className="relative z-10 mx-auto grid min-h-[calc(100vh-5.5rem)] max-w-7xl items-center gap-10 px-5 pb-14 pt-24 sm:px-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(380px,460px)] lg:gap-8 lg:pb-20 lg:pt-10"
       >
         <div className="w-full min-w-0 max-w-[21rem] sm:max-w-3xl lg:pr-8">
           <p className="mb-4 max-w-[20rem] text-[0.64rem] font-medium uppercase tracking-[0.08em] text-bone/68 sm:text-[0.72rem] sm:tracking-[0.18em]">
@@ -119,14 +122,13 @@ function Hero() {
             I help founders, investors and organizations make better decisions
             in uncertain markets.
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-bone/78 drop-shadow-[0_1px_14px_rgba(0,0,0,0.22)] sm:text-lg">
-            Connecting founders, investors, institutions and operators around
-            ideas worth building.
-          </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <ArrowLink href={socialLinks.strategicSession} label="Book a €100 Strategic Session" />
-            <ArrowLink href="#work" label="Explore Projects" variant="light" />
+            <ArrowLink href="/product-venture-leader" label="For hiring teams" variant="light" />
           </div>
+          <a href="https://zcal.co/axlindholm/discovery" className="mt-3 inline-flex min-h-11 items-center text-sm font-medium text-bone underline decoration-bone/45 underline-offset-4 transition hover:decoration-bone focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bone">
+            15 min Discovery Call
+          </a>
         </div>
         <div className="w-full min-w-0 max-w-[21rem] sm:max-w-[430px] lg:ml-0 lg:max-w-[420px] lg:translate-x-32 xl:translate-x-48">
           <HeroLinkedInCard />
@@ -150,9 +152,7 @@ function HeroLinkedInCard() {
           in
         </span>
         <div>
-          <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-bone/76">
-            Most active on LinkedIn
-          </p>
+          <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-bone/76"><CompanyMentions text={"Most active on LinkedIn"} /></p>
           <h2 className="mt-3 text-2xl font-semibold tracking-[-0.02em]">
             Alex P. Lindholm
           </h2>
@@ -162,9 +162,7 @@ function HeroLinkedInCard() {
 
       <div className="mt-5 border-t border-bone/20 pt-5">
         <p className="text-base leading-7 text-bone/88">
-          I stress-test startups before they waste time and money. Founder
-          advisor, venture architect, and practical connector for VC,
-          fundraising, and consultation.
+          I stress-test startups before they waste time and money.
         </p>
       </div>
 
@@ -175,7 +173,7 @@ function HeroLinkedInCard() {
         </div>
         <div className="grid grid-cols-[0.8fr_1.2fr] gap-4">
           <span className="text-bone/66">Companies</span>
-          <span>InspireXchange, Masterschool</span>
+          <span><CompanyMentions text={"InspireXchange, Masterschool"} /></span>
         </div>
       </div>
 
@@ -203,10 +201,6 @@ function WhoIAm() {
             eyebrow="Who I Am"
             title="Operator instinct. Human context. Venture discipline."
           />
-          <p className="mt-5 max-w-sm text-sm leading-6 text-graphite/64">
-            A practical bridge between founders, capital, institutions,
-            creative operators, and technology teams.
-          </p>
         </div>
         <div className="grid gap-6 lg:grid-cols-[0.78fr_1fr] lg:items-start">
           <div className="relative min-h-[390px] overflow-hidden rounded-sm shadow-quiet">
@@ -229,18 +223,6 @@ function WhoIAm() {
               venture ecosystems, NGOs, educational initiatives, and
               international partnerships, helping ideas, people, and
               organizations grow in chaotic and fast-changing environments.
-            </p>
-            <p>
-              As a managing partner of InspireXchange and venture architect, I
-              focus on connecting the right people around useful opportunities:
-              founders, investors, institutions, innovators, and unconventional
-              collaborators.
-            </p>
-            <p>
-              My work sits between venture strategy, ecosystem building,
-              human-centered innovation, and practical execution. I enjoy
-              creating situations where long-term partnerships, trust, and
-              shared vision become more valuable than short-term transactions.
             </p>
           </div>
         </div>
@@ -312,10 +294,10 @@ function ProfessionalFit() {
                   {role.period}
                 </p>
                 <h3 className="mt-2 text-lg font-semibold leading-tight tracking-[-0.015em]">
-                  {role.title}
+                  <CompanyMentions text={role.title} />
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-graphite/70">
-                  {role.text}
+                  <CompanyMentions text={role.text} />
                 </p>
               </article>
             ))}
@@ -600,7 +582,7 @@ function EducationAndSpeaking() {
                     {item.title}
                   </h3>
                   <p className="mt-4 text-sm leading-6 text-graphite/70">
-                    {item.text}
+                    <CompanyMentions text={item.text} />
                   </p>
                 </article>
               ))}
@@ -949,7 +931,8 @@ function CredibilitySection() {
 function LogoCard({ item }: { item: CredibilityLogo }) {
   const treatment = item.treatment ?? "standard";
   const imageSrc = item.src;
-  const isLinked = Boolean(item.href);
+  const officialHref = item.href || officialCompanyUrl(item.name);
+  const isLinked = Boolean(officialHref);
 
   const isDark = treatment === "dark";
   const logoScale = item.logoScale ?? 1;
@@ -1005,7 +988,7 @@ function LogoCard({ item }: { item: CredibilityLogo }) {
   if (item.href) {
     return (
       <a
-        href={item.href}
+        href={officialHref}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Open ${item.name} website`}
@@ -1076,7 +1059,6 @@ function Collaborations() {
             <SectionHeader
               eyebrow="Collaborations"
               title="The best work usually starts between worlds."
-              intro="I collaborate with people who care about substance: builders, capital partners, creative operators, institutions, private communities, and technology teams working on real questions."
             />
           </div>
           <div className="grid gap-3 md:grid-cols-2">
@@ -1151,36 +1133,28 @@ function HumanSide() {
 function Contact() {
   return (
     <section id="contact" className="bg-bone pb-14 pt-8 text-ink sm:pb-16 sm:pt-10">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[1fr_0.72fr] lg:items-start">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.85fr_1fr] lg:items-start">
         <div>
           <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
             Contact
           </p>
           <h2 className="mt-4 text-3xl font-medium leading-tight tracking-[-0.025em] text-balance sm:text-4xl">
-            Build something meaningful.
+            What are we untangling?
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-7 text-graphite/75">
-            Looking for a strategic perspective, the right introduction, or an
-            unconventional collaboration? Start with a clear note and a real
-            reason to connect.
+            A few lines are enough to start. Tell me what needs to happen.
           </p>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={socialLinks.linkedin}
-              target="_blank"
-              rel="noopener noreferrer me"
-              className="inline-flex min-h-12 items-center justify-center gap-3 rounded-md border border-electric bg-electric px-6 text-sm font-medium text-bone transition duration-300 hover:bg-blue-700"
-              aria-label="Connect with Alex Lindholm on LinkedIn"
-            >
-              <SocialMark type="linkedin" />
-              <span>Connect on LinkedIn</span>
-              <span aria-hidden="true">→</span>
-            </a>
+          <div className="mt-7 flex flex-wrap gap-4">
+            <a href="mailto:alex@inspirexchange.nl" className="text-base font-semibold text-electric underline underline-offset-4">alex@inspirexchange.nl ↗</a>
+          </div>
+          <p className="mt-5 text-sm leading-6 text-graphite/70">No presentation required. Unfinished thoughts welcome.</p>
+          <div className="mt-6 flex flex-wrap gap-4">
             <ArrowLink href="https://zcal.co/axlindholm/1hour" label="Book a €100 Strategic Session" variant="lineDark" />
+            <a href="https://zcal.co/axlindholm/discovery" className="inline-flex min-h-12 items-center text-sm font-medium text-electric underline underline-offset-4">15 min Discovery Call</a>
           </div>
           <SocialContactLinks />
         </div>
-        <LinkedInProfileCard tone="light" />
+        <ContactNoteForm directSend={process.env.CONTACT_PROVIDER === "resend" && Boolean(process.env.RESEND_API_KEY && process.env.CONTACT_FROM && process.env.CONTACT_RATE_SECRET && process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN)} />
       </div>
     </section>
   );
@@ -1214,9 +1188,7 @@ function InstagramFieldNotes() {
     <section className="section bg-bone text-ink" aria-labelledby="instagram-heading">
       <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.58fr_1fr] lg:items-start">
         <div>
-          <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
-            Instagram / Field Notes
-          </p>
+          <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper"><CompanyMentions text={"Instagram / Field Notes"} /></p>
           <h2
             id="instagram-heading"
             className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.02em] text-balance sm:text-4xl"
@@ -1237,10 +1209,7 @@ function InstagramFieldNotes() {
             <span>Follow on Instagram</span>
             <span aria-hidden="true">→</span>
           </a>
-          <p className="mt-4 text-xs leading-5 text-graphite/55">
-            Personal notes only. For venture updates and ecosystem
-            conversations, LinkedIn remains the main channel.
-          </p>
+          <p className="mt-4 text-xs leading-5 text-graphite/55"><CompanyMentions text={"Personal notes only. For venture updates and ecosystem conversations, LinkedIn remains the main channel."} /></p>
         </div>
 
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -1434,107 +1403,6 @@ function SocialMark({
       <circle cx="12" cy="12" r="3.2" stroke="currentColor" strokeWidth="1.7" />
       <circle cx="16.4" cy="7.7" r="1" fill="currentColor" />
     </svg>
-  );
-}
-
-function LinkedInProfileCard({
-  tone,
-  compact = false,
-}: {
-  tone: "dark" | "light";
-  compact?: boolean;
-}) {
-  const isDark = tone === "dark";
-  const shellClass = isDark
-    ? "border-bone/16 bg-bone text-bone shadow-quiet"
-    : "border-ink/10 bg-bone text-ink shadow-quiet";
-  const mutedTextClass = isDark ? "text-graphite/68" : "text-graphite/70";
-  const fineTextClass = isDark ? "text-bone/54" : "text-graphite/56";
-
-  return (
-    <aside
-      className={`overflow-hidden rounded-sm border backdrop-blur-md ${shellClass}`}
-      aria-label="Alex Lindholm LinkedIn profile"
-    >
-      <div className={`relative overflow-hidden bg-[linear-gradient(135deg,#10131A_0%,#4A3A63_72%,#2B3038_100%)] ${compact ? "h-16" : "h-20"}`}>
-        {compact ? (
-          <Image
-            src="/media/linkedin-banner.jpg"
-            alt=""
-            fill
-            sizes="(min-width: 1024px) 34vw, 100vw"
-            className="object-cover"
-          />
-        ) : null}
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/22 via-transparent to-ink/30" />
-        <div className="absolute left-4 top-4 flex items-center gap-2 rounded-sm border border-bone/18 bg-ink/42 px-3 py-2 text-[0.66rem] font-medium uppercase tracking-[0.14em] text-bone">
-          <span
-            className="flex h-5 w-5 items-center justify-center rounded-[3px] bg-bone text-[0.62rem] font-bold text-ink"
-            aria-hidden="true"
-          >
-            in
-          </span>
-          LinkedIn Profile
-        </div>
-      </div>
-
-      <div className={`px-4 pb-4 ${compact ? "text-[0.94rem]" : ""}`}>
-        <div className="-mt-8 flex items-end justify-between gap-4">
-          <div className={`flex items-center justify-center rounded-full border-4 border-paper bg-ink text-bone shadow-quiet ${compact ? "h-14 w-14" : "h-16 w-16"}`}>
-            <span className="text-sm font-semibold tracking-[0.08em]">AL</span>
-          </div>
-          <p className={`pb-1.5 text-[0.68rem] font-medium uppercase tracking-[0.14em] ${fineTextClass}`}>
-            500+ connections
-          </p>
-        </div>
-
-        <h3 className={`mt-3 font-medium leading-tight tracking-[-0.015em] ${compact ? "text-lg" : "text-xl"}`}>
-          Alex P. Lindholm
-        </h3>
-        <p className={`mt-2 text-sm ${compact ? "leading-5" : "leading-6"} ${mutedTextClass}`}>
-          I stress-test startups before they waste time and money. Founder
-          advisor, venture architect, and practical connector for VC,
-          fundraising, and consultation.
-        </p>
-
-        <div
-          className={`mt-4 gap-2 border-t pt-4 ${compact ? "hidden text-xs sm:grid" : "grid text-sm"} ${
-            isDark ? "border-ink/10" : "border-ink/10"
-          }`}
-        >
-          <div className="flex items-center justify-between gap-4">
-            <span className={fineTextClass}>Location</span>
-            <span className="text-right">Rotterdam and The Hague</span>
-          </div>
-          <div className="flex items-center justify-between gap-4">
-            <span className={fineTextClass}>Companies</span>
-            <span className="text-right">InspireXchange, Masterschool</span>
-          </div>
-        </div>
-
-        <p className={`mt-4 text-xs leading-5 ${fineTextClass} ${compact ? "hidden sm:block" : ""}`}>
-          Follow ongoing projects, essays, and ecosystem perspectives on
-          startups, ethical technology, venture building, and long-term
-          collaborations.
-        </p>
-      </div>
-
-      <a
-        href={socialLinks.linkedin}
-        target="_blank"
-        rel="noopener noreferrer me"
-        aria-label="Connect with Alex Lindholm on LinkedIn"
-        className={`mx-4 mb-4 inline-flex w-[calc(100%-2rem)] items-center justify-center gap-3 rounded-md border px-5 text-sm font-medium transition duration-300 ${compact ? "min-h-10" : "min-h-11"} ${
-          isDark
-            ? "border-bone bg-bone text-ink hover:bg-paper"
-            : "border-ink bg-ink text-bone hover:bg-graphite"
-        }`}
-      >
-        <SocialMark type="linkedin" />
-        <span>Connect on LinkedIn</span>
-        <span aria-hidden="true">→</span>
-      </a>
-    </aside>
   );
 }
 

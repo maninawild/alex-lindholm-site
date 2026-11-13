@@ -1,3 +1,4 @@
+import { ConversionEvents } from "@/components/conversion-events";
 import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
@@ -97,6 +98,7 @@ export default function RootLayout({
         {children}
         <PublicOnlyEnhancements />
         <Analytics />
+        <ConversionEvents />
         <SpeedInsights />
       </body>
     </html>

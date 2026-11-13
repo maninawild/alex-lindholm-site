@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const navItems = [
+  { href: "/product-venture-leader", label: "For hiring teams" },
   { href: "/#experience", label: "Experience" },
   { href: "/#work", label: "Work" },
   { href: "/lectures-and-speaking", label: "Speaking" },
@@ -20,6 +21,7 @@ const linkedinUrl = "https://www.linkedin.com/in/axlindholm/";
 type SiteHeaderProps = {
   transparentAtTop?: boolean;
   privateZone?: boolean;
+  contentLanguage?: "en" | "ru";
   languageSwitch?: {
     href: string;
     label: string;
@@ -30,9 +32,11 @@ type SiteHeaderProps = {
 export function SiteHeader({
   transparentAtTop = true,
   privateZone = false,
+  contentLanguage,
   languageSwitch,
 }: SiteHeaderProps) {
   const pathname = usePathname();
+  const currentLanguage = contentLanguage || (pathname.startsWith("/ru/") ? "ru" : "en");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -47,6 +51,7 @@ export function SiteHeader({
 
   return (
     <header
+      lang="en"
       className={`pointer-events-none fixed inset-x-0 z-[100] w-full transition-[background-color,border-color,color,box-shadow] duration-300 ${
         privateZone ? "top-9" : "top-0"
       } ${
@@ -66,14 +71,14 @@ export function SiteHeader({
           Alex Lindholm
         </Link>
         <div
-          className={`hidden items-center gap-x-6 text-sm font-semibold md:flex ${
+          className={`hidden items-center gap-x-4 text-sm font-semibold xl:flex ${
             isSolid ? "text-graphite/78" : "text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.78)]"
           }`}
         >
           {navItems.map((item) => (
             <Link
               key={item.label}
-              href={item.href}
+              href={item.href === "/donate" && currentLanguage === "ru" ? "/ru/donate" : item.href}
               className={
                 item.accent
                   ? `rounded-full border px-3 py-1.5 transition ${
@@ -91,6 +96,7 @@ export function SiteHeader({
           ))}
         </div>
         <div className="flex items-center gap-2">
+          <span aria-label={currentLanguage === "ru" ? "Russian" : "English"} className="text-xs font-semibold tracking-[0.08em] opacity-70">{currentLanguage.toUpperCase()}</span>
           {languageSwitch ? (
             <Link
               href={languageSwitch.href}
@@ -106,7 +112,7 @@ export function SiteHeader({
           ) : null}
           <button
             type="button"
-            className={`inline-flex min-h-11 items-center justify-center rounded-md border px-3 text-sm font-semibold transition md:hidden ${
+            className={`inline-flex min-h-11 items-center justify-center rounded-md border px-3 text-sm font-semibold transition xl:hidden ${
               isSolid
                 ? "border-ink/12 bg-white text-ink"
                 : "border-white/45 bg-ink/18 text-white backdrop-blur-md [text-shadow:0_1px_8px_rgba(0,0,0,0.72)]"
@@ -120,13 +126,13 @@ export function SiteHeader({
         </div>
       </nav>
       {isMenuOpen ? (
-        <div id="mobile-site-menu" className="pointer-events-auto border-t border-ink/10 bg-white px-5 py-4 text-ink shadow-quiet md:hidden">
+        <div id="mobile-site-menu" className="pointer-events-auto border-t border-ink/10 bg-white px-5 py-4 text-ink shadow-quiet xl:hidden">
           <div className="mx-auto grid max-w-7xl gap-2">
             {[...navItems, { href: linkedinUrl, label: "LinkedIn" }].map((item) => (
               item.href.startsWith("http") ? (
                 <a
                   key={item.label}
-                  href={item.href}
+                  href={item.href === "/donate" && currentLanguage === "ru" ? "/ru/donate" : item.href}
                   className="min-h-12 rounded-md border border-ink/8 px-4 py-3 text-base font-medium text-ink transition hover:border-electric hover:bg-electric/5"
                   target="_blank"
                   rel="noopener noreferrer me"
@@ -137,7 +143,7 @@ export function SiteHeader({
               ) : (
                 <Link
                   key={item.label}
-                  href={item.href}
+                  href={item.href === "/donate" && currentLanguage === "ru" ? "/ru/donate" : item.href}
                   className={`min-h-12 rounded-md border px-4 py-3 text-base font-medium transition ${
                     "accent" in item && item.accent
                       ? "border-copper/30 bg-copper/8 text-copper hover:bg-copper hover:text-white"

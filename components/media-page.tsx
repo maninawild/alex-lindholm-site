@@ -8,7 +8,7 @@ export function MediaPageContent() {
   const jsonLd = [
     personSchema("media"),
     webPageSchema("media"),
-    ...videos.map(videoObjectSchema),
+    ...videos.map(videoObjectSchema).filter(Boolean),
   ];
 
   return (
