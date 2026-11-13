@@ -1,3 +1,4 @@
+import { CountUp } from "@/components/count-up";
 import { CompanyMentions } from "@/components/company-mentions";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -188,7 +189,7 @@ export default function ProductVentureLeaderPage() {
             ["500+", "lectures, workshops and strategy sessions"],
           ].map(([value, label]) => (
             <div className="px-5 py-7 sm:border-l sm:border-ink/10 sm:px-8" key={label}>
-              <p className="text-3xl font-semibold tracking-[-0.025em]">{value}</p>
+              <p className="text-3xl font-semibold tracking-[-0.025em]"><CountUp value={value} /></p>
               <p className="mt-2 text-sm leading-6 text-graphite/66">{label}</p>
             </div>
           ))}
