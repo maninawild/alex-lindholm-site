@@ -102,7 +102,7 @@ export function SiteHeader({
         <div className="flex items-center gap-2">
           <span aria-label={currentLanguage === "ru" ? "Russian" : "English"} className="text-xs font-semibold tracking-[0.08em] opacity-70">{currentLanguage.toUpperCase()}</span>
           {languageSwitch ? (
-            <Link
+            <a
               href={languageSwitch.href}
               aria-label={languageSwitch.ariaLabel}
               className={`inline-flex min-h-11 min-w-12 items-center justify-center rounded-md border px-3 text-sm font-bold tracking-[0.08em] transition ${
@@ -112,7 +112,7 @@ export function SiteHeader({
               }`}
             >
               {languageSwitch.label}
-            </Link>
+            </a>
           ) : null}
           <button
             type="button"
