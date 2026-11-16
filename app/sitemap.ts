@@ -12,6 +12,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = Array.from(new Set([
     "",
     "/links",
+    "/donate",
+    "/donate/anya-tishinskaya",
+    "/ru/donate",
+    "/ru/donate/anya-tishinskaya",
     "/product-venture-leader",
     "/lectures-and-speaking",
     "/trips",

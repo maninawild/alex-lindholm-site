@@ -12,6 +12,7 @@ const navItems = [
   { href: "/trips", label: "Trips" },
   { href: "/articles", label: "Articles" },
   { href: "/media", label: "Media" },
+  { href: "/donate", label: "Giving" },
   { href: "/#collaborate", label: "Collaborate" },
   { href: "/private", label: "Private", accent: true },
 ];
