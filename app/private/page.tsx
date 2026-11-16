@@ -5,17 +5,8 @@ import { privateIdeas } from "@/data/private-ideas";
 const whatsappUrl = "https://wa.me/message/4OIGQ3FHUZQSD1";
 
 export const metadata: Metadata = {
-  title: "Private Zone",
-  description:
-    "Private projects, selected experiences and emerging initiatives by Alex Lindholm.",
-  alternates: { canonical: "https://www.axlindholm.nl/private" },
-  openGraph: {
-    title: "Private Zone | Alex Lindholm",
-    description:
-      "Private projects, selected experiences and emerging initiatives by Alex Lindholm.",
-    url: "/private",
-    type: "website",
-  },
+  title: "Private Area",
+  description: "An area shared personally by Alex Lindholm.",
 };
 
 export default function PrivateLandingPage() {

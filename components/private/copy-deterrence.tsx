@@ -16,6 +16,7 @@ export function CopyDeterrence({ children }: { children: ReactNode }) {
       }
     };
 
+    element.addEventListener("selectstart", prevent);
     element.addEventListener("contextmenu", prevent);
     element.addEventListener("copy", prevent);
     element.addEventListener("cut", prevent);
@@ -23,6 +24,7 @@ export function CopyDeterrence({ children }: { children: ReactNode }) {
     element.addEventListener("keydown", preventShortcut);
 
     return () => {
+      element.removeEventListener("selectstart", prevent);
       element.removeEventListener("contextmenu", prevent);
       element.removeEventListener("copy", prevent);
       element.removeEventListener("cut", prevent);
