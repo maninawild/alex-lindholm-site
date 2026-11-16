@@ -48,11 +48,15 @@ export function SiteHeader({
     return () => window.removeEventListener("scroll", updateHeader);
   }, []);
 
+  const ru = currentLanguage === "ru";
+  const labels: Record<string, string> = { "For hiring teams": "Для работодателей", Experience: "Опыт", Work: "Проекты", Speaking: "Лекции", Trips: "Поездки", Articles: "Статьи", Media: "Медиа", Collaborate: "Сотрудничество", Private: "Закрытый раздел", Giving: "Поддержать", LinkedIn: "LinkedIn" };
+  const localizedNavItems = navItems.map(item => ({ ...item, label: ru ? labels[item.label] : item.label, href: ru && ["/trips", "/donate"].includes(item.href) ? `/ru${item.href}` : item.href }));
+
   const isSolid = !transparentAtTop || isScrolled || isMenuOpen;
 
   return (
     <header
-      lang="en"
+      lang={currentLanguage}
       className={`pointer-events-none fixed inset-x-0 z-[100] w-full transition-[background-color,border-color,color,box-shadow] duration-300 ${
         privateZone ? "top-9" : "top-0"
       } ${
@@ -76,7 +80,7 @@ export function SiteHeader({
             isSolid ? "text-graphite/78" : "text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.78)]"
           }`}
         >
-          {navItems.map((item) => (
+          {localizedNavItems.map((item) => (
             <Link
               key={item.label}
               href={item.href === "/donate" && currentLanguage === "ru" ? "/ru/donate" : item.href}
@@ -97,9 +101,9 @@ export function SiteHeader({
           ))}
         </div>
         <div className="flex items-center gap-2">
-          <span aria-label={currentLanguage === "ru" ? "Russian" : "English"} className="text-xs font-semibold tracking-[0.08em] opacity-70">{currentLanguage.toUpperCase()}</span>
+          <span aria-label={currentLanguage === "ru" ? "Русский" : "English"} className="text-xs font-semibold tracking-[0.08em] opacity-70">{currentLanguage.toUpperCase()}</span>
           {languageSwitch ? (
-            <Link
+            <a
               href={languageSwitch.href}
               aria-label={languageSwitch.ariaLabel}
               className={`inline-flex min-h-11 min-w-12 items-center justify-center rounded-md border px-3 text-sm font-bold tracking-[0.08em] transition ${
@@ -109,7 +113,7 @@ export function SiteHeader({
               }`}
             >
               {languageSwitch.label}
-            </Link>
+            </a>
           ) : null}
           <button
             type="button"
@@ -122,14 +126,14 @@ export function SiteHeader({
             aria-controls="mobile-site-menu"
             onClick={() => setIsMenuOpen((value) => !value)}
           >
-            {isMenuOpen ? "Close" : "Menu"}
+            {ru ? (isMenuOpen ? "Закрыть" : "Меню") : (isMenuOpen ? "Close" : "Menu")}
           </button>
         </div>
       </nav>
       {isMenuOpen ? (
         <div id="mobile-site-menu" className="pointer-events-auto border-t border-ink/10 bg-white px-5 py-4 text-ink shadow-quiet xl:hidden">
           <div className="mx-auto grid max-w-7xl gap-2">
-            {[...navItems, { href: linkedinUrl, label: "LinkedIn" }].map((item) => (
+            {[...localizedNavItems, { href: linkedinUrl, label: "LinkedIn" }].map((item) => (
               item.href.startsWith("http") ? (
                 <a
                   key={item.label}

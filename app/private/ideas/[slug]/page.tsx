@@ -7,7 +7,7 @@ import { YouthExchangeIdeasHub } from "@/components/private/youth-exchange-ideas
 import { getPrivateIdea } from "@/data/private-ideas";
 
 export const metadata: Metadata = {
-  title: "Private Development Concept",
+  title: "Private Area",
   description: "Unlisted private development concept.",
   robots: {
     index: false,

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { PrivatePageShell } from "@/components/private/private-page-shell";
 
 export const metadata: Metadata = {
-  title: "Youth Exchange Concept",
+  title: "Private Area",
   description: "Unlisted youth exchange development concept.",
   robots: { index: false, follow: false, noarchive: true, nosnippet: true, noimageindex: true },
 };

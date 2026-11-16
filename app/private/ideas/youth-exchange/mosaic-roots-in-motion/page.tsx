@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PrivatePageShell } from "@/components/private/private-page-shell";
 
-export const metadata: Metadata = { title: "MOSAIC: ROOTS IN MOTION", description: "Unlisted youth exchange development concept.", robots: { index: false, follow: false, noarchive: true, nosnippet: true, noimageindex: true } };
+export const metadata: Metadata = { title: "Private Area", description: "Unlisted youth exchange development concept.", robots: { index: false, follow: false, noarchive: true, nosnippet: true, noimageindex: true } };
 
 function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) { return <a href={href} target="_blank" rel="noopener noreferrer" className="font-medium text-electric underline decoration-electric/30 underline-offset-4 hover:decoration-electric">{children}</a>; }
 function Section({ number, title, children }: { number: string; title: string; children: React.ReactNode }) { return <section className="border-t border-ink/10 py-10 sm:py-12"><div className="grid gap-6 lg:grid-cols-[11rem_1fr]"><div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">{number}</p><h2 className="mt-3 font-serif text-3xl font-medium tracking-[-0.03em] text-ink">{title}</h2></div><div className="max-w-3xl space-y-5 text-base leading-8 text-graphite/76">{children}</div></div></section>; }

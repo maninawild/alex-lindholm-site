@@ -1,7 +1,11 @@
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 
-export function proxy() {
-  const response = NextResponse.next();
+export function proxy(request: NextRequest) {
+  const requestHeaders = new Headers(request.headers);
+  const locale = request.nextUrl.pathname === "/private/jewish" && request.nextUrl.searchParams.get("lang") === "ru" ? "ru" : "en";
+  requestHeaders.set("x-private-locale", locale);
+  requestHeaders.set("x-private-pathname", request.nextUrl.pathname);
+  const response = NextResponse.next({ request: { headers: requestHeaders } });
   response.headers.set("Cache-Control", "private, no-store, max-age=0, must-revalidate");
   response.headers.set(
     "X-Robots-Tag",
