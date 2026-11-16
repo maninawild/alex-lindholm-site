@@ -12,6 +12,7 @@ const navItems = [
   { href: "/trips", label: "Trips" },
   { href: "/articles", label: "Articles" },
   { href: "/media", label: "Media" },
+  { href: "/donate", label: "Giving" },
   { href: "/#collaborate", label: "Collaborate" },
   { href: "/private", label: "Private", accent: true },
 ];
@@ -48,8 +49,8 @@ export function SiteHeader({
   }, []);
 
   const ru = currentLanguage === "ru";
-  const labels: Record<string, string> = { "For hiring teams": "Для работодателей", Experience: "Опыт", Work: "Проекты", Speaking: "Лекции", Trips: "Поездки", Articles: "Статьи", Media: "Медиа", Collaborate: "Сотрудничество", Private: "Закрытый раздел", LinkedIn: "LinkedIn" };
-  const localizedNavItems = navItems.map(item => ({ ...item, label: ru ? labels[item.label] : item.label, href: ru && item.href === "/trips" ? "/ru/trips" : item.href }));
+  const labels: Record<string, string> = { "For hiring teams": "Для работодателей", Experience: "Опыт", Work: "Проекты", Speaking: "Лекции", Trips: "Поездки", Articles: "Статьи", Media: "Медиа", Collaborate: "Сотрудничество", Private: "Закрытый раздел", Giving: "Поддержать", LinkedIn: "LinkedIn" };
+  const localizedNavItems = navItems.map(item => ({ ...item, label: ru ? labels[item.label] : item.label, href: ru && ["/trips", "/donate"].includes(item.href) ? `/ru${item.href}` : item.href }));
 
   const isSolid = !transparentAtTop || isScrolled || isMenuOpen;
 
@@ -100,7 +101,7 @@ export function SiteHeader({
           ))}
         </div>
         <div className="flex items-center gap-2">
-          <span aria-label={currentLanguage === "ru" ? "Russian" : "English"} className="text-xs font-semibold tracking-[0.08em] opacity-70">{currentLanguage.toUpperCase()}</span>
+          <span aria-label={currentLanguage === "ru" ? "Русский" : "English"} className="text-xs font-semibold tracking-[0.08em] opacity-70">{currentLanguage.toUpperCase()}</span>
           {languageSwitch ? (
             <a
               href={languageSwitch.href}
