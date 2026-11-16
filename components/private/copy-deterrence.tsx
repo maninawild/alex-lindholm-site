@@ -18,18 +18,18 @@ export function CopyDeterrence({ children }: { children: ReactNode }) {
 
     element.addEventListener("selectstart", prevent);
     element.addEventListener("contextmenu", prevent);
-    element.addEventListener("copy", prevent);
-    element.addEventListener("cut", prevent);
+    document.addEventListener("copy", prevent, true);
+    document.addEventListener("cut", prevent, true);
     element.addEventListener("dragstart", prevent);
-    element.addEventListener("keydown", preventShortcut);
+    document.addEventListener("keydown", preventShortcut, true);
 
     return () => {
       element.removeEventListener("selectstart", prevent);
       element.removeEventListener("contextmenu", prevent);
-      element.removeEventListener("copy", prevent);
-      element.removeEventListener("cut", prevent);
+      document.removeEventListener("copy", prevent, true);
+      document.removeEventListener("cut", prevent, true);
       element.removeEventListener("dragstart", prevent);
-      element.removeEventListener("keydown", preventShortcut);
+      document.removeEventListener("keydown", preventShortcut, true);
     };
   }, []);
 
