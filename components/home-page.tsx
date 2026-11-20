@@ -88,7 +88,7 @@ function Hero() {
 
       <div
         id="top"
-        className="relative z-10 mx-auto grid min-h-[calc(100vh-5.5rem)] max-w-7xl items-center gap-10 px-5 pb-14 pt-24 sm:px-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(380px,460px)] lg:gap-8 lg:pb-20 lg:pt-10"
+        className={`relative z-10 mx-auto grid min-h-[calc(100vh-5.5rem)] max-w-7xl items-center gap-10 px-5 pb-14 pt-24 sm:px-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(380px,460px)] lg:gap-8 lg:pb-20 ${locale === "ru" ? "lg:pt-28" : "lg:pt-10"}`}
       >
         <div className="w-full min-w-0 max-w-[21rem] sm:max-w-3xl lg:pr-8">
           <p className="mb-4 max-w-[20rem] text-[0.64rem] font-medium uppercase tracking-[0.08em] text-bone/68 sm:text-[0.72rem] sm:tracking-[0.18em]">

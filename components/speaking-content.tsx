@@ -222,18 +222,18 @@ function Day42Highlight() {
               {event.title}
             </h2>
             <p className="mt-3 text-sm leading-6 text-graphite/70">
-              {event.displayDate} · {event.location}
+              {locale === "ru" ? "17 июня 2026 г." : event.displayDate} · {event.location}
             </p>
             <p className="mt-6 text-xl font-medium leading-8 text-ink">
-              {event.talkTitle}
+              {t(event.talkTitle ?? "")}
             </p>
             <p className="mt-4 max-w-2xl text-base leading-7 text-graphite/76">
-              {event.shortDescription}
+              {t(event.shortDescription)}
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <ArrowLink
                 href={eventPath}
-                label={`Event recap & all ${event.galleryImages.length} photos`}
+                label={locale === "ru" ? `Как это было и все фото (${event.galleryImages.length}) · EN` : `Event recap & all ${event.galleryImages.length} photos`}
               />
               {event.linkedInUrl ? (
                 <ArrowLink href={event.linkedInUrl} label={t("LinkedIn recap")} variant="lineDark" />
@@ -243,7 +243,7 @@ function Day42Highlight() {
           <a
             href={eventPath}
             className="relative block aspect-[4/3] overflow-hidden rounded-sm bg-ink/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric"
-            aria-label={`See the photos and recap of ${event.title}`}
+            aria-label={locale === "ru" ? `Фото и рассказ о ${event.title} (EN)` : `See the photos and recap of ${event.title}`}
           >
             <Image
               src={speakerPhoto || event.coverImage}
@@ -260,7 +260,7 @@ function Day42Highlight() {
               key={photo.src}
               href={eventPath}
               className="relative block aspect-[3/2] overflow-hidden rounded-sm bg-ink/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric"
-              aria-label={photo.alt}
+              aria-label={t(photo.alt)}
             >
               <Image
                 src={photo.src}
