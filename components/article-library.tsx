@@ -186,7 +186,7 @@ function ArticleCard({ article, locale }: { article: ArticleSummary; locale: Loc
           <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.14em] text-graphite/52">
             <span>{locale === "ru" ? (article.language === "ru" ? "Русский" : "Английский") : languageLabel}</span>
             <span>/</span>
-            <span>{formatCardDate(article.originalDate || article.date, article.language)}</span>
+            <span>{formatCardDate(article.originalDate || article.date, locale)}</span>
           </div>
           <div className="mt-3 flex flex-wrap gap-2">
             {article.source ? (

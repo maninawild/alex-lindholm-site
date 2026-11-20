@@ -28,7 +28,7 @@ export function InsightsDirectory({
               >
                 <span className="font-medium">{t(topic.name)}{locale === "ru" ? " (EN)" : ""}</span>
                 <span className="mt-2 block text-xs text-graphite/58">
-                  {topic.articleCount} {locale === "ru" ? "статей" : topic.articleCount === 1 ? "article" : "articles"}
+                  {topic.articleCount} {locale === "ru" ? ({one: "статья", few: "статьи", many: "статей", other: "статьи"}[new Intl.PluralRules("ru").select(topic.articleCount)] ?? "статей") : topic.articleCount === 1 ? "article" : "articles"}
                 </span>
               </Link>
             ))}
