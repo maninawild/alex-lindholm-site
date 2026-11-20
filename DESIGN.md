@@ -38,3 +38,7 @@ Updated 13 November 2026. This is the working canon for incremental changes, not
 ## Current implementation
 
 Shared route: `app/articles/[slug]/page.tsx`. Typography: scoped `.article-reading` rules in `app/globals.css`. Markdown insertion slot: `components/markdown-content.tsx`. Exact source article files and photo assets remain unchanged by the reading-layout release.
+
+## Photography and captions — approved, 20 November 2026
+
+Approved by Alex on 20 November 2026; applied to the six affected photographs on the Speaking page. Use intrinsic image dimensions for full-frame editorial photographs, without fixed-height dark letterboxing. Put functional captions on a separate solid white surface with dark text. Keep photographic overlays only where their contrast is explicitly checked against the actual image and their computed gradient exists. Apply through scoped photo components rather than a global object-fit change. Preserve existing photo files and prior per-image approval rules.
