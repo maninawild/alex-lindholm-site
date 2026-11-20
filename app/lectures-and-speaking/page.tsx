@@ -1,4 +1,11 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
+import liveRoomPhoto from "@/public/media/speaking/ZaSkobkamy2.jpg";
+import matchingPhoto from "@/public/media/speaking/swipe-matching-markets.jpg";
+import audiencePhoto from "@/public/media/speaking/swipe-audience.jpg";
+import interactionPhoto from "@/public/media/speaking/swipe-model-spectrum-live.jpg";
+import digitalLecturePhoto from "@/public/media/speaking/digital-transformation-ai-lecture.jpg";
+import rabbiLecturePhoto from "@/public/media/speaking/ai-rabbi-lecture.jpg";
+import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import { ArrowLink } from "@/components/arrow-link";
 import { SectionHeader } from "@/components/section-header";
@@ -137,7 +144,7 @@ type FeaturedSession = {
   title: string;
   subtitle?: string;
   text: string;
-  image?: string;
+  image?: StaticImageData;
   imageAlt?: string;
   highlight?: boolean;
 };
@@ -153,14 +160,14 @@ const featuredSessions: FeaturedSession[] = [
   {
     title: "Digital Transformation & AI: Media, Power and Personal Freedom",
     text: "A session about how AI reshapes society at the level of state, community, and personal ethics.",
-    image: "/media/speaking/digital-transformation-ai-lecture.jpg",
+    image: digitalLecturePhoto,
     imageAlt:
       "Alex Lindholm lecturing at Erasmus University Rotterdam on digital transformation and the future of AI",
   },
   {
     title: "Will AI Replace a Rabbi?",
     text: "A discussion on artificial intelligence, religion, authority, and what communities should or should not outsource to machines.",
-    image: "/media/speaking/ai-rabbi-lecture.jpg",
+    image: rabbiLecturePhoto,
     imageAlt:
       "Alex Lindholm leading an interactive discussion connected to the Will AI Replace a Rabbi lecture",
   },
@@ -225,28 +232,17 @@ export default function LecturesAndSpeakingPage() {
           </div>
         </div>
 
-        <div className="relative flex min-h-[430px] items-center justify-center overflow-hidden rounded-sm bg-ink shadow-premium">
-          <Image
-            src="/media/speaking/ZaSkobkamy2.jpg"
-            alt="Alex Lindholm speaking during an interactive session"
-            fill
-            priority
-            sizes="(min-width: 1024px) 38vw, 100vw"
-            className="object-contain"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/84 via-ink/18 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-white/72">
-              Live room format
-            </p>
-            <div className="mt-4 grid gap-2 text-sm leading-6 text-white/86 sm:grid-cols-2">
-              <span>Discussion prompts</span>
-              <span>Audience voting</span>
-              <span>Matching systems</span>
-              <span>Marketplace cases</span>
-            </div>
-          </div>
-        </div>
+        <SpeakingPhoto src={liveRoomPhoto} alt="Alex Lindholm speaking during an interactive session" sizes="(min-width: 1024px) 38vw, 100vw" priority
+          caption={(
+            <>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-graphite">Live room format</p>
+              <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-sm leading-6 text-ink">
+                <span>Discussion prompts</span><span>Audience voting</span>
+                <span>Matching systems</span><span>Marketplace cases</span>
+              </div>
+            </>
+          )}
+        />
       </section>
 
       <Day42Highlight />
@@ -457,12 +453,12 @@ function SwipeIsDeadHighlight() {
 
   const supportingImages = [
     {
-      src: "/media/speaking/swipe-audience.jpg",
+      src: audiencePhoto,
       alt: "Audience listening during the Swipe Is Dead lecture",
       label: "Audience",
     },
     {
-      src: "/media/speaking/swipe-model-spectrum-live.jpg",
+      src: interactionPhoto,
       alt: "Alex explaining the LoveTech business model spectrum",
       label: "Interaction",
     },
@@ -500,25 +496,14 @@ function SwipeIsDeadHighlight() {
           </div>
 
           <div className="grid gap-4">
-            <div className="relative flex min-h-[430px] items-center justify-center overflow-hidden rounded-sm bg-ink shadow-premium">
-              <Image
-                src="/media/speaking/swipe-matching-markets.jpg"
-                alt="Alex Lindholm presenting Swipe Is Dead. But I Am Not"
-                fill
-                sizes="(min-width: 1024px) 58vw, 100vw"
-                className="object-contain"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/86 via-ink/16 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                <p className="text-xs font-medium uppercase tracking-[0.18em] text-white/70">
-                  Human Systems, LoveTech & Matching Markets
-                </p>
-                <p className="mt-3 max-w-xl text-lg leading-7 text-white/88">
-                  What dating apps, startup fundraising, investor matching,
-                  marketplaces and human decision-making have in common.
-                </p>
-              </div>
-            </div>
+            <SpeakingPhoto src={matchingPhoto} alt="Alex Lindholm presenting Swipe Is Dead. But I Am Not" sizes="(min-width: 1024px) 58vw, 100vw"
+              caption={(
+                <>
+                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-graphite">Human Systems, LoveTech &amp; Matching Markets</p>
+                  <p className="mt-3 max-w-xl text-lg leading-7 text-ink">What dating apps, startup fundraising, investor matching, marketplaces and human decision-making have in common.</p>
+                </>
+              )}
+            />
 
             <div className="grid gap-3 md:grid-cols-[1fr_0.72fr]">
               <article className="rounded-sm border border-ink/8 bg-bone p-5 shadow-quiet">
@@ -566,23 +551,9 @@ function SwipeIsDeadHighlight() {
 
             <div className="grid gap-3 sm:grid-cols-2">
               {supportingImages.map((item) => (
-                <article
-                  className="relative flex min-h-[260px] items-center justify-center overflow-hidden rounded-sm bg-ink shadow-quiet"
-                  key={item.src}
-                >
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    sizes="(min-width: 1024px) 28vw, 100vw"
-                    className="object-contain"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/72 to-transparent p-4">
-                    <p className="text-xs font-medium uppercase tracking-[0.18em] text-white/82">
-                      {item.label}
-                    </p>
-                  </div>
-                </article>
+                <SpeakingPhoto key={item.src.src} src={item.src} alt={item.alt} sizes="(min-width: 1024px) 28vw, 100vw"
+                  caption={<p className="text-xs font-medium uppercase tracking-[0.18em] text-ink">{item.label}</p>}
+                />
               ))}
             </div>
 
@@ -672,14 +643,8 @@ function FeaturedSessions() {
                 }`}
               >
                 {session.image ? (
-                  <div className="relative mb-5 flex min-h-[320px] items-center justify-center overflow-hidden rounded-sm bg-ink md:mb-0">
-                    <Image
-                      src={session.image}
-                      alt={session.imageAlt ?? session.title}
-                      fill
-                      sizes="(min-width: 1024px) 28vw, 100vw"
-                      className="object-contain"
-                    />
+                  <div className="mb-5 self-start md:mb-0">
+                    <SpeakingPhoto src={session.image} alt={session.imageAlt ?? session.title} sizes="(min-width: 1024px) 28vw, 100vw" />
                   </div>
                 ) : null}
                 <div>
@@ -793,5 +758,21 @@ function WhatsAppCta() {
         </div>
       </div>
     </section>
+  );
+}
+
+// Photo and caption have separate surfaces; natural dimensions preserve the full frame.
+function SpeakingPhoto({ src, alt, sizes, priority = false, caption }: {
+  src: StaticImageData;
+  alt: string;
+  sizes: string;
+  priority?: boolean;
+  caption?: ReactNode;
+}) {
+  return (
+    <figure className="self-start overflow-hidden rounded-sm border border-ink/10 bg-white">
+      <Image src={src} alt={alt} sizes={sizes} priority={priority} className="block h-auto w-full" />
+      {caption ? <figcaption className="border-t border-ink/10 bg-white p-5 sm:p-6">{caption}</figcaption> : null}
+    </figure>
   );
 }
