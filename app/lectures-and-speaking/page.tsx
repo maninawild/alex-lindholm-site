@@ -4,6 +4,7 @@ import { ArrowLink } from "@/components/arrow-link";
 import { SectionHeader } from "@/components/section-header";
 import { SiteHeader } from "@/components/site-header";
 import { TestimonialsSection } from "@/components/testimonials-section";
+import { getEventBySlug } from "@/data/events";
 
 const consultationUrl = "https://zcal.co/axlindholm/1hour";
 const linkedinUrl = "https://www.linkedin.com/in/axlindholm/";
@@ -248,6 +249,7 @@ export default function LecturesAndSpeakingPage() {
         </div>
       </section>
 
+      <Day42Highlight />
       <CredibilityStrip />
       <BackgroundPrograms />
       <HowSessionsWork />
@@ -258,6 +260,93 @@ export default function LecturesAndSpeakingPage() {
       <InviteCta />
       <WhatsAppCta />
     </main>
+  );
+}
+
+function Day42Highlight() {
+  const event = getEventBySlug("build-night-4-mollie-amsterdam-tech-week-2026");
+  if (!event) return null;
+
+  const eventPath = `/events/${event.slug}`;
+  const [audiencePhoto, roomPhoto, , , , , conversationPhoto, speakerPhoto] =
+    event.galleryImages;
+  const moments = [
+    { src: audiencePhoto, alt: "The DAY42 Build Night audience at Mollie in Amsterdam" },
+    { src: roomPhoto, alt: "Alex Lindholm presenting to the DAY42 Build Night audience" },
+    { src: conversationPhoto, alt: "Alex Lindholm and a DAY42 host on stage at Mollie" },
+  ];
+
+  return (
+    <section
+      id="day42-build-night"
+      aria-labelledby="day42-heading"
+      className="mx-auto max-w-7xl px-5 pb-16 sm:px-8"
+    >
+      <div className="border-t border-ink/10 pt-10">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <div>
+            <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
+              Featured event · {event.organizer}
+            </p>
+            <h2
+              id="day42-heading"
+              className="mt-4 text-3xl font-medium leading-tight tracking-[-0.02em] sm:text-4xl"
+            >
+              {event.title}
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-graphite/70">
+              {event.displayDate} · {event.location}
+            </p>
+            <p className="mt-6 text-xl font-medium leading-8 text-ink">
+              {event.talkTitle}
+            </p>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-graphite/76">
+              {event.shortDescription}
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <ArrowLink
+                href={eventPath}
+                label={`Event recap & all ${event.galleryImages.length} photos`}
+              />
+              {event.linkedInUrl ? (
+                <ArrowLink href={event.linkedInUrl} label="LinkedIn recap" variant="lineDark" />
+              ) : null}
+            </div>
+          </div>
+          <a
+            href={eventPath}
+            className="relative block aspect-[4/3] overflow-hidden rounded-sm bg-ink/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric"
+            aria-label={`See the photos and recap of ${event.title}`}
+          >
+            <Image
+              src={speakerPhoto || event.coverImage}
+              alt="Alex Lindholm speaking at DAY42 Build Night at Mollie during Amsterdam Tech Week"
+              fill
+              sizes="(min-width: 1024px) 46vw, 100vw"
+              className="object-cover object-center"
+            />
+          </a>
+        </div>
+        <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {moments.filter((photo) => photo.src).map((photo) => (
+            <a
+              key={photo.src}
+              href={eventPath}
+              className="relative block aspect-[3/2] overflow-hidden rounded-sm bg-ink/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric"
+              aria-label={photo.alt}
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="(min-width: 640px) 30vw, 100vw"
+                className="object-cover object-center"
+              />
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
