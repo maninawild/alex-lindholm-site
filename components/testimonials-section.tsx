@@ -1,5 +1,6 @@
 "use client";
 
+import { translator, type Locale } from "@/lib/i18n";
 import { useRef, useState, type KeyboardEvent } from "react";
 import { testimonials, type Testimonial } from "@/data/testimonials";
 
@@ -25,14 +26,17 @@ function getMonogram(name: string) {
 function TestimonialCard({
   testimonial,
   index,
+  locale = "en",
 }: {
   testimonial: Testimonial;
   index: number;
+  locale?: Locale;
 }) {
+  const t = translator(locale);
   return (
     <article
-      aria-label={`${testimonial.name} testimonial`}
-      aria-roledescription="slide"
+      aria-label={locale === "ru" ? `Отзыв: ${testimonial.name}` : `${testimonial.name} testimonial`}
+      aria-roledescription={locale === "ru" ? "слайд" : "slide"}
       tabIndex={-1}
       className={`flex w-[86%] shrink-0 snap-start snap-always flex-col justify-between rounded-sm border border-ink/10 bg-paper p-6 text-ink shadow-[0_18px_45px_rgba(16,19,26,0.045)] outline-none transition duration-300 focus-visible:ring-2 focus-visible:ring-electric/35 motion-reduce:transform-none motion-reduce:transition-none sm:p-7 lg:w-auto lg:snap-none lg:p-8 lg:hover:-translate-y-0.5 lg:hover:border-electric/22 lg:hover:shadow-[0_22px_55px_rgba(16,19,26,0.07)] ${
         desktopCardLayouts[index] ?? "lg:col-span-6"
@@ -42,12 +46,13 @@ function TestimonialCard({
         <div className="mb-7 flex items-center gap-3">
           <span className="h-px w-7 bg-electric/45" aria-hidden="true" />
           <p className="text-[0.68rem] font-semibold uppercase text-electric">
-            {testimonial.category}
+            {t(testimonial.category)}
           </p>
         </div>
 
-        <blockquote className="text-[1.08rem] leading-8 text-graphite/86 sm:text-lg sm:leading-8">
-          {testimonial.quote}
+        <blockquote lang={locale} className="text-[1.08rem] leading-8 text-graphite/86 sm:text-lg sm:leading-8">
+          {t(testimonial.quote)}
+          {locale === "ru" ? <span className="mt-2 block text-xs text-graphite/55">Перевод опубликованного отзыва</span> : null}
         </blockquote>
       </div>
 
@@ -61,7 +66,7 @@ function TestimonialCard({
         <div className="min-w-0">
           <p className="text-sm font-semibold text-ink">{testimonial.name}</p>
           <p className="mt-1 text-sm leading-6 text-graphite/62">
-            {testimonial.role}
+            {t(testimonial.role)}
             {testimonial.age ? `, ${testimonial.age}` : ""}
           </p>
         </div>
@@ -161,14 +166,14 @@ export function TestimonialsSection({ locale = "en" }: { locale?: "en" | "ru" })
           ref={trackRef}
           role="region"
           aria-label={ru ? "Отзывы" : "Testimonials carousel"}
-          aria-roledescription="carousel"
+          aria-roledescription={ru ? "карусель" : "carousel"}
           tabIndex={0}
           onKeyDown={handleKeyDown}
           onScroll={handleScroll}
           className="mt-10 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto overscroll-x-contain pb-3 outline-none scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] focus-visible:ring-2 focus-visible:ring-electric/35 focus-visible:ring-offset-4 focus-visible:ring-offset-bone [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-12 lg:gap-5 lg:overflow-visible lg:pb-0 lg:focus-visible:ring-0"
         >
           {testimonials.map((testimonial, index) => (
-            <TestimonialCard
+            <TestimonialCard locale={locale}
               testimonial={testimonial}
               index={index}
               key={testimonial.name}

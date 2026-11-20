@@ -1,5 +1,6 @@
 "use client";
 
+import { localizedHref, publicLocaleRoutes } from "@/lib/i18n";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -34,10 +35,10 @@ export function SiteHeader({
   transparentAtTop = true,
   privateZone = false,
   contentLanguage,
-  languageSwitch,
+  languageSwitch: suppliedLanguageSwitch,
 }: SiteHeaderProps) {
   const pathname = usePathname();
-  const currentLanguage = contentLanguage || (pathname.startsWith("/ru/") ? "ru" : "en");
+  const currentLanguage = contentLanguage || ((pathname === "/ru" || pathname.startsWith("/ru/")) ? "ru" : "en");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -50,7 +51,9 @@ export function SiteHeader({
 
   const ru = currentLanguage === "ru";
   const labels: Record<string, string> = { "For hiring teams": "Для работодателей", Experience: "Опыт", Work: "Проекты", Speaking: "Лекции", Trips: "Поездки", Articles: "Статьи", Media: "Медиа", Collaborate: "Сотрудничество", Private: "Закрытый раздел", Giving: "Поддержать", LinkedIn: "LinkedIn" };
-  const localizedNavItems = navItems.map(item => ({ ...item, label: ru ? labels[item.label] : item.label, href: ru && ["/trips", "/donate"].includes(item.href) ? `/ru${item.href}` : item.href }));
+  const localizedNavItems = navItems.map(item => ({ ...item, label: ru ? labels[item.label] : item.label, href: localizedHref(item.href, currentLanguage) }));
+  const basePath = pathname.replace(/^\/ru(?=\/|$)/, "") || "/";
+  const languageSwitch = suppliedLanguageSwitch ?? ((publicLocaleRoutes as readonly string[]).includes(basePath) ? {href: ru ? basePath : localizedHref(basePath,"ru"), label:ru?"EN":"RU", ariaLabel:ru?"Read this page in English":"Читать эту страницу по-русски"}:undefined);
 
   const isSolid = !transparentAtTop || isScrolled || isMenuOpen;
 
@@ -67,7 +70,7 @@ export function SiteHeader({
     >
       <nav className="pointer-events-auto mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8 md:py-4">
         <Link
-          href="/#top"
+          href={localizedHref("/#top", currentLanguage)}
           className={`text-lg font-bold tracking-[-0.01em] transition ${
             isSolid ? "text-ink" : "text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.82)]"
           }`}

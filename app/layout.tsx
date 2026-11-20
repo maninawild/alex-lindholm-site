@@ -1,3 +1,5 @@
+import { getArticleBySlug } from "@/lib/articles";
+import { headers } from "next/headers";
 import { ConversionEvents } from "@/components/conversion-events";
 import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
@@ -81,13 +83,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const requestHeaders = await headers();
+  const pathname = requestHeaders.get("x-site-pathname") || "/";
+  const articleLanguage = pathname.startsWith("/articles/") ? getArticleBySlug(pathname.split("/")[2])?.language : undefined;
+  const locale = articleLanguage ?? (requestHeaders.get("x-site-locale") === "ru" ? "ru" : "en");
   return (
-    <html lang="en" className={`${inter.variable} ${newsreader.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${newsreader.variable}`}>
       <body>
         <script
           type="application/ld+json"

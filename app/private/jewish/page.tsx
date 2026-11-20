@@ -132,8 +132,8 @@ const articles = [
               <div className="mt-9 max-w-2xl border-l border-white/20 pl-5 text-sm leading-6 text-white/58">
                 {t("Shared personally with you. Please do not copy, forward or redistribute this content without permission.", "Эти материалы переданы вам лично. Пожалуйста, не копируйте и не распространяйте их без разрешения.")}</div>
               <nav aria-label={t("Private section navigation", "Навигация закрытого раздела")} className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold">
-                <Link href="/private" className="text-white/68 transition hover:text-white">
-                  {t("← Private overview", "← Обзор закрытого раздела (EN)")}</Link>
+                <Link href={locale === "ru" ? "/private?lang=ru" : "/private"} className="text-white/68 transition hover:text-white">
+                  {t("← Private overview", "← Обзор закрытого раздела")}</Link>
                 <Link href="/private#development-ideas" className="text-white/68 transition hover:text-white">
                   {t("Explore New Development Ideas →", "Новые идеи проектов (EN) →")}</Link>
               </nav>

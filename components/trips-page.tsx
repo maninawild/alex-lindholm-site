@@ -22,8 +22,8 @@ const sharedTrips = [
 const copy = {
   en: {
     switchHref: "/ru/trips", switchLabel: "RU", switchAria: "Open the Russian version",
-    eyebrow: "Trips with Alex", title: "See places through more than one lens.",
-    intro: "Small-group trips shaped by history, culture, nature, people and the conversations that happen along the way.",
+    eyebrow: "Trips with a Jewish Accent", title: "See places through more than one lens.",
+    intro: "Small, distinctive trips lasting a day or several days, bringing together history, culture, nature and people. The conversations between participants along the way are among the most important and memorable parts of the experience. We use informal education methods so you can feel at ease and learn naturally.",
     navUpcoming: "Next trip", navPast: "Past experiences", navFormats: "Formats",
     upcomingEyebrow: "Coming in October 2026", upcomingTitle: "Kröller-Müller & De Hoge Veluwe",
     upcomingText: "A day around modern art, architecture and one of the Netherlands’ most distinctive landscapes. Full details and the date will follow.",
@@ -53,9 +53,9 @@ const copy = {
     ],
     formatsEyebrow: "Formats",
     formatsTitle: "A trip can be a day out or the beginning of a project.",
-    formats: ["Day trips", "Culture & history", "Nature", "Investment & discovery trips"],
+    formats: ["Day trips in and around the Netherlands", "Three- to five-day trips across Europe", "Author-led tours of my cities: Stockholm, Berlin, The Hague, Rotterdam, New York and Boston", "Yacht trips in a private group", "Investment trips to different regions"],
     backgroundTitle: "Why travel with me",
-    backgroundText: ["I trained as a historian and have worked across education, communities, startups and investment. I connect the place to the wider context, introduce people and leave room for the unexpected."],
+    backgroundText: ["I trained as a historian, though I would rather explore ruins than an archive. I have worked in informal education and Jewish communities, including closed and religious ones. Today I consult startups and work with private investments.", "I connect places to the wider world and their distinctive character, introduce participants to one another and leave room for guests to contribute. I want people to leave with a feeling tied to the place, useful new contacts and a pleasant aftertaste."],
     finalTitle: "Want to join the next trip?", finalText: "Message me on WhatsApp. Payment and ticketing will be added later.", finalCta: "Message Alex", home: "Home",
   },
   ru: {
@@ -114,8 +114,8 @@ export function TripsPage({ locale }: TripsPageProps) {
   const t = copy[locale];
 
   return (
-    <main className="bg-white text-ink">
-      <SiteHeader languageSwitch={{ href: t.switchHref, label: t.switchLabel, ariaLabel: t.switchAria }} />
+    <main lang={locale} className="bg-white text-ink">
+      <SiteHeader contentLanguage={locale} languageSwitch={{ href: t.switchHref, label: t.switchLabel, ariaLabel: t.switchAria }} />
 
       <section className="relative min-h-[84svh] overflow-hidden bg-ink text-white">
         <Image src="/media/alex/alex-travel-01.jpg" alt={locale === "ru" ? "Алекс Линдхольм в путешествии" : "Alex Lindholm travelling in Tallinn"} fill priority sizes="100vw" className="object-cover object-[55%_50%]" />

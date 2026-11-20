@@ -1,3 +1,4 @@
+import { translator } from "@/lib/i18n";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { privateIdeas } from "@/data/private-ideas";
@@ -9,23 +10,24 @@ export const metadata: Metadata = {
   description: "An area shared personally by Alex Lindholm.",
 };
 
-export default function PrivateLandingPage() {
+export default async function PrivateLandingPage({searchParams}:{searchParams:Promise<{lang?:string}>}) {
+ const locale=(await searchParams).lang === "ru" ? "ru" : "en"; const t=translator(locale);
   return (
-    <main className="bg-paper px-5 py-16 sm:px-8 sm:py-20">
+    <main lang={locale} className="bg-paper px-5 py-16 sm:px-8 sm:py-20">
       <div className="mx-auto w-full max-w-5xl">
         <section className="max-w-xl">
           <h1 className="font-serif text-5xl font-medium tracking-[-0.045em] text-ink sm:text-6xl">
-            Private
+            {locale === "ru" ? "Закрытый раздел" : "Private"}
           </h1>
-          <nav aria-label="Private sections" className="mt-10 grid gap-3">
+          <nav aria-label={locale === "ru" ? "Разделы" : "Private sections"} className="mt-10 grid gap-3">
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex min-h-14 items-center justify-between rounded-md border border-ink/12 bg-white px-5 text-base font-semibold text-ink transition hover:border-copper hover:text-copper">
-              Private Events <span aria-hidden="true">↗</span>
+              {locale === "ru" ? "Частные мероприятия" : "Private Events"} <span aria-hidden="true">↗</span>
             </a>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex min-h-14 items-center justify-between rounded-md border border-ink/12 bg-white px-5 text-base font-semibold text-ink transition hover:border-copper hover:text-copper">
-              Travel &amp; Excursions <span aria-hidden="true">↗</span>
+              {locale === "ru" ? "Поездки и экскурсии" : "Travel & Excursions"} <span aria-hidden="true">↗</span>
             </a>
-            <Link href="/private/jewish" className="flex min-h-14 items-center justify-between rounded-md bg-ink px-5 text-base font-semibold text-white transition hover:bg-graphite">
-              Jewish Experience &amp; Projects <span aria-hidden="true">→</span>
+            <Link href={locale === "ru" ? "/private/jewish?lang=ru" : "/private/jewish"} className="flex min-h-14 items-center justify-between rounded-md bg-ink px-5 text-base font-semibold text-white transition hover:bg-graphite">
+              {locale === "ru" ? "Еврейский опыт и проекты" : "Jewish Experience & Projects"} <span aria-hidden="true">→</span>
             </Link>
           </nav>
         </section>
@@ -38,15 +40,15 @@ export default function PrivateLandingPage() {
           <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-electric/25 blur-3xl" />
           <div className="relative">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-electric">
-              Private concepts
+              {locale === "ru" ? "Закрытые концепции · EN" : "Private concepts"}
             </p>
             <h2
               id="development-ideas-title"
               className="mt-3 font-serif text-4xl font-medium tracking-[-0.04em] sm:text-5xl"
             >
-              New Development Ideas
+              {locale === "ru" ? "Новые идеи проектов" : "New Development Ideas"}
             </h2>
-            <nav aria-label="New development ideas" className="mt-8 grid gap-3 md:grid-cols-3">
+            <nav aria-label={locale === "ru" ? "Новые идеи проектов" : "New development ideas"} className="mt-8 grid gap-3 md:grid-cols-3">
               {privateIdeas.map((idea, index) => (
                 <Link
                   key={idea.slug}
@@ -54,7 +56,7 @@ export default function PrivateLandingPage() {
                   className="group flex min-h-44 flex-col justify-between rounded-sm border border-white/14 bg-white/[0.065] p-5 transition hover:-translate-y-0.5 hover:border-electric/65 hover:bg-white/[0.1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric"
                 >
                   <span className="flex items-center justify-between gap-3 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-white/42">
-                    <span>{idea.status}</span>
+                    <span>{locale === "ru" ? "Материалы на английском" : idea.status}</span>
                     <span aria-hidden="true">0{index + 1}</span>
                   </span>
                   <span className="flex items-end justify-between gap-4">

@@ -1,5 +1,7 @@
 "use client";
 
+import { translator, type Locale } from "@/lib/i18n";
+import { videoEnglish } from "@/lib/i18n/videos";
 import { useState } from "react";
 import {
   type VideoItem,
@@ -14,14 +16,18 @@ const languageLabel: Record<VideoItem["language"], string> = {
 
 type YouTubeVideoCardProps = {
   video: VideoItem;
+  locale?: Locale;
   variant?: "media" | "homepage";
 };
 
-export function YouTubeVideoCard({ video, variant = "media" }: YouTubeVideoCardProps) {
+export function YouTubeVideoCard({ video, variant = "media", locale = "en" }: YouTubeVideoCardProps) {
+  const ru = locale === "ru";
+  const t = translator(locale);
+  const title = ru ? video.title : videoEnglish[video.youtubeId]?.title ?? video.title;
   const [isPlaying, setIsPlaying] = useState(false);
   const isHomepage = variant === "homepage";
   const thumbnail = isHomepage ? video.homepageThumbnail : undefined;
-  const description = isHomepage ? video.homepageDescription ?? video.description : video.description;
+  const description = ru ? video.description : videoEnglish[video.youtubeId]?.description ?? video.homepageDescription ?? video.description;
 
   return (
     <article className="overflow-hidden rounded-sm border border-ink/10 bg-bone shadow-quiet lg:grid lg:grid-cols-[minmax(0,1.28fr)_minmax(20rem,0.72fr)]">
@@ -31,13 +37,13 @@ export function YouTubeVideoCard({ video, variant = "media" }: YouTubeVideoCardP
             type="button"
             onClick={() => setIsPlaying(true)}
             className="group absolute inset-0 block h-full w-full text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-bone"
-            aria-label={`Play ${video.title} on YouTube`}
+            aria-label={ru ? `Смотреть «${title}» на YouTube` : `Play ${title} on YouTube`}
           >
             {/* This supplied local video cover is intentionally rendered without optimization. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={thumbnail.src}
-              alt={thumbnail.alt}
+              alt={title}
               className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
             />
             <span className="absolute inset-0 bg-ink/15 transition group-hover:bg-ink/25" />
@@ -49,7 +55,7 @@ export function YouTubeVideoCard({ video, variant = "media" }: YouTubeVideoCardP
           <iframe
             className="absolute inset-0 h-full w-full"
             src={`${youtubeEmbedUrl(video.youtubeId)}?autoplay=${isHomepage ? "1" : "0"}&rel=0&modestbranding=1&playsinline=1`}
-            title={video.title}
+            title={title}
             loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
@@ -61,13 +67,13 @@ export function YouTubeVideoCard({ video, variant = "media" }: YouTubeVideoCardP
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.68rem] font-medium uppercase tracking-[0.16em] text-copper">
           {video.series ? <span>{video.series}</span> : null}
           {video.series ? <span aria-hidden="true">·</span> : null}
-          <span>{isHomepage ? video.homepageLanguageNote ?? languageLabel[video.language] : languageLabel[video.language]}</span>
+          <span>{ru ? (video.language === "ru" ? "Видео на русском" : "Видео на английском") : `${languageLabel[video.language]} audio${video.homepageLanguageNote?.includes("English CC") ? " · English CC" : ""}`}</span>
           <span aria-hidden="true">·</span>
-          <span>{video.type}</span>
+          <span>{ru ? ({Interview:"Интервью",Conversation:"Беседа",Talk:"Выступление",Panel:"Дискуссия",Podcast:"Подкаст"}[video.type]) : video.type}</span>
         </div>
 
         <h3 className="mt-3 text-xl font-medium leading-tight tracking-[-0.015em] text-ink sm:text-2xl">
-          {video.title}
+          {title}
         </h3>
         <p className="mt-3 text-sm leading-6 text-graphite/74 sm:text-base">
           {description}
@@ -76,10 +82,10 @@ export function YouTubeVideoCard({ video, variant = "media" }: YouTubeVideoCardP
         <div className="mt-auto flex flex-wrap gap-2 pt-5">
           {video.topics.slice(0, 3).map((topic) => (
             <span
-              key={topic}
+              key={t(topic)}
               className="rounded-full border border-ink/10 px-3 py-1 text-xs text-graphite/70"
             >
-              {topic}
+              {t(topic)}
             </span>
           ))}
         </div>
@@ -90,7 +96,7 @@ export function YouTubeVideoCard({ video, variant = "media" }: YouTubeVideoCardP
           rel="noopener noreferrer"
           className="mt-5 inline-flex w-fit text-sm font-medium text-ink underline decoration-ink/20 underline-offset-8 transition hover:decoration-ink"
         >
-          Смотреть на YouTube →
+          {ru ? "Смотреть на YouTube →" : "Watch on YouTube →"}
         </a>
       </div>
     </article>
