@@ -12,7 +12,7 @@ export default async function JewishPrivatePage({ searchParams }: { searchParams
   const locale = (await searchParams).lang === "ru" ? "ru" : "en";
   const t = (en: string, ru: string) => locale === "ru" ? ru : en;
   const timeline = [
-  ["2012–2013", t("Program Manager, Hillel St. Petersburg", "Менеджер программ, «Гилель» Санкт-Петербурга")],
+  ["2011–2013", t("Program Manager, Hillel St. Petersburg", "Менеджер программ, «Гилель» Санкт-Петербурга")],
   ["2013–2015", t("Program Director, Hillel St. Petersburg", "Программный директор, «Гилель» Санкт-Петербурга")],
   ["2013–2015", t("Curator, madrichim leadership school and recurring education programs", "Куратор школы мадрихов и регулярных образовательных программ")],
   ["2015–2016", t("Chief Curator, Maximum Jewish Leadership Program", "Главный куратор еврейской лидерской программы «Максимум»")],
@@ -122,7 +122,7 @@ const articles = [
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_90%,rgba(37,99,235,0.18),transparent_32%)]" />
           <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.08fr_0.72fr] lg:items-end lg:py-28">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/55">{t("Selected record · 2012–present", "Избранный опыт · с 2012 года")}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/55">{t("Selected record · 2011–present", "Избранный опыт · с 2011 года")}</p>
               <h1 className="mt-5 max-w-4xl font-serif text-5xl font-medium leading-[0.98] tracking-[-0.045em] text-balance sm:text-7xl">
                 {t("Jewish Experience & Projects", "Еврейский опыт и проекты")}
               </h1>
@@ -166,7 +166,7 @@ const articles = [
               <p>
                 {t("The recurring theme is practical community infrastructure: creating formats where identity, learning, leadership, culture, and trusted relationships reinforce one another.", "Общая задача этой работы — создавать в общине условия для обучения, культурной жизни, развития лидерства и доверительных отношений, помогая участникам осмыслять свою идентичность.")}</p>
               <p>
-                {t("Since 2023, Alex has served as an adviser to the ", "С 2023 года Алекс — советник")} {" "}<a href="https://globaljewry.org/about-us/alex-lindholm/" target="_blank" rel="noopener noreferrer" className="font-semibold text-electric hover:underline">{t("Global Jewry initiative ↗", "инициативы Global Jewry ↗")}</a>{t(", aligning with its mission of building the relationships, shared awareness, and mutual trust that make collective action possible. This role extends more than a decade of work across international and local Jewish organisations in six countries, including mentoring counter-hate media initiatives.", ". Её миссия — развивать связи, взаимопонимание и доверие, необходимые для совместных действий. Эта роль продолжает более чем десятилетнюю работу с международными и местными еврейскими организациями в шести странах, включая менторство медийных инициатив против ненависти.")}</p>
+                {t("Since 2023, Alex has been a member of the Advisory Board of the ", "С 2023 года Алекс входит в Advisory Board")} {" "}<a href="https://globaljewry.org/about-us/alex-lindholm/" target="_blank" rel="noopener noreferrer" className="font-semibold text-electric hover:underline">{t("Global Jewry initiative ↗", "инициативы Global Jewry ↗")}</a>{t(", aligning with its mission of building the relationships, shared awareness, and mutual trust that make collective action possible. This role extends more than a decade of work across international and local Jewish organisations in six countries, including mentoring counter-hate media initiatives.", ". Её миссия — развивать связи, взаимопонимание и доверие, необходимые для совместных действий. Эта роль продолжает более чем десятилетнюю работу с международными и местными еврейскими организациями в шести странах, включая менторство медийных инициатив против ненависти.")}</p>
             </div>
           </div>
         </section>
@@ -202,8 +202,8 @@ const articles = [
                 <p>{t("Program leadership built on earlier work with the madrichim school and recurring educational initiatives at Hillel St. Petersburg. Responsibilities recorded in the source materials include mentoring participants, helping ideas become workable programs, coordinating delivery, and supporting community engagement.", "Руководство программой продолжило работу со школой мадрихов и регулярными образовательными инициативами петербургского «Гилеля». В задачи входили менторство участников, помощь в разработке программ, координация их реализации и вовлечение в жизнь общины.")}</p>
                 <a href="https://hillel.ru/maximum/" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex font-semibold text-electric hover:underline">{t("Maximum program reference ↗", "О программе «Максимум» ↗")}</a>
               </PrivateProjectCard>
-              <PrivateProjectCard eyebrow={t("Community", "Община")} title={t("Hillel St. Petersburg", "«Гилель» Санкт-Петербурга")} summary={t("Five years across program management, program direction, education and participant-led initiatives.", "Пять лет работы: управление программами, образование и инициативы участников.")}>
-                <p>{t("From 2012 to 2016, Alex moved through program management, program direction, and leadership-program curation. The work covered event and program planning, community communications, stakeholder coordination, volunteer and participant support, and the development of educational and social projects.", "В 2012–2016 годах Алекс работал менеджером и программным директором, затем курировал лидерские программы. Он занимался планированием мероприятий и программ, коммуникациями общины, взаимодействием с партнёрами, поддержкой волонтёров и участников, развитием образовательных и социальных проектов.")}</p>
+              <PrivateProjectCard eyebrow={t("Community", "Община")} title={t("Hillel St. Petersburg", "«Гилель» Санкт-Петербурга")} summary={t("Program management, program direction, education and participant-led initiatives, 2011–2016.", "Управление программами, образование и инициативы участников, 2011–2016 годы.")}>
+                <p>{t("From 2011 to 2016, Alex moved through program management, program direction, and leadership-program curation. The work covered event and program planning, community communications, stakeholder coordination, volunteer and participant support, and the development of educational and social projects.", "В 2011–2016 годах Алекс работал менеджером и программным директором, затем курировал лидерские программы. Он занимался планированием мероприятий и программ, коммуникациями общины, взаимодействием с партнёрами, поддержкой волонтёров и участников, развитием образовательных и социальных проектов.")}</p>
                 <a href="https://hillel.ru/city/spb/" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex font-semibold text-electric hover:underline">Hillel St. Petersburg ↗</a>
               </PrivateProjectCard>
               <PrivateProjectCard eyebrow={t("Culture", "Культура")} title={t("Festivals, camps and public formats", "Фестивали, лагеря и открытые мероприятия")} summary={t("A portfolio of youth, cultural and community projects developed between 2012 and 2015.", "Молодёжные, культурные и общинные проекты 2012–2015 годов.")}>
