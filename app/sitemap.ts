@@ -1,3 +1,4 @@
+import { publicLocaleRoutes, localizedHref } from "@/lib/i18n";
 import type { MetadataRoute } from "next";
 import { events } from "@/data/events";
 import { baseUrl, seoPages } from "@/data/seo-pages";
@@ -12,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = Array.from(new Set([
     "",
     "/links",
+    ...publicLocaleRoutes.map(path => localizedHref(path,"ru")),
     "/donate",
     "/donate/anya-tishinskaya",
     "/ru/donate",
@@ -36,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const publicPages: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${baseUrl}${route}`,
+    ...((publicLocaleRoutes as readonly string[]).includes(route || "/") || publicLocaleRoutes.some(path => localizedHref(path,"ru")===route) ? {alternates:{languages:{en: `${baseUrl}${route.replace(/^\/ru(?=\/|$)/,"") || "/"}`,ru:`${baseUrl}${localizedHref(route.replace(/^\/ru(?=\/|$)/,"") || "/","ru")}`}}} : {}),
     changeFrequency: route === "" ? "weekly" : "monthly",
     priority: route === "" ? 1 : 0.75,
   }));

@@ -1,10 +1,11 @@
+import { localizeMetadata } from "@/lib/i18n/metadata";
 import type { Metadata } from "next";
 import { MediaPageContent } from "@/components/media-page";
 import { baseUrl, seoPages } from "@/data/seo-pages";
 
 const page = seoPages.media;
 
-export const metadata: Metadata = {
+const original: Metadata = {
   title: "Media | Commentary on AI, Startups & Human-Centered Technology",
   description: page.description,
   alternates: { canonical: `${baseUrl}${page.path}` },
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const metadata = localizeMetadata(original, "/media", "en");
+
 export default function MediaPage() {
-  return <MediaPageContent />;
+  return <MediaPageContent locale="en" />;
 }

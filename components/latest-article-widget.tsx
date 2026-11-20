@@ -1,10 +1,13 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+import { translator, localizedHref } from "@/lib/i18n";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 
 type LatestArticle = {
+  language?: string;
   title: string;
   href: string;
   date?: string;
@@ -15,6 +18,9 @@ type LatestArticle = {
 };
 
 export function LatestArticleWidget() {
+  const pathname=usePathname();
+  const locale=pathname === "/ru" || pathname.startsWith("/ru/") ? "ru" : "en";
+  const t=translator(locale);
   const [article, setArticle] = useState<LatestArticle | null>(null);
   const [target, setTarget] = useState<Element | null>(null);
 
@@ -29,7 +35,7 @@ export function LatestArticleWidget() {
   if (!target || !article) return null;
 
   const published = article.date
-    ? new Intl.DateTimeFormat("en-GB", {
+    ? new Intl.DateTimeFormat(locale === "ru" ? "ru-RU" : "en-GB", {
         day: "numeric",
         month: "long",
         year: "numeric",
@@ -52,30 +58,30 @@ export function LatestArticleWidget() {
           </div>
           <div className="p-6 sm:p-8">
             <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copper">
-              Latest from Alex
+              {t("Latest from Alex")}
             </p>
-            <h2 id="latest-writing-heading" className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.025em] text-balance sm:text-4xl">
+            <h2 lang={article.language} id="latest-writing-heading" className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.025em] text-balance sm:text-4xl">
               {article.title}
             </h2>
             <p className="mt-3 text-sm text-graphite/58">
               {[published, article.source].filter(Boolean).join(" · ")}
             </p>
             <p className="mt-5 max-w-3xl text-base leading-7 text-graphite/74">
-              {article.excerpt}
+              <span lang={article.language}>{article.excerpt}</span>
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a
                 href={article.href}
                 className="inline-flex min-h-11 items-center justify-center gap-3 rounded-md border border-electric bg-electric px-5 text-sm font-medium text-white transition hover:bg-blue-700"
               >
-                <span>Read article</span>
+                <span>{t("Read article")}</span>
                 <span aria-hidden="true">→</span>
               </a>
               <a
-                href="/articles"
+                href={localizedHref("/articles",locale)}
                 className="inline-flex min-h-11 items-center justify-center gap-3 rounded-md border border-ink/15 px-5 text-sm font-medium text-ink transition hover:border-electric hover:bg-electric/5"
               >
-                <span>View all articles</span>
+                <span>{t("View all articles")}</span>
                 <span aria-hidden="true">→</span>
               </a>
             </div>

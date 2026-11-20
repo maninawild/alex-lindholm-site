@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { connection } from "next/server";
 import { PrivatePageShell } from "@/components/private/private-page-shell";
 import { PrivateProjectCard } from "@/components/private/private-project-card";
@@ -132,10 +131,10 @@ const articles = [
               <div className="mt-9 max-w-2xl border-l border-white/20 pl-5 text-sm leading-6 text-white/58">
                 {t("Shared personally with you. Please do not copy, forward or redistribute this content without permission.", "Эти материалы переданы вам лично. Пожалуйста, не копируйте и не распространяйте их без разрешения.")}</div>
               <nav aria-label={t("Private section navigation", "Навигация закрытого раздела")} className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold">
-                <Link href="/private" className="text-white/68 transition hover:text-white">
-                  {t("← Private overview", "← Обзор закрытого раздела (EN)")}</Link>
-                <Link href="/private#development-ideas" className="text-white/68 transition hover:text-white">
-                  {t("Explore New Development Ideas →", "Новые идеи проектов (EN) →")}</Link>
+                <a href={locale === "ru" ? "/private?lang=ru" : "/private"} className="text-white/68 transition hover:text-white">
+                  {t("← Private overview", "← Обзор закрытого раздела")}</a>
+                <a href="/private#development-ideas" className="text-white/68 transition hover:text-white">
+                  {t("Explore New Development Ideas →", "Новые идеи проектов (EN) →")}</a>
               </nav>
             </div>
             <div className="relative min-h-[300px] overflow-hidden rounded-sm border border-white/10 bg-white/5 shadow-[0_28px_80px_rgba(0,0,0,0.28)] sm:min-h-[390px]">
@@ -219,8 +218,8 @@ const articles = [
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">{t("International exchange", "Международные обмены")}</p>
                 <h2 className="mt-4 font-serif text-4xl font-medium tracking-[-0.035em] sm:text-5xl">{t("Erasmus+ Exchange Projects", "Проекты молодёжных обменов Erasmus+")}</h2>
                 <p className="mt-5 max-w-md text-base leading-7 text-graphite/66">{t("A four-project sequence spanning Germany, Russia, Ukraine and Israel, with history and intercultural cooperation as shared foundations.", "Четыре проекта с участниками из Германии, России, Украины и Израиля. Общие темы — история и межкультурное сотрудничество.")}</p>
-                <Link href="/private/ideas/youth-exchange" className="mt-6 inline-flex font-semibold text-electric hover:underline">
-                  {t("Explore Youth Exchange Ideas →", "Идеи молодёжных обменов (EN) →")}</Link>
+                <a href="/private/ideas/youth-exchange" className="mt-6 inline-flex font-semibold text-electric hover:underline">
+                  {t("Explore Youth Exchange Ideas →", "Идеи молодёжных обменов (EN) →")}</a>
               </div>
               <div className="border-b border-ink/12">
                 {erasmusProjects.map((project) => (
@@ -269,7 +268,7 @@ const articles = [
               {t("New Development Ideas", "Новые идеи проектов")}</h2>
             <nav aria-label={t("New development ideas", "Новые идеи проектов")} className="mt-8 grid gap-3 md:grid-cols-3">
               {privateIdeas.map((idea, index) => (
-                <Link
+                <a
                   key={idea.slug}
                   href={`/private/ideas/${idea.slug}`}
                   className="group flex min-h-44 flex-col justify-between rounded-sm border border-white/14 bg-white/[0.065] p-5 transition hover:-translate-y-0.5 hover:border-electric/65 hover:bg-white/[0.1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric"
@@ -282,7 +281,7 @@ const articles = [
                     <span className="font-serif text-2xl font-medium leading-tight tracking-[-0.025em]">{idea.title}</span>
                     <span className="shrink-0 text-electric transition group-hover:translate-x-1" aria-hidden="true">→</span>
                   </span>
-                </Link>
+                </a>
               ))}
             </nav>
           </div>

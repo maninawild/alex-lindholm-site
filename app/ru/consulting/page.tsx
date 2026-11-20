@@ -1,0 +1,24 @@
+import { localizeMetadata } from "@/lib/i18n/metadata";
+import type { Metadata } from "next";
+import { SeoLandingPage } from "@/components/seo-landing-page";
+import { baseUrl, seoPages } from "@/data/seo-pages";
+
+const page = seoPages.consulting;
+
+const original: Metadata = {
+  title: "Consulting | Venture Strategy & Ecosystem Design",
+  description: page.description,
+  alternates: { canonical: `${baseUrl}${page.path}` },
+  openGraph: {
+    title: "Consulting | Alex Lindholm",
+    description: page.description,
+    url: page.path,
+    type: "profile",
+  },
+};
+
+export const metadata = localizeMetadata(original, "/consulting", "ru");
+
+export default function ConsultingPage() {
+  return <SeoLandingPage pageKey="consulting" locale="ru" />;
+}

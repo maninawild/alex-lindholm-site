@@ -1,10 +1,11 @@
+import { localizeMetadata } from "@/lib/i18n/metadata";
 import type { Metadata } from "next";
 import { SeoLandingPage } from "@/components/seo-landing-page";
 import { baseUrl, seoPages } from "@/data/seo-pages";
 
 const page = seoPages.startupMentor;
 
-export const metadata: Metadata = {
+const original: Metadata = {
   title: "Startup Mentor | Founder Crash-Test & Investor Readiness",
   description: page.description,
   alternates: { canonical: `${baseUrl}${page.path}` },
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const metadata = localizeMetadata(original, "/startup-mentor", "en");
+
 export default function StartupMentorPage() {
-  return <SeoLandingPage pageKey="startupMentor" />;
+  return <SeoLandingPage pageKey="startupMentor" locale="en" />;
 }

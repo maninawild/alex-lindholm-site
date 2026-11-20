@@ -1,10 +1,11 @@
+import { localizeMetadata } from "@/lib/i18n/metadata";
 import type { Metadata } from "next";
 import { SeoLandingPage } from "@/components/seo-landing-page";
 import { baseUrl, seoPages } from "@/data/seo-pages";
 
 const page = seoPages.humanCenteredAi;
 
-export const metadata: Metadata = {
+const original: Metadata = {
   title: "Human-Centered AI | Responsible AI & Digital Humanism",
   description: page.description,
   alternates: { canonical: `${baseUrl}${page.path}` },
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const metadata = localizeMetadata(original, "/human-centered-ai", "en");
+
 export default function HumanCenteredAiPage() {
-  return <SeoLandingPage pageKey="humanCenteredAi" />;
+  return <SeoLandingPage pageKey="humanCenteredAi" locale="en" />;
 }

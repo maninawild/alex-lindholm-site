@@ -1,5 +1,6 @@
 "use client";
 
+import { translator, type Locale } from "@/lib/i18n";
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import { articleLanguages, type ArticleLanguage } from "@/data/article-taxonomy";
@@ -7,6 +8,7 @@ import type { ArticleSummary } from "@/lib/articles";
 
 type ArticleLibraryProps = {
   articles: ArticleSummary[];
+  locale?: Locale;
 };
 
 const languageOptions = [
@@ -26,10 +28,11 @@ const featuredTopics = [
   "Cities & Communities",
 ];
 
-export function ArticleLibrary({ articles }: ArticleLibraryProps) {
+export function ArticleLibrary({ articles, locale = "en" }: ArticleLibraryProps) {
+  const t=translator(locale);
   const [query, setQuery] = useState("");
   const [language, setLanguage] = useState<(typeof languageOptions)[number]["value"]>("all");
-  const [tag, setTag] = useState("All");
+  const [tag, setTag] = useState(t("All"));
 
   const topicTags = useMemo(() => {
     const allTags = Array.from(new Set([...featuredTopics, ...articles.flatMap((article) => article.tags)]));
@@ -41,10 +44,12 @@ export function ArticleLibrary({ articles }: ArticleLibraryProps) {
 
     return articles.filter((article) => {
       const matchesLanguage = language === "all" || article.language === language;
-      const matchesTag = tag === "All" || article.tags.includes(tag) || article.category === tag;
+      const matchesTag = tag === t("All") || article.tags.includes(tag) || article.category === tag;
       const searchable = [
         article.title,
         article.category,
+        t(article.category),
+        ...article.tags.map(t),
         article.language,
         article.metaDescription,
         article.source,
@@ -56,17 +61,17 @@ export function ArticleLibrary({ articles }: ArticleLibraryProps) {
 
       return matchesLanguage && matchesTag && (!normalizedQuery || searchable.includes(normalizedQuery));
     });
-  }, [articles, language, query, tag]);
+  }, [articles, language, query, tag, locale]);
 
   const hasRussianArticles = articles.some((article) => article.language === "ru");
   const emptyTitle =
     language === "ru" && !hasRussianArticles
-      ? "Russian articles will appear here after Telegram import."
-      : "No articles match these filters.";
+      ? t("Russian articles will appear here after Telegram import.")
+      : t("No articles match these filters.");
   const emptyText =
     language === "ru" && !hasRussianArticles
-      ? "The Telegram import structure is prepared, but no Russian posts have been imported yet."
-      : "Try All languages, clear the search, or choose another topic tag.";
+      ? t("The Telegram import structure is prepared, but no Russian posts have been imported yet.")
+      : t("Try All languages, clear the search, or choose another topic tag.");
 
   return (
     <section className="bg-bone pb-20 text-ink">
@@ -75,12 +80,11 @@ export function ArticleLibrary({ articles }: ArticleLibraryProps) {
           <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
             <label className="block">
               <span className="mb-2 block text-xs font-medium uppercase tracking-[0.16em] text-graphite/52">
-                Search articles
-              </span>
+                {t("Search articles")}</span>
               <input
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
-                placeholder="Search by title, topic, tag, or description"
+                placeholder={t("Search by title, topic, tag, or description")}
                 className="min-h-12 w-full rounded-md border border-ink/12 bg-white px-4 text-sm text-ink outline-none transition placeholder:text-graphite/45 focus:border-electric"
               />
             </label>
@@ -96,7 +100,7 @@ export function ArticleLibrary({ articles }: ArticleLibraryProps) {
                       : "border-ink/12 bg-white text-graphite/74 hover:border-electric"
                   }`}
                 >
-                  {option.label}
+                  {t(option.label)}
                 </button>
               ))}
             </div>
@@ -104,21 +108,20 @@ export function ArticleLibrary({ articles }: ArticleLibraryProps) {
 
           <div className="mt-5">
             <p className="mb-2 text-xs font-medium uppercase tracking-[0.16em] text-graphite/52">
-              Featured topics
-            </p>
+              {t("Featured topics")}</p>
             <div className="relative z-10 flex gap-2 overflow-x-auto pb-1">
-              {["All topics", ...featuredTopics].map((item) => (
+              {[t("All topics"), ...featuredTopics].map((item) => (
                 <button
-                  key={item}
+                  key={t(item)}
                   type="button"
-                  onClick={() => setTag(item === "All topics" ? "All" : item)}
+                  onClick={() => setTag(item === t("All topics") ? t("All") : item)}
                   className={`relative z-10 shrink-0 rounded-md border px-3 py-2 text-xs transition ${
-                    (item === "All topics" ? tag === "All" : tag === item)
+                    (item === t("All topics") ? tag === t("All") : tag === item)
                       ? "border-ink bg-ink text-white"
                       : "border-ink/10 bg-white text-graphite/70 hover:border-ink/30"
                   }`}
                 >
-                  {item}
+                  {t(item)}
                 </button>
               ))}
             </div>
@@ -127,7 +130,7 @@ export function ArticleLibrary({ articles }: ArticleLibraryProps) {
           <div className="relative z-10 mt-3 flex gap-2 overflow-x-auto pb-1">
             {topicTags.filter((item) => !featuredTopics.includes(item)).map((item) => (
               <button
-                key={item}
+                key={t(item)}
                 type="button"
                 onClick={() => setTag(item)}
                 className={`relative z-10 shrink-0 rounded-md border px-3 py-2 text-xs transition ${
@@ -136,7 +139,7 @@ export function ArticleLibrary({ articles }: ArticleLibraryProps) {
                     : "border-ink/10 bg-white text-graphite/70 hover:border-ink/30"
                 }`}
               >
-                {item}
+                {t(item)}
               </button>
             ))}
           </div>
@@ -145,14 +148,14 @@ export function ArticleLibrary({ articles }: ArticleLibraryProps) {
         {visibleArticles.length > 0 ? (
           <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {visibleArticles.map((article) => (
-              <ArticleCard key={article.slug} article={article} />
+              <ArticleCard locale={locale} key={article.slug} article={article} />
             ))}
           </div>
         ) : (
           <div className="mt-12 max-w-2xl border-l border-ink/14 pl-6">
-            <p className="font-serif text-3xl leading-tight text-ink">{emptyTitle}</p>
+            <p className="font-serif text-3xl leading-tight text-ink">{t(emptyTitle)}</p>
             <p className="mt-4 text-base leading-7 text-graphite/72">
-              {emptyText}
+              {t(emptyText)}
             </p>
           </div>
         )}
@@ -161,7 +164,8 @@ export function ArticleLibrary({ articles }: ArticleLibraryProps) {
   );
 }
 
-function ArticleCard({ article }: { article: ArticleSummary }) {
+function ArticleCard({ article, locale }: { article: ArticleSummary; locale: Locale }) {
+ const t=translator(locale);
   const languageLabel = articleLanguages[article.language as ArticleLanguage];
 
   return (
@@ -169,7 +173,7 @@ function ArticleCard({ article }: { article: ArticleSummary }) {
       <a href={article.href} className="flex aspect-[16/10] items-center justify-center overflow-hidden border-b border-ink/8 bg-bone">
           <Image
             src={article.coverImage}
-            alt={article.coverImageAlt}
+            alt={article.coverImageAlt} lang={article.language}
             width={800}
             height={500}
             loading="lazy"
@@ -180,9 +184,9 @@ function ArticleCard({ article }: { article: ArticleSummary }) {
       <div className="flex flex-1 flex-col justify-between p-6">
         <div>
           <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.14em] text-graphite/52">
-            <span>{languageLabel}</span>
+            <span>{locale === "ru" ? (article.language === "ru" ? "Русский" : "Английский") : languageLabel}</span>
             <span>/</span>
-            <span>{formatCardDate(article.originalDate || article.date, article.language)}</span>
+            <span>{formatCardDate(article.originalDate || article.date, locale)}</span>
           </div>
           <div className="mt-3 flex flex-wrap gap-2">
             {article.source ? (
@@ -191,7 +195,7 @@ function ArticleCard({ article }: { article: ArticleSummary }) {
               </span>
             ) : null}
             <span className="rounded-md border border-ink/10 px-2.5 py-1 text-xs text-graphite/65">
-              {article.readingTime} min read
+              {article.readingTime} {t("min read")}
             </span>
           </div>
           <h2 className="mt-5 font-serif text-3xl leading-[1.08] tracking-[-0.01em] text-ink">
@@ -202,16 +206,15 @@ function ArticleCard({ article }: { article: ArticleSummary }) {
 
         <div className="mt-8">
           <div className="flex flex-wrap gap-2">
-            <span className="rounded-md bg-ink px-3 py-1.5 text-xs text-white">{article.category}</span>
+            <span className="rounded-md bg-ink px-3 py-1.5 text-xs text-white">{t(article.category)}</span>
             {article.tags.slice(0, 2).map((tag) => (
-              <span key={tag} className="rounded-md border border-ink/10 px-3 py-1.5 text-xs text-graphite/68">
-                {tag}
+              <span key={t(tag)} className="rounded-md border border-ink/10 px-3 py-1.5 text-xs text-graphite/68">
+                {t(tag)}
               </span>
             ))}
           </div>
           <a className="mt-6 inline-flex text-sm font-medium text-electric transition group-hover:translate-x-1" href={article.href}>
-            Read article
-          </a>
+            {t("Read article")}</a>
         </div>
       </div>
     </article>
@@ -219,7 +222,7 @@ function ArticleCard({ article }: { article: ArticleSummary }) {
 }
 
 function formatCardDate(date: string | undefined, language: ArticleLanguage) {
-  if (!date) return "Undated";
+  if (!date) return language === "ru" ? "Без даты" : "Undated";
 
   const monthOnly = /^\d{4}-\d{2}$/.test(date);
   return new Intl.DateTimeFormat(language === "ru" ? "ru-RU" : "en-US", {

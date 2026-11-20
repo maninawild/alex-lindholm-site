@@ -13,6 +13,7 @@ export function GET() {
   return NextResponse.json({
     article: {
       title: article.title,
+      language: article.language,
       href: article.href,
       date: article.date,
       excerpt: article.excerpt,

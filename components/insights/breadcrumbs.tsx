@@ -1,3 +1,4 @@
+import type { Locale } from "@/lib/i18n";
 import Link from "next/link";
 
 export type BreadcrumbItem = {
@@ -5,9 +6,9 @@ export type BreadcrumbItem = {
   href?: string;
 };
 
-export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
+export function Breadcrumbs({ items, locale = "en" }: { items: BreadcrumbItem[]; locale?: Locale }) {
   return (
-    <nav aria-label="Breadcrumb" className="text-sm text-graphite/62">
+    <nav aria-label={locale === "ru" ? "Навигационная цепочка" : "Breadcrumb"} className="text-sm text-graphite/62">
       <ol className="flex flex-wrap items-center gap-2">
         {items.map((item, index) => (
           <li key={`${item.label}-${index}`} className="flex items-center gap-2">

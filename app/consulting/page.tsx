@@ -1,10 +1,11 @@
+import { localizeMetadata } from "@/lib/i18n/metadata";
 import type { Metadata } from "next";
 import { SeoLandingPage } from "@/components/seo-landing-page";
 import { baseUrl, seoPages } from "@/data/seo-pages";
 
 const page = seoPages.consulting;
 
-export const metadata: Metadata = {
+const original: Metadata = {
   title: "Consulting | Venture Strategy & Ecosystem Design",
   description: page.description,
   alternates: { canonical: `${baseUrl}${page.path}` },
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const metadata = localizeMetadata(original, "/consulting", "en");
+
 export default function ConsultingPage() {
-  return <SeoLandingPage pageKey="consulting" />;
+  return <SeoLandingPage pageKey="consulting" locale="en" />;
 }
