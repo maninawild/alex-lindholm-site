@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { CopyDeterrence } from "@/components/private/copy-deterrence";
 import { PrivateNotice } from "@/components/private/private-notice";
@@ -29,12 +28,12 @@ export default async function PrivateLayout({ children }: { children: React.Reac
     <CopyDeterrence><div lang={locale} className="min-h-screen bg-paper text-ink">
       <div className="fixed inset-x-0 top-0 z-[120] h-9 border-b border-white/10 bg-[#10131a] text-white">
         <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
-          <Link href={ru ? "/private?lang=ru" : "/private"} className="truncate text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-white/78 transition hover:text-white">
+          <a href={ru ? "/private?lang=ru" : "/private"} className="truncate text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-white/78 transition hover:text-white">
             {ru ? "Лично и конфиденциально · Алекс Линдхольм" : "Private & Confidential · Alex Lindholm"}
-          </Link>
-          <Link href={ru ? "/ru" : "/"} className="shrink-0 text-[0.68rem] font-semibold text-white/62 transition hover:text-white">
+          </a>
+          <a href={ru ? "/ru" : "/"} className="shrink-0 text-[0.68rem] font-semibold text-white/62 transition hover:text-white">
             {ru ? "Основной сайт" : "Main site"}
-          </Link>
+          </a>
         </div>
       </div>
       <SiteHeader transparentAtTop={false} privateZone contentLanguage={locale} languageSwitch={jewish || landing ? { href: landing ? (ru ? "/private" : "/private?lang=ru") : (ru ? "/private/jewish" : "/private/jewish?lang=ru"), label: ru ? "EN" : "RU", ariaLabel: ru ? "Read this page in English" : "Читать эту страницу на русском" } : undefined} />

@@ -1,14 +1,13 @@
 import { translator } from "@/lib/i18n";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { privateIdeas } from "@/data/private-ideas";
 
 const whatsappUrl = "https://wa.me/message/4OIGQ3FHUZQSD1";
 
-export const metadata: Metadata = {
-  title: "Private Area",
-  description: "An area shared personally by Alex Lindholm.",
-};
+export async function generateMetadata({ searchParams }: { searchParams: Promise<{lang?: string}> }): Promise<Metadata> {
+  const ru = (await searchParams).lang === "ru";
+  return { title: ru ? "Закрытый раздел" : "Private Area", description: ru ? "Раздел, которым Алекс Линдхольм делится лично." : "An area shared personally by Alex Lindholm." };
+}
 
 export default async function PrivateLandingPage({searchParams}:{searchParams:Promise<{lang?:string}>}) {
  const locale=(await searchParams).lang === "ru" ? "ru" : "en"; const t=translator(locale);
@@ -26,9 +25,9 @@ export default async function PrivateLandingPage({searchParams}:{searchParams:Pr
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex min-h-14 items-center justify-between rounded-md border border-ink/12 bg-white px-5 text-base font-semibold text-ink transition hover:border-copper hover:text-copper">
               {locale === "ru" ? "Поездки и экскурсии" : "Travel & Excursions"} <span aria-hidden="true">↗</span>
             </a>
-            <Link href={locale === "ru" ? "/private/jewish?lang=ru" : "/private/jewish"} className="flex min-h-14 items-center justify-between rounded-md bg-ink px-5 text-base font-semibold text-white transition hover:bg-graphite">
+            <a href={locale === "ru" ? "/private/jewish?lang=ru" : "/private/jewish"} className="flex min-h-14 items-center justify-between rounded-md bg-ink px-5 text-base font-semibold text-white transition hover:bg-graphite">
               {locale === "ru" ? "Еврейский опыт и проекты" : "Jewish Experience & Projects"} <span aria-hidden="true">→</span>
-            </Link>
+            </a>
           </nav>
         </section>
 
@@ -50,7 +49,7 @@ export default async function PrivateLandingPage({searchParams}:{searchParams:Pr
             </h2>
             <nav aria-label={locale === "ru" ? "Новые идеи проектов" : "New development ideas"} className="mt-8 grid gap-3 md:grid-cols-3">
               {privateIdeas.map((idea, index) => (
-                <Link
+                <a
                   key={idea.slug}
                   href={`/private/ideas/${idea.slug}`}
                   className="group flex min-h-44 flex-col justify-between rounded-sm border border-white/14 bg-white/[0.065] p-5 transition hover:-translate-y-0.5 hover:border-electric/65 hover:bg-white/[0.1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric"
@@ -67,7 +66,7 @@ export default async function PrivateLandingPage({searchParams}:{searchParams:Pr
                       →
                     </span>
                   </span>
-                </Link>
+                </a>
               ))}
             </nav>
           </div>
