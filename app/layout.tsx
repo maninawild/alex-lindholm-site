@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { ConversionEvents } from "@/components/conversion-events";
 import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
+import { SiteAnalytics } from "@/components/site-analytics";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { PublicOnlyEnhancements } from "@/components/public-only-enhancements";
 import { personJsonLd, siteUrl, websiteJsonLd } from "@/lib/site";
@@ -103,8 +103,8 @@ export default async function RootLayout({
         />
         {children}
         <PublicOnlyEnhancements />
-        <Analytics />
-        <ConversionEvents />
+        <SiteAnalytics />
+        <ConversionEvents enabled={process.env.SITE_METRICS_ENABLED === "true"} />
         <SpeedInsights />
       </body>
     </html>
