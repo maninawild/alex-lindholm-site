@@ -1,11 +1,11 @@
 "use client";
 
 import { translator, type Locale } from "@/lib/i18n";
-import { track } from "@vercel/analytics";
+import { recordIntent } from "@/lib/metrics/client";
 import { useState, type FormEvent } from "react";
 
 // Uses the visitor's email app; no server storage or unapproved external processor.
-export function ContactNoteForm({ directSend = false, locale = "en" }: { directSend?: boolean; locale?: Locale }) {
+export function ContactNoteForm({ directSend = false, metricsEnabled = false, locale = "en" }: { directSend?: boolean; metricsEnabled?: boolean; locale?: Locale }) {
   const t = translator(locale);
   const [pending, setPending] = useState(false);
   const [status, setStatus] = useState("");
@@ -22,15 +22,15 @@ export function ContactNoteForm({ directSend = false, locale = "en" }: { directS
         const response = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name, email, message, intent: String(form.get("intent") || ""), website: String(form.get("website") || "") }) });
         const result = await response.json();
         if (!response.ok || result.accepted !== true) throw new Error(result.error || t("Sending failed."));
-        track("contact_submit_success");
+        // Provider acceptance is counted by the server, never trusted from a browser.
         setStatus(t("Accepted for sending. This does not yet confirm inbox delivery."));
       } catch {
-        track("contact_submit_error");
+        recordIntent(metricsEnabled, "contact_submit_error");
         setStatus(t("Sending could not be confirmed. Please email Alex directly or try again."));
       } finally { setPending(false); }
       return;
     }
-    track("contact_email_draft");
+    recordIntent(metricsEnabled, "contact_email_draft");
     const body = `${message}\n\n${name}\nReply to: ${email}`;
     window.location.assign(`mailto:alex@inspirexchange.nl?subject=${encodeURIComponent(`${intent} — ${name}`)}&body=${encodeURIComponent(body)}`);
     setStatus(t("Email draft requested. Review and send it in your email app. Nothing has been sent by this website."));

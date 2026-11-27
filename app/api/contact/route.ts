@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Redis } from "@upstash/redis";
 import { createHmac, randomUUID } from "node:crypto";
+import { incrementMetric } from "@/lib/metrics/server";
 import { parseContactInput } from "@/lib/contact-input";
 
 export async function POST(request: Request) {
@@ -36,6 +37,7 @@ export async function POST(request: Request) {
     if (!response.ok) return reply("Sending failed. Please retry or email Alex directly.", 502);
     const result = await response.json();
     if (typeof result.id !== "string") return reply("Sending could not be confirmed.", 502);
+    await incrementMetric({ event: "contact_provider_accepted", page: "home", placement: "contact" }).catch(() => false);
     return NextResponse.json({ accepted: true, reference: id }, { headers: { "Cache-Control": "no-store" } });
   } catch { return reply("Sending is unavailable. Please email Alex directly.", 503); }
 }
