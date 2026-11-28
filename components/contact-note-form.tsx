@@ -4,7 +4,7 @@ import { translator, type Locale } from "@/lib/i18n";
 import { recordIntent } from "@/lib/metrics/client";
 import { useState, type FormEvent } from "react";
 
-// Uses the visitor's email app; no server storage or unapproved external processor.
+// Direct sending is enabled only after the approved provider is configured.
 export function ContactNoteForm({ directSend = false, metricsEnabled = false, locale = "en" }: { directSend?: boolean; metricsEnabled?: boolean; locale?: Locale }) {
   const t = translator(locale);
   const [pending, setPending] = useState(false);
@@ -32,7 +32,7 @@ export function ContactNoteForm({ directSend = false, metricsEnabled = false, lo
     }
     recordIntent(metricsEnabled, "contact_email_draft");
     const body = `${message}\n\n${name}\nReply to: ${email}`;
-    window.location.assign(`mailto:alex@inspirexchange.nl?subject=${encodeURIComponent(`${intent} — ${name}`)}&body=${encodeURIComponent(body)}`);
+    window.location.assign(`mailto:axlindholm@gmail.com?subject=${encodeURIComponent(`${intent} — ${name}`)}&body=${encodeURIComponent(body)}`);
     setStatus(t("Email draft requested. Review and send it in your email app. Nothing has been sent by this website."));
   }
   const fieldClass = "mt-2 block w-full rounded-none border-0 border-b border-ink/25 bg-transparent px-0 py-3 text-base text-ink placeholder:text-graphite/55 focus:outline-none focus:ring-2 focus:ring-electric focus:ring-offset-4";
@@ -47,6 +47,6 @@ export function ContactNoteForm({ directSend = false, metricsEnabled = false, lo
     <p className="mt-5 text-xs leading-5 text-graphite/65">{directSend ? t("Your details are used to reply to this enquiry. Sending is processed by Resend. Please leave sensitive information out of this form.") : t("This opens a draft in your email app. Your note is not stored or sent by this website.")}</p>
     <button disabled={pending} type="submit" className="mt-5 inline-flex min-h-12 items-center justify-center rounded-md bg-electric px-6 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric">{pending ? t("Sending…") : directSend ? t("Send a note ↗") : t("Open email draft ↗")}</button>
     <p role="status" aria-live="polite" className="mt-4 text-sm leading-6 text-graphite/75">{status}</p>
-    <a href="mailto:alex@inspirexchange.nl" className="mt-2 inline-block text-sm text-electric underline underline-offset-4">{t("Or email Alex directly")}</a>
+    <a href="mailto:axlindholm@gmail.com" className="mt-2 inline-block text-sm text-electric underline underline-offset-4">{t("Or email Alex directly")}</a>
   </form>;
 }

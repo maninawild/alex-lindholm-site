@@ -6,13 +6,13 @@ Owner approved free, anonymous analytics on 27 November 2026. Vercel pageviews a
 
 `SITE_METRICS_ENABLED=true` enables the first-party counter. The only client dimensions are an allowlisted action, a bounded page category, and placement. Both EN/RU pages use the same categories. Private/API routes, DNT and GPC opt-outs are excluded. No names, emails, message bodies, raw URLs, IPs, cookies, visitor IDs or unique-person estimates are stored. Browser-provided fields outside the contract are rejected.
 
-Counters use the existing server-side Upstash credentials. Daily UTC hashes expire after 63 days. A global daily budget bounds abuse; these counters are useful diagnostics, not audited leads. There is no public read endpoint. Vercel pageview URLs have query strings/fragments stripped; Private paths and DNT/GPC are excluded before sending.
+Counters and contact rate limits use dedicated SITE_DATA_KV_REST_API_URL/TOKEN credentials. The previous alex-private-access integration is uninstalled; its credentials remain untouched for private routes. Legacy KV credentials are a fallback only when neither dedicated setting exists. Daily UTC hashes expire after 63 days. A global daily budget bounds abuse; these counters are useful diagnostics, not audited leads. There is no public read endpoint. Vercel pageview URLs have query strings/fragments stripped; Private paths and DNT/GPC are excluded before sending.
 
 Run `node --env-file=.env.local scripts/report-growth.mjs YYYY-MM-DD YYYY-MM-DD` in a private operator environment. Output contains aggregate counters only. Before the first recorded action, metrics are unknown; a period preceding collection is incomplete. Data is not retroactive. Do not compare these UTC action counts directly to Search Console totals as a conversion rate.
 
 ## Contact delivery
 
-Existing `/api/contact` requires CONTACT_PROVIDER=resend, RESEND_API_KEY, CONTACT_FROM, CONTACT_RATE_SECRET and the existing KV credentials. Provider key/sender are not currently connected. The form continues honestly opening an email draft until all requirements exist. No dummy success is shown. No real email is sent by the readiness checks.
+Existing `/api/contact` requires CONTACT_PROVIDER=resend, RESEND_API_KEY, CONTACT_FROM, CONTACT_RATE_SECRET and the dedicated SITE_DATA store credentials. The owner approved mail.axlindholm.nl sender verification and changed the form destination to axlindholm@gmail.com on 28 November 2026. Provider key/sender are not currently connected. The form continues honestly opening an email draft until all requirements exist. No dummy success is shown. No real email is sent by the readiness checks.
 
 A browser cannot claim `contact_provider_accepted`: the server records it only after the email provider returns a successful ID. This means accepted by the provider, not delivered to an inbox. Metrics errors cannot turn an accepted email into a failed-send response. Preserve an accessible direct email fallback. Connect and verify the sender through the owner’s authenticated account; never paste credentials into chat. Owner approval is still needed for DNS changes or new agreements.
 

@@ -5,9 +5,11 @@ if(!/^\d{4}-\d{2}-\d{2}$/.test(start||'')||!/^\d{4}-\d{2}-\d{2}$/.test(end||''))
 const days=(Date.parse(end)-Date.parse(start))/86400000;
 if(!Number.isInteger(days)||days<0||days>62)throw new Error('Choose a valid period of at most 63 days.');
 const report={period:{start,end,timezone:'UTC'},intent_metrics:{status:'unknown'},business_outcomes:{status:'unknown'}};
-if(process.env.KV_REST_API_URL&&process.env.KV_REST_API_TOKEN){
+const storeUrl=process.env.SITE_DATA_KV_REST_API_URL||process.env.KV_REST_API_URL;
+const storeToken=process.env.SITE_DATA_KV_REST_API_READ_ONLY_TOKEN||process.env.SITE_DATA_KV_REST_API_TOKEN||process.env.KV_REST_API_TOKEN;
+if(storeUrl&&storeToken){
  try{
- const redis=new Redis({url:process.env.KV_REST_API_URL,token:process.env.KV_REST_API_TOKEN});
+ const redis=new Redis({url:storeUrl,token:storeToken});
  const startedAt=await redis.get('site-metrics:v1:startedAt');
  if(startedAt){
  const rows=await Promise.all(Array.from({length:days+1},(_,i)=>{const day=new Date(Date.parse(start)+i*86400000).toISOString().slice(0,10);return redis.hgetall(`site-metrics:v1:${day}`).then(counts=>({day,counts:counts||{}}));}));
