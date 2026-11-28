@@ -1,3 +1,4 @@
+import { siteStoreCredentials } from "@/lib/site-store";
 import { translator, localizedHref, type Locale } from "@/lib/i18n";
 import { ContactNoteForm } from "@/components/contact-note-form";
 import { CompanyMentions } from "@/components/company-mentions";
@@ -1092,7 +1093,7 @@ function Contact() {
           </div>
           <SocialContactLinks />
         </div>
-        <ContactNoteForm metricsEnabled={process.env.SITE_METRICS_ENABLED === "true"} locale={locale} directSend={process.env.CONTACT_PROVIDER === "resend" && Boolean(process.env.RESEND_API_KEY && process.env.CONTACT_FROM && process.env.CONTACT_RATE_SECRET && process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN)} />
+        <ContactNoteForm metricsEnabled={process.env.SITE_METRICS_ENABLED === "true"} locale={locale} directSend={process.env.CONTACT_PROVIDER === "resend" && Boolean(process.env.RESEND_API_KEY && process.env.CONTACT_FROM && process.env.CONTACT_RATE_SECRET && siteStoreCredentials().url && siteStoreCredentials().token)} />
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { siteStoreCredentials } from "@/lib/site-store";
 import { Redis } from "@upstash/redis";
 import { createHmac, randomUUID } from "node:crypto";
 import { incrementMetric } from "@/lib/metrics/server";
@@ -18,7 +19,8 @@ export async function POST(request: Request) {
   try { parsed = parseContactInput(JSON.parse(body)); } catch { return reply("Check the form fields.", 400); }
   if (!parsed) return reply("Check the form fields.", 400);
   const key = process.env.RESEND_API_KEY, from = process.env.CONTACT_FROM;
-  const url = process.env.KV_REST_API_URL, token = process.env.KV_REST_API_TOKEN, salt = process.env.CONTACT_RATE_SECRET;
+  const { url, token } = siteStoreCredentials();
+  const salt = process.env.CONTACT_RATE_SECRET;
   if (process.env.CONTACT_PROVIDER !== "resend" || !key || !from || !url || !token || !salt) return reply("Sending is unavailable. Please email Alex directly.", 503);
   try {
     const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
@@ -32,7 +34,7 @@ export async function POST(request: Request) {
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST", signal: AbortSignal.timeout(10000),
       headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json", "Idempotency-Key": id },
-      body: JSON.stringify({ from, to: ["alex@inspirexchange.nl"], reply_to: parsed.email, subject: `Website: ${parsed.intent}`, text: `${parsed.message}\n\nFrom: ${parsed.name}\nReply to: ${parsed.email}\nReference: ${id}` }),
+      body: JSON.stringify({ from, to: ["axlindholm@gmail.com"], reply_to: parsed.email, subject: `Website: ${parsed.intent}`, text: `${parsed.message}\n\nFrom: ${parsed.name}\nReply to: ${parsed.email}\nReference: ${id}` }),
     });
     if (!response.ok) return reply("Sending failed. Please retry or email Alex directly.", 502);
     const result = await response.json();

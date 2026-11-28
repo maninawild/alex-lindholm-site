@@ -1,8 +1,10 @@
+import { siteStoreCredentials } from "../site-store";
 import { Redis } from "@upstash/redis";
 import type { Metric } from "./contract";
 export async function incrementMetric(metric: Metric | { event: "contact_provider_accepted"; page: "home"; placement: "contact" }) {
-  if (process.env.SITE_METRICS_ENABLED !== "true" || !process.env.KV_REST_API_URL || !process.env.KV_REST_API_TOKEN) return false;
-  const redis = new Redis({ url: process.env.KV_REST_API_URL, token: process.env.KV_REST_API_TOKEN });
+  const { url, token } = siteStoreCredentials();
+  if (process.env.SITE_METRICS_ENABLED !== "true" || !url || !token) return false;
+  const redis = new Redis({ url, token });
   const day = new Date().toISOString().slice(0, 10);
   const key = `site-metrics:v1:${day}`;
   // Bounded keys and daily aggregates only: no identity, IP, message, email or URL.
